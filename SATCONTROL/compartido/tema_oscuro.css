@@ -1,0 +1,3454 @@
+/*
+ * Tema transversal azul oscuro de Paulet FISE.
+ * Se carga despues de los estilos de cada modulo para mantener una apariencia
+ * consistente sin modificar la simbologia ni los marcadores del mapa.
+ */
+
+:root,
+body:not(.pagina-acceso) {
+  color-scheme: dark;
+  --tema-fondo: #0b1020;
+  --tema-fondo-2: #101a36;
+  --tema-superficie: #142850;
+  --tema-superficie-2: #1b3261;
+  --tema-superficie-3: #234177;
+  --tema-borde: rgba(91, 107, 186, .52);
+  --tema-borde-suave: rgba(91, 107, 186, .28);
+  --tema-borde-activo: #6ea8ff;
+  --tema-texto: #f4f7ff;
+  --tema-texto-2: #cfe2ff;
+  --tema-texto-3: #a9bde0;
+  --tema-acento: #6ea8ff;
+  --tema-acento-2: #2563eb;
+  --tema-exito: #56b98a;
+  --tema-alerta: #dda83f;
+  --tema-peligro: #dc666c;
+  --tema-sombra: 0 18px 42px rgba(1, 8, 20, .34);
+}
+
+/* Buscador de Beneficiarios FISE: superficie transparente e ícono SVG nítido. */
+body:not(.pagina-acceso) .filtros-fise .buscador-beneficiario{background:transparent!important;background-image:none!important;box-shadow:none!important}
+body:not(.pagina-acceso) .filtros-fise .buscador-beneficiario .icono-busqueda-beneficiario{color:#cfe2ff!important;fill:none!important;stroke:currentColor!important}
+
+html,
+body {
+  color: var(--tema-texto);
+  background: var(--tema-fondo);
+}
+
+body {
+  background:
+    radial-gradient(circle at 82% 4%, rgba(62, 111, 166, .19), transparent 33rem),
+    linear-gradient(145deg, #0a1529 0%, #081224 58%, #0b172c 100%);
+}
+
+body :where(.contenido-principal, .contenido-admin, .vista-modulo, .seccion-modulo, .pagina-graficas) {
+  color: var(--tema-texto);
+  background-color: transparent !important;
+}
+
+body :where(h1, h2, h3, h4, legend, strong) { color: var(--tema-texto); }
+body :where(p, small, .descripcion, .subtitulo, .texto-secundario) { color: var(--tema-texto-3); }
+
+/* Cabeceras y navegacion */
+body :where(.cabecera-modulo, .encabezado-pagina, .encabezado-seccion, .cabecera-admin) {
+  color: var(--tema-texto);
+  border-color: var(--tema-borde);
+  background: rgba(10, 23, 43, .82);
+}
+
+body :where(.menu-lateral, .sidebar, .barra-lateral) {
+  color: var(--tema-texto-2);
+  border-color: #243a5d;
+  background: linear-gradient(180deg, #101d38 0%, #091329 100%);
+}
+
+body :where(.menu-lateral a, .menu-lateral button, .sidebar a, .sidebar button) {
+  color: var(--tema-texto-2);
+}
+
+body :where(.menu-lateral a:hover, .menu-lateral button:hover, .menu-lateral .activo,
+            .sidebar a:hover, .sidebar button:hover, .sidebar .activo) {
+  color: #fff;
+  border-color: #3c628d;
+  background: #1b3153;
+}
+
+/* Filtros y formularios */
+body :where(.filtros-fise, .filtros-mcter, .filtros-masificacion, .filtros-bonogas,
+            .filtros-gnv, .filtros-graficas-gnv, .filtros-analitica, .filtros-admin,
+            .filtros-usuarios, .filtros-tabla-gestion, .contenedor-filtros-general,
+            .contenedor-filtros-fise, .contenedor-filtros-gnv) {
+  color: var(--tema-texto-2);
+  border-color: var(--tema-borde);
+  background: linear-gradient(145deg, rgba(18, 34, 61, .98), rgba(12, 26, 49, .98));
+  box-shadow: 0 12px 28px rgba(2, 9, 23, .18);
+}
+
+body :where(label, .campo-formulario, .etiqueta-campo) { color: var(--tema-texto-2); }
+
+body :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  color: var(--tema-texto) !important;
+  caret-color: var(--tema-acento);
+  border-color: var(--tema-borde) !important;
+  background-color: #0b1830 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025);
+}
+
+body :where(input, textarea)::placeholder {
+  color: #8195b2 !important;
+  opacity: 1;
+}
+
+body select { color-scheme: dark; }
+body :where(input, select, textarea):focus {
+  border-color: var(--tema-borde-activo) !important;
+  outline: 3px solid rgba(88, 168, 207, .14);
+}
+
+body input[type="checkbox"],
+body input[type="radio"] { accent-color: var(--tema-acento); }
+
+body :where(.alternar-filtros-general, .boton-filtros-fise, .boton-colapsar-filtros) {
+  color: var(--tema-texto-2);
+  border-color: var(--tema-borde);
+  background: var(--tema-superficie-2);
+}
+
+/* Botones */
+body :where(.boton-principal, .aplicar-filtros-general, .acciones-filtros-generales .aplicar-filtros-general,
+            .acciones-filtros-bonogas button:first-child, .acciones-filtros-gnv button:first-child,
+            .acciones-graficas-gnv button:first-child, button.principal, .boton-modal-principal) {
+  color: #fff !important;
+  border-color: #4d8fb6 !important;
+  background: linear-gradient(120deg, #376f9f, #4f9fc2) !important;
+  box-shadow: 0 8px 20px rgba(35, 102, 145, .24);
+}
+
+body :where(.boton-secundario, .restablecer-filtros-general, .acciones-filtros-generales .restablecer-filtros-general,
+            .acciones-filtros-bonogas button:last-child, .acciones-filtros-gnv button:last-child,
+            .acciones-graficas-gnv button:last-child, .boton-modal-secundario) {
+  color: var(--tema-texto-2) !important;
+  border-color: var(--tema-borde) !important;
+  background: #162945 !important;
+}
+
+body button { font-family: inherit; }
+body button:hover { filter: brightness(1.08); }
+
+/* Superficies, paneles, tarjetas y graficas */
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin,
+            .resumen-cabecera, .encabezado-resumen-gnv, .tarjeta-admin,
+            .tarjeta-control, .tarjeta-analitica, .tarjeta-grafica-gnv,
+            .tarjeta-tabla-gestion, .tabla-resumen-gnv, .kpi-analitica,
+            .kpis > article, .kpis-resumen-gnv > article, .kpis-admin > article,
+            .kpis-gestion > article, .territorio-kpis > article,
+            .grafica-card, .chart-card, .card, .tarjeta) {
+  color: var(--tema-texto);
+  border-color: var(--tema-borde);
+  background: linear-gradient(145deg, var(--tema-superficie) 0%, #0e1b33 100%);
+  box-shadow: 0 12px 30px rgba(2, 9, 22, .22);
+}
+
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin) {
+  scrollbar-color: var(--tema-acento) #14243d;
+}
+
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin)::-webkit-scrollbar-track,
+body :where(.tabla-scroll-gnv, .contenedor-tabla-gestion, .tabla-modal)::-webkit-scrollbar-track {
+  background: #14243d;
+}
+
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin)::-webkit-scrollbar-thumb,
+body :where(.tabla-scroll-gnv, .contenedor-tabla-gestion, .tabla-modal)::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #4a8fb5;
+}
+
+body :where(.resumen-cabecera, .encabezado-resumen-gnv) small,
+body :where(.sobrelinea, .eyebrow) { color: #76badd; }
+
+body :where(.kpis > article, .kpis-resumen-gnv > article, .kpis-admin > article,
+            .kpis-gestion > article, .territorio-kpis > article, .kpi-analitica) span,
+body :where(.kpis > article, .kpis-resumen-gnv > article, .kpis-admin > article,
+            .kpis-gestion > article, .territorio-kpis > article, .kpi-analitica) small {
+  color: var(--tema-texto-3);
+}
+
+body :where(.verde, .kpi-conforme) { border-color: rgba(86, 185, 138, .58); }
+body :where(.amarillo, .naranja, .kpi-pendiente) { border-color: rgba(221, 168, 63, .58); }
+body :where(.rojo, .kpi-observado) { border-color: rgba(220, 102, 108, .58); }
+body :where(.azul, .kpi-emitida, .kpi-solicitud) { border-color: rgba(88, 168, 207, .58); }
+
+/* Tablas */
+body :where(.tabla-modal, .contenedor-tabla-gestion, .tabla-scroll-gnv,
+            .tabla-canjes-contenedor, .tabla-scroll-proyectos, .tabla-usuarios) {
+  color: var(--tema-texto-2);
+  border-color: var(--tema-borde);
+  background: #0d1a31;
+}
+
+body table { color: var(--tema-texto-2); border-color: var(--tema-borde); }
+body table thead,
+body table th {
+  color: #dce7f6 !important;
+  border-color: var(--tema-borde) !important;
+  background: #1b3152 !important;
+}
+
+body table td {
+  color: var(--tema-texto-2);
+  border-color: #263e60 !important;
+  background: #101e37;
+}
+
+body table tbody tr:nth-child(even) td { background: #13243f; }
+body table tbody tr:hover td { background: #1a3151; }
+
+/* Controles sobre el mapa: solo cambia el contenedor, no la simbologia GIS. */
+body .controles-mapa button {
+  color: var(--tema-texto-2) !important;
+  border-color: rgba(82, 121, 163, .82) !important;
+  background: rgba(15, 31, 56, .94) !important;
+  box-shadow: 0 10px 24px rgba(2, 10, 24, .3);
+}
+
+body .controles-mapa button svg { stroke: #a9c7dc !important; }
+body .controles-mapa button:hover,
+body .controles-mapa button[aria-expanded="true"] {
+  color: #fff !important;
+  border-color: var(--tema-borde-activo) !important;
+  background: #285679 !important;
+}
+
+html body [class*="mapa"] .controles-mapa button {
+  color: var(--tema-texto-2) !important;
+  border-color: rgba(82, 121, 163, .82) !important;
+  background: rgba(15, 31, 56, .96) !important;
+}
+
+html body [class*="controles-mapa"] button {
+  color: var(--tema-texto-2) !important;
+  border-color: rgba(82, 121, 163, .82) !important;
+  background: rgba(15, 31, 56, .96) !important;
+  box-shadow: 0 10px 24px rgba(2, 10, 24, .3) !important;
+}
+
+html body [class*="controles-mapa"] button svg { stroke: #a9c7dc !important; }
+html body [class*="controles-mapa"] button:hover,
+html body [class*="controles-mapa"] button[aria-expanded="true"] {
+  color: #fff !important;
+  border-color: var(--tema-borde-activo) !important;
+  background: #285679 !important;
+}
+
+html body [class*="mapa"] .controles-mapa button svg { stroke: #a9c7dc !important; }
+html body [class*="mapa"] .controles-mapa button:hover,
+html body [class*="mapa"] .controles-mapa button[aria-expanded="true"] {
+  color: #fff !important;
+  border-color: var(--tema-borde-activo) !important;
+  background: #285679 !important;
+}
+
+body :where([class*="buscador"], [class*="busqueda"]):not(input):not(.leaflet-control) {
+  color: var(--tema-texto-2);
+  border-color: var(--tema-borde) !important;
+  background-color: #0f1e37 !important;
+}
+
+body :where(.panel-opciones-mapa, .menu-capas, .menu-tematicos, .panel-mapas,
+            .panel-capas, .panel-tematicos, .desplegable-mapa) {
+  color: var(--tema-texto-2);
+  border-color: var(--tema-borde);
+  background: rgba(13, 27, 50, .97);
+  box-shadow: var(--tema-sombra);
+}
+
+/* Herramientas flotantes */
+body :where(.abrir-herramientas-fise, .abrir-herramientas-mcter) {
+  color: var(--tema-texto-2) !important;
+  border-color: var(--tema-borde) !important;
+  background: rgba(17, 34, 61, .97) !important;
+}
+
+body :where(.panel-herramientas-fise, .panel-herramientas-mcter,
+            .contenedor-herramientas, .herramientas-desplegadas) {
+  color: var(--tema-texto-2);
+  border-color: var(--tema-borde);
+  background: rgba(12, 25, 47, .98);
+  box-shadow: var(--tema-sombra);
+}
+
+/* Modales de todos los modulos */
+body :where(dialog, .modal-alerta-contenido, .modal-exportacion-contenido,
+            .modal-contenido-gnv, .modal-herramienta-modulo, .modal-eliminar-proyecto,
+            .modal-perfil-contenido, .modal-contenido, [role="dialog"]) {
+  color: var(--tema-texto);
+  border-color: #35547d !important;
+  background: linear-gradient(145deg, #152644 0%, #0c1830 100%) !important;
+  box-shadow: 0 26px 70px rgba(0, 5, 16, .6) !important;
+}
+
+body dialog::backdrop { background: rgba(2, 7, 18, .78); backdrop-filter: blur(5px); }
+
+body :where(.modal-alerta, .modal-exportacion, .modal-gnv, .modal-admin, .modal-perfil) {
+  color: var(--tema-texto);
+}
+
+body :where(.modal-alerta-fondo, .modal-exportacion-fondo, .modal-fondo-gnv,
+            .modal-admin-fondo, .modal-perfil-fondo) {
+  background: rgba(2, 7, 18, .78);
+  backdrop-filter: blur(5px);
+}
+
+body :where(dialog, .modal-alerta-contenido, .modal-exportacion-contenido,
+            .modal-contenido-gnv, .modal-herramienta-modulo, .modal-eliminar-proyecto,
+            .modal-perfil-contenido, [role="dialog"])
+     :where(header, footer, section, article, fieldset, .modal-cuerpo, .modal-cuerpo-gnv,
+            .tarjeta-crear-proyecto, .resumen-liquidacion, .contenido-trazabilidad,
+            .paso-alerta, .opcion-canal, .formato-exportacion, .alcance-exportacion) {
+  color: var(--tema-texto);
+  border-color: var(--tema-borde);
+  background-color: transparent;
+}
+
+body :where(dialog, .modal-alerta-contenido, .modal-exportacion-contenido,
+            .modal-contenido-gnv, .modal-herramienta-modulo, .modal-eliminar-proyecto,
+            .modal-perfil-contenido, [role="dialog"])
+     :where(p, small, span:not(.estado):not(.badge)) { color: var(--tema-texto-3); }
+
+body :where(dialog, .modal-alerta-contenido, .modal-exportacion-contenido,
+            .modal-contenido-gnv, .modal-herramienta-modulo, .modal-eliminar-proyecto,
+            .modal-perfil-contenido, [role="dialog"])
+     :where(.kpis-modal > article, [class*="kpi"] > article, .metrica, .dato,
+            .resultado, .resumen, .tarjeta, .item, .opcion-canal, .formato-exportacion) {
+  color: var(--tema-texto);
+  border-color: var(--tema-borde);
+  background: #13243f;
+}
+
+body :where(dialog, .modal-alerta-contenido, .modal-exportacion-contenido,
+            .modal-contenido-gnv, .modal-herramienta-modulo, .modal-eliminar-proyecto,
+            .modal-perfil-contenido, [role="dialog"])
+     button:not(.principal):not(.boton-modal-principal) {
+  color: var(--tema-texto-2);
+  border-color: var(--tema-borde);
+  background-color: #172a48;
+}
+
+body :where(.cerrar-modal, [data-cerrar-modal], [data-cerrar-alerta], [data-cerrar-exportacion]) {
+  color: #dce8f6;
+}
+
+/* Asistente IA */
+body :where(.asistente-ia-panel, .panel-asistente, .chatbot-panel, .asistente-paulet) {
+  color: var(--tema-texto);
+  border-color: var(--tema-borde);
+  background: linear-gradient(160deg, #142746, #0b172d);
+  box-shadow: var(--tema-sombra);
+}
+
+body :where(.asistente-ia-panel, .panel-asistente, .chatbot-panel, .asistente-paulet)
+     :where(.mensaje, .burbuja, .sugerencia) {
+  color: var(--tema-texto-2);
+  border-color: var(--tema-borde);
+  background: #172a48;
+}
+
+/* Login: conserva los logos, pero integra ambos lados con la paleta oscura. */
+body :where(.login-contenedor, .contenedor-login, .login-card) {
+  color: var(--tema-texto);
+  border-color: var(--tema-borde);
+  background: linear-gradient(120deg, #132541, #0b172e);
+  box-shadow: var(--tema-sombra);
+}
+
+body :where(.login-izquierda, .panel-izquierdo, .lado-izquierdo,
+            .login-derecha, .panel-derecho-login, .lado-derecho) {
+  color: var(--tema-texto);
+  background-color: #101f39;
+}
+
+/* La cartografia y sus iconos conservan su paleta funcional. */
+body :where(.leaflet-container, .leaflet-pane, .leaflet-tile-pane,
+            .leaflet-marker-pane, .leaflet-overlay-pane, .leaflet-shadow-pane) {
+  color-scheme: normal;
+}
+
+@media (max-width: 760px) {
+  body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin) {
+    border-color: var(--tema-borde);
+  }
+}
+
+/*
+ * Refuerzo final para componentes que en los estilos historicos usan
+ * declaraciones !important. Se mantiene deliberadamente fuera del mapa.
+ */
+body :where(h1, h2, h3, h4, legend, strong) { color: var(--tema-texto) !important; }
+body :where(p, small, .descripcion, .subtitulo, .texto-secundario) { color: var(--tema-texto-3) !important; }
+
+body :where(.filtros-fise, .filtros-mcter, .filtros-masificacion, .filtros-bonogas,
+            .filtros-gnv, .filtros-graficas-gnv, .filtros-analitica, .filtros-admin,
+            .filtros-usuarios, .filtros-tabla-gestion, .contenedor-filtros-general,
+            .contenedor-filtros-fise, .contenedor-filtros-gnv) {
+  border-color: var(--tema-borde) !important;
+  background: linear-gradient(145deg, #142643, #0d1a31) !important;
+}
+
+body :where(.resumen-cabecera, .encabezado-resumen-gnv, .grafico-tarjeta,
+            .panel-operativo, .historial-ubicaciones-fotovoltaico, .metricas-resumen,
+            .estado-registros, .tarjeta-control, .tabla-resumen-gnv, .bloque-resumen,
+            .avance-ciudades, .accion-resumen, .proyecto-arbol,
+            .tarjeta-admin, .tarjeta-analitica, .tarjeta-grafica-gnv,
+            .tarjeta-tabla-gestion, .kpi-analitica, .grafica-card, .chart-card) {
+  color: var(--tema-texto) !important;
+  border-color: var(--tema-borde) !important;
+  background: linear-gradient(145deg, #142540, #0e1b33) !important;
+}
+
+body :where(.barra-proyectos-mapa, .barra-proyectos-busqueda,
+            .barra-proyectos-mapa > footer, .arbol-proyectos,
+            .lista-proyectos-mapa) {
+  color: var(--tema-texto-2) !important;
+  border-color: var(--tema-borde) !important;
+  background: #12233e !important;
+}
+
+body :where(.kpis > article, .kpis-resumen-gnv > article, .kpis-admin > article,
+            .kpis-gestion > article, .territorio-kpis > article,
+            .metricas-resumen > article, .control-kpis > article,
+            .resumen-semanal-gnv > article, [class*="kpis-"] > article) {
+  color: var(--tema-texto) !important;
+  border-color: var(--tema-borde) !important;
+  background: #142540 !important;
+}
+
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin,
+            .panel-contenido, .detalle-lateral, .detalle-expediente,
+            .detalle-mcter, .panel-resumen) {
+  color: var(--tema-texto) !important;
+  border-color: var(--tema-borde) !important;
+  background: linear-gradient(180deg, #12233e, #0b172c) !important;
+}
+
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin,
+            .panel-contenido, .detalle-lateral, .detalle-expediente,
+            .detalle-mcter, .panel-resumen)
+     :where(section, article, header, .tarjeta, .card, .bloque) {
+  border-color: var(--tema-borde) !important;
+  background-color: #12233e !important;
+}
+
+body :where(.detalle-mcter > header, .panel-resumen > header,
+            .regla-alerta, .leyenda-modulos-admin) {
+  color: var(--tema-texto) !important;
+  border-color: var(--tema-borde) !important;
+  background: #12233e !important;
+}
+
+body table thead,
+body table th { background: #1b3152 !important; }
+body table td { background: #101e37 !important; }
+body table tbody tr:nth-child(even) td { background: #13243f !important; }
+body table tbody tr:hover td { background: #1a3151 !important; }
+
+body :where(dialog, .modal-alerta-contenido, .modal-exportacion-contenido,
+            .modal-contenido-gnv, .modal-herramienta-modulo, .modal-eliminar-proyecto,
+            .modal-perfil-contenido, [role="dialog"])
+     :where(.modal-cuerpo, .modal-cuerpo-gnv, .contenido-trazabilidad,
+            .panel-liquidacion, .auditoria-expediente, .cuerpo-modificar-proyecto) {
+  color: var(--tema-texto) !important;
+  background: transparent !important;
+}
+
+body :where(dialog, .modal-alerta-contenido, .modal-exportacion-contenido,
+            .modal-contenido-gnv, .modal-herramienta-modulo, .modal-eliminar-proyecto,
+            .modal-perfil-contenido, [role="dialog"])
+     :where(section, article, fieldset, .tarjeta-crear-proyecto, .resumen-liquidacion,
+            .opcion-canal, .formato-exportacion, .alcance-exportacion, .paso-alerta,
+            .tabla-modal, .tabla-liquidaciones-gnv, .tabla-semanal-gnv,
+            .tabla-morosidad-gnv, .resumen-resultado-ia-gnv) {
+  border-color: var(--tema-borde) !important;
+  background-color: #12233e !important;
+}
+
+body dialog :where(.panel-proyectos-modificar, .barra-beneficiarios-proyecto,
+                   .acciones-crear-proyecto, aside, footer) {
+  color: var(--tema-texto-2) !important;
+  border-color: var(--tema-borde) !important;
+  background: #101f39 !important;
+}
+
+/*
+ * Ajuste de profundidad visual: evita que los bordes contiguos formen
+ * franjas duras y distingue el panel de resultados con un azul mas luminoso.
+ */
+body :where(.cabecera-modulo, .encabezado-pagina, .encabezado-seccion,
+            .cabecera-admin, .contenido-principal, main) {
+  border-color: var(--tema-borde-suave) !important;
+}
+
+body :where(.filtros-fise, .filtros-mcter, .filtros-masificacion, .filtros-bonogas,
+            .filtros-gnv, .filtros-graficas-gnv, .filtros-analitica, .filtros-admin,
+            .filtros-usuarios, .filtros-tabla-gestion, .contenedor-filtros-general,
+            .contenedor-filtros-fise, .contenedor-filtros-gnv) {
+  border-color: var(--tema-borde-suave) !important;
+  box-shadow: 0 10px 26px rgba(1, 8, 20, .16) !important;
+}
+
+body :where(.filtros-fise, .filtros-mcter, .filtros-masificacion, .filtros-bonogas,
+            .filtros-gnv, .filtros-graficas-gnv, .filtros-analitica, .filtros-admin,
+            .filtros-usuarios, .filtros-tabla-gestion, .contenedor-filtros-general,
+            .contenedor-filtros-fise, .contenedor-filtros-gnv)
+     :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea,
+            [class*="buscador"], [class*="busqueda"]) {
+  border-color: rgba(116, 154, 195, .30) !important;
+  box-shadow: none !important;
+}
+
+/* El nombre de clase "filtro-busqueda" no debe recibir una tarjeta propia. */
+body:not(.pagina-acceso) .filtros-fise .filtro-busqueda{background:transparent!important;background-image:none!important;box-shadow:none!important}
+
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin,
+            .panel-contenido, .detalle-lateral, .detalle-expediente,
+            .detalle-mcter, .panel-resumen) {
+  border-color: rgba(143, 177, 210, .20) !important;
+  background: linear-gradient(180deg, #1d385d 0%, #172f50 100%) !important;
+  box-shadow: 0 14px 32px rgba(2, 10, 24, .22) !important;
+}
+
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin,
+            .panel-contenido, .detalle-lateral, .detalle-expediente,
+            .detalle-mcter, .panel-resumen)
+     :where(section, article, header, .tarjeta, .card, .bloque,
+            .resumen-cabecera, .encabezado-resumen-gnv) {
+  border-color: rgba(151, 183, 214, .18) !important;
+  background: linear-gradient(145deg, #234266, #1c385c) !important;
+  box-shadow: 0 8px 20px rgba(3, 12, 28, .15) !important;
+}
+
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin,
+            .panel-contenido, .detalle-lateral, .detalle-expediente,
+            .detalle-mcter, .panel-resumen)
+     :where(section, article, header, .tarjeta, .card, .bloque)
+     :where(section, article, header, .tarjeta, .card, .bloque) {
+  border-color: rgba(151, 183, 214, .12) !important;
+  box-shadow: none !important;
+}
+
+body :where(.panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin)::-webkit-scrollbar-track {
+  background: #162b49;
+}
+
+body :where(.alternar-filtros-general, .boton-filtros-fise,
+            .boton-colapsar-filtros, [class*="colapsar-filtros"]) {
+  color: var(--tema-texto-2) !important;
+  border-color: rgba(136, 170, 204, .24) !important;
+  background: #1b3557 !important;
+  box-shadow: 0 6px 16px rgba(2, 10, 24, .14) !important;
+}
+
+body :where(.mapa-panel, .mapa-panel-gnv, .mapa-mcter-panel, .mapa-admin-panel,
+            .contenedor-mapa, .mapa-contenedor) {
+  border-color: rgba(135, 168, 202, .20) !important;
+  box-shadow: 0 12px 28px rgba(2, 9, 22, .18) !important;
+}
+
+body :where(.detalle-gestion, .criterios-validacion-ia-gnv,
+            .resumen-liquidacion, .panel-proyectos-modificar) {
+  color: var(--tema-texto-2) !important;
+  border-color: rgba(145, 178, 211, .20) !important;
+}
+
+body :where(.asistente-ia-panel, .panel-asistente-ia, .chatbot-panel,
+            .asistente-paulet, .pie-asistente-ia) {
+  color: var(--tema-texto) !important;
+  border-color: rgba(145, 178, 211, .22) !important;
+  background: linear-gradient(160deg, #1d385d, #142b49) !important;
+}
+
+body :where(.asistente-ia-panel, .panel-asistente-ia, .chatbot-panel,
+            .asistente-paulet)
+     :where(button:not(.boton-enviar-asistente), .mensaje, .burbuja, .sugerencia) {
+  color: var(--tema-texto-2) !important;
+  border-color: rgba(145, 178, 211, .18) !important;
+  background: #203c60 !important;
+}
+
+/* El acceso conserva su identidad clara incluso cuando el resto de la plataforma usa tema oscuro. */
+body.pagina-acceso {
+  color: #fff !important;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(44, 107, 237, .13), transparent 36rem),
+    #f6f7ff !important;
+}
+
+body.pagina-acceso .pagina-login {
+  background: transparent !important;
+}
+
+body.pagina-acceso .tarjeta-login {
+  color: #fff !important;
+  border-color: transparent !important;
+  background: #070f26 !important;
+  box-shadow: 0 28px 70px rgba(7, 15, 38, .28) !important;
+}
+
+body.pagina-acceso .panel-marca,
+body.pagina-acceso .panel-marca::after {
+  color: #070f26 !important;
+  background: #fff !important;
+}
+
+body.pagina-acceso .panel-formulario {
+  color: #fff !important;
+  background:
+    radial-gradient(circle at 85% 0, rgba(44, 107, 237, .28), transparent 45%),
+    linear-gradient(145deg, #132e63, #070f26 62%) !important;
+}
+
+body.pagina-acceso .campo,
+body.pagina-acceso .boton-selector {
+  border-color: rgba(44, 107, 237, .58) !important;
+  background: rgba(7, 15, 38, .62) !important;
+  box-shadow: none !important;
+}
+
+body.pagina-acceso .campo input {
+  color: #fff !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.pagina-acceso .campo input::placeholder {
+  color: #aebbd4 !important;
+}
+
+body.pagina-acceso .lista-perfiles {
+  border-color: rgba(44, 107, 237, .58) !important;
+  background: #0b1c42 !important;
+}
+
+body.pagina-acceso .opcion-perfil {
+  color: #dbe4f7 !important;
+  background: transparent !important;
+}
+
+body.pagina-acceso .opcion-perfil:hover {
+  color: #fff !important;
+  background: #132e63 !important;
+}
+
+body.pagina-acceso .opcion-perfil.activa {
+  color: #fff !important;
+  background: linear-gradient(90deg, #2c6bed, #245bd0) !important;
+}
+
+body.pagina-acceso .boton-ingresar {
+  color: #fff !important;
+  background: linear-gradient(100deg, #2c6bed, #20d7d4) !important;
+}
+
+body.pagina-acceso .acceso-demostracion {
+  color: #bfeeed !important;
+  border-color: rgba(32, 215, 212, .42) !important;
+  background: rgba(19, 46, 99, .64) !important;
+}
+
+body.pagina-acceso .acceso-demostracion strong {
+  color: #d8efff !important;
+}
+
+/* Paleta institucional unificada: noche, azul FISE, azul vivo, turquesa y blanco. */
+body:not(.pagina-acceso) {
+  color: var(--tema-texto) !important;
+  background:
+    radial-gradient(circle at 84% 4%, rgba(44, 107, 237, .16), transparent 34rem),
+    linear-gradient(145deg, #070f26 0%, #0a1734 55%, #070f26 100%) !important;
+}
+
+body:not(.pagina-acceso) :where(.cabecera-modulo, .encabezado-pagina, .encabezado-seccion, .cabecera-admin) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .26) !important;
+  background: rgba(7, 15, 38, .88) !important;
+}
+
+body:not(.pagina-acceso) :where(.menu-lateral, .sidebar, .barra-lateral) {
+  color: #d6e1f5 !important;
+  border-color: rgba(44, 107, 237, .25) !important;
+  background:
+    radial-gradient(circle at 28% 0, rgba(44, 107, 237, .18), transparent 22rem),
+    linear-gradient(180deg, #0b193a 0%, #070f26 74%) !important;
+  box-shadow: 8px 0 28px rgba(1, 6, 20, .30) !important;
+}
+
+body:not(.pagina-acceso) :where(.menu-lateral a, .menu-lateral button, .sidebar a, .sidebar button, .barra-lateral a, .barra-lateral button) {
+  color: #c8d5ee !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .menu-lateral a:hover, .menu-lateral button:hover, .menu-lateral .activo, .menu-lateral [aria-current="page"],
+  .sidebar a:hover, .sidebar button:hover, .sidebar .activo,
+  .barra-lateral a:hover, .barra-lateral button:hover, .barra-lateral .activo
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(32, 215, 212, .42) !important;
+  background: linear-gradient(105deg, rgba(44, 107, 237, .42), rgba(19, 46, 99, .84)) !important;
+  box-shadow: inset 3px 0 0 #20d7d4, 0 8px 18px rgba(2, 10, 30, .16) !important;
+}
+
+body:not(.pagina-acceso) :where(.boton-menu, .menu-toggle, .boton-hamburguesa) {
+  color: #f6f7ff !important;
+  border-color: rgba(32, 215, 212, .48) !important;
+  background: linear-gradient(135deg, #2c6bed, #20d7d4) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .filtros-fise, .filtros-masificacion, .filtros-mcter, .filtros-bonogas,
+  .filtros-gnv, .filtros-electricidad, .filtros-fotovoltaico, .panel-filtros,
+  .contenedor-filtros, .barra-filtros, .filtros
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .30) !important;
+  background: linear-gradient(145deg, #0d2149, #0a1a3b) !important;
+  box-shadow: 0 12px 28px rgba(1, 7, 22, .22) !important;
+}
+
+body:not(.pagina-acceso) :where(input, select, textarea, .campo-control, .selector-control, .control-filtro) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .34) !important;
+  background: #0a1835 !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(input, textarea)::placeholder { color: #9eb1d3 !important; }
+body:not(.pagina-acceso) :where(input, select, textarea):focus {
+  border-color: #20d7d4 !important;
+  box-shadow: 0 0 0 3px rgba(32, 215, 212, .13) !important;
+  outline: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .boton-primario, .btn-primary, .boton-aplicar, .aplicar-filtros,
+  .boton-exportar, .boton-generar, .boton-ingresar, .btn-gradient
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(32, 215, 212, .45) !important;
+  background: linear-gradient(105deg, #2c6bed, #20d7d4) !important;
+  box-shadow: 0 10px 22px rgba(10, 61, 154, .24) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .boton-secundario, .btn-secondary, .boton-restablecer, .restablecer-filtros,
+  .boton-cancelar, .btn-outline
+) {
+  color: #d6e1f5 !important;
+  border-color: rgba(44, 107, 237, .38) !important;
+  background: #132e63 !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .tarjeta, .card, .panel, .bloque, .seccion-card, .tarjeta-resumen,
+  .tarjeta-grafica, .kpi, .tarjeta-kpi, .panel-resumen, .panel-informacion
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .27) !important;
+  background: linear-gradient(145deg, #0d2149, #0a1a3b) !important;
+  box-shadow: 0 14px 32px rgba(1, 7, 22, .22) !important;
+}
+
+body:not(.pagina-acceso) :where(.panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral, .panel-lateral-derecho) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .34) !important;
+  background: linear-gradient(180deg, #132e63, #0e2755) !important;
+  box-shadow: 0 18px 38px rgba(1, 7, 22, .28) !important;
+}
+
+body:not(.pagina-acceso) :where(.panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral, .panel-lateral-derecho)
+  :where(.tarjeta, .card, .bloque, .kpi, .tarjeta-kpi, .panel, section, article) {
+  border-color: rgba(32, 215, 212, .20) !important;
+  background: linear-gradient(145deg, #173a75, #132e63) !important;
+}
+
+body:not(.pagina-acceso) :where(table, .tabla, .tabla-datos) {
+  color: #d6e1f5 !important;
+  border-color: rgba(44, 107, 237, .28) !important;
+  background: #0d2149 !important;
+}
+body:not(.pagina-acceso) :where(thead, th) { color: #f6f7ff !important; background: #132e63 !important; }
+body:not(.pagina-acceso) :where(td) { border-color: rgba(44, 107, 237, .20) !important; background: #0d2149 !important; }
+body:not(.pagina-acceso) :where(tbody tr:nth-child(even) td) { background: #102858 !important; }
+body:not(.pagina-acceso) :where(tbody tr:hover td) { background: #173a75 !important; }
+
+body:not(.pagina-acceso) :where(.modal-contenido, .modal-content, .dialogo, [role="dialog"], dialog) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .48) !important;
+  background: linear-gradient(145deg, #132e63, #070f26) !important;
+  box-shadow: 0 28px 68px rgba(0, 4, 16, .58) !important;
+}
+
+body:not(.pagina-acceso) :where(.modal-contenido, .modal-content, .dialogo, [role="dialog"], dialog)
+  :where(.tarjeta, .card, .bloque, section, article, .panel) {
+  border-color: rgba(44, 107, 237, .28) !important;
+  background: #0d2149 !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .boton-mapa, .mapa-boton, .map-control-button, .leaflet-bar a,
+  .boton-herramientas, .tools-toggle, .boton-asistente
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(32, 215, 212, .34) !important;
+  background: #132e63 !important;
+}
+
+body:not(.pagina-acceso) :where(.boton-mapa.activo, .mapa-boton.activo, .map-control-button.active, .boton-herramientas.activo) {
+  color: #f6f7ff !important;
+  border-color: #20d7d4 !important;
+  background: #2c6bed !important;
+}
+
+body:not(.pagina-acceso) :where(.panel-herramientas, .tools-panel, .barra-herramientas, .dock-herramientas) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .40) !important;
+  background: linear-gradient(150deg, #132e63, #0a1835) !important;
+}
+
+body:not(.pagina-acceso) :where(.asistente-ia-panel, .panel-asistente-ia, .chatbot-panel, .asistente-paulet, .pie-asistente-ia) {
+  color: #f6f7ff !important;
+  border-color: rgba(32, 215, 212, .30) !important;
+  background: linear-gradient(160deg, #132e63, #070f26) !important;
+}
+
+body:not(.pagina-acceso) :where(.asistente-ia-panel, .panel-asistente-ia, .chatbot-panel, .asistente-paulet)
+  :where(button:not(.boton-enviar-asistente), .mensaje, .burbuja, .sugerencia) {
+  color: #d6e1f5 !important;
+  border-color: rgba(44, 107, 237, .25) !important;
+  background: #0d2149 !important;
+}
+
+body:not(.pagina-acceso) ::-webkit-scrollbar-track { background: #0a1835; }
+body:not(.pagina-acceso) ::-webkit-scrollbar-thumb {
+  border: 2px solid #0a1835;
+  border-radius: 999px;
+  background: linear-gradient(#2c6bed, #20d7d4);
+}
+
+/* ================================================================
+   PALETA FINAL SIN DEGRADADOS
+   Esta sección debe permanecer al final: neutraliza colores heredados
+   de las hojas particulares de cada módulo.
+   ================================================================ */
+html,
+body:not(.pagina-acceso),
+body:not(.pagina-acceso) :where(.pagina, .app, .aplicacion, .contenido-principal,
+  .main-content, .contenido-modulo, .vista-modulo, .pagina-modulo,
+  .pagina-satcontrol, .pagina-graficas, .admin-main, .admin-content) {
+  background-color: #070f26 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(.cabecera-modulo, .encabezado-pagina,
+  .encabezado-seccion, .cabecera-admin, .menu-lateral, .sidebar,
+  .barra-lateral, .header-modulo, .topbar) {
+  background-color: #070f26 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .filtros-fise, .filtros-masificacion, .filtros-mcter, .filtros-bonogas,
+  .filtros-gnv, .filtros-electricidad, .filtros-fotovoltaico, .panel-filtros,
+  .contenedor-filtros, .barra-filtros, .filtros,
+  .panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral,
+  .panel-lateral-derecho, .panel-resumen, .resumen-cabecera,
+  .cabecera-resumen, .panel-cabecera, .cabecera-panel,
+  .resumen-general, .informacion-general,
+  .tarjeta, .card, .panel, .bloque, .seccion-card, .tarjeta-resumen,
+  .tarjeta-grafica, .kpi, .tarjeta-kpi, .panel-informacion,
+  .panel-herramientas, .tools-panel, .barra-herramientas, .dock-herramientas,
+  .asistente-ia-panel, .panel-asistente-ia, .chatbot-panel,
+  .asistente-paulet, .pie-asistente-ia,
+  .modal-contenido, .modal-content, .dialogo, [role="dialog"], dialog
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .38) !important;
+  background-color: #132e63 !important;
+  background-image: none !important;
+}
+
+/* Contraste interno uniforme para tarjetas y bloques anidados. */
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral,
+  .panel-lateral-derecho, .panel-resumen,
+  .modal-contenido, .modal-content, .dialogo, [role="dialog"], dialog,
+  .asistente-ia-panel, .panel-asistente-ia, .chatbot-panel, .asistente-paulet
+) :where(.tarjeta, .card, .bloque, .kpi, .tarjeta-kpi, .panel,
+  .resumen-cabecera, .cabecera-resumen, .panel-cabecera,
+  section, article, .mensaje, .burbuja, .sugerencia) {
+  color: #f6f7ff !important;
+  border-color: rgba(32, 215, 212, .24) !important;
+  background-color: #070f26 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(input, select, textarea, .campo-control,
+  .selector-control, .control-filtro, .campo, .selector) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .48) !important;
+  background-color: #070f26 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .boton-primario, .btn-primary, .boton-aplicar, .aplicar-filtros,
+  .boton-exportar, .boton-generar, .boton-ingresar, .btn-gradient,
+  .boton-menu, .menu-toggle, .boton-hamburguesa
+) {
+  color: #f6f7ff !important;
+  border-color: #2c6bed !important;
+  background-color: #2c6bed !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .menu-lateral a:hover, .menu-lateral button:hover, .menu-lateral .activo,
+  .menu-lateral [aria-current="page"], .sidebar a:hover, .sidebar button:hover,
+  .sidebar .activo, .barra-lateral a:hover, .barra-lateral button:hover,
+  .barra-lateral .activo
+) {
+  background-color: #132e63 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(table, .tabla, .tabla-datos) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .34) !important;
+  background-color: #132e63 !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(thead, th) {
+  color: #f6f7ff !important;
+  background-color: #132e63 !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(td, tbody tr:nth-child(even) td) {
+  color: #f6f7ff !important;
+  background-color: #070f26 !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(tbody tr:hover td) {
+  background-color: #132e63 !important;
+}
+
+body:not(.pagina-acceso) ::-webkit-scrollbar-track { background: #070f26; }
+body:not(.pagina-acceso) ::-webkit-scrollbar-thumb {
+  border-color: #070f26;
+  background: #20d7d4;
+}
+
+/* El acceso mantiene fondo claro, pero sin ningún degradado. */
+body.pagina-acceso {
+  background-color: #f6f7ff !important;
+  background-image: none !important;
+}
+body.pagina-acceso .panel-formulario {
+  background-color: #070f26 !important;
+  background-image: none !important;
+}
+body.pagina-acceso .opcion-perfil.activa,
+body.pagina-acceso .boton-ingresar {
+  background-color: #2c6bed !important;
+  background-image: none !important;
+}
+
+/* Componentes con nombres particulares usados por los distintos módulos. */
+body:not(.pagina-acceso) :where(
+  .contenedor-filtros-fise, .contenedor-filtros-general,
+  .contenedor-filtros-gnv, .filtros-tabla-gestion, .filtros-admin,
+  .detalle-mcter, .panel-derecho-gnv,
+  .resumen-general-mcter, .ficha-sistema-mcter,
+  .historial-ubicaciones-fotovoltaico,
+  .barra-proyectos-cabecera, .proyecto-arbol,
+  .encabezado-resumen-gnv, .kpis-resumen-gnv, .tabla-resumen-gnv,
+  .ficha-cabecera, .tarjeta-tabla-gestion,
+  .tarjeta-admin, .listado-proyectos-admin
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .38) !important;
+  background-color: #132e63 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .detalle-mcter, .panel-derecho-gnv, .resumen-general-mcter,
+  .ficha-sistema-mcter, .historial-ubicaciones-fotovoltaico,
+  .encabezado-resumen-gnv, .kpis-resumen-gnv, .tabla-resumen-gnv,
+  .tarjeta-tabla-gestion, .tarjeta-admin
+) :where(header, section, article) {
+  color: #f6f7ff !important;
+  border-color: rgba(32, 215, 212, .22) !important;
+  background-color: #070f26 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .aplicar-filtros-general, .boton-principal,
+  .generar-reporte-mcter, .boton-exportar-panel
+) {
+  color: #f6f7ff !important;
+  border-color: #2c6bed !important;
+  background-color: #2c6bed !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .ficha-seleccion-mapa, .panel-operativo, .detalle-proyecto,
+  .ejecucion-pac, .tarjeta-control, .resumen-mapa-admin,
+  .bloque-resumen, .kpis-mapa article,
+  .filtros-analitica, .filtros-graficas-gnv
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(44, 107, 237, .38) !important;
+  background-color: #132e63 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .ficha-seleccion-mapa, .panel-operativo, .detalle-proyecto,
+  .ejecucion-pac, .tarjeta-control, .resumen-mapa-admin
+) > header {
+  color: #f6f7ff !important;
+  border-color: rgba(32, 215, 212, .22) !important;
+  background-color: #070f26 !important;
+  background-image: none !important;
+}
+
+/* ================================================================
+   PALETA TRANSVERSAL DEFINITIVA · AGOSTO 2026
+   Fondo #1e223b y superficies comunes para todos los módulos.
+   ================================================================ */
+body:not(.pagina-acceso) {
+  --tema-fondo: #1e223b;
+  --tema-fondo-2: #171a2f;
+  --tema-superficie: #282d4b;
+  --tema-superficie-2: #323858;
+  --tema-superficie-3: #3b4265;
+  --tema-borde: rgba(70, 80, 113, .82);
+  --tema-borde-suave: rgba(70, 80, 113, .48);
+  --tema-borde-activo: #4fd1c5;
+  --tema-texto: #f5f7ff;
+  --tema-texto-2: #d8def2;
+  --tema-texto-3: #b7c0dc;
+  --tema-acento: #4fd1c5;
+  --tema-acento-2: #5b7cfa;
+  color: #f5f7ff !important;
+  background-color: #1e223b !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(.pagina, .app, .aplicacion,
+  .contenido-principal, .main-content, .contenido-modulo, .vista-modulo,
+  .pagina-modulo, .pagina-satcontrol, .pagina-graficas,
+  .admin-main, .admin-content) {
+  color: #f5f7ff !important;
+  background-color: #1e223b !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(.menu-lateral, .sidebar, .barra-lateral,
+  .cabecera-modulo, .encabezado-pagina, .encabezado-seccion,
+  .cabecera-admin, .header-modulo, .topbar) {
+  color: #f5f7ff !important;
+  border-color: #303653 !important;
+  background-color: #171a2f !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .filtros-fise, .filtros-masificacion, .filtros-mcter, .filtros-bonogas,
+  .filtros-gnv, .filtros-electricidad, .filtros-fotovoltaico,
+  .contenedor-filtros-fise, .contenedor-filtros-general,
+  .contenedor-filtros-gnv, .panel-filtros, .contenedor-filtros,
+  .barra-filtros, .filtros, .filtros-tabla-gestion, .filtros-admin,
+  .filtros-analitica, .filtros-graficas-gnv,
+  .panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral,
+  .panel-lateral-derecho, .panel-resumen, .detalle-mcter,
+  .panel-derecho-gnv, .resumen-mapa-admin,
+  .tarjeta, .card, .panel, .bloque, .seccion-card, .tarjeta-resumen,
+  .tarjeta-grafica, .kpi, .tarjeta-kpi, .panel-informacion,
+  .tarjeta-admin, .tarjeta-tabla-gestion, .proyecto-arbol,
+  .modal-contenido, .modal-content, .dialogo, [role="dialog"], dialog,
+  .panel-herramientas, .tools-panel, .barra-herramientas,
+  .dock-herramientas, .asistente-ia-panel, .panel-asistente-ia,
+  .chatbot-panel, .asistente-paulet, .pie-asistente-ia
+) {
+  color: #f5f7ff !important;
+  border-color: #465071 !important;
+  background-color: #282d4b !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .resumen-cabecera, .cabecera-resumen, .panel-cabecera, .cabecera-panel,
+  .ficha-cabecera, .panel-operativo-cabecera, .barra-proyectos-cabecera,
+  .encabezado-resumen-gnv, .resumen-general-mcter,
+  .ficha-sistema-mcter, .historial-ubicaciones-fotovoltaico,
+  .bloque-resumen, .kpis-mapa article
+) {
+  color: #f5f7ff !important;
+  border-color: #465071 !important;
+  background-color: #323858 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral,
+  .panel-lateral-derecho, .panel-resumen, .detalle-mcter,
+  .panel-derecho-gnv, .resumen-mapa-admin,
+  .modal-contenido, .modal-content, .dialogo, [role="dialog"], dialog
+) :where(.tarjeta, .card, .bloque, .kpi, .tarjeta-kpi, .panel,
+  section, article, header) {
+  color: #f5f7ff !important;
+  border-color: #465071 !important;
+  background-color: #323858 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(input, select, textarea, .campo-control,
+  .selector-control, .control-filtro, .campo, .selector) {
+  color: #f5f7ff !important;
+  border-color: #465071 !important;
+  background-color: #202540 !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(input, textarea)::placeholder {
+  color: #929dbd !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .boton-primario, .btn-primary, .boton-aplicar, .aplicar-filtros,
+  .aplicar-filtros-general, .boton-principal, .boton-exportar,
+  .boton-exportar-panel, .boton-generar, .generar-reporte-mcter,
+  .btn-gradient, .boton-menu, .menu-toggle, .boton-hamburguesa
+) {
+  color: #f5f7ff !important;
+  border-color: #5b7cfa !important;
+  background-color: #5b7cfa !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .boton-secundario, .btn-secondary, .boton-restablecer,
+  .restablecer-filtros, .boton-cancelar, .btn-outline
+) {
+  color: #d8def2 !important;
+  border-color: #465071 !important;
+  background-color: #323858 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .menu-lateral a:hover, .menu-lateral button:hover, .menu-lateral .activo,
+  .menu-lateral [aria-current="page"], .sidebar a:hover,
+  .sidebar button:hover, .sidebar .activo,
+  .barra-lateral a:hover, .barra-lateral button:hover,
+  .barra-lateral .activo
+) {
+  color: #f5f7ff !important;
+  border-color: #4fd1c5 !important;
+  background-color: #282d4b !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(table, .tabla, .tabla-datos) {
+  color: #f5f7ff !important;
+  border-color: #465071 !important;
+  background-color: #282d4b !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(thead, th) {
+  color: #f5f7ff !important;
+  background-color: #323858 !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(td, tbody tr:nth-child(even) td) {
+  color: #d8def2 !important;
+  border-color: #465071 !important;
+  background-color: #282d4b !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(tbody tr:hover td) {
+  background-color: #323858 !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral,
+  .panel-lateral-derecho, .panel-resumen, .detalle-mcter,
+  .panel-derecho-gnv, .resumen-mapa-admin
+) :where(h1, h2, h3, h4, strong, b, .valor, .kpi-valor) {
+  color: #f5f7ff !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral,
+  .panel-lateral-derecho, .panel-resumen, .detalle-mcter,
+  .panel-derecho-gnv, .resumen-mapa-admin
+) :where(p, small, label, dt, dd, .descripcion, .subtitulo,
+  .texto-secundario, .kpi-etiqueta) {
+  color: #b7c0dc !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .filtros-fise, .filtros-masificacion, .filtros-mcter,
+  .filtros-bonogas, .filtros-gnv, .filtros-electricidad,
+  .filtros-fotovoltaico, .contenedor-filtros-fise,
+  .contenedor-filtros-general, .contenedor-filtros-gnv
+) label {
+  color: #b7c0dc !important;
+}
+
+body:not(.pagina-acceso) ::-webkit-scrollbar-track { background: #171a2f; }
+body:not(.pagina-acceso) ::-webkit-scrollbar-thumb {
+  border-color: #171a2f;
+  background: #5b7cfa;
+}
+
+/* ========================================================================== */
+/* PALETA COBALTO DEFINITIVA · AGOSTO 2026                                   */
+/* #0B1020 · #142850 · #2563EB · #5B6BBA · #CFE2FF                          */
+/* ========================================================================== */
+
+body:not(.pagina-acceso) {
+  --tema-fondo: #0b1020;
+  --tema-fondo-2: #101a36;
+  --tema-superficie: #142850;
+  --tema-superficie-2: #1b3261;
+  --tema-superficie-3: #234177;
+  --tema-borde: rgba(91, 107, 186, .48);
+  --tema-borde-suave: rgba(91, 107, 186, .25);
+  --tema-borde-activo: #6ea8ff;
+  --tema-texto: #f4f7ff;
+  --tema-texto-2: #cfe2ff;
+  --tema-texto-3: #a9bde0;
+  --tema-acento: #6ea8ff;
+  --tema-acento-2: #2563eb;
+  color: #f4f7ff !important;
+  background-color: #0b1020 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .app, .aplicacion, .layout, .layout-app, .contenido-principal,
+  .contenido-admin, .vista-modulo, .pagina-graficas, .seccion-modulo,
+  .main-content, main
+) {
+  color: #f4f7ff !important;
+  background-color: #0b1020 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .menu-lateral, .sidebar, .barra-lateral, .menu-admin,
+  .cabecera-modulo, .encabezado-pagina, .encabezado-seccion, .cabecera-admin
+) {
+  color: #cfe2ff !important;
+  border-color: rgba(91, 107, 186, .36) !important;
+  background-color: #101a36 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .filtros-fise, .filtros-masificacion, .filtros-mcter,
+  .filtros-bonogas, .filtros-gnv, .filtros-graficas-gnv,
+  .filtros-electricidad, .filtros-fotovoltaico, .filtros-admin,
+  .filtros-usuarios, .filtros-tabla-gestion, .contenedor-filtros-fise,
+  .contenedor-filtros-general, .contenedor-filtros-gnv,
+  .panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral,
+  .panel-lateral-derecho, .panel-resumen, .detalle-mcter,
+  .panel-derecho-gnv, .resumen-mapa-admin, .panel-herramientas,
+  .tools-panel, .barra-herramientas, .dock-herramientas,
+  .asistente-ia-panel, .panel-asistente-ia, .chatbot-panel,
+  .asistente-paulet, .modal-contenido, .modal-content, .dialogo,
+  [role="dialog"], dialog
+) {
+  color: #f4f7ff !important;
+  border-color: rgba(91, 107, 186, .48) !important;
+  background-color: #142850 !important;
+  background-image: none !important;
+  box-shadow: 0 16px 36px rgba(3, 7, 18, .28) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .tarjeta, .card, .bloque, .panel, .kpi, .tarjeta-kpi,
+  .resumen-card, .tarjeta-resumen, .info-card, .panel-card,
+  .cabecera-panel, .encabezado-panel, .ficha-beneficiario,
+  .ficha-sistema, .ficha-sistema-mcter, .historial-ubicaciones-fotovoltaico,
+  .bloque-resumen, .kpis-mapa article
+) {
+  color: #f4f7ff !important;
+  border-color: rgba(91, 107, 186, .38) !important;
+  background-color: #1b3261 !important;
+  background-image: none !important;
+  box-shadow: 0 10px 24px rgba(3, 7, 18, .18) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .right-panel, .sidebar-derecha, .resumen-lateral,
+  .panel-lateral-derecho, .panel-resumen, .detalle-mcter,
+  .panel-derecho-gnv, .resumen-mapa-admin,
+  .modal-contenido, .modal-content, .dialogo, [role="dialog"], dialog
+) :where(.tarjeta, .card, .bloque, .kpi, .tarjeta-kpi, .panel, section, article, header) {
+  color: #f4f7ff !important;
+  border-color: rgba(91, 107, 186, .38) !important;
+  background-color: #1b3261 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(input, select, textarea, .campo-control,
+  .selector-control, .control-filtro, .campo, .selector) {
+  color: #f4f7ff !important;
+  border-color: rgba(91, 107, 186, .54) !important;
+  background-color: #101a36 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+body:not(.pagina-acceso) :where(input, textarea)::placeholder {
+  color: #91a7cf !important;
+}
+body:not(.pagina-acceso) :where(input, select, textarea):focus {
+  border-color: #6ea8ff !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .22) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .boton-primario, .btn-primary, .boton-aplicar, .aplicar-filtros,
+  .aplicar-filtros-general, .boton-principal, .boton-exportar,
+  .boton-exportar-panel, .boton-generar, .generar-reporte-mcter,
+  .btn-gradient, .boton-menu, .menu-toggle, .boton-hamburguesa
+) {
+  color: #f4f7ff !important;
+  border-color: #2563eb !important;
+  background-color: #2563eb !important;
+  background-image: none !important;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, .20) !important;
+}
+body:not(.pagina-acceso) :where(
+  .boton-primario, .btn-primary, .boton-aplicar, .aplicar-filtros,
+  .aplicar-filtros-general, .boton-principal, .boton-exportar,
+  .boton-exportar-panel, .boton-generar, .generar-reporte-mcter
+):hover {
+  border-color: #3b82f6 !important;
+  background-color: #3b82f6 !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .boton-secundario, .btn-secondary, .boton-restablecer,
+  .restablecer-filtros, .boton-cancelar, .btn-outline
+) {
+  color: #cfe2ff !important;
+  border-color: rgba(91, 107, 186, .52) !important;
+  background-color: #1b3261 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .menu-lateral a:hover, .menu-lateral button:hover, .menu-lateral .activo,
+  .menu-lateral [aria-current="page"], .sidebar a:hover,
+  .sidebar button:hover, .sidebar .activo, .barra-lateral a:hover,
+  .barra-lateral button:hover, .barra-lateral .activo
+) {
+  color: #f4f7ff !important;
+  border-color: rgba(110, 168, 255, .62) !important;
+  background-color: #142850 !important;
+  background-image: none !important;
+  box-shadow: inset 3px 0 0 #6ea8ff !important;
+}
+
+body:not(.pagina-acceso) :where(table, .tabla, .tabla-datos) {
+  color: #f4f7ff !important;
+  border-color: rgba(91, 107, 186, .34) !important;
+  background-color: #142850 !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(thead, th) {
+  color: #cfe2ff !important;
+  border-color: rgba(91, 107, 186, .34) !important;
+  background-color: #1b3261 !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(td, tbody tr:nth-child(even) td) {
+  color: #cfe2ff !important;
+  border-color: rgba(91, 107, 186, .26) !important;
+  background-color: #142850 !important;
+  background-image: none !important;
+}
+body:not(.pagina-acceso) :where(tbody tr:nth-child(even) td) {
+  background-color: #101a36 !important;
+}
+body:not(.pagina-acceso) :where(tbody tr:hover td) {
+  background-color: #1b3261 !important;
+}
+
+body:not(.pagina-acceso) :where(h1, h2, h3, h4, strong, b, .valor, .kpi-valor) {
+  color: #f4f7ff !important;
+}
+body:not(.pagina-acceso) :where(p, small, label, dt, dd, .descripcion,
+  .subtitulo, .texto-secundario, .kpi-etiqueta) {
+  color: #a9bde0 !important;
+}
+
+body:not(.pagina-acceso) ::-webkit-scrollbar-track { background: #0b1020; }
+body:not(.pagina-acceso) ::-webkit-scrollbar-thumb {
+  border-color: #0b1020;
+  background: #5b6bba;
+}
+
+/* El login conserva el panel institucional claro y adopta la misma familia azul. */
+body.pagina-acceso {
+  background-color: #cdd5e3 !important;
+  background-image: none !important;
+}
+body.pagina-acceso .tarjeta-login {
+  background-color: #0b1020 !important;
+  background-image: none !important;
+  box-shadow: 0 28px 64px rgba(11, 16, 32, .30) !important;
+}
+body.pagina-acceso .panel-marca,
+body.pagina-acceso .panel-marca::after {
+  color: #0b1020 !important;
+  background-color: #fff !important;
+  background-image: none !important;
+}
+body.pagina-acceso .panel-formulario {
+  color: #f4f7ff !important;
+  background-color: #142850 !important;
+  background-image: none !important;
+}
+body.pagina-acceso .campo,
+body.pagina-acceso .boton-selector {
+  border-color: rgba(91, 107, 186, .62) !important;
+  background-color: #101a36 !important;
+}
+body.pagina-acceso .lista-perfiles {
+  border-color: rgba(91, 107, 186, .62) !important;
+  background-color: #0b1020 !important;
+}
+body.pagina-acceso .opcion-perfil:hover { background-color: #1b3261 !important; }
+body.pagina-acceso .opcion-perfil.activa {
+  background-color: #2563eb !important;
+  background-image: none !important;
+}
+body.pagina-acceso .boton-ingresar {
+  color: #f4f7ff !important;
+  background-color: #2563eb !important;
+  background-image: none !important;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, .25) !important;
+}
+body.pagina-acceso .acceso-demostracion {
+  color: #cfe2ff !important;
+  border-color: rgba(91, 107, 186, .58) !important;
+  background-color: #1b3261 !important;
+  background-image: none !important;
+}
+
+/* Correcciones de composición y contraste para Vale FISE. */
+html {
+  background-color: #0b1020 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) .filtros-fise .buscador-beneficiario {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 35px !important;
+  display: grid !important;
+  grid-template-columns: 24px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 0 12px !important;
+  overflow: hidden !important;
+  color: #f4f7ff !important;
+  border: 1px solid rgba(91, 107, 186, .54) !important;
+  border-radius: 10px !important;
+  background-color: #101a36 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) .filtros-fise .buscador-beneficiario b {
+  width: 24px !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+  margin: 0 !important;
+  color: #cfe2ff !important;
+  background: transparent !important;
+}
+
+body:not(.pagina-acceso) .filtros-fise .buscador-beneficiario input {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 33px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #f4f7ff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) .filtros-fise .buscador-beneficiario input::placeholder {
+  color: #a9bde0 !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) #panelResumen,
+body:not(.pagina-acceso) #panelResumen :where(
+  h1, h2, h3, h4, h5, h6, p, small, span, label, dt, dd, b, strong,
+  th, td, .descripcion, .subtitulo, .texto-secundario, .kpi-etiqueta,
+  .kpi-valor, .valor, .leyenda-etiqueta, .leyenda-valor
+) {
+  color: #f4f7ff !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) #panelResumen {
+  background-color: #142850 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) #panelResumen :where(
+  .resumen-cabecera, .grafico-tarjeta, .kpis, .tarjeta, .card,
+  section, article, header
+) {
+  border-color: rgba(91, 107, 186, .38) !important;
+  background-color: #1b3261 !important;
+  background-image: none !important;
+}
+
+/* Mantiene legible el total ubicado en el centro de los gráficos de dona. */
+body:not(.pagina-acceso) #panelResumen .dona-centro {
+  color: #f4f7ff !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Vale FISE: composición limpia y transparente en cabecera y búsqueda. */
+body:not(.pagina-acceso) #satcontrol > .cabecera-modulo {
+  border-color: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) .filtros-fise .buscador-beneficiario {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Restaura el anillo de las gráficas y usa un centro oscuro legible. */
+body:not(.pagina-acceso) #panelResumen .dona {
+  background-color: transparent !important;
+}
+
+body:not(.pagina-acceso) #panelResumen .dona::after {
+  background-color: #142850 !important;
+}
+
+body:not(.pagina-acceso) #panelResumen .dona-centro span,
+body:not(.pagina-acceso) #panelResumen .dona-centro strong {
+  color: #f4f7ff !important;
+}
+
+/* Canjes: iconos y estados con contraste real sobre el tema oscuro. */
+body:not(.pagina-acceso) #reporteCanjes .metrica-icono {
+  color: #eaf4ff !important;
+  border: 1px solid rgba(100, 181, 246, .38) !important;
+  background-color: #2563eb !important;
+}
+
+body:not(.pagina-acceso) #reporteCanjes .metricas-canjes :where(small, strong, p),
+body:not(.pagina-acceso) #reporteCanjes .tabla-canjes :where(th, td) {
+  color: #f4f7ff !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) #reporteCanjes .tabla-canjes th {
+  background-color: #142850 !important;
+}
+
+body:not(.pagina-acceso) #reporteCanjes .tabla-canjes tbody tr:hover {
+  background-color: #233b70 !important;
+}
+
+body:not(.pagina-acceso) #reporteCanjes .etiqueta-api {
+  color: #bff7d4 !important;
+  border-color: rgba(74, 222, 128, .32) !important;
+  background-color: #174d3a !important;
+}
+
+body:not(.pagina-acceso) #reporteCanjes .etiqueta-manual {
+  color: #ffe5a3 !important;
+  border-color: rgba(245, 184, 69, .34) !important;
+  background-color: #634817 !important;
+}
+
+/* Exportación y reportes: evita textos grises o tarjetas claras. */
+body:not(.pagina-acceso) .modal-exportacion-contenido :where(
+  h1, h2, h3, legend, b, strong, label
+) {
+  color: #f4f7ff !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) .modal-exportacion-contenido :where(p, small, span) {
+  color: #cfe2ff !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) .modal-exportacion-contenido .formatos-exportacion span,
+body:not(.pagina-acceso) .modal-exportacion-contenido .detalle-exportacion {
+  color: #f4f7ff !important;
+  border-color: rgba(91, 107, 186, .50) !important;
+  background-color: #101a36 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) .modal-exportacion-contenido .formatos-exportacion input:checked + span {
+  border-color: #4ea8ff !important;
+  background-color: #1b3261 !important;
+  box-shadow: 0 0 0 3px rgba(78, 168, 255, .18) !important;
+}
+
+body:not(.pagina-acceso) .modal-exportacion-contenido .acciones-exportacion button:first-child,
+body:not(.pagina-acceso) .modal-exportacion-contenido .modal-exportacion-cabecera > button {
+  color: #f4f7ff !important;
+  background-color: #233b70 !important;
+}
+
+/* ================================================================
+   PALETA TRANSVERSAL 2026 · superficies algo mas claras y uniformes
+   Esta capa se mantiene al final para neutralizar colores heredados
+   de cada modulo sin modificar la simbologia propia de los mapas.
+   ================================================================ */
+:root,
+body:not(.pagina-acceso) {
+  --tema-fondo: #18223a;
+  --tema-fondo-2: #1c2946;
+  --tema-superficie: #223252;
+  --tema-superficie-2: #293c61;
+  --tema-superficie-3: #314873;
+  --tema-borde: rgba(126, 157, 211, .42);
+  --tema-borde-suave: rgba(126, 157, 211, .24);
+  --tema-texto: #f6f8ff;
+  --tema-texto-2: #e3ebfa;
+  --tema-texto-3: #b9c8e3;
+  --tema-acento: #69b7e3;
+  --tema-acento-2: #4d7ff0;
+  --tema-sombra: 0 14px 34px rgba(5, 12, 29, .24);
+}
+
+html,
+body:not(.pagina-acceso) {
+  color: var(--tema-texto) !important;
+  background-color: var(--tema-fondo) !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .contenido-principal, .contenido-admin, .vista-modulo, .seccion-modulo,
+  .pagina-graficas, main, .app, .contenido
+) {
+  color: var(--tema-texto) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Titulos principales: una sola franja visual, transparente y sin cortes. */
+body:not(.pagina-acceso) :where(
+  .cabecera-modulo, .cabecera-gestion, .encabezado-pagina,
+  .encabezado-seccion, .cabecera-admin
+) {
+  color: var(--tema-texto) !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .cabecera-modulo, .cabecera-gestion, .encabezado-pagina,
+  .encabezado-seccion, .cabecera-admin
+) :where(h1, h2, p, span) {
+  color: var(--tema-texto) !important;
+}
+
+/* Filtros compactos con una superficie comun, sin degradados. */
+body:not(.pagina-acceso) :where(
+  .filtros-fise, .filtros-mcter, .filtros-masificacion, .filtros-bonogas,
+  .filtros-gnv, .filtros-graficas-gnv, .filtros-analitica, .filtros-admin,
+  .filtros-usuarios, .filtros-tabla-gestion, .contenedor-filtros-general,
+  .contenedor-filtros-fise, .contenedor-filtros-gnv
+) {
+  color: var(--tema-texto-2) !important;
+  border: 1px solid var(--tema-borde-suave) !important;
+  background-color: var(--tema-fondo-2) !important;
+  background-image: none !important;
+  box-shadow: 0 8px 22px rgba(5, 12, 29, .16) !important;
+}
+
+/* El envoltorio solo posiciona el botón para ocultar filtros. Cuando está
+   abierto no debe dibujar una segunda tarjeta rectangular alrededor del
+   formulario redondeado. Al colapsarse recupera su superficie compacta. */
+body:not(.pagina-acceso) :where(
+  .contenedor-filtros-general,
+  .contenedor-filtros-fise,
+  .contenedor-filtros-gnv
+):not(.colapsado) {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .buscador-beneficiario, .campo-busqueda, .buscador-general,
+  .busqueda-filtros, .buscador-panel
+) {
+  color: var(--tema-texto) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  color: var(--tema-texto) !important;
+  border-color: var(--tema-borde) !important;
+  background-color: #172540 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(input, textarea)::placeholder {
+  color: #afbfdb !important;
+  opacity: 1 !important;
+}
+
+/* Paneles y tarjetas: azul medio comun para mejorar lectura. */
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin,
+  .panel-resumen, .panel-informacion, .contenedor-panel-derecho
+) {
+  color: var(--tema-texto) !important;
+  border-color: rgba(126, 157, 211, .24) !important;
+  background-color: #1c2946 !important;
+  background-image: none !important;
+  box-shadow: var(--tema-sombra) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .resumen-cabecera, .encabezado-resumen-gnv, .tarjeta-admin,
+  .tarjeta-control, .tarjeta-analitica, .tarjeta-grafica-gnv,
+  .tarjeta-tabla-gestion, .tabla-resumen-gnv, .kpi-analitica,
+  .kpis > article, .kpis-resumen-gnv > article, .kpis-admin > article,
+  .kpis-gestion > article, .territorio-kpis > article,
+  .grafica-card, .chart-card, .card, .tarjeta, .grafico-tarjeta,
+  .metricas-canjes > article
+) {
+  color: var(--tema-texto) !important;
+  border-color: rgba(126, 157, 211, .24) !important;
+  background-color: #223252 !important;
+  background-image: none !important;
+  box-shadow: 0 9px 24px rgba(5, 12, 29, .16) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin,
+  .panel-resumen, .panel-informacion, .contenedor-panel-derecho,
+  .grafica-card, .chart-card, .tarjeta-grafica-gnv
+) :where(h1, h2, h3, h4, h5, h6, strong, b, th, td) {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .panel-derecho-gnv, .resumen-mapa-admin,
+  .panel-resumen, .panel-informacion, .contenedor-panel-derecho,
+  .grafica-card, .chart-card, .tarjeta-grafica-gnv
+) :where(p, small, span, label, dt, dd) {
+  color: var(--tema-texto-2) !important;
+  opacity: 1 !important;
+}
+
+/* Vale FISE y paneles equivalentes: elimina el azul antiguo demasiado saturado. */
+body:not(.pagina-acceso) #panelResumen {
+  color: var(--tema-texto) !important;
+  background-color: var(--tema-fondo-2) !important;
+  background-image: none !important;
+}
+
+/* Etiquetas claras: nunca deben heredar el texto blanco de los paneles. */
+body:not(.pagina-acceso) #totalTablaGnv {
+  color: #244a68 !important;
+  background-color: #eaf5f9 !important;
+}
+
+body:not(.pagina-acceso) .estado-tabla-gnv.estado-liquidada {
+  color: #17613c !important;
+  background-color: #e4f5ea !important;
+}
+
+body:not(.pagina-acceso) .estado-tabla-gnv.estado-certificada {
+  color: #285690 !important;
+  background-color: #e5eefb !important;
+}
+
+body:not(.pagina-acceso) .estado-tabla-gnv.estado-en-proceso {
+  color: #765000 !important;
+  background-color: #fff0c9 !important;
+}
+
+body:not(.pagina-acceso) .estado-tabla-gnv.estado-atrasado {
+  color: #96363a !important;
+  background-color: #fce5e6 !important;
+}
+
+body:not(.pagina-acceso) #panelResumen :where(
+  .resumen-cabecera, .grafico-tarjeta, .kpis, .tarjeta, .card,
+  section, article, header
+) {
+  border-color: var(--tema-borde-suave) !important;
+  background-color: var(--tema-superficie) !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) #panelResumen .dona::after {
+  background-color: var(--tema-superficie) !important;
+}
+
+/* Graficas: encabezados transparentes y superficies coherentes. */
+body:not(.pagina-acceso) :where(#graficas, .pagina-graficas, [id*="graficas"]) > .cabecera-modulo {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .grafica-card, .chart-card, .tarjeta-grafica-gnv,
+  .contenedor-grafica, .panel-grafica
+) :where(text, .chart-label, .chart-value, .leyenda, .leyenda-item) {
+  color: var(--tema-texto-2) !important;
+  fill: var(--tema-texto-2) !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) :where(#graficas, .pagina-graficas, [id*="graficas"]) svg text {
+  fill: #cfe2ff !important;
+  opacity: 1 !important;
+}
+
+/* Tablas y reportes con contraste uniforme. */
+body:not(.pagina-acceso) :where(
+  .tabla-modal, .contenedor-tabla-gestion, .tabla-scroll-gnv,
+  .tabla-canjes-contenedor, .tabla-scroll-proyectos, .tabla-usuarios
+) {
+  color: var(--tema-texto-2) !important;
+  border-color: var(--tema-borde-suave) !important;
+  background-color: #172540 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) table :where(th, td) {
+  color: var(--tema-texto) !important;
+  border-color: rgba(126, 157, 211, .25) !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) table th { background-color: #2b3f64 !important; }
+body:not(.pagina-acceso) table td { background-color: #1e2d4b !important; }
+body:not(.pagina-acceso) table tbody tr:nth-child(even) td { background-color: #223252 !important; }
+body:not(.pagina-acceso) table tbody tr:hover td { background-color: #2a3e64 !important; }
+
+/* Iconos generales y reportes: elimina estados gris sobre gris. */
+body:not(.pagina-acceso) :where(
+  .metrica-icono, .icono-kpi, .icono-tarjeta, .boton-icono,
+  .accion-icono, .icono-reporte
+) {
+  color: #ffffff !important;
+  border-color: rgba(105, 183, 227, .44) !important;
+  background-color: #35699a !important;
+  background-image: none !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .metrica-icono, .icono-kpi, .icono-tarjeta, .boton-icono,
+  .accion-icono, .icono-reporte
+) :where(svg, path, line, polyline, circle, rect) {
+  color: #ffffff !important;
+  stroke: currentColor !important;
+  opacity: 1 !important;
+}
+
+/* Modales de todos los modulos. */
+body:not(.pagina-acceso) :where(
+  dialog, [class*="modal-contenido"], [class*="modal-"] > section,
+  .modal-masificacion, .modal-exportacion-contenido, .modal-proceso-mcter > section
+) {
+  color: var(--tema-texto) !important;
+  border-color: var(--tema-borde) !important;
+  background-color: var(--tema-fondo-2) !important;
+  background-image: none !important;
+  box-shadow: 0 24px 62px rgba(3, 8, 21, .46) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  dialog, [class*="modal-contenido"], [class*="modal-"] > section,
+  .modal-masificacion, .modal-exportacion-contenido, .modal-proceso-mcter > section
+) :where(h1, h2, h3, h4, strong, b, legend) {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) :where(
+  dialog, [class*="modal-contenido"], [class*="modal-"] > section,
+  .modal-masificacion, .modal-exportacion-contenido, .modal-proceso-mcter > section
+) :where(p, small, span, label) {
+  color: var(--tema-texto-2) !important;
+  opacity: 1 !important;
+}
+
+/* Menu lateral sobrio, sin degradados ni contornos brillantes. */
+body:not(.pagina-acceso) :where(.menu-lateral, .sidebar, .barra-lateral) {
+  color: var(--tema-texto-2) !important;
+  border-color: rgba(126, 157, 211, .22) !important;
+  background-color: #121d34 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .menu-lateral a:hover, .menu-lateral button:hover, .menu-lateral .activo,
+  .sidebar a:hover, .sidebar button:hover, .sidebar .activo
+) {
+  color: #ffffff !important;
+  border-color: rgba(105, 183, 227, .40) !important;
+  background-color: #26395c !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Contraste semantico compartido.
+   Estas reglas deben quedar al final: el tema oscuro no debe convertir en blanco
+   el texto de insignias y controles que conservan una superficie clara. */
+body:not(.pagina-acceso) :where(
+  .etiqueta-api,
+  .estado-tabla-gnv.estado-liquidada,
+  .estado-mora-gnv.estado-al-día,
+  .estado-pdf-gnv.listo,
+  .estado-firma-gnv.firmado,
+  .etiqueta-estado.orden-emitida,
+  .etiqueta-estado.aprobada,
+  .estado-liquidacion.emitida,
+  .encabezado-seccion-liquidacion > span.emitida,
+  #listaLiquidaciones article > small.emitida,
+  .estado-resolucion-mcter.vigente,
+  .estado-algoritmo,
+  .gis-ok,
+  .estado-proyecto-tabla.finalizado,
+  .estado-geometria-proyecto.registrada,
+  .evidencia-eat__contador
+) {
+  color: #17613c !important;
+  background-color: #e4f5ea !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .estado-tabla-gnv.estado-certificada,
+  .estado-pdf-gnv,
+  .estado-maqueta-herramienta,
+  .estado-proyecto-tabla.en-ejecucion,
+  .etiqueta-estado.nueva,
+  .cabecera-bloque-mcter > span,
+  .cabecera-bloque-mcter > button,
+  .cabecera-bloque-eat > span,
+  .cabecera-bloque-eat > button,
+  .cabecera-reporte-inconsistencias > span:not(.advertencia),
+  .estado-modal,
+  .estado-borrador
+) {
+  color: #285690 !important;
+  background-color: #e5eefb !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .etiqueta-manual,
+  .estado-tabla-gnv.estado-en-proceso,
+  .estado-mora-gnv.estado-con-mora,
+  .estado-firma-gnv.pendiente,
+  .etiqueta-estado.pendiente-de-pago,
+  .etiqueta-estado.en-validacion,
+  .estado-liquidacion,
+  .encabezado-seccion-liquidacion > span,
+  #listaLiquidaciones article > small,
+  .estado-resolucion-mcter.parcial,
+  .estado-proyecto-tabla.planificado,
+  .estado-expediente,
+  .cabecera-reporte-inconsistencias > span
+) {
+  color: #765000 !important;
+  background-color: #fff0c9 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .estado-tabla-gnv.estado-atrasado,
+  .estado-mora-gnv.estado-atrasado,
+  .etiqueta-estado.observado,
+  .etiqueta-estado.observada,
+  .estado-resolucion-mcter.pendiente,
+  .alerta-resultado-ia,
+  .detalle-resultados-ia article.observado
+) {
+  color: #96363a !important;
+  background-color: #fce5e6 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .etiqueta-perfil,
+  .estado-proyecto-tabla,
+  .estado-maqueta-herramienta,
+  .estado-subir-capa,
+  .detalle-exportacion,
+  .detalle-exportacion-bonogas
+) {
+  color: #29445f !important;
+}
+
+/* Botones secundarios claros: texto oscuro, iconos legibles y sin heredar blanco. */
+body:not(.pagina-acceso) :where(
+  .boton-modal-secundario,
+  .boton-secundario,
+  .boton-cancelar,
+  .accion-secundaria,
+  .secundario,
+  .cancelar-capa,
+  .boton-ver-fila,
+  .cargar-expediente-eat,
+  .empresa-detalle,
+  .paginacion button:not(.activo),
+  .paginacion-inconsistencias-eat button,
+  .tarjeta-tabla-gestion > footer button
+) {
+  color: #29445f !important;
+  border-color: #b9cae0 !important;
+  background-color: #edf3f8 !important;
+  background-image: none !important;
+  opacity: 1 !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .boton-modal-secundario,
+  .boton-secundario,
+  .boton-cancelar,
+  .accion-secundaria,
+  .secundario,
+  .cancelar-capa,
+  .boton-ver-fila,
+  .cargar-expediente-eat,
+  .empresa-detalle,
+  .paginacion button:not(.activo),
+  .paginacion-inconsistencias-eat button,
+  .tarjeta-tabla-gestion > footer button
+) :where(span, small, b, strong, svg) {
+  color: inherit !important;
+  stroke: currentColor !important;
+  opacity: 1 !important;
+}
+
+/* Contadores claros usados sobre paneles oscuros. */
+body:not(.pagina-acceso) :where(
+  #totalTablaGnv,
+  .contador-etiqueta,
+  .estado-maqueta-herramienta
+) {
+  color: #244a68 !important;
+  background-color: #eaf5f9 !important;
+  background-image: none !important;
+}
+
+/* BonoGas: superficies oscuras completas.
+   El modulo conserva los colores semanticos, pero elimina paneles blancos en
+   Validaciones, Solicitudes, herramientas y controles internos del mapa. */
+body.pagina-bonogas {
+  --bonogas-panel: #14213d;
+  --bonogas-panel-2: #1a2c4d;
+  --bonogas-panel-3: #22395f;
+  --bonogas-linea: rgba(126, 157, 211, .34);
+  --bonogas-texto: #f6f8ff;
+  --bonogas-secundario: #c9d8f2;
+  --bonogas-suave: #9fb4d8;
+}
+
+body.pagina-bonogas :where(
+  .modulo-gestion-bonogas,
+  .cabecera-gestion,
+  .distribucion-gestion
+) {
+  color: var(--bonogas-texto) !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+body.pagina-bonogas :where(
+  .tarjeta-tabla-gestion,
+  .detalle-gestion,
+  .bloque-gestion,
+  .filtros-tabla-gestion,
+  .tarjeta-control,
+  .detalle-beneficiario,
+  .liquidacion-formulario,
+  .resumen-liquidacion,
+  .historial-liquidaciones,
+  .lista-ranking,
+  .detalle-ranking
+) {
+  color: var(--bonogas-texto) !important;
+  border-color: var(--bonogas-linea) !important;
+  background-color: var(--bonogas-panel) !important;
+  background-image: none !important;
+  box-shadow: 0 14px 34px rgba(2, 8, 23, .26) !important;
+}
+
+body.pagina-bonogas :where(
+  .detalle-gestion,
+  .bloque-gestion,
+  .tarjeta-tabla-gestion,
+  .liquidacion-formulario,
+  .resumen-liquidacion,
+  .historial-liquidaciones
+) :where(h1, h2, h3, h4, b, strong) {
+  color: var(--bonogas-texto) !important;
+  opacity: 1 !important;
+}
+
+body.pagina-bonogas :where(
+  .detalle-gestion,
+  .bloque-gestion,
+  .tarjeta-tabla-gestion,
+  .liquidacion-formulario,
+  .resumen-liquidacion,
+  .historial-liquidaciones
+) :where(p, small, label, span) {
+  color: var(--bonogas-secundario) !important;
+  opacity: 1 !important;
+}
+
+body.pagina-bonogas :where(.lista-datos-gestion div, .lista-documentos div) {
+  color: var(--bonogas-secundario) !important;
+  border-color: rgba(126, 157, 211, .24) !important;
+  background-color: var(--bonogas-panel-2) !important;
+  background-image: none !important;
+}
+
+body.pagina-bonogas .lista-datos-gestion div > b,
+body.pagina-bonogas .lista-documentos div > span {
+  color: var(--bonogas-texto) !important;
+}
+
+body.pagina-bonogas .lista-documentos div > b,
+body.pagina-bonogas .chips-validacion span {
+  color: #86e6b2 !important;
+  border: 1px solid rgba(86, 185, 138, .30) !important;
+  background-color: #173b35 !important;
+  background-image: none !important;
+}
+
+body.pagina-bonogas .trazabilidad-gestion article {
+  color: var(--bonogas-secundario) !important;
+}
+
+body.pagina-bonogas .trazabilidad-gestion article b {
+  color: var(--bonogas-texto) !important;
+}
+
+body.pagina-bonogas .trazabilidad-gestion i {
+  color: #ffffff !important;
+  border: 2px solid #63c493 !important;
+  background-color: #267c5c !important;
+  box-shadow: 0 0 0 4px rgba(86, 185, 138, .12) !important;
+}
+
+body.pagina-bonogas .trazabilidad-gestion article:last-child i {
+  color: #8bc1ff !important;
+  border: 2px dashed #6ea8ff !important;
+  background-color: #172b4c !important;
+  box-shadow: none !important;
+}
+
+body.pagina-bonogas :where(
+  .contenedor-tabla-gestion,
+  .tarjeta-tabla-gestion > footer,
+  .filtros-tabla-gestion
+) {
+  color: var(--bonogas-secundario) !important;
+  border-color: var(--bonogas-linea) !important;
+  background-color: #111f39 !important;
+  background-image: none !important;
+}
+
+body.pagina-bonogas .contenedor-tabla-gestion table th {
+  color: #dce8ff !important;
+  background-color: #293f65 !important;
+}
+
+body.pagina-bonogas .contenedor-tabla-gestion table td {
+  color: var(--bonogas-texto) !important;
+  background-color: #192a48 !important;
+}
+
+body.pagina-bonogas .contenedor-tabla-gestion tbody tr:nth-child(even) td {
+  background-color: #1d304f !important;
+}
+
+body.pagina-bonogas .contenedor-tabla-gestion tbody tr:hover td,
+body.pagina-bonogas .contenedor-tabla-gestion tbody tr.seleccionado td {
+  background-color: #28456f !important;
+}
+
+/* Estados oscuros y legibles dentro de tablas y expedientes. */
+body.pagina-bonogas :where(
+  .etiqueta-estado.orden-emitida,
+  .etiqueta-estado.aprobada,
+  .estado-liquidacion.emitida,
+  .encabezado-seccion-liquidacion > span.emitida,
+  #listaLiquidaciones article > small.emitida
+) {
+  color: #8be6b4 !important;
+  background-color: #173b35 !important;
+}
+
+body.pagina-bonogas :where(
+  .etiqueta-estado.pendiente-de-pago,
+  .etiqueta-estado.en-validacion,
+  .estado-liquidacion,
+  .encabezado-seccion-liquidacion > span,
+  #listaLiquidaciones article > small
+) {
+  color: #ffd977 !important;
+  background-color: #42351b !important;
+}
+
+body.pagina-bonogas :where(.etiqueta-estado.observado, .etiqueta-estado.observada) {
+  color: #ffadb2 !important;
+  background-color: #47252f !important;
+}
+
+body.pagina-bonogas :where(.etiqueta-estado.nueva, .etiqueta-estado) {
+  border: 1px solid rgba(126, 157, 211, .24) !important;
+}
+
+body.pagina-bonogas :where(
+  .boton-ver-fila,
+  .tarjeta-tabla-gestion > footer button,
+  .acciones-detalle-gestion button,
+  .acciones-validacion-ia .secundario,
+  .acciones-exportacion-bonogas button:first-child
+) {
+  color: #d9e7ff !important;
+  border-color: rgba(126, 157, 211, .42) !important;
+  background-color: #22395f !important;
+  background-image: none !important;
+}
+
+/* Controles flotantes y desplegables del mapa BonoGas. */
+body.pagina-bonogas .controles-mapa button {
+  color: #dce8ff !important;
+  border-color: rgba(126, 157, 211, .45) !important;
+  background-color: #172743 !important;
+  background-image: none !important;
+  box-shadow: 0 10px 24px rgba(2, 8, 23, .30) !important;
+}
+
+body.pagina-bonogas .controles-mapa button svg {
+  color: #a9cfff !important;
+  stroke: currentColor !important;
+}
+
+body.pagina-bonogas .controles-mapa button:hover,
+body.pagina-bonogas .controles-mapa button[aria-expanded="true"] {
+  color: #ffffff !important;
+  border-color: #6ea8ff !important;
+  background-color: #28588a !important;
+}
+
+body.pagina-bonogas .panel-mapa {
+  color: var(--bonogas-texto) !important;
+  border-color: rgba(126, 157, 211, .45) !important;
+  background-color: rgba(15, 29, 54, .98) !important;
+  background-image: none !important;
+  box-shadow: 0 18px 38px rgba(2, 8, 23, .42) !important;
+  scrollbar-color: #5796c4 #172743;
+}
+
+body.pagina-bonogas .panel-mapa :where(strong, b) {
+  color: #ffffff !important;
+}
+
+body.pagina-bonogas .panel-mapa :where(label, p, small, span) {
+  color: var(--bonogas-secundario) !important;
+}
+
+body.pagina-bonogas .panel-mapa :where(label, .selector-tematico label) {
+  border-color: rgba(126, 157, 211, .22) !important;
+  background-color: #172743 !important;
+  background-image: none !important;
+}
+
+body.pagina-bonogas .panel-mapa label:hover,
+body.pagina-bonogas .panel-mapa label:has(input:checked) {
+  color: #ffffff !important;
+  border-color: rgba(110, 168, 255, .58) !important;
+  background-color: #203c65 !important;
+}
+
+body.pagina-bonogas .titulo-grupo-capas {
+  color: #9fc0ec !important;
+  border-color: rgba(126, 157, 211, .28) !important;
+}
+
+/* Modales BonoGas: evita cabeceras, tarjetas y formatos blancos. */
+body.pagina-bonogas :where(
+  .modal-reporte,
+  .modal-exportacion-bonogas,
+  .modal-validacion-ia,
+  .modal-liquidaciones-bonogas,
+  .cabecera-exportacion-bonogas,
+  .cuerpo-exportacion-bonogas,
+  .modal-cuerpo
+) {
+  color: var(--bonogas-texto) !important;
+  border-color: var(--bonogas-linea) !important;
+  background-color: #101c35 !important;
+  background-image: none !important;
+}
+
+body.pagina-bonogas :where(
+  .carga-evidencias-ia label,
+  .escaneo-ia,
+  .lista-analisis-ia article,
+  .resumen-resultado-ia article,
+  .detalle-resultados-ia article,
+  .formatos-exportacion-bonogas span,
+  .detalle-exportacion-bonogas,
+  .montos-liquidacion article,
+  .controles-liquidacion label,
+  .acciones-sustento-liquidacion label,
+  #listaLiquidaciones article,
+  .formula-liquidacion
+) {
+  color: var(--bonogas-texto) !important;
+  border-color: rgba(126, 157, 211, .32) !important;
+  background-color: #192a48 !important;
+  background-image: none !important;
+}
+
+body.pagina-bonogas :where(
+  .carga-evidencias-ia label,
+  .escaneo-ia,
+  .lista-analisis-ia article,
+  .resumen-resultado-ia article,
+  .detalle-resultados-ia article,
+  .formatos-exportacion-bonogas span,
+  .detalle-exportacion-bonogas,
+  .montos-liquidacion article,
+  .controles-liquidacion label,
+  #listaLiquidaciones article
+) :where(b, strong, h3) {
+  color: #ffffff !important;
+}
+
+body.pagina-bonogas :where(
+  .carga-evidencias-ia label,
+  .escaneo-ia,
+  .lista-analisis-ia article,
+  .resumen-resultado-ia article,
+  .detalle-resultados-ia article,
+  .formatos-exportacion-bonogas span,
+  .detalle-exportacion-bonogas,
+  .montos-liquidacion article,
+  .controles-liquidacion label,
+  #listaLiquidaciones article
+) :where(p, small, span, label) {
+  color: var(--bonogas-secundario) !important;
+}
+
+body.pagina-bonogas .formatos-exportacion-bonogas input:checked + span,
+body.pagina-bonogas .carga-evidencias-ia label:hover,
+body.pagina-bonogas .carga-evidencias-ia label.cargado {
+  color: #ffffff !important;
+  border-color: #6ea8ff !important;
+  background-color: #213f69 !important;
+  box-shadow: 0 0 0 3px rgba(110, 168, 255, .12) !important;
+}
+
+body.pagina-bonogas .pasos-validacion-ia li:not(:last-child)::after {
+  background-color: #314a72 !important;
+}
+
+body.pagina-bonogas .pasos-validacion-ia i {
+  color: #ffffff !important;
+  border-color: #101c35 !important;
+  background-color: #405477 !important;
+}
+
+body.pagina-bonogas .pasos-validacion-ia li.activo i {
+  background-color: #397eb6 !important;
+}
+
+body.pagina-bonogas .pasos-validacion-ia li.completo i {
+  background-color: #2d8d67 !important;
+}
+
+/* ================================================================
+   LIMPIEZA TRANSVERSAL DE COMPONENTES INTERNOS
+   Las filas informativas no deben parecer botones ni tarjetas. El color
+   queda reservado para estados, acciones y elementos GIS.
+   ================================================================ */
+body:not(.pagina-acceso),
+body:not(.pagina-acceso) :where(button, input, select, textarea) {
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+/* Escala tipográfica común: basada en la interfaz de Vale FISE. */
+body:not(.pagina-acceso) .cabecera-modulo h1 { font-size: 1.55rem !important; }
+body:not(.pagina-acceso) .cabecera-modulo p,
+body:not(.pagina-acceso) .actualizacion { font-size: .72rem !important; }
+body:not(.pagina-acceso) :where(.filtros-fise, .filtros-mcter, .filtros-masificacion, .filtros-bonogas) label { font-size: .6rem !important; }
+body:not(.pagina-acceso) :where(.filtros-fise, .filtros-mcter, .filtros-masificacion, .filtros-bonogas) :where(input, select, button) { font-size: .7rem !important; }
+body:not(.pagina-acceso) :where(.panel-resumen, .detalle-mcter, .panel-derecho, .panel-derecho-gnv) :where(h2, h3) { font-size: 1rem !important; }
+body:not(.pagina-acceso) :where(.panel-resumen, .detalle-mcter, .panel-derecho, .panel-derecho-gnv) :where(p, small, span, dt) { font-size: .62rem !important; }
+body:not(.pagina-acceso) :where(.kpis, .kpis-resumen-mcter, .kpis-resumen-gnv, .kpis-admin) :where(span, small) { font-size: .6rem !important; }
+body:not(.pagina-acceso) :where(.kpis, .kpis-resumen-mcter, .kpis-resumen-gnv, .kpis-admin) strong { font-size: 1rem !important; }
+
+/* Opciones de Mapas, Capas y Tematicos: fondo transparente en todos los modulos. */
+body:not(.pagina-acceso) :where(
+  .panel-mapa,
+  .panel-flotante-mapa,
+  .panel-mapa-flotante,
+  .panel-opciones-mapa,
+  .panel-mapas,
+  .panel-capas,
+  .panel-tematicos,
+  .menu-capas,
+  .menu-tematicos,
+  .desplegable-mapa
+) :where(label, .opcion-capa, .fila-capa, .item-capa, .opcion-mapa, .opcion-tematica) {
+  color: #d9e7ff !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-mapa,
+  .panel-flotante-mapa,
+  .panel-mapa-flotante,
+  .panel-opciones-mapa,
+  .panel-mapas,
+  .panel-capas,
+  .panel-tematicos,
+  .menu-capas,
+  .menu-tematicos,
+  .desplegable-mapa
+) :where(label, .opcion-capa, .fila-capa, .item-capa, .opcion-mapa, .opcion-tematica):hover {
+  color: #ffffff !important;
+  background-color: rgba(110, 168, 255, .06) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-mapa,
+  .panel-flotante-mapa,
+  .panel-mapa-flotante,
+  .panel-opciones-mapa,
+  .panel-mapas,
+  .panel-capas,
+  .panel-tematicos,
+  .menu-capas,
+  .menu-tematicos,
+  .desplegable-mapa
+) label:has(input:checked) {
+  color: #ffffff !important;
+  border-left: 3px solid #6ea8ff !important;
+  background-color: transparent !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-mapa,
+  .panel-flotante-mapa,
+  .panel-mapa-flotante,
+  .panel-opciones-mapa,
+  .panel-mapas,
+  .panel-capas,
+  .panel-tematicos,
+  .menu-capas,
+  .menu-tematicos,
+  .desplegable-mapa
+) :where(.titulo-grupo-capas, .titulo-grupo, h3, h4) {
+  color: #ffffff !important;
+  border-color: rgba(126, 157, 211, .24) !important;
+  background: transparent !important;
+}
+
+/* Elimina especificamente los rectangulos azules heredados de BonoGas. */
+body.pagina-bonogas .panel-mapa :where(label, .selector-tematico label),
+body.pagina-bonogas .panel-mapa label:hover,
+body.pagina-bonogas .panel-mapa label:has(input:checked) {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Modales: superficie exterior oscura y contenido interno limpio. */
+body:not(.pagina-acceso) :where(
+  dialog,
+  [role="dialog"],
+  .modal-alerta-contenido,
+  .modal-exportacion-contenido,
+  .modal-contenido,
+  .modal-contenido-gnv,
+  .modal-herramienta-modulo,
+  .modal-eliminar-proyecto,
+  .modal-perfil-contenido,
+  .modal-reporte,
+  .modal-validacion-ia,
+  .modal-liquidaciones-bonogas,
+  .modal-exportacion-bonogas,
+  .modal-proceso-mcter,
+  .modal-masificacion
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(110, 168, 255, .38) !important;
+  background-color: #101d38 !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  dialog,
+  [role="dialog"],
+  .modal-alerta-contenido,
+  .modal-exportacion-contenido,
+  .modal-contenido,
+  .modal-contenido-gnv,
+  .modal-herramienta-modulo,
+  .modal-eliminar-proyecto,
+  .modal-perfil-contenido,
+  .modal-reporte,
+  .modal-validacion-ia,
+  .modal-liquidaciones-bonogas,
+  .modal-exportacion-bonogas,
+  .modal-proceso-mcter,
+  .modal-masificacion
+) :where(h1, h2, h3, h4, h5, legend, b, strong) {
+  color: #ffffff !important;
+}
+
+body:not(.pagina-acceso) :where(
+  dialog,
+  [role="dialog"],
+  .modal-alerta-contenido,
+  .modal-exportacion-contenido,
+  .modal-contenido,
+  .modal-contenido-gnv,
+  .modal-herramienta-modulo,
+  .modal-eliminar-proyecto,
+  .modal-perfil-contenido,
+  .modal-reporte,
+  .modal-validacion-ia,
+  .modal-liquidaciones-bonogas,
+  .modal-exportacion-bonogas,
+  .modal-proceso-mcter,
+  .modal-masificacion
+) :where(p, small, label, .descripcion, .subtitulo, .texto-secundario) {
+  color: #cfe2ff !important;
+}
+
+/* Filas descriptivas de modales: sin bloques de color innecesarios. */
+body:not(.pagina-acceso) :where(
+  dialog,
+  [role="dialog"],
+  .modal-alerta-contenido,
+  .modal-exportacion-contenido,
+  .modal-contenido,
+  .modal-contenido-gnv,
+  .modal-herramienta-modulo,
+  .modal-reporte,
+  .modal-validacion-ia,
+  .modal-liquidaciones-bonogas,
+  .modal-proceso-mcter,
+  .modal-masificacion
+) :where(
+  .fila-informacion,
+  .fila-detalle,
+  .fila-documento,
+  .item-documento,
+  .item-checklist,
+  .opcion-lista,
+  .lista-datos > li,
+  .lista-documentos > li
+) {
+  color: #e9f1ff !important;
+  border-color: rgba(126, 157, 211, .20) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Paneles laterales: texto principal blanco y secundarios con contraste alto. */
+body:not(.pagina-acceso) :where(
+  .panel-derecho,
+  .panel-derecho-gnv,
+  .right-panel,
+  .sidebar-derecha,
+  .resumen-lateral,
+  .panel-lateral-derecho,
+  .panel-resumen,
+  .detalle-lateral,
+  .detalle-expediente,
+  .detalle-mcter
+) :where(h1, h2, h3, h4, h5, b, strong, dt, dd) {
+  color: #ffffff !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-derecho,
+  .panel-derecho-gnv,
+  .right-panel,
+  .sidebar-derecha,
+  .resumen-lateral,
+  .panel-lateral-derecho,
+  .panel-resumen,
+  .detalle-lateral,
+  .detalle-expediente,
+  .detalle-mcter
+) :where(p, small, span:not(.badge):not(.estado):not(.etiqueta-estado), label) {
+  color: #d2e1f8 !important;
+}
+
+/* Botones secundarios oscuros y legibles; los estados mantienen su color semantico. */
+body:not(.pagina-acceso) :where(
+  .boton-secundario,
+  .btn-secondary,
+  .boton-cancelar,
+  .btn-outline,
+  .restablecer-filtros-general,
+  .boton-modal-secundario,
+  .boton-ver-fila,
+  .boton-cerrar
+) {
+  color: #e4edff !important;
+  border-color: rgba(110, 168, 255, .38) !important;
+  background-color: #172a48 !important;
+  background-image: none !important;
+}
+
+/* ================================================================
+   ACABADO FINAL DE MODALES Y LISTAS INFORMATIVAS
+   Evita "tarjetas dentro de tarjetas": las filas de lectura y los
+   checklist quedan transparentes; formularios y estados conservan jerarquia.
+   ================================================================ */
+body:not(.pagina-acceso) :where(
+  .modal-admin > section, .modal-proceso-mcter > section,
+  .modal-exportacion-mcter > section, .modal-exportacion-bonogas > section,
+  .modal-liquidaciones-bonogas > section, .modal-validacion-ia > section,
+  .modal-reporte > section, .modal-contenido, .modal-contenido-gnv,
+  .modal-alerta-contenido, .modal-exportacion-contenido,
+  .modal-perfil-contenido, .modal-herramienta-modulo, .modal-masificacion
+) :where(
+  .bloque-gestion, .bloque-proceso-mcter, .liquidacion-formulario,
+  .liquidacion-resumen, .controles-liquidacion, .titulo-anexo,
+  .barra-acciones-modal, .tabla-modal, .vista-documento,
+  .cabecera-trazabilidad, .cabecera-auditoria, .flujo-expediente article,
+  .tarjeta-modal, .seccion-modal
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(110, 168, 255, .22) !important;
+  background-color: rgba(20, 40, 80, .42) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .modal-admin, .modal-proceso-mcter, .modal-exportacion-mcter,
+  .modal-exportacion-bonogas, .modal-liquidaciones-bonogas,
+  .modal-validacion-ia, .modal-reporte, .modal-contenido,
+  .modal-contenido-gnv, .modal-alerta-contenido,
+  .modal-exportacion-contenido, .modal-perfil-contenido,
+  .modal-herramienta-modulo, .modal-masificacion, dialog
+) :where(
+  .lista-datos-gestion > div, .lista-documentos > div,
+  .lista-documentos > li, .chips-validacion > span,
+  .controles-liquidacion > label, .lista-analisis-ia-admin > article,
+  .resultados-documentos-ia-admin > article, .evidencias-ia-admin > article,
+  .item-validacion, .fila-validacion, .fila-check,
+  .checklist > label, .checklist > li, .lista-checklist > li,
+  .lista-checklist > label, .detalle-lista > div, .detalle-lista > li,
+  .resultado-lista > div, .resultado-lista > li
+) {
+  color: #edf4ff !important;
+  border-color: rgba(126, 157, 211, .18) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Los contenedores que solo agrupan filas no deben crear un segundo panel
+   coloreado detrás del texto. La jerarquía la aporta el borde exterior del
+   bloque y los separadores, no un rectángulo por cada contenido. */
+body:not(.pagina-acceso) :where(
+  .lista-datos-gestion, .lista-documentos, .chips-validacion,
+  .trazabilidad-gestion, .controles-liquidacion, .lista-checklist,
+  .checklist, .detalle-lista, .resultado-lista, .filas-validacion,
+  .lista-resultados, .lista-evidencias
+) {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .lista-datos-gestion, .lista-documentos, .chips-validacion,
+  .trazabilidad-gestion, .controles-liquidacion, .lista-checklist,
+  .checklist, .detalle-lista, .resultado-lista
+) > :where(div, article, label, li, span) {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* BonoGas: el detalle de validación y el checklist de liquidaciones son
+   listas informativas. Conservan únicamente separadores discretos. */
+body.pagina-bonogas :where(
+  .lista-datos-gestion, .lista-documentos, .chips-validacion,
+  .trazabilidad-gestion, .controles-liquidacion
+) {
+  background: transparent !important;
+  border-color: rgba(126, 157, 211, .18) !important;
+}
+
+body.pagina-bonogas :where(
+  .lista-datos-gestion > div, .lista-documentos > div,
+  .controles-liquidacion > label, .trazabilidad-gestion > article
+) {
+  background: transparent !important;
+  border-radius: 0 !important;
+  border-width: 0 0 1px !important;
+  border-style: solid !important;
+  border-color: rgba(126, 157, 211, .18) !important;
+}
+
+/* BonoGas: la ficha de validacion y la liquidacion no muestran
+   rectangulos de color detras de cada texto. */
+body.pagina-bonogas :where(
+  .lista-datos-gestion > div, .lista-documentos > div,
+  .chips-validacion > span, .controles-liquidacion > label
+) {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.pagina-bonogas .lista-documentos > div,
+body.pagina-bonogas .controles-liquidacion > label {
+  border-bottom: 1px solid rgba(126, 157, 211, .18) !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+}
+
+body.pagina-bonogas .chips-validacion > span {
+  padding-inline: 0 !important;
+  color: #8fe0b4 !important;
+  border: 0 !important;
+}
+
+body.pagina-bonogas .trazabilidad-gestion article {
+  color: #d5e3f8 !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Los encabezados y pies pegajosos usan la misma superficie oscura. */
+body:not(.pagina-acceso) :where(
+  .modal-admin, .modal-proceso-mcter, .modal-exportacion-mcter,
+  .modal-exportacion-bonogas, .modal-liquidaciones-bonogas,
+  .modal-validacion-ia, .modal-reporte, .modal-contenido,
+  .modal-contenido-gnv, .modal-alerta-contenido,
+  .modal-exportacion-contenido, .modal-perfil-contenido,
+  .modal-herramienta-modulo, .modal-masificacion, dialog
+) :where(
+  header, footer, .modal-cabecera, .modal-pie, .acciones-modal,
+  .acciones-exportacion, .acciones-exportacion-masificacion,
+  .pie-modal-potencial
+) {
+  border-color: rgba(126, 157, 211, .22) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* ================================================================
+   CONTRASTE FINAL COMPARTIDO
+   El color pertenece al contenedor, nunca a la caja tipografica.
+   Evita franjas o rectangulos detras de titulos, etiquetas y textos.
+   ================================================================ */
+/* Capas de modal: el color pertenece al velo, no al contenedor que ocupa toda la pantalla. */
+body:not(.pagina-acceso) :is(.modal-admin,.modal-proceso-mcter,.modal-exportacion-mcter,.modal-gnv,.modal-exportacion,.modal-alerta,.modal-perfil){background-color:transparent!important;background-image:none!important;border-color:transparent!important}body:not(.pagina-acceso) :is(.modal-admin-fondo,.fondo-modal-mcter,.fondo-exportacion-mcter,.modal-fondo-gnv,.modal-exportacion-fondo,.modal-alerta-fondo,.modal-perfil-fondo){background:rgba(5,13,30,.34)!important;backdrop-filter:blur(3px)!important}body:not(.pagina-acceso) dialog::backdrop{background:rgba(5,13,30,.34)!important;backdrop-filter:blur(3px)!important}
+body:not(.pagina-acceso) :where(
+  h1, h2, h3, h4, h5, h6, p, small, label, legend,
+  .cabecera-modulo, .cabecera-modulo > *,
+  .cabecera-gestion, .cabecera-gestion > *,
+  .titulo-grupo-capas, .cabecera-tematicos,
+  .resumen-cabecera > *, .tarjeta-control header > div,
+  .detalle-beneficiario > small, .bloque-detalle > h4
+) {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .panel-derecho-gnv, .panel-resumen,
+  .detalle-beneficiario, .detalle-gestion, .detalle-mcter
+) :where(h1, h2, h3, h4, h5, h6, b, strong) {
+  color: #ffffff !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-derecho, .panel-derecho-gnv, .panel-resumen,
+  .detalle-beneficiario, .detalle-gestion, .detalle-mcter
+) :where(p, small, label, dt, dd) {
+  color: #cfe2ff !important;
+}
+
+/* Los encabezados internos no deben dibujar una franja detrás del texto. */
+body:not(.pagina-acceso) :where(
+  .ficha-seleccion-mapa, .panel-operativo, .detalle-proyecto,
+  .ejecucion-pac, .tarjeta-control, .resumen-mapa-admin,
+  .estado-registros, .bloque-resumen
+) > header {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* BonoGas conservaba componentes claros definidos en su CSS local. */
+body.pagina-bonogas :where(
+  .panel-derecho, .resumen-cabecera, .metricas-resumen,
+  .estado-registros, .ejecucion-pac, .tarjeta-control,
+  .detalle-beneficiario, .bloque-detalle, .detalle-grid,
+  .control-lista, .control-kpis
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(110, 168, 255, .28) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body.pagina-bonogas .panel-derecho {
+  background-color: #101d38 !important;
+}
+
+body.pagina-bonogas :where(
+  .resumen-cabecera, .metricas-resumen, .estado-registros,
+  .ejecucion-pac, .tarjeta-control, .detalle-beneficiario
+) {
+  background-color: rgba(20, 40, 80, .72) !important;
+}
+
+body.pagina-bonogas :where(
+  .metricas-resumen article, .ejecucion-pac article,
+  .control-lista article, .control-kpis article,
+  .detalle-grid > div, .lista-seleccion article
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(126, 157, 211, .20) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body.pagina-bonogas :where(
+  .resumen-cabecera, .metricas-resumen, .estado-registros,
+  .ejecucion-pac, .tarjeta-control, .detalle-beneficiario,
+  .bloque-detalle, .detalle-grid, .control-lista, .control-kpis
+) :where(h2, h3, h4, b, strong) {
+  color: #ffffff !important;
+}
+
+body.pagina-bonogas :where(
+  .resumen-cabecera, .metricas-resumen, .estado-registros,
+  .ejecucion-pac, .tarjeta-control, .detalle-beneficiario,
+  .bloque-detalle, .detalle-grid, .control-lista, .control-kpis
+) :where(p, small, span:not(.muestra-capa):not(.muestra-linea):not(.muestra-poligono)) {
+  color: #cfe2ff !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+body.pagina-bonogas .tarjeta-control header button {
+  color: #eaf3ff !important;
+  border-color: rgba(110, 168, 255, .42) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+body.pagina-bonogas .control-20 header button {
+  color: #fff2bd !important;
+  border-color: rgba(240, 179, 35, .55) !important;
+  background-color: transparent !important;
+}
+
+body.pagina-bonogas :where(.cerrar-detalle, .empresa-detalle) {
+  color: #eaf3ff !important;
+  border-color: rgba(110, 168, 255, .38) !important;
+  background-color: #172a48 !important;
+  background-image: none !important;
+}
+
+/* La ficha inferior del mapa tambien pertenece al tema oscuro. */
+body.pagina-bonogas .trazabilidad-mapa {
+  color: #f6f7ff !important;
+  border-color: rgba(110, 168, 255, .35) !important;
+  background-color: rgba(16, 29, 56, .96) !important;
+  background-image: none !important;
+}
+body.pagina-bonogas .trazabilidad-mapa :where(header, p, strong, span, small) {
+  background: transparent !important;
+}
+body.pagina-bonogas .trazabilidad-mapa strong,
+body.pagina-bonogas .fase-trazabilidad span { color: #ffffff !important; }
+body.pagina-bonogas .trazabilidad-mapa p,
+body.pagina-bonogas .fase-trazabilidad small { color: #cfe2ff !important; }
+body.pagina-bonogas .fase-trazabilidad:not(:last-child)::after {
+  background: rgba(110, 168, 255, .35) !important;
+}
+
+/* ================================================================
+   RESULTADOS DINAMICOS DE LAS HERRAMIENTAS DEL MAPA
+   Circulo, poligono y seleccion crean su contenido con JavaScript.
+   Estas reglas finales impiden que el CSS local recupere superficies
+   blancas cuando cambia el estado de la ficha o del panel derecho.
+   ================================================================ */
+body:not(.pagina-acceso) :where(
+  .ficha-seleccion-mapa, .ficha-beneficiario, .ficha-territorial,
+  .detalle-conversion-gnv, .seleccion-herramienta-gnv,
+  .ficha-sistema-mcter, .ficha-hogar-mcter, .ficha-beneficiario-mcter,
+  .detalle-seleccion, .detalle-proyecto, .detalle-beneficiario
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(110, 168, 255, .30) !important;
+  background-color: rgba(20, 40, 80, .78) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .ficha-seleccion-mapa, .ficha-beneficiario, .ficha-territorial,
+  .detalle-conversion-gnv, .seleccion-herramienta-gnv,
+  .ficha-sistema-mcter, .ficha-hogar-mcter, .ficha-beneficiario-mcter,
+  .detalle-seleccion, .detalle-proyecto, .detalle-beneficiario
+) > header {
+  color: #f6f7ff !important;
+  border-color: rgba(110, 168, 255, .20) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .ficha-seleccion-mapa, .ficha-beneficiario, .ficha-territorial,
+  .detalle-conversion-gnv, .seleccion-herramienta-gnv,
+  .ficha-sistema-mcter, .ficha-hogar-mcter, .ficha-beneficiario-mcter,
+  .detalle-seleccion, .detalle-proyecto, .detalle-beneficiario
+) :where(h2, h3, h4, b, strong, dd) {
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .ficha-seleccion-mapa, .ficha-beneficiario, .ficha-territorial,
+  .detalle-conversion-gnv, .seleccion-herramienta-gnv,
+  .ficha-sistema-mcter, .ficha-hogar-mcter, .ficha-beneficiario-mcter,
+  .detalle-seleccion, .detalle-proyecto, .detalle-beneficiario
+) :where(p, small, span, dt) {
+  color: #cfe2ff !important;
+  background: transparent !important;
+}
+
+/* Las filas de resultados usan separadores, no tarjetas claras anidadas. */
+body:not(.pagina-acceso) :where(
+  .lista-seleccion-mapa, .lista-seleccion-gnv, .lista-seleccion,
+  .ficha-datos, .detalle-grid-gnv, .detalle-grid,
+  .ficha-sistema-mcter dl, .ficha-hogar-mcter dl,
+  .ficha-beneficiario-mcter dl, .detalle-proyecto dl
+) {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .lista-seleccion-mapa, .lista-seleccion-gnv, .lista-seleccion,
+  .ficha-datos, .detalle-grid-gnv, .detalle-grid,
+  .ficha-sistema-mcter dl, .ficha-hogar-mcter dl,
+  .ficha-beneficiario-mcter dl, .detalle-proyecto dl
+) > :where(article, button, div) {
+  color: #f6f7ff !important;
+  border-color: rgba(126, 157, 211, .20) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .lista-seleccion-mapa, .lista-seleccion-gnv, .lista-seleccion,
+  .ficha-datos, .detalle-grid-gnv, .detalle-grid,
+  .ficha-sistema-mcter dl, .ficha-hogar-mcter dl,
+  .ficha-beneficiario-mcter dl, .detalle-proyecto dl
+) > :where(article, button, div):not(:last-child) {
+  border-bottom-color: rgba(126, 157, 211, .20) !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .acciones-seleccion-mapa, .ficha-cabecera,
+  .seleccion-herramienta-gnv, .detalle-seleccion
+) button {
+  color: #eaf3ff !important;
+  border-color: rgba(110, 168, 255, .38) !important;
+  background-color: #172a48 !important;
+  background-image: none !important;
+}
+
+/* MCTER, Electricidad al Toque y Fotovoltaico comparten estas fichas. */
+body:not(.pagina-acceso) .detalle-mcter {
+  color: #f6f7ff !important;
+  border-color: rgba(110, 168, 255, .28) !important;
+  background-color: #101d38 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) .detalle-mcter section > header,
+body:not(.pagina-acceso) .detalle-mcter dl > div {
+  color: #f6f7ff !important;
+  border-color: rgba(126, 157, 211, .20) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) .detalle-mcter :where(h2, h3, h4, dd, b, strong) {
+  color: #ffffff !important;
+}
+body:not(.pagina-acceso) .detalle-mcter :where(p, small, dt, span) {
+  color: #cfe2ff !important;
+  background: transparent !important;
+}
+
+/* Tarjetas compactas de los paneles GIS compartidos. */
+body:not(.pagina-acceso) .detalle-mcter .kpis-resumen-mcter > article,
+body:not(.pagina-acceso) .detalle-mcter .datos-generales-fotovoltaico > div {
+  color: #f6f7ff !important;
+  border-color: rgba(126, 157, 211, .28) !important;
+  background-color: #1b2a50 !important;
+  background-image: none !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.025) !important;
+}
+body:not(.pagina-acceso) .detalle-mcter .kpis-resumen-mcter > article span,
+body:not(.pagina-acceso) .detalle-mcter .datos-generales-fotovoltaico > div span {
+  color: #c3d4f2 !important;
+  background: transparent !important;
+}
+body:not(.pagina-acceso) .detalle-mcter .kpis-resumen-mcter > article strong,
+body:not(.pagina-acceso) .detalle-mcter .datos-generales-fotovoltaico > div strong {
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+body:not(.pagina-acceso) .boton-herramientas-icono {
+  color: #f6f7ff !important;
+  border: 1px solid rgba(150, 181, 232, .55) !important;
+  background-color: #172541 !important;
+  background-image: none !important;
+  box-shadow: 0 8px 22px rgba(5, 12, 28, .28) !important;
+}
+body:not(.pagina-acceso) .boton-herramientas-icono:hover,
+body:not(.pagina-acceso) .boton-herramientas-icono[aria-expanded="true"] {
+  color: #ffffff !important;
+  border-color: #6d94df !important;
+  background-color: #203a68 !important;
+}
+
+/* Resultados y formularios que se inyectan dentro de modales de herramientas. */
+body:not(.pagina-acceso) :where(
+  .bloque-proceso-mcter, .resultados-mcter, .detalle-validacion-eat,
+  .reporte-inconsistencias-eat, .contenido-proceso-mcter,
+  .resultado-validacion-ia-gnv, .kpis-resultado-ia-gnv,
+  .resumen-resultado-ia-gnv, .detalle-resultados-ia
+) {
+  color: #f6f7ff !important;
+  border-color: rgba(110, 168, 255, .25) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .resultados-mcter, .detalle-validacion-eat,
+  .kpis-resultado-ia-gnv, .resumen-resultado-ia-gnv,
+  .detalle-resultados-ia
+) > :where(div, article, section) {
+  color: #f6f7ff !important;
+  border-color: rgba(126, 157, 211, .20) !important;
+  background-color: rgba(20, 40, 80, .42) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .bloque-proceso-mcter, .resultados-mcter, .detalle-validacion-eat,
+  .reporte-inconsistencias-eat, .resultado-validacion-ia-gnv,
+  .kpis-resultado-ia-gnv, .resumen-resultado-ia-gnv,
+  .detalle-resultados-ia
+) :where(h2, h3, h4, b, strong, dd) {
+  color: #ffffff !important;
+}
+body:not(.pagina-acceso) :where(
+  .bloque-proceso-mcter, .resultados-mcter, .detalle-validacion-eat,
+  .reporte-inconsistencias-eat, .resultado-validacion-ia-gnv,
+  .kpis-resultado-ia-gnv, .resumen-resultado-ia-gnv,
+  .detalle-resultados-ia
+) :where(p, small, span, dt, label) {
+  color: #cfe2ff !important;
+  background: transparent !important;
+}
+
+/* Perfil: las tarjetas internas mantienen la misma superficie oscura del modal. */
+body:not(.pagina-acceso) .modal-perfil-contenido {
+  background-color: #101d38 !important;
+}
+body:not(.pagina-acceso) .modal-perfil-cabecera {
+  border-bottom-color: rgba(110, 168, 255, .28) !important;
+  background-color: #142344 !important;
+}
+body:not(.pagina-acceso) .modal-perfil-cabecera small { color: #8dbdff !important; }
+body:not(.pagina-acceso) .modal-perfil-cabecera p { color: #c7d9f6 !important; }
+body:not(.pagina-acceso) .cerrar-modal-perfil {
+  color: #e8f1ff !important;
+  background-color: #1c3158 !important;
+}
+body:not(.pagina-acceso) .perfil-bloque {
+  border-color: rgba(110, 168, 255, .30) !important;
+  background-color: #172a4b !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035), 0 10px 24px rgba(4, 13, 34, .22) !important;
+}
+body:not(.pagina-acceso) .perfil-bloque-titulo > span {
+  color: #b9dcff !important;
+  background-color: #203b67 !important;
+}
+body:not(.pagina-acceso) .perfil-bloque p,
+body:not(.pagina-acceso) .perfil-bloque label { color: #c7d9f6 !important; }
+body:not(.pagina-acceso) .perfil-bloque input {
+  color: #f6f9ff !important;
+  border-color: rgba(126, 169, 235, .62) !important;
+  background-color: #101f3d !important;
+}
+body:not(.pagina-acceso) .perfil-bloque input:focus {
+  border-color: #76b6ff !important;
+  background-color: #13294d !important;
+  box-shadow: 0 0 0 3px rgba(93, 166, 255, .20) !important;
+}
+body:not(.pagina-acceso) .perfil-claves button {
+  color: #d8e7ff !important;
+  background-color: #1b3158 !important;
+}
+body:not(.pagina-acceso) .perfil-claves button svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+  margin: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+body:not(.pagina-acceso) .perfil-claves button.activo {
+  color: #ffffff !important;
+  background-color: #28518a !important;
+}
+body:not(.pagina-acceso) .boton-modificar-clave {
+  background-color: #203c6c !important;
+}
+
+/* Ahorro GNV: paneles desplegables sobre el mapa. */
+body:not(.pagina-acceso) .mapa-panel-gnv .panel-flotante-mapa {
+  color: #e8f1ff !important;
+  border-color: rgba(126, 169, 235, .48) !important;
+  background: rgba(15, 30, 57, .97) !important;
+  box-shadow: 0 14px 30px rgba(3, 11, 28, .42) !important;
+}
+body:not(.pagina-acceso) .mapa-panel-gnv .panel-flotante-mapa > strong {
+  color: #ffffff !important;
+}
+body:not(.pagina-acceso) .mapa-panel-gnv .panel-flotante-mapa label {
+  color: #d9e7ff !important;
+  background: transparent !important;
+}
+body:not(.pagina-acceso) .mapa-panel-gnv .panel-flotante-mapa label:hover,
+body:not(.pagina-acceso) .mapa-panel-gnv .panel-flotante-mapa label:has(input:checked) {
+  color: #ffffff !important;
+  background-color: rgba(83, 143, 225, .18) !important;
+}
+body:not(.pagina-acceso) .mapa-panel-gnv .panel-flotante-mapa :where(small, p, .leyenda-calor-gnv) {
+  color: #bcd2f4 !important;
+  background: transparent !important;
+}
+
+/* Fotovoltaico: paneles de Mapas y Capas sobre el mapa. */
+body:not(.pagina-acceso) .mapa-mcter-panel .panel-capa-mcter {
+  color: #e8f1ff !important;
+  border-color: rgba(126, 169, 235, .48) !important;
+  background: rgba(15, 30, 57, .97) !important;
+  box-shadow: 0 14px 30px rgba(3, 11, 28, .42) !important;
+}
+body:not(.pagina-acceso) .mapa-mcter-panel .panel-capa-mcter > strong {
+  color: #ffffff !important;
+}
+body:not(.pagina-acceso) .mapa-mcter-panel .panel-capa-mcter label {
+  color: #d9e7ff !important;
+  border-radius: 8px;
+  background: transparent !important;
+}
+body:not(.pagina-acceso) .mapa-mcter-panel .panel-capa-mcter label:hover,
+body:not(.pagina-acceso) .mapa-mcter-panel .panel-capa-mcter label:has(input:checked) {
+  color: #ffffff !important;
+  background-color: rgba(83, 143, 225, .18) !important;
+}
+body:not(.pagina-acceso) .mapa-mcter-panel .panel-capa-mcter :where(small, p) {
+  color: #bcd2f4 !important;
+  background: transparent !important;
+}
+
+/* Patrón único de Vale FISE para todos los paneles de resumen laterales. */
+body:not(.pagina-acceso) :where(
+  .panel-resumen, .panel-derecho, .panel-derecho-gnv,
+  .detalle-mcter, .resumen-mapa-admin
+) {
+  color: var(--tema-texto) !important;
+  border-color: var(--tema-borde-suave) !important;
+  background-color: var(--tema-fondo-2) !important;
+  background-image: none !important;
+}
+
+body:not(.pagina-acceso) :where(
+  .panel-resumen, .panel-derecho, .panel-derecho-gnv,
+  .detalle-mcter, .resumen-mapa-admin
+) :where(
+  .resumen-cabecera, .encabezado-resumen-gnv,
+  #resumenEat > header, .detalle-mcter section > header,
+  .kpis > article, .kpis-resumen-gnv > article,
+  .kpis-resumen-mcter > article, .kpis-admin > article,
+  .datos-generales-fotovoltaico > div, .tabla-resumen-mcter,
+  .tabla-resumen-gnv, .grafico-tarjeta, .tarjeta-control,
+  .tarjeta-admin, .historial-ubicaciones-fotovoltaico
+) {
+  color: var(--tema-texto) !important;
+  border-color: var(--tema-borde-suave) !important;
+  background-color: var(--tema-superficie) !important;
+  background-image: none !important;
+  box-shadow: 0 9px 24px rgba(5, 12, 29, .16) !important;
+}
+
+/* BonoGas conserva una regla local más específica; se alinea al mismo patrón. */
+body.pagina-bonogas .panel-derecho {
+  border-color: rgba(126, 157, 211, .24) !important;
+  background-color: #1c2946 !important;
+  background-image: none !important;
+}
+
+/* Ahorro GNV: las KPI no necesitan una segunda superficie de fondo. */
+body:not(.pagina-acceso) .kpis-resumen-gnv {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+body:not(.pagina-acceso) .kpis-resumen-gnv > article {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Fotovoltaico: las KPI también se integran con el fondo del panel. */
+body:not(.pagina-acceso) .kpis-resumen-mcter,
+body:not(.pagina-acceso) .kpis-resumen-mcter > article {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Mis apps: catálogo de servicios y autenticación de Vale FISE. */
+body:not(.pagina-acceso) .modal-mis-apps-contenido{color:#f6f7ff!important;border-color:#40527f!important;background:#101a36!important}body:not(.pagina-acceso) .modal-mis-apps-contenido :where(header,section,form){background:transparent!important}body:not(.pagina-acceso) .modal-mis-apps-contenido :where(h2,h3,strong){color:#fff!important}body:not(.pagina-acceso) .modal-mis-apps-contenido :where(p,small,label){color:#aebbe2!important}body:not(.pagina-acceso) .modal-mis-apps-contenido .tarjeta-servicio{color:#fff!important;border-color:#40527f!important;background:#111a36!important}body:not(.pagina-acceso) .modal-mis-apps-contenido .tarjeta-servicio:hover{border-color:#6fa9ff!important;background:#172548!important}body:not(.pagina-acceso) .modal-mis-apps-contenido .tarjeta-servicio.actual{border-color:#5bdb77!important}body:not(.pagina-acceso) .modal-mis-apps-contenido .tarjeta-servicio>span{color:#07152f!important;background:linear-gradient(135deg,#6fc8ed,#6074e9)!important}body:not(.pagina-acceso) .modal-mis-apps-contenido .tarjeta-servicio.actual>span{color:#fff!important;background:#f0ad00!important}body:not(.pagina-acceso) .modal-mis-apps-contenido :where(input){color:#fff!important;border-color:#4b6196!important;background:#0b142d!important}body:not(.pagina-acceso) .modal-mis-apps-contenido .boton-autenticar-servicio{color:#fff!important;background:linear-gradient(135deg,#397fa7,#45a9bf)!important}
+
+/* Fotovoltaico: el bloque padre de las KPI tampoco debe crear un fondo extra. */
+body:not(.pagina-acceso) #resumenEat {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+body:not(.pagina-acceso) .filtros-fise .filtro-busqueda {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Tarjetas visibles del primer bloque del menú lateral. */
+body:not(.pagina-acceso) .menu-lateral .menu-contenido>.grupo-menu:first-child>.grupo-titulo{border:2px solid #edf3ff!important;border-radius:22px!important;background:#142946!important;box-shadow:inset 0 0 24px rgba(75,155,220,.12)!important}body:not(.pagina-acceso) .menu-lateral .menu-contenido>.grupo-menu:first-child>.enlace-menu{border:1px solid #345a8c!important;border-radius:20px!important;background:#193151!important}body:not(.pagina-acceso) .menu-lateral .menu-contenido>.grupo-menu:first-child>.enlace-menu.activo::before{background:#56d7ef!important;box-shadow:0 0 15px rgba(86,215,239,.6)!important}
+
+/* Barra de herramientas GIS: superficie oscura y acciones por color. */
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas){border:1px solid #334975!important;border-radius:15px!important;background:#101c38!important;box-shadow:0 12px 30px rgba(2,8,25,.48)!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas)>i,body:not(.pagina-acceso) .panel-herramientas-mcter :is(.pagina-herramientas-mcter>i){background:#3a4e78!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.grupo-herramientas-admin-rapidas) button,body:not(.pagina-acceso) .panel-herramientas-mcter .pagina-herramientas-mcter button{color:#fff!important;border:0!important;border-radius:10px!important;background:#53699a!important;box-shadow:none!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.grupo-herramientas-admin-rapidas) :is([data-herramienta="seleccionar"],[data-tool="seleccionar"]),body:not(.pagina-acceso) .panel-herramientas-mcter :is([data-tool="seleccionar"]){background:#49b9df!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.grupo-herramientas-admin-rapidas) :is([data-herramienta="poligono"],[data-tool="poligono"],[data-tool="nuevo-punto"]),body:not(.pagina-acceso) .panel-herramientas-mcter :is([data-tool="poligono"],[data-tool="nuevo-punto"]){background:#efa900!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.grupo-herramientas-admin-rapidas) :is([data-herramienta="circulo"],[data-tool="circulo"]),body:not(.pagina-acceso) .panel-herramientas-mcter :is([data-tool="circulo"]){background:#d84599!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.grupo-herramientas-admin-rapidas) :is([data-herramienta="ampliar"],[data-tool="ampliar"],[data-tool="ficef"]),body:not(.pagina-acceso) .panel-herramientas-mcter :is([data-tool="ampliar"],[data-tool="ficef"]){background:#8258e8!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.grupo-herramientas-admin-rapidas) button.activo,body:not(.pagina-acceso) .panel-herramientas-mcter .pagina-herramientas-mcter button.activo{outline:3px solid #c9efff!important;outline-offset:3px;filter:brightness(1.08)}
+
+/* Lupa vectorial para todos los buscadores que no traen un SVG propio. */
+body:not(.pagina-acceso) input[type="search"].busqueda-con-lupa{padding-left:38px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a9c8f0' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='m15.5 15.5 4.5 4.5'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:12px center!important;background-size:18px 18px!important}
+body:not(.pagina-acceso) :is(.barra-modal>label>span,.campo-busqueda-proyecto>span,.buscar-usuario>b,.buscador-proyecto b)[aria-hidden="true"],body:not(.pagina-acceso) .barra-modal>label>span{display:inline-block!important;width:18px!important;height:18px!important;flex:0 0 18px!important;overflow:hidden!important;color:transparent!important;font-size:0!important;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a9c8f0' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='m15.5 15.5 4.5 4.5'/%3E%3C/svg%3E") center/18px 18px no-repeat!important}
+
+/* Navegación lateral: jerarquía clara, aire visual y tipografía contenida. */
+body:not(.pagina-acceso) .menu-lateral .menu-contenido{padding:22px 24px!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav{display:grid;gap:30px}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu{margin:0!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.grupo-titulo{
+  min-height:62px!important;margin:0 0 20px!important;padding:0 20px!important;
+  grid-template-columns:32px 1fr auto!important;gap:12px!important;border-radius:18px!important;
+  font-size:.94rem!important;letter-spacing:0!important;
+}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.grupo-titulo b{font-size:1.15rem!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.enlace-menu{
+  min-height:64px!important;margin:0 18px!important;padding:0 18px!important;
+  border-radius:18px!important;font-size:.84rem!important;
+}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:not(:first-child)>.grupo-titulo{
+  margin:0 14px 10px!important;padding:0!important;color:#edf3ff!important;
+  font-size:.68rem!important;letter-spacing:.11em!important;
+}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:not(:first-child)>.enlace-menu{
+  min-height:52px!important;margin:0 18px!important;padding:0 16px!important;
+  border-radius:14px!important;font-size:.82rem!important;
+}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido .enlace-menu .menu-icono{width:26px!important;height:26px!important}
+@media(max-width:760px){
+  body:not(.pagina-acceso) .menu-lateral .menu-contenido{padding:18px 16px!important}
+  body:not(.pagina-acceso) .menu-lateral .menu-contenido nav{gap:22px}
+  body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.enlace-menu{margin-inline:12px!important}
+}
+
+/* El nombre del módulo se muestra limpio; sin símbolos de respaldo. */
+body:not(.pagina-acceso) .menu-lateral .indicador-modulo-menu,
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.grupo-titulo b{display:none!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.grupo-titulo{grid-template-columns:1fr!important}
+
+/* Navegación compacta: módulo arriba y opciones consecutivas, sin rótulos redundantes. */
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav{gap:10px!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.grupo-titulo{min-height:52px!important;margin-bottom:10px!important;padding-inline:18px!important;font-size:.9rem!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.enlace-menu{min-height:56px!important;margin-inline:14px!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:not(:first-child)>.grupo-titulo{display:none!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:not(:first-child)>.enlace-menu{min-height:50px!important;margin:0 14px!important;padding-inline:16px!important}
+
+/* Marca compacta: conserva el logo sin reservar una cabecera excesiva. */
+body:not(.pagina-acceso) .menu-lateral .menu-cabecera{display:flex!important;min-height:88px!important;padding:14px 18px!important;justify-content:center!important}
+body:not(.pagina-acceso) .menu-lateral .menu-marca{display:flex!important;align-items:center!important;justify-items:initial!important;gap:10px!important;text-align:left!important}
+body:not(.pagina-acceso) .menu-lateral .menu-logo{width:56px!important;height:56px!important;padding:3px!important;border-radius:14px!important}
+body:not(.pagina-acceso) .menu-lateral .menu-marca-texto{display:grid!important;justify-items:start!important;gap:1px!important}
+body:not(.pagina-acceso) .menu-lateral .menu-marca-texto strong{font-size:.95rem!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido{padding-top:18px!important}
+@media(max-width:760px){body:not(.pagina-acceso) .menu-lateral .menu-cabecera{min-height:78px!important;padding:11px 14px!important}body:not(.pagina-acceso) .menu-lateral .menu-logo{width:48px!important;height:48px!important}}
+
+/* Marca vertical, como la presentación original, pero sin ocupar media barra. */
+body:not(.pagina-acceso) .menu-lateral .menu-cabecera{height:142px!important;min-height:142px!important;max-height:142px!important;padding:12px 18px!important}
+body:not(.pagina-acceso) .menu-lateral .menu-marca{display:grid!important;justify-items:center!important;align-content:center!important;gap:5px!important;text-align:center!important}
+body:not(.pagina-acceso) .menu-lateral .menu-logo{width:76px!important;height:76px!important;padding:4px!important;border-radius:18px!important}
+body:not(.pagina-acceso) .menu-lateral .menu-marca-texto{justify-items:center!important;text-align:center!important}
+body:not(.pagina-acceso) .menu-lateral .menu-marca-texto strong{font-size:1rem!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido{padding-top:16px!important}
+body:not(.pagina-acceso) .menu-lateral .menu-pie{padding:18px 18px!important}
+body:not(.pagina-acceso) .menu-lateral .menu-pie :is(.boton-mis-apps,.boton-ver-perfil,.cerrar-sesion){min-height:54px!important;padding-inline:12px!important;font-size:.9rem!important}
+body:not(.pagina-acceso) .menu-lateral .menu-pie :is(.boton-mis-apps,.boton-ver-perfil,.cerrar-sesion) .menu-icono{width:28px!important;font-size:1.25rem!important}
+body:not(.pagina-acceso) .menu-lateral .menu-pie :is(.boton-mis-apps,.boton-ver-perfil,.cerrar-sesion) .menu-icono svg{width:23px!important;height:23px!important}
+@media(max-width:760px){body:not(.pagina-acceso) .menu-lateral .menu-cabecera{height:124px!important;min-height:124px!important;max-height:124px!important}body:not(.pagina-acceso) .menu-lateral .menu-logo{width:66px!important;height:66px!important}}
+
+/* El título y el primer acceso deben estar consecutivos, sin altura reservada. */
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child{display:grid!important;grid-template-rows:44px auto!important;gap:0!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.grupo-titulo{height:44px!important;min-height:44px!important;margin:0!important;padding:0 10px!important;align-self:stretch!important;display:grid!important;align-items:center!important}
+body:not(.pagina-acceso) .menu-lateral .menu-contenido nav>.grupo-menu:first-child>.enlace-menu{margin:0 14px!important;align-self:start!important}
+
+/* Paleta GIS única para todas las barras de herramientas. */
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas) :is([data-herramienta="seleccionar"],[data-herramienta-gnv="seleccionar"],[data-herramienta-rapida="consultar"],[data-tool="seleccionar"]){background:#49b9df!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas) :is([data-herramienta="poligono"],[data-herramienta-gnv="poligono"],[data-herramienta-rapida="poligono"],[data-tool="poligono"],[data-tool="nuevo-punto"]){background:#efa900!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas) :is([data-herramienta="circulo"],[data-herramienta-gnv="circulo"],[data-herramienta-rapida="circulo"],[data-tool="circulo"]){background:#d84599!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas) :is([data-herramienta="ampliar"],[data-herramienta-gnv="ampliar"],[data-tool="ampliar"],[data-tool="ficef"],[data-tool="dger"]){background:#8258e8!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas) :is([data-herramienta="mover"],[data-herramienta-gnv="mover"],[data-tool="mover"]){background:#5a9fbd!important}
+
+/* Acciones especiales con colores propios, sin repetir los de Vale FISE. */
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas) :is([data-herramienta="liquidaciones"],[data-herramienta-gnv="liquidaciones"],[data-tool="liquidaciones"]){background:#e57d32!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas) :is([data-herramienta="informes"],[data-herramienta-gnv="informes-digitales"],[data-tool="informes"]){background:#2f8db8!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.panel-herramientas-mcter,.grupo-herramientas-admin-rapidas) :is([data-herramienta="validacion-ia"],[data-herramienta-gnv="validacion-ia"],[data-tool="validacion-ia"]){background:#42a96e!important}
+
+/* En la vista ampliada, icono y texto comparten un eje perfectamente centrado. */
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.grupo-herramientas-admin-rapidas) button:has(>span){grid-template-rows:1fr auto!important;align-items:center!important;justify-items:center!important;padding:7px 4px 6px!important;text-align:center!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.grupo-herramientas-admin-rapidas) button:has(>span)>svg{align-self:end!important;margin:0!important}
+body:not(.pagina-acceso) :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion,.grupo-herramientas-admin-rapidas) button:has(>span)>span{align-self:start!important;width:100%;line-height:1.1!important;text-align:center!important}
+
+/* Centrado real del contenido en botones ampliados. */
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;padding:5px 4px!important;text-align:center!important}
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button>svg{display:block!important;flex:0 0 auto!important;margin:0!important}
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button>span{display:block!important;width:100%!important;flex:0 0 auto!important;line-height:1.1!important;text-align:center!important}
+
+/* Posicionamiento absoluto para que cada icono quede exactamente en el centro. */
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button{position:relative!important;display:block!important;padding:0!important}
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button>svg{position:absolute!important;top:7px!important;left:50%!important;display:block!important;margin:0!important;transform:translateX(-50%)!important}
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button>span{position:absolute!important;right:2px!important;bottom:6px!important;left:2px!important;display:block!important;margin:0!important;text-align:center!important}
+
+/* Menor separación vertical entre icono y etiqueta en modo ampliado. */
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button>svg{top:15px!important}
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button>span{bottom:12px!important;line-height:1!important}
+
+/* Escala equilibrada para tarjetas ampliadas: compactas y con respiración visual. */
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button{width:52px!important;height:46px!important}
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button>svg{top:6px!important}
+body:not(.pagina-acceso) :is(.barra-herramientas-fise,.herramientas-gnv,.herramientas-bonogas,.herramientas-masificacion).ampliada :is(.grupo-herramientas-fise,.grupo-herramientas-masificacion) button>span{bottom:5px!important;line-height:1.05!important}
+
+/* Tarjetas de formatos de exportación coherentes con el tema oscuro. */
+body:not(.pagina-acceso) :is(fieldset[class*="formatos-exportacion"],.modal-admin .formatos-exportacion) :is(label>span,button){color:#f4f7ff!important;border-color:#405783!important;background:#172442!important;box-shadow:none!important}
+body:not(.pagina-acceso) :is(fieldset[class*="formatos-exportacion"],.modal-admin .formatos-exportacion) :is(label>span,button):hover{border-color:#60a9cf!important;background:#1d3155!important}
+body:not(.pagina-acceso) fieldset[class*="formatos-exportacion"] input:checked+span,body:not(.pagina-acceso) .modal-admin .formatos-exportacion button.activo{color:#fff!important;border-color:#65b9dc!important;background:#234d78!important;box-shadow:0 0 0 3px rgba(74,170,213,.2)!important}
+body:not(.pagina-acceso) :is(fieldset[class*="formatos-exportacion"],.modal-admin .formatos-exportacion) :is(b,small){color:inherit!important}
+body:not(.pagina-acceso) fieldset[class*="formatos-exportacion"] legend{color:#b9c8e3!important}
+body:not(.pagina-acceso) :is([class*="detalle-exportacion"],[class*="alcance-exportacion"]){color:#dbe5f7!important;background:#111d38!important;border:1px solid #344b75!important}
+body:not(.pagina-acceso) :is([class*="detalle-exportacion"],[class*="alcance-exportacion"]) :is(span,strong,b){color:inherit!important}

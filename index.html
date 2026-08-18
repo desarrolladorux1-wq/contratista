@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Panel del contratista para proyectos de Masificación">
+  <title>Masificación | Panel del contratista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="SATCONTROL/compartido/estilos_generales.css?v=20260814-5">
+  <link rel="stylesheet" href="SATCONTROL/estilos_masificacion.css?v=20260817-70">
+  <link rel="stylesheet" href="SATCONTROL/compartido/tema_oscuro.css?v=20260817-18">
+  <link rel="stylesheet" href="SATCONTROL/compartido/estilos_asistente_ia.css?v=20260813-3">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="aplicacion">
+    <aside class="menu-lateral panel-lateral" id="panelLateral" aria-label="Menú principal">
+      <header class="menu-cabecera">
+        <a class="menu-marca" href="#sat-control" aria-label="Inicio de Masificación"><img class="menu-logo" src="SATCONTROL/compartido/img/logo_fise.png" alt=""><span class="menu-marca-texto"><strong>Masificación</strong><small>Panel del contratista</small></span></a>
+        <button class="boton-menu" id="contraerMenu" type="button" aria-label="Contraer o ampliar menú" aria-expanded="true"><span aria-hidden="true"></span></button>
+      </header>
+      <div class="menu-contenido"><nav aria-label="Módulos de Masificación"><section class="grupo-menu" aria-labelledby="grupo-operacion-contratista">
+        <h2 class="grupo-titulo" id="grupo-operacion-contratista">Operación</h2>
+        <button class="enlace-menu activo" type="button" data-vista="sat-control" data-etiqueta="SAT control"><span class="menu-icono"><svg viewBox="0 0 24 24"><path d="M4 5.5 9 3l6 2.5L20 3v15.5L15 21l-6-2.5L4 21V5.5Z"/><path d="M9 3v15.5M15 5.5V21"/><circle cx="12" cy="11.5" r="2"/></svg></span><span class="enlace-texto">SAT control</span></button>
+        <button class="enlace-menu" type="button" data-vista="informe-supervision" data-etiqueta="Informe de supervisión"><span class="menu-icono"><svg viewBox="0 0 24 24"><path d="M7 3h10v4H7zM5 5H3v16h18V5h-2"/><path d="M7 11h10M7 15h7M7 19h5"/></svg></span><span class="enlace-texto">Informe de supervisión</span></button>
+        <button class="enlace-menu" type="button" data-vista="repositorio-informes" data-etiqueta="Repositorio de informes"><span class="menu-icono"><svg viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v11H3zM3 7V4h7l2 2h7v3"/><path d="M8 13h8M8 17h5"/></svg></span><span class="enlace-texto">Repositorio de informes</span></button>
+      </section></nav></div>
+      <footer class="menu-pie"><a class="enlace-menu cerrar-sesion" href="../../login/login.html" data-etiqueta="Cerrar sesión"><span class="menu-icono">↪</span><span class="enlace-texto">Cerrar sesión</span></a></footer>
+    </aside>
+
+    <main class="contenido-principal">
+      <header class="cabecera-principal">
+        <button class="menu-movil" id="abrirMenu" type="button" aria-label="Abrir menú">☰</button>
+        <div><small>MASIFICACIÓN DE GAS NATURAL</small><h1 id="tituloVista">SAT control</h1></div>
+        <div class="cabecera-acciones">
+          <button id="recargarSatcontrol" type="button" title="Recargar SATCONTROL" aria-label="Recargar SATCONTROL"><svg viewBox="0 0 24 24"><path d="M20 6v5h-5M4 18v-5h5"/><path d="M6.1 9A7 7 0 0 1 18 6l2 5M17.9 15A7 7 0 0 1 6 18l-2-5"/></svg></button>
+          <button id="alternarTema" type="button" title="Cambiar tema" aria-label="Cambiar tema"><svg viewBox="0 0 24 24"><path d="M20.5 14.1A8 8 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg></button>
+          <button id="notificaciones" type="button" title="Notificaciones" aria-label="Notificaciones"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><i>3</i></button><span>AC</span>
+        </div>
+      </header>
+
+      <section class="vista activa vista-satcontrol-completo" id="sat-control" aria-labelledby="tituloVista">
+        <div class="estado-carga-sat" id="estadoCargaSat"><span></span><strong>Cargando SATCONTROL completo…</strong></div>
+        <iframe id="satcontrolCompleto" title="SATCONTROL completo de Masificación" src="SATCONTROL/masificacion.html?contratista=1&v=20260818-2" loading="eager"></iframe>
+      </section>
+
+      <section class="vista vista-supervision-integrada" id="informe-supervision" aria-labelledby="tituloVista" hidden>
+        <div class="supervision-cuerpo">
+          <section class="identidad-informe-supervision" aria-labelledby="tituloIdentidadInforme">
+            <div class="logo-institucional-informe"><small>LOGO INSTITUCIONAL</small><img src="SATCONTROL/compartido/img/logo_fise.png" alt="Logo FISE"><strong>FISE</strong></div>
+            <div class="logo-contratista-informe"><div><small>IDENTIDAD DEL CONTRATISTA</small><h3 id="tituloIdentidadInforme">Logo para el informe</h3><p>Este logo aparecerá separado del logo FISE en la cabecera del documento.</p></div><label class="cargar-logo-contratista">Subir logo<input id="logoContratistaInforme" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml"></label></div>
+            <div class="vista-logo-contratista" id="vistaLogoContratista"><span>LOGO</span><small id="nombreLogoContratista">Sin logo cargado</small></div>
+          </section>
+          <nav class="supervision-tipos" aria-label="Tipo de informe"><button type="button" class="activo" data-tipo-supervision="diario"><span>Diario</span><small>IDT · END-FPY-FI-04</small></button><button type="button" data-tipo-supervision="semanal"><span>Semanal</span><small>ISO · END-FPY-FI-05</small></button></nav>
+          <section class="supervision-configuracion">
+            <label>Proyecto<select id="supervisionProyecto"><option value="CUS-03">CUS-03 · Red de distribución Sector 03</option><option value="AQP-CN">AQP-CN · Ampliación Cono Norte</option><option value="LIM-S2">LIM-S2 · Lima Sur Etapa II</option></select></label>
+            <label>N.° de informe<input id="supervisionNumero" value="END-IDT-RED-CU-259-G1-25-07-2026"></label>
+            <label id="campoFechaSupervision">Fecha de ejecución<input id="supervisionFecha" type="date" value="2026-08-18"></label><label id="campoPeriodoSupervision" hidden>Periodo<input id="supervisionPeriodo" value="12/08/2026 – 18/08/2026"></label>
+          </section>
+          <details class="supervision-editor" open><summary>Editar contenido del informe</summary><div class="supervision-editor-grid">
+            <label>Contratista<input id="supervisionContratista" value="NAGASCO S.A.C."></label><label>Supervisión<input id="supervisionSupervisor" value="END PERÚ S.A.C."></label><label>Cliente<input id="supervisionCliente" value="FONDO DE INCLUSIÓN SOCIAL ENERGÉTICO - FISE"></label><label>Lugar de supervisión<input id="supervisionLugar" value="Ca. Cauce Seco de Llocllopata / Cusco"></label>
+            <label>Avance civil<input id="supervisionAvanceCivil" value="100.00%"></label><label>Avance mecánico<input id="supervisionAvanceMecanico" value="100.00%"></label><label>Personal en obra<input id="supervisionPersonal" type="number" value="29"></label><label>Equipos<input id="supervisionEquipos" type="number" value="6"></label><label>Incidentes<input id="supervisionIncidentes" type="number" value="0"></label><label>Accidentes<input id="supervisionAccidentes" type="number" value="0"></label>
+            <label class="ancho">Observaciones<textarea id="supervisionObservaciones">Se realizó el seguimiento de los trabajos ejecutados, pruebas, gasificación, reposición y cierre de observaciones del proyecto.</textarea></label><label class="ancho">Conclusiones / restricciones<textarea id="supervisionConclusiones">Las actividades se desarrollaron de acuerdo con la programación. Permanecen acciones de seguimiento documentario y control de calidad.</textarea></label><label class="ancho">Agregar fotografías<input id="supervisionFotos" type="file" accept="image/*" multiple><small>Puede agregar fotos manualmente e incluirlas o descartarlas antes de generar el PDF.</small></label>
+          </div></details>
+          <section class="supervision-movil"><header><div><small>EVIDENCIAS DE CAMPO</small><h3>Fotografías recibidas desde el móvil</h3><p>Dispositivo SUP-CUSCO-04 vinculado · Seleccione las imágenes que formarán parte del PDF.</p></div><div class="supervision-movil-estado"><i></i><span>En línea</span><button type="button" id="sincronizarFotosSupervision">Sincronizar</button></div></header><div class="supervision-galeria" id="galeriaFotosSupervision" aria-live="polite"></div></section>
+          <section class="supervision-vista" id="vistaInformeDiario">
+            <div class="supervision-portada"><div><small>FORMATO END-FPY-FI-04</small><h3>Informe diario de trabajo · IDT</h3><p>Proyecto de distribución de gas natural por red de ductos</p></div><strong>FISE · END Perú</strong></div>
+            <div class="supervision-ficha"><span><small>Contratista</small><b>NAGASCO S.A.C.</b></span><span><small>Supervisión</small><b>END Perú S.A.C.</b></span><span><small>Cliente</small><b>FISE</b></span><span><small>Especialidad</small><b>Civil / Mecánica / Seguridad</b></span></div>
+            <div class="supervision-kpis"><article><small>Avance de red</small><strong>24,994.94 ml</strong><span>Construcción completada</span></article><article><small>Gasificación</small><strong>19,277.37 ml</strong><span>Frentes verificados</span></article><article><small>RNC</small><strong>14</strong><span>5 abiertas · 9 cerradas</span></article><article><small>Personal</small><strong>29</strong><span>Cuadrilla total</span></article></div>
+            <div class="supervision-grid"><article><h4>1. Avance constructivo</h4><ul><li>Permisos, difusión y señalización.</li><li>Interferencias y excavación de calicatas.</li><li>Hermeticidad, electrofusión y gasificación.</li></ul></article><article><h4>2. Observaciones y auditorías</h4><p>Seguimiento de acciones correctivas y cierre documentado de RNC.</p><div class="supervision-progreso"><i style="width:64%"></i></div></article><article><h4>3. Gestión del tiempo</h4><p>Construcción concluida; permanecen pruebas y control de fugas.</p></article><article><h4>4. Seguridad</h4><p>Charla diaria registrada. Sin incidentes ni accidentes.</p></article></div>
+            <div class="supervision-tablas"><section><h4>Personal del contratista</h4><table><thead><tr><th>Grupo</th><th>Cant.</th></tr></thead><tbody><tr><td>Ingeniería, calidad y seguridad</td><td>8</td></tr><tr><td>Cuadrilla civil y mecánica</td><td>18</td></tr><tr><td>Topografía y relaciones comunitarias</td><td>3</td></tr></tbody><tfoot><tr><th>Total</th><th>29</th></tr></tfoot></table></section><section><h4>Equipos</h4><table><thead><tr><th>Equipo</th><th>Cant.</th></tr></thead><tbody><tr><td>Retroexcavadora / minicargador</td><td>2</td></tr><tr><td>Cortadora / compactadores</td><td>3</td></tr><tr><td>Equipo de fusión</td><td>1</td></tr></tbody><tfoot><tr><th>Total</th><th>6</th></tr></tfoot></table></section></div>
+            <section class="supervision-evidencias"><header><div><h4>Registro fotográfico</h4><p>22 evidencias georreferenciadas incluidas en el IDT.</p></div><b>22 fotos</b></header><div><span>Charla de seguridad</span><span>Prueba de hermeticidad</span><span>Electrofusión</span><span>Control de presión</span><span>Venteo y gasificación</span><span>Verificación de fugas</span></div></section>
+          </section>
+          <section class="supervision-vista" id="vistaInformeSemanal" hidden>
+            <div class="supervision-portada"><div><small>FORMATO END-FPY-FI-05</small><h3>Informe semanal de trabajo · ISO</h3><p>Periodo de seguimiento de redes de distribución</p></div><strong>CU-REDES · 039</strong></div>
+            <div class="supervision-ficha"><span><small>Contratista</small><b>NAGASCO S.A.C.</b></span><span><small>Plazo</small><b>270 días</b></span><span><small>Monto contractual</small><b>US$ 5,552,825.29 + IGV</b></span><span><small>Personal</small><b>44 trabajadores</b></span></div>
+            <div class="supervision-kpis"><article><small>Fase 1 + 2</small><strong>100%</strong><span>Avance contractual</span></article><article><small>Hermeticidad</small><strong>100%</strong><span>Pruebas concluidas</span></article><article><small>Red construida</small><strong>24,994.94 ml</strong><span>32 mallas</span></article><article><small>Reposición</small><strong>92.84%</strong><span>18,244.23 ml</span></article></div>
+            <div class="supervision-grid"><article><h4>I. Resumen de obra</h4><ul><li>Comunicaciones y gestión comunitaria.</li><li>Seguridad, salud y gestión ambiental.</li><li>Control de personal y frentes activos.</li></ul></article><article><h4>II. Restricciones</h4><ul><li>Reposición y observaciones de calidad.</li><li>Asfalto rechazado y actividades pendientes.</li><li>Seguimiento a pruebas y gasificación.</li></ul></article><article><h4>III. Reuniones y compromisos</h4><p>Responsables, fechas comprometidas y estado de cada acuerdo.</p></article><article><h4>IV. Evidencia semanal</h4><p>Concreto, asfalto, temperatura, granulometría, red y reposición.</p></article></div>
+            <section class="supervision-curvas"><h4>Avance semanal de red</h4><div><span>Construida <b>24,994.94 ml</b></span><i><em style="width:100%"></em></i></div><div><span>Gasificada <b>19,277.37 ml</b></span><i><em style="width:77%"></em></i></div><div><span>Reposición <b>18,244.23 ml</b></span><i><em style="width:92.84%"></em></i></div><p>SPI: <strong>1.00</strong> · Pendiente de gasificación: <strong>5,717.57 ml</strong></p></section>
+            <div class="supervision-tablas"><section><h4>Avance por especialidad</h4><table><thead><tr><th>Especialidad</th><th>Estado</th></tr></thead><tbody><tr><td>Civil</td><td>En cierre</td></tr><tr><td>Mecánica</td><td>Concluida</td></tr><tr><td>Hermeticidad</td><td>100%</td></tr></tbody></table></section><section><h4>Compromisos</h4><table><thead><tr><th>Actividad</th><th>Seguimiento</th></tr></thead><tbody><tr><td>Reposición observada</td><td>En proceso</td></tr><tr><td>Cierre de RNC</td><td>Por validar</td></tr><tr><td>Gasificación pendiente</td><td>Programada</td></tr></tbody></table></section></div>
+          </section>
+        </div>
+        <footer class="supervision-acciones"><span id="estadoInformeSupervision">Edite los datos, revise las evidencias y genere el informe.</span><button type="button" id="guardarBorrador">Guardar borrador</button><button type="button" id="exportarSupervisionCsv">Exportar CSV</button><button type="button" id="guardarInformeRepositorio">Guardar en repositorio</button><button type="button" class="principal" id="exportarSupervisionPdf">Generar PDF</button></footer>
+      </section>
+
+      <section class="vista" id="repositorio-informes" aria-labelledby="tituloVista" hidden>
+        <div class="titulo-pagina"><div><h2>Repositorio de informes</h2><p>Historial de los informes de supervisión registrados.</p></div><button class="primario" type="button" data-ir="informe-supervision">+ Crear informe</button></div>
+        <section class="tarjeta repositorio">
+          <div class="barra-repositorio"><label>Buscar informe<input id="buscarInforme" type="search" placeholder="Número, nombre o responsable"></label><label>Tipo<select id="filtrarTipo"><option value="">Todos</option><option>Informe diario</option><option>Informe semanal</option></select></label><strong id="cantidadInformes">0 informes</strong></div>
+          <div class="tabla-contenedor"><table><thead><tr><th>Fecha</th><th>Número / nombre del informe</th><th>Tipo</th><th>Realizado por</th><th>Proyecto</th><th>Estado</th><th></th></tr></thead><tbody id="listaInformes"></tbody></table></div>
+          <div class="vacio" id="repositorioVacio" hidden><span>▤</span><h3>No hay informes para mostrar</h3><p>Cree un informe de supervisión o cambie los filtros.</p></div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <button class="velo" id="velo" type="button" aria-label="Cerrar menú"></button>
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <script src="SATCONTROL/compartido/scripts_generales.js?v=20260814-3"></script>
+  <script src="SATCONTROL/compartido/asistente_ia.js?v=20260813-3"></script>
+  <script src="app.js?v=20260818-5"></script>
+</body>
+</html>

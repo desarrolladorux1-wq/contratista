@@ -1,0 +1,1301 @@
+{
+  "type": "FeatureCollection",
+  "name": "manzanas_urbanas_masificacion",
+  "metadata": {
+    "source": "datos_masificacion.geojson",
+    "extractedAt": "2026-07-31T18:23:59.760Z",
+    "description": "Manzanas urbanas derivadas de los lotes reales de cada proyecto de Masificación."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "LOT-001-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -77.05,
+              -11.988
+            ],
+            [
+              -77.02,
+              -11.988
+            ],
+            [
+              -77.02,
+              -11.969999999999999
+            ],
+            [
+              -77.05,
+              -11.969999999999999
+            ],
+            [
+              -77.05,
+              -11.988
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-001",
+        "codigoProyecto": "MAS-001",
+        "nombreProyecto": "Ampliación Norte",
+        "distrito": "Comas",
+        "numero": 1,
+        "orden": 1,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-001-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -77.05,
+              -11.943
+            ],
+            [
+              -77.02,
+              -11.943
+            ],
+            [
+              -77.02,
+              -11.924999999999999
+            ],
+            [
+              -77.05,
+              -11.924999999999999
+            ],
+            [
+              -77.05,
+              -11.943
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-001",
+        "codigoProyecto": "MAS-001",
+        "nombreProyecto": "Ampliación Norte",
+        "distrito": "Comas",
+        "numero": 2,
+        "orden": 2,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-001-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -77.05,
+              -11.898
+            ],
+            [
+              -77.02,
+              -11.898
+            ],
+            [
+              -77.02,
+              -11.879999999999999
+            ],
+            [
+              -77.05,
+              -11.879999999999999
+            ],
+            [
+              -77.05,
+              -11.898
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-001",
+        "codigoProyecto": "MAS-001",
+        "nombreProyecto": "Ampliación Norte",
+        "distrito": "Comas",
+        "numero": 3,
+        "orden": 3,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-002-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -76.92999999999999,
+              -12.258000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.258000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.24
+            ],
+            [
+              -76.92999999999999,
+              -12.24
+            ],
+            [
+              -76.92999999999999,
+              -12.258000000000001
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-002",
+        "codigoProyecto": "MAS-002",
+        "nombreProyecto": "Red Metropolitana Sur",
+        "distrito": "Villa El Salvador",
+        "numero": 1,
+        "orden": 4,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-002-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -76.92999999999999,
+              -12.213000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.213000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.195
+            ],
+            [
+              -76.92999999999999,
+              -12.195
+            ],
+            [
+              -76.92999999999999,
+              -12.213000000000001
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-002",
+        "codigoProyecto": "MAS-002",
+        "nombreProyecto": "Red Metropolitana Sur",
+        "distrito": "Villa El Salvador",
+        "numero": 2,
+        "orden": 5,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-002-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -76.92999999999999,
+              -12.168000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.168000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.15
+            ],
+            [
+              -76.92999999999999,
+              -12.15
+            ],
+            [
+              -76.92999999999999,
+              -12.168000000000001
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-002",
+        "codigoProyecto": "MAS-002",
+        "nombreProyecto": "Red Metropolitana Sur",
+        "distrito": "Villa El Salvador",
+        "numero": 3,
+        "orden": 6,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-003-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.55,
+              -16.418000000000003
+            ],
+            [
+              -71.52,
+              -16.418000000000003
+            ],
+            [
+              -71.52,
+              -16.400000000000002
+            ],
+            [
+              -71.55,
+              -16.400000000000002
+            ],
+            [
+              -71.55,
+              -16.418000000000003
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-003",
+        "codigoProyecto": "MAS-003",
+        "nombreProyecto": "Corredor Gas Arequipa",
+        "distrito": "Cerro Colorado",
+        "numero": 1,
+        "orden": 7,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-003-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.55,
+              -16.373
+            ],
+            [
+              -71.52,
+              -16.373
+            ],
+            [
+              -71.52,
+              -16.355
+            ],
+            [
+              -71.55,
+              -16.355
+            ],
+            [
+              -71.55,
+              -16.373
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-003",
+        "codigoProyecto": "MAS-003",
+        "nombreProyecto": "Corredor Gas Arequipa",
+        "distrito": "Cerro Colorado",
+        "numero": 2,
+        "orden": 8,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-003-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.55,
+              -16.328000000000003
+            ],
+            [
+              -71.52,
+              -16.328000000000003
+            ],
+            [
+              -71.52,
+              -16.310000000000002
+            ],
+            [
+              -71.55,
+              -16.310000000000002
+            ],
+            [
+              -71.55,
+              -16.328000000000003
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-003",
+        "codigoProyecto": "MAS-003",
+        "nombreProyecto": "Corredor Gas Arequipa",
+        "distrito": "Cerro Colorado",
+        "numero": 3,
+        "orden": 9,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-004-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.02,
+              -8.158
+            ],
+            [
+              -78.99,
+              -8.158
+            ],
+            [
+              -78.99,
+              -8.139999999999999
+            ],
+            [
+              -79.02,
+              -8.139999999999999
+            ],
+            [
+              -79.02,
+              -8.158
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-004",
+        "codigoProyecto": "MAS-004",
+        "nombreProyecto": "Expansión Trujillo",
+        "distrito": "Trujillo",
+        "numero": 1,
+        "orden": 10,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-004-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.02,
+              -8.113
+            ],
+            [
+              -78.99,
+              -8.113
+            ],
+            [
+              -78.99,
+              -8.094999999999999
+            ],
+            [
+              -79.02,
+              -8.094999999999999
+            ],
+            [
+              -79.02,
+              -8.113
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-004",
+        "codigoProyecto": "MAS-004",
+        "nombreProyecto": "Expansión Trujillo",
+        "distrito": "Trujillo",
+        "numero": 2,
+        "orden": 11,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-004-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.02,
+              -8.068
+            ],
+            [
+              -78.99,
+              -8.068
+            ],
+            [
+              -78.99,
+              -8.049999999999999
+            ],
+            [
+              -79.02,
+              -8.049999999999999
+            ],
+            [
+              -79.02,
+              -8.068
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-004",
+        "codigoProyecto": "MAS-004",
+        "nombreProyecto": "Expansión Trujillo",
+        "distrito": "Trujillo",
+        "numero": 3,
+        "orden": 12,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-005-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.83,
+              -6.808
+            ],
+            [
+              -79.8,
+              -6.808
+            ],
+            [
+              -79.8,
+              -6.789999999999999
+            ],
+            [
+              -79.83,
+              -6.789999999999999
+            ],
+            [
+              -79.83,
+              -6.808
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-005",
+        "codigoProyecto": "MAS-005",
+        "nombreProyecto": "Red Urbana Chiclayo",
+        "distrito": "José Leonardo Ortiz",
+        "numero": 1,
+        "orden": 13,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-005-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.83,
+              -6.763
+            ],
+            [
+              -79.8,
+              -6.763
+            ],
+            [
+              -79.8,
+              -6.744999999999999
+            ],
+            [
+              -79.83,
+              -6.744999999999999
+            ],
+            [
+              -79.83,
+              -6.763
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-005",
+        "codigoProyecto": "MAS-005",
+        "nombreProyecto": "Red Urbana Chiclayo",
+        "distrito": "José Leonardo Ortiz",
+        "numero": 2,
+        "orden": 14,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-005-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.83,
+              -6.718
+            ],
+            [
+              -79.8,
+              -6.718
+            ],
+            [
+              -79.8,
+              -6.699999999999999
+            ],
+            [
+              -79.83,
+              -6.699999999999999
+            ],
+            [
+              -79.83,
+              -6.718
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-005",
+        "codigoProyecto": "MAS-005",
+        "nombreProyecto": "Red Urbana Chiclayo",
+        "distrito": "José Leonardo Ortiz",
+        "numero": 3,
+        "orden": 15,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-006-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.88,
+              -13.578
+            ],
+            [
+              -71.85,
+              -13.578
+            ],
+            [
+              -71.85,
+              -13.559999999999999
+            ],
+            [
+              -71.88,
+              -13.559999999999999
+            ],
+            [
+              -71.88,
+              -13.578
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-006",
+        "codigoProyecto": "MAS-006",
+        "nombreProyecto": "Conexión Cusco",
+        "distrito": "San Sebastián",
+        "numero": 1,
+        "orden": 16,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-006-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.88,
+              -13.533
+            ],
+            [
+              -71.85,
+              -13.533
+            ],
+            [
+              -71.85,
+              -13.514999999999999
+            ],
+            [
+              -71.88,
+              -13.514999999999999
+            ],
+            [
+              -71.88,
+              -13.533
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-006",
+        "codigoProyecto": "MAS-006",
+        "nombreProyecto": "Conexión Cusco",
+        "distrito": "San Sebastián",
+        "numero": 2,
+        "orden": 17,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-006-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.88,
+              -13.488
+            ],
+            [
+              -71.85,
+              -13.488
+            ],
+            [
+              -71.85,
+              -13.469999999999999
+            ],
+            [
+              -71.88,
+              -13.469999999999999
+            ],
+            [
+              -71.88,
+              -13.488
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-006",
+        "codigoProyecto": "MAS-006",
+        "nombreProyecto": "Conexión Cusco",
+        "distrito": "San Sebastián",
+        "numero": 3,
+        "orden": 18,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-007-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.61999999999999,
+              -5.238
+            ],
+            [
+              -80.58999999999999,
+              -5.238
+            ],
+            [
+              -80.58999999999999,
+              -5.22
+            ],
+            [
+              -80.61999999999999,
+              -5.22
+            ],
+            [
+              -80.61999999999999,
+              -5.238
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-007",
+        "codigoProyecto": "MAS-007",
+        "nombreProyecto": "Anillo Piura",
+        "distrito": "Castilla",
+        "numero": 1,
+        "orden": 19,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-007-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.61999999999999,
+              -5.1930000000000005
+            ],
+            [
+              -80.58999999999999,
+              -5.1930000000000005
+            ],
+            [
+              -80.58999999999999,
+              -5.175
+            ],
+            [
+              -80.61999999999999,
+              -5.175
+            ],
+            [
+              -80.61999999999999,
+              -5.1930000000000005
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-007",
+        "codigoProyecto": "MAS-007",
+        "nombreProyecto": "Anillo Piura",
+        "distrito": "Castilla",
+        "numero": 2,
+        "orden": 20,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-007-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.61999999999999,
+              -5.148000000000001
+            ],
+            [
+              -80.58999999999999,
+              -5.148000000000001
+            ],
+            [
+              -80.58999999999999,
+              -5.13
+            ],
+            [
+              -80.61999999999999,
+              -5.13
+            ],
+            [
+              -80.61999999999999,
+              -5.148000000000001
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-007",
+        "codigoProyecto": "MAS-007",
+        "nombreProyecto": "Anillo Piura",
+        "distrito": "Castilla",
+        "numero": 3,
+        "orden": 21,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-008-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.75,
+              -14.068
+            ],
+            [
+              -75.72,
+              -14.068
+            ],
+            [
+              -75.72,
+              -14.049999999999999
+            ],
+            [
+              -75.75,
+              -14.049999999999999
+            ],
+            [
+              -75.75,
+              -14.068
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-008",
+        "codigoProyecto": "MAS-008",
+        "nombreProyecto": "Expansión Ica",
+        "distrito": "Subtanjalla",
+        "numero": 1,
+        "orden": 22,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-008-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.75,
+              -14.023
+            ],
+            [
+              -75.72,
+              -14.023
+            ],
+            [
+              -75.72,
+              -14.004999999999999
+            ],
+            [
+              -75.75,
+              -14.004999999999999
+            ],
+            [
+              -75.75,
+              -14.023
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-008",
+        "codigoProyecto": "MAS-008",
+        "nombreProyecto": "Expansión Ica",
+        "distrito": "Subtanjalla",
+        "numero": 2,
+        "orden": 23,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-008-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.75,
+              -13.978
+            ],
+            [
+              -75.72,
+              -13.978
+            ],
+            [
+              -75.72,
+              -13.959999999999999
+            ],
+            [
+              -75.75,
+              -13.959999999999999
+            ],
+            [
+              -75.75,
+              -13.978
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-008",
+        "codigoProyecto": "MAS-008",
+        "nombreProyecto": "Expansión Ica",
+        "distrito": "Subtanjalla",
+        "numero": 3,
+        "orden": 24,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-009-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.21,
+              -12.088
+            ],
+            [
+              -75.17999999999999,
+              -12.088
+            ],
+            [
+              -75.17999999999999,
+              -12.069999999999999
+            ],
+            [
+              -75.21,
+              -12.069999999999999
+            ],
+            [
+              -75.21,
+              -12.088
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-009",
+        "codigoProyecto": "MAS-009",
+        "nombreProyecto": "Red Huancayo",
+        "distrito": "El Tambo",
+        "numero": 1,
+        "orden": 25,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-009-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.21,
+              -12.043
+            ],
+            [
+              -75.17999999999999,
+              -12.043
+            ],
+            [
+              -75.17999999999999,
+              -12.024999999999999
+            ],
+            [
+              -75.21,
+              -12.024999999999999
+            ],
+            [
+              -75.21,
+              -12.043
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-009",
+        "codigoProyecto": "MAS-009",
+        "nombreProyecto": "Red Huancayo",
+        "distrito": "El Tambo",
+        "numero": 2,
+        "orden": 26,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-009-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.21,
+              -11.998
+            ],
+            [
+              -75.17999999999999,
+              -11.998
+            ],
+            [
+              -75.17999999999999,
+              -11.979999999999999
+            ],
+            [
+              -75.21,
+              -11.979999999999999
+            ],
+            [
+              -75.21,
+              -11.998
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-009",
+        "codigoProyecto": "MAS-009",
+        "nombreProyecto": "Red Huancayo",
+        "distrito": "El Tambo",
+        "numero": 3,
+        "orden": 27,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-010-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.50999999999999,
+              -9.168
+            ],
+            [
+              -78.47999999999999,
+              -9.168
+            ],
+            [
+              -78.47999999999999,
+              -9.149999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.149999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.168
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-010",
+        "codigoProyecto": "MAS-010",
+        "nombreProyecto": "Conexión Chimbote",
+        "distrito": "Nuevo Chimbote",
+        "numero": 1,
+        "orden": 28,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-010-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.50999999999999,
+              -9.123
+            ],
+            [
+              -78.47999999999999,
+              -9.123
+            ],
+            [
+              -78.47999999999999,
+              -9.104999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.104999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.123
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-010",
+        "codigoProyecto": "MAS-010",
+        "nombreProyecto": "Conexión Chimbote",
+        "distrito": "Nuevo Chimbote",
+        "numero": 2,
+        "orden": 29,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-010-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.50999999999999,
+              -9.078
+            ],
+            [
+              -78.47999999999999,
+              -9.078
+            ],
+            [
+              -78.47999999999999,
+              -9.059999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.059999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.078
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "manzana_urbana",
+        "proyecto": "MAS-010",
+        "codigoProyecto": "MAS-010",
+        "nombreProyecto": "Conexión Chimbote",
+        "distrito": "Nuevo Chimbote",
+        "numero": 3,
+        "orden": 30,
+        "categoria": "Urban block",
+        "fuente": "datos_masificacion.geojson",
+        "descripcion": "Manzana urbana derivada de los lotes reales del proyecto."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1148 @@
+.contenido-principal{padding:22px 22px 28px}.cabecera-modulo{display:grid;gap:12px;margin-bottom:14px}.cabecera-modulo h1{margin:0;color:#17203a;font-size:1.65rem}.cabecera-modulo p{margin:4px 0 0;color:#748099;font-size:.9rem}.boton-crear-proyecto{width:max-content;padding:0 18px;height:44px;border:0;border-radius:12px;color:#fff;font:inherit;font-size:.72rem;font-weight:850;cursor:pointer;background:linear-gradient(110deg,#438eaf,#57bf79);box-shadow:0 10px 22px rgba(36,84,116,.16);justify-self:start;position:relative;z-index:2}.boton-crear-proyecto:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(36,84,116,.2)}.barra-herramientas-fise{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;justify-content:flex-end}.boton-crear-proyecto-toolbar{min-width:0;max-width:126px;height:40px;padding:0 12px;border-radius:11px;box-shadow:0 8px 18px rgba(36,84,116,.16);font-size:.66rem;white-space:nowrap}.barra-herramientas-fise .boton-herramientas-icono{width:52px;min-width:52px;height:52px;padding:0;display:grid;place-items:center;border-radius:14px}.barra-herramientas-fise .boton-herramientas-icono svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.filtros-masificacion{padding:16px 18px;margin-bottom:16px;border:1px solid #cbd8e8;border-radius:18px;background:#fff;box-shadow:0 10px 28px rgba(39,67,104,.08)}
+.filtros-masificacion label{display:grid;gap:6px;color:#71809a;font-size:var(--filtro-etiqueta-tamano);font-weight:800;letter-spacing:.05em;text-transform:uppercase}.buscador-proyecto{margin-bottom:12px}.buscador-proyecto span{height:35px;display:flex;align-items:center;gap:8px;padding:0 12px;border:1px solid #ced8e7;border-radius:10px;background:#f7f9fc}.buscador-proyecto b{color:#6591ad;font-size:.85rem}.buscador-proyecto input{width:100%;border:0;outline:0;background:transparent;color:#25324b;font-family:inherit;font-size:var(--filtro-busqueda-tamano);font-weight:400}.fila-filtros{display:grid;grid-template-columns:minmax(170px,1.25fr) repeat(4,minmax(112px,1fr)) auto;gap:10px;align-items:end}.fila-filtros select{height:40px;padding:0 11px;border:1px solid #ced8e7;border-radius:10px;background:#f7f9fc;color:#25324b;font:inherit;font-size:var(--filtro-control-tamano);font-weight:650}.fila-filtros button{height:40px;padding:0 16px;border:0;border-radius:10px;color:#fff;font:inherit;font-size:var(--filtro-boton-tamano);font-weight:800;cursor:pointer;background:linear-gradient(100deg,#4caee1,#56c872)}
+.tablero-masificacion{position:relative;display:grid;grid-template-columns:minmax(0,2.2fr) minmax(310px,.9fr);gap:16px;height:var(--alto-tablero-masificacion,calc(100dvh - 330px));min-height:460px;transition:grid-template-columns .28s ease,gap .28s ease}.tablero-masificacion.resumen-oculto{grid-template-columns:minmax(0,1fr) 0;gap:0}.mapa-panel,.panel-derecho{position:relative;min-height:0;border:1px solid #cbd8e7;border-radius:18px;overflow:hidden;background:#e5edf6}.mapa-panel{box-shadow:0 15px 34px rgba(40,74,109,.12)}#mapaMasificacion{width:100%;height:100%;min-height:0}.tablero-masificacion.resumen-oculto .panel-derecho{visibility:hidden;pointer-events:none}
+.boton-resumen-masificacion{position:absolute;z-index:600;top:50%;left:calc(69.5% - 8px);width:50px;height:50px;display:grid;place-items:center;padding:0;color:#fff;cursor:pointer;border:2px solid rgba(204,220,239,.85);border-radius:14px;background:#1d2948;box-shadow:0 9px 22px rgba(17,26,56,.25);transform:translate(-50%,-50%);transition:left .28s ease,background .2s,outline .2s}.boton-resumen-masificacion:hover,.boton-resumen-masificacion:focus-visible{background:#243f68;outline:2px solid #65b8db}.boton-resumen-masificacion>span{display:block;width:12px;height:12px;border-top:4px solid #fff;border-right:4px solid #fff;border-radius:1px;transform:rotate(45deg);transition:transform .25s}.tablero-masificacion.resumen-oculto .boton-resumen-masificacion{left:auto;right:12px;transform:translateY(-50%)}.tablero-masificacion.resumen-oculto .boton-resumen-masificacion>span{transform:rotate(-135deg)}
+.controles-mapa .subir{color:#326e8b}.controles-mapa button span{white-space:nowrap}
+.panel-flotante{position:absolute;z-index:510;top:76px;left:18px;width:245px;display:grid;gap:10px;padding:15px;border:1px solid #c5d5e5;border-radius:14px;background:rgba(255,255,255,.98);box-shadow:0 12px 30px rgba(25,55,87,.18);font-size:.8rem}.panel-flotante[hidden]{display:none}.panel-flotante label{display:flex;align-items:center;gap:8px;color:#43516a}.panel-flotante i{width:10px;height:10px;border-radius:50%}.panel-flotante .proyectada{background:#4e7de1}.panel-flotante .ejecucion{background:#e5a510}.panel-flotante .instalada{background:#3fac79}.panel-flotante hr{width:100%;border:0;border-top:1px solid #e0e7f0}.panel-flotante p,.panel-flotante small{margin:0;color:#78869d;line-height:1.45}.panel-subir{width:310px}.panel-subir input{position:absolute;opacity:0;pointer-events:none}.elegir-archivo{justify-content:center!important;padding:11px;border-radius:10px!important;color:#fff!important;background:#438eaf;cursor:pointer;font-weight:800}.leyenda{display:flex;align-items:center;gap:5px;color:#758198;font-size:.68rem}.leyenda i:nth-child(1){background:#bde5f4}.leyenda i:nth-child(2){background:#61b8dc}.leyenda i:nth-child(3){background:#246f9c}
+.grupo-capas{display:grid;gap:10px}.grupo-capas[hidden]{display:none}.capas-proyecto small{font-size:.58rem;font-weight:900}.capas-proyecto strong{padding-bottom:8px;border-bottom:1px solid #e1e8f0}.capas-proyecto i{border-radius:3px!important}.capa-estrato{background:#a98bd2}.capa-beneficiarios{background:#7655a8}.capa-cobertura{background:#69bdd6}.capa-troncal{height:4px!important;background:#e65c56}.capa-ramales{height:4px!important;background:#f0a632}.capa-concesionaria{height:4px!important;background:#3588c1}.capa-distrito{border:2px dashed #394c78;background:transparent}
+.contador-mapa{position:absolute;z-index:450;right:14px;bottom:12px;padding:8px 12px;border-radius:9px;color:#fff;background:rgba(17,26,56,.86);font-size:.72rem;font-weight:800}.panel-derecho{padding:12px 8px 12px 12px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#69afd0 #dce6f0}.panel-derecho::-webkit-scrollbar{width:8px}.panel-derecho::-webkit-scrollbar-track{border-radius:10px;background:#dce6f0}.panel-derecho::-webkit-scrollbar-thumb{border:2px solid #dce6f0;border-radius:10px;background:linear-gradient(180deg,#4d89b1,#61b3cf)}.panel-derecho::-webkit-scrollbar-thumb:hover{background:#3f8eb5}.resumen-cabecera,.avance-ciudades,.detalle-proyecto,.potencial-beneficiarios{padding:18px;border:1px solid #d8e1ed;border-radius:16px;background:#fff;box-shadow:0 10px 25px rgba(25,45,78,.06)}.resumen-cabecera small,.detalle-proyecto small,.potencial-beneficiarios small{color:#71809a;font-size:var(--panel-sobrelinea-tamano);font-weight:800;letter-spacing:.08em}.resumen-cabecera h2{margin:5px 0 4px;color:#17203a;font-size:var(--panel-titulo-tamano)}.resumen-cabecera p,.avance-ciudades p,.potencial-beneficiarios p{margin:0;color:#71809a;font-size:var(--panel-descripcion-tamano);font-weight:700}.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.kpis article{min-height:82px;display:grid;align-content:center;gap:6px;padding:13px;border:1px solid #d9e4f0;border-left:4px solid #7a91ae;border-radius:12px;background:linear-gradient(145deg,#f5f9fd,#eaf3fa)}.kpis article.verde{border-left-color:#3fac79}.kpis article.amarillo{border-left-color:#e5a510}.kpis article.azul{border-left-color:#4e7de1}.kpis span{display:block;color:#71809a;font-size:var(--panel-kpi-etiqueta-tamano)}.kpis strong{display:block;margin-top:5px;color:#17203a;font-size:var(--panel-kpi-valor-tamano)}.potencial-beneficiarios{margin-bottom:12px}.potencial-beneficiarios header{display:flex;justify-content:space-between;gap:10px}.potencial-beneficiarios h3{margin:5px 0 3px;font-size:1rem}.estado-algoritmo{align-self:start;padding:6px 9px;border-radius:12px;color:#267551;background:#e0f4e9;font-size:.58rem;font-weight:900}.metricas-potencial{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:13px 0}.metricas-potencial article{padding:10px;border-radius:10px;background:#f2f7fb}.metricas-potencial span{display:block;color:#73819a;font-size:.62rem}.metricas-potencial strong{display:block;margin-top:5px;font-size:.95rem}.potencial-beneficiarios button{width:100%;height:38px;border:0;border-radius:10px;color:#fff;background:#438eaf;font-size:.7rem;font-weight:800;cursor:pointer}.potencial-beneficiarios button span{margin-right:6px}.avance-ciudades h3{margin:0 0 3px;font-size:1rem}.avance-item{display:grid;grid-template-columns:80px 1fr 35px;gap:8px;align-items:center;margin-top:13px;font-size:.7rem;font-weight:700}.barra-avance{height:8px;overflow:hidden;border-radius:10px;background:#e7edf5}.barra-avance i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#4d80df,#5fbee0)}.detalle-proyecto{margin-top:12px}.detalle-proyecto header{display:flex;justify-content:space-between;gap:10px}.detalle-proyecto h2{margin:5px 0;font-size:1.05rem}.detalle-proyecto button{width:30px;height:30px;border:0;border-radius:9px;cursor:pointer}.detalle-proyecto dl{display:grid;grid-template-columns:1fr 1fr;gap:8px}.detalle-proyecto dl div{padding:10px;border-radius:9px;background:#f3f7fb}.detalle-proyecto dt{color:#7a879c;font-size:.65rem}.detalle-proyecto dd{margin:4px 0 0;font-size:.75rem;font-weight:800}
+.indicador-version-mapa{position:absolute;z-index:451;right:14px;top:14px;padding:7px 10px;border:1px solid #7897f1;border-radius:9px;color:#fff;background:rgba(48,81,186,.94);font-size:.6rem;font-weight:900;letter-spacing:.05em}.indicador-version-mapa.asbuilt{border-color:#58b987;background:rgba(28,117,79,.94)}.icono-proyecto-mapa.planificacion{border-style:dashed;box-shadow:0 0 0 3px rgba(78,125,225,.28),0 7px 15px rgba(24,48,76,.28)}.icono-proyecto-mapa.asbuilt{border-style:solid}
+.manzana-potencial{stroke:#7753a8;stroke-width:1.3;fill:#b9a2df;fill-opacity:.22;stroke-linejoin:round;stroke-linecap:round;filter:drop-shadow(0 2px 5px rgba(76,56,119,.12))}.lote-organico{stroke-linejoin:round;stroke-linecap:round;filter:drop-shadow(0 2px 5px rgba(65,44,110,.14))}.area-influencia{stroke:#4299bb;stroke-width:1.4;stroke-dasharray:6 5;fill:#65bbd6;fill-opacity:.09}.predio-potencial{stroke:#fff;stroke-width:1;fill:#7655a8;fill-opacity:.9}
+.estrato-inei{stroke-linejoin:round;stroke-linecap:round}.leyenda-estratos{display:flex;gap:5px;flex-wrap:wrap;padding:6px 2px 2px 30px}.leyenda-estratos .filtro-estrato{display:inline-flex;align-items:center;gap:4px;min-height:28px;padding:4px 8px;border:1px solid #d4dfed;border-radius:8px;background:#fff;color:#71809a;font-family:inherit;font-size:.62rem;font-weight:800;line-height:1;cursor:pointer;box-shadow:none;transition:background .18s,border-color .18s,color .18s,transform .18s}.leyenda-estratos .filtro-estrato:hover{border-color:#72acd0;color:#315c7d;transform:translateY(-1px)}.leyenda-estratos .filtro-estrato.activo{border-color:#4e98c4;background:#eaf6fb;color:#1f587a;box-shadow:0 0 0 2px rgba(78,152,196,.12)}.leyenda-estratos i{display:inline-block;width:11px!important;height:11px!important;border-radius:3px!important}.leyenda-estratos i[data-estrato="1"]{background:#3454a5}.leyenda-estratos i[data-estrato="2"]{background:#4d79cf}.leyenda-estratos i[data-estrato="3"]{background:#51a8d7}.leyenda-estratos i[data-estrato="4"]{background:#79c88a}.leyenda-estratos i[data-estrato="5"]{background:#e4bf55}
+.tramo-red{stroke-linecap:round;filter:drop-shadow(0 2px 3px rgba(26,54,81,.2))}
+.marcador-proyecto{background:transparent;border:0}.icono-proyecto-mapa{width:40px;height:40px;display:grid;place-items:center;border:3px solid #fff;border-radius:50%;color:#fff;background:var(--color-proyecto,#4e7de1);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-proyecto,#4e7de1) 22%,transparent),0 7px 15px rgba(24,48,76,.28)}.icono-proyecto-mapa svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.detalle-proyecto{margin-top:0;min-height:100%}.titulo-detalle-proyecto{display:flex;align-items:center;gap:11px}.icono-detalle-proyecto{width:39px;height:39px;display:grid;place-items:center;flex:0 0 auto;border-radius:11px;color:#fff;background:#438eaf;font-size:1.4rem}.detalle-proyecto header p{margin:3px 0 0;color:#7a879d;font-size:.7rem}.detalle-proyecto dl{margin-top:18px}.detalle-proyecto dl div{border-left:3px solid #d3e2ed}.detalle-proyecto dl div:nth-child(2){border-left-color:#e2a81e}
+.icono-detalle-proyecto.beneficiario{background:#7655a8}.volver-proyecto{width:100%!important;height:40px!important;margin-top:14px;color:#fff!important;border:0!important;border-radius:10px!important;background:#438eaf!important;font-size:.7rem;font-weight:800}.beneficiario-mapa{transition:r .15s}.beneficiario-mapa:hover{filter:drop-shadow(0 0 4px rgba(80,48,122,.5))}
+.grupo-herramientas-masificacion{position:absolute;top:51px;right:0;display:flex;align-items:center;gap:5px;padding:6px;border:1px solid #c4d6e2;border-radius:14px;background:#fff;box-shadow:0 12px 28px rgba(31,58,81,.2)}.grupo-herramientas-masificacion[hidden]{display:none}.grupo-herramientas-masificacion>i{width:1px;height:24px;background:#d5e1e9}.grupo-herramientas-masificacion button{width:34px;height:34px;display:grid;place-items:center;padding:0;color:#40516a;cursor:pointer;border:1px solid #dce5ec;border-radius:9px;background:#f4f7fa}.grupo-herramientas-masificacion button:hover,.grupo-herramientas-masificacion button.activo{color:#fff;border-color:#559ab8;background:#559ab8}.grupo-herramientas-masificacion svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.grupo-herramientas-masificacion button span{display:none;font-size:.46rem;font-weight:750}.herramientas-masificacion.ampliada .grupo-herramientas-masificacion button{width:56px;height:49px;grid-template-rows:21px auto}.herramientas-masificacion.ampliada .grupo-herramientas-masificacion button span{display:block}.lista-seleccion{display:grid;gap:8px;margin-top:14px}.lista-seleccion article{padding:10px;border:1px solid #d8e3ec;border-radius:10px;background:#f6f9fc}.lista-seleccion strong{display:block;font-size:.7rem}.lista-seleccion small{color:#758198;font-size:.6rem}.detalle-seleccion header button{width:auto;padding:0 10px;color:#fff;background:#438eaf}.modo-dibujo{cursor:crosshair!important}
+.modal-masificacion{width:min(1180px,94vw);max-height:90vh;padding:0;border:0;border-radius:20px;color:#1b2740;background:#f7f9fc;box-shadow:0 30px 80px rgba(18,35,58,.32)}.modal-masificacion::backdrop{background:rgba(15,29,49,.55);backdrop-filter:blur(3px)}.modal-masificacion>header{position:sticky;top:0;z-index:4;display:flex;justify-content:space-between;gap:20px;padding:20px 24px;color:#fff;background:linear-gradient(120deg,#263c63,#438eaf)}.modal-masificacion>header h2{margin:3px 0;font-size:1.25rem}.modal-masificacion>header p,.modal-masificacion>header small{margin:0;color:#dfeef5}.modal-masificacion>header button{width:38px;height:38px;border:1px solid #83b8cf;border-radius:11px;color:#fff;background:#233654;font-size:1.4rem;cursor:pointer}.modal-cuerpo{display:grid;gap:16px;padding:20px 24px 26px}.titulo-anexo{padding:16px;text-align:center;border:1px solid #d5e1ea;border-radius:14px;background:#fff}.titulo-anexo p{margin:6px 0}.campos-modal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.campos-modal label{display:grid;gap:5px;color:#64738b;font-size:.68rem;font-weight:750}.campos-modal input{min-width:0;padding:11px 12px;border:1px solid #ccd9e5;border-radius:9px;color:#24324b;background:#fff}.campo-ancho{grid-column:span 2}.barra-acciones-modal{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:12px;border:1px solid #d5e1ea;border-radius:13px;background:#fff}.barra-acciones-modal>div{margin-right:auto;display:grid}.barra-acciones-modal small{color:#708098}.barra-acciones-modal button,.barra-acciones-modal>label{padding:9px 12px;border:0;border-radius:9px;color:#fff;background:#438eaf;font:inherit;font-weight:750;cursor:pointer}.barra-acciones-modal input[type=file]{display:none}.tabla-modal{overflow:auto;border:1px solid #d5e1ea;border-radius:13px;background:#fff}.tabla-modal table{width:100%;border-collapse:collapse;font-size:.67rem}.tabla-modal th,.tabla-modal td{padding:11px 10px;text-align:left;border-bottom:1px solid #e2e9ef;vertical-align:top}.tabla-modal th{color:#52627a;background:#eef4f8}.gis-ok{display:inline-block;padding:4px 7px;border-radius:20px;color:#24704e;background:#daf2e6;white-space:nowrap}.eliminar-partida{border:0;color:#b24444;background:transparent;cursor:pointer}.estado-modal,.estado-borrador{padding:9px 12px;border-radius:9px;color:#275d73;background:#e1f2f8}.vista-documento{padding:22px;border:1px solid #d5e1ea;border-radius:14px;background:#fff;box-shadow:0 7px 22px rgba(38,62,91,.07)}.vista-documento h3{margin-top:0}.vista-documento h4{margin:16px 0 4px;color:#294f70}.vista-documento p{margin:0;color:#52627a;line-height:1.55}@media(max-width:760px){.campos-modal{grid-template-columns:1fr}.campo-ancho{grid-column:auto}.modal-masificacion{width:98vw}.modal-cuerpo{padding:14px}}
+@media(max-width:1050px){.fila-filtros{grid-template-columns:repeat(2,1fr)}.tablero-masificacion{grid-template-columns:1fr;height:auto}.mapa-panel{height:600px}.panel-derecho{max-height:620px}}
+@media(max-width:760px){.contenido-principal{padding:72px 10px 15px}.fila-filtros{grid-template-columns:1fr}.tablero-masificacion{min-height:0}.mapa-panel{height:560px}.panel-flotante{top:68px;left:12px;max-width:calc(100% - 24px)}}
+.modal-subir-capa{width:min(830px,calc(100vw - 32px));max-height:min(94vh,900px);padding:0;border:1px solid #33487a;border-radius:24px;color:#f6f8ff;background:#111a38;box-shadow:0 28px 90px rgba(7,14,35,.55)}.modal-subir-capa::backdrop{background:rgba(7,14,30,.72);backdrop-filter:blur(5px)}.modal-subir-capa header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:28px 30px 24px;border-bottom:1px solid #33487a}.modal-subir-capa h2{margin:0;color:#fff;font-size:2rem;line-height:1.05}.modal-subir-capa header p{max-width:650px;margin:12px 0 0;color:#aebbd9;font-size:1rem;font-weight:650;line-height:1.35}.modal-subir-capa header button{width:52px;height:52px;flex:none;border:1px solid #344a7c;border-radius:16px;color:#fff;background:#172243;font-size:2rem;line-height:1;cursor:pointer}.cuerpo-subir-capa{display:grid;gap:18px;padding:24px 30px}.campo-subir-capa{display:grid;gap:9px;color:#b9c6e3;font-size:1rem;font-weight:800}.campo-subir-capa>input[type=text],.campo-subir-capa>input:not([type]){height:58px;padding:0 18px;border:1px solid #33487a;border-radius:16px;outline:0;color:#f4f7ff;background:#0c142e;font:inherit;font-size:1rem}.campo-subir-capa>input:focus{border-color:#58c9e2;box-shadow:0 0 0 3px rgba(88,201,226,.15)}.campo-subir-capa>input[type=file]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.boton-archivo-capa{width:max-content;padding:15px 24px;border:1px solid #33487a;border-radius:16px;color:#f7f9ff;background:#172243;font-weight:800;cursor:pointer}.campo-subir-capa small{color:#9eacce;font-size:.86rem;font-weight:650}.visibilidad-capa{display:grid;gap:14px;margin:0;padding:0;border:0}.visibilidad-capa legend{margin-bottom:2px;color:#b9c6e3;font-size:1rem;font-weight:800}.visibilidad-capa label{position:relative;display:block}.visibilidad-capa input{position:absolute;opacity:0}.visibilidad-capa label>span{display:grid;gap:5px;padding:18px 20px;border:1px solid #33487a;border-radius:17px;color:#f5f7ff;background:#151e3b;cursor:pointer}.visibilidad-capa input:checked+span{border-color:#58c9e2;box-shadow:0 0 0 2px rgba(88,201,226,.18)}.visibilidad-capa b{font-size:1rem}.visibilidad-capa small{color:#9eacce;font-size:.86rem;font-weight:650}.visibilidad-capa input:checked+span:after{content:'✓';position:absolute;right:22px;top:18px;width:22px;height:22px;display:grid;place-items:center;border-radius:50%;color:#0b1631;background:#59cce2;font-weight:900}.campo-subir-capa output{display:flex;align-items:center;min-height:58px;padding:0 18px;border:1px solid #33487a;border-radius:16px;color:#9eacce;background:#0c142e}.estado-subir-capa{margin:0;color:#9eacce;font-size:.88rem}.modal-subir-capa footer{display:flex;justify-content:flex-end;gap:14px;padding:4px 30px 28px}.modal-subir-capa footer button{min-width:150px;height:50px;padding:0 22px;border-radius:15px;font:inherit;font-weight:800;cursor:pointer}.cancelar-capa{border:1px solid #33487a;color:#fff;background:#172243}.cargar-capa{border:0;color:#fff;background:linear-gradient(110deg,#46afe0,#4fc76c)}@media(max-width:640px){.modal-subir-capa header{padding:22px 20px}.modal-subir-capa h2{font-size:1.65rem}.modal-subir-capa header p{font-size:.86rem}.cuerpo-subir-capa{padding:20px}.modal-subir-capa footer{padding:4px 20px 22px}.modal-subir-capa footer button{min-width:0;flex:1}}
+.modal-subir-capa{overflow:hidden}.modal-subir-capa[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}.cuerpo-subir-capa{overflow:auto;scrollbar-width:thin;scrollbar-color:#58a9ca #182342}.cargar-capa:disabled{cursor:wait;opacity:.7}
+
+/* Modal GIS unificado con el resto de ventanas de Masificación */
+.modal-masificacion.modal-subir-capa{
+  width:min(760px,calc(100vw - 32px));
+  max-height:min(90vh,820px);
+  color:#1b2740;
+  border:1px solid #cbdbe7;
+  border-radius:20px;
+  background:#f7f9fc;
+  box-shadow:0 28px 80px rgba(18,35,58,.32);
+}
+.modal-masificacion.modal-subir-capa::backdrop{background:rgba(15,29,49,.55);backdrop-filter:blur(3px)}
+.modal-masificacion.modal-subir-capa>header{
+  padding:20px 24px;
+  color:#fff;
+  border-bottom:0;
+  background:linear-gradient(120deg,#263c63,#438eaf);
+}
+.modal-masificacion.modal-subir-capa h2{color:#fff;font-size:1.25rem;line-height:1.2}
+.modal-masificacion.modal-subir-capa header p{max-width:590px;margin:6px 0 0;color:#dfeef5;font-size:.72rem;font-weight:600;line-height:1.45}
+.modal-masificacion.modal-subir-capa header button{
+  width:38px;
+  height:38px;
+  border:1px solid #83b8cf;
+  border-radius:11px;
+  color:#fff;
+  background:#233654;
+  font-size:1.4rem;
+}
+.modal-masificacion.modal-subir-capa .cuerpo-subir-capa{
+  gap:14px;
+  padding:20px 24px;
+  background:#f7f9fc;
+  scrollbar-color:#76abc3 #e5edf4;
+}
+.modal-masificacion.modal-subir-capa .campo-subir-capa,
+.modal-masificacion.modal-subir-capa .visibilidad-capa legend{
+  gap:6px;
+  color:#64738b;
+  font-size:.68rem;
+  font-weight:800;
+}
+.modal-masificacion.modal-subir-capa .campo-subir-capa>input[type=text]{
+  height:44px;
+  padding:0 13px;
+  color:#24324b;
+  border:1px solid #ccd9e5;
+  border-radius:10px;
+  background:#fff;
+  font-size:.74rem;
+}
+.modal-masificacion.modal-subir-capa .campo-subir-capa>input:focus{border-color:#4ca5c9;box-shadow:0 0 0 3px rgba(76,165,201,.13)}
+.modal-masificacion.modal-subir-capa .boton-archivo-capa{
+  padding:11px 15px;
+  color:#fff;
+  border:0;
+  border-radius:10px;
+  background:#438eaf;
+  font-size:.7rem;
+}
+.modal-masificacion.modal-subir-capa .campo-subir-capa small{color:#78869d;font-size:.63rem}
+.modal-masificacion.modal-subir-capa .visibilidad-capa{grid-template-columns:1fr 1fr;gap:10px}
+.modal-masificacion.modal-subir-capa .visibilidad-capa legend{grid-column:1/-1}
+.modal-masificacion.modal-subir-capa .visibilidad-capa label>span{
+  min-height:66px;
+  align-content:center;
+  gap:4px;
+  padding:12px 42px 12px 14px;
+  color:#26344c;
+  border:1px solid #d5e1ea;
+  border-radius:12px;
+  background:#fff;
+}
+.modal-masificacion.modal-subir-capa .visibilidad-capa input:checked+span{border-color:#4ca5c9;box-shadow:0 0 0 3px rgba(76,165,201,.12);background:#eef8fc}
+.modal-masificacion.modal-subir-capa .visibilidad-capa b{font-size:.72rem}
+.modal-masificacion.modal-subir-capa .visibilidad-capa small{color:#748299;font-size:.6rem}
+.modal-masificacion.modal-subir-capa .visibilidad-capa input:checked+span:after{
+  right:14px;
+  top:50%;
+  width:21px;
+  height:21px;
+  color:#fff;
+  background:#4ba7c9;
+  transform:translateY(-50%);
+}
+.modal-masificacion.modal-subir-capa .campo-subir-capa output{
+  min-height:44px;
+  padding:0 13px;
+  color:#6f7d93;
+  border:1px solid #ccd9e5;
+  border-radius:10px;
+  background:#fff;
+  font-size:.7rem;
+}
+.modal-masificacion.modal-subir-capa .estado-subir-capa{
+  padding:10px 12px;
+  color:#537087;
+  border-radius:10px;
+  background:#eaf3f7;
+  font-size:.64rem;
+}
+.modal-masificacion.modal-subir-capa>footer{
+  padding:14px 24px 20px;
+  border-top:1px solid #e0e8ef;
+  background:#fff;
+}
+.modal-masificacion.modal-subir-capa>footer button{
+  min-width:130px;
+  height:41px;
+  border-radius:10px;
+  font-size:.68rem;
+}
+.modal-masificacion.modal-subir-capa .cancelar-capa{color:#52647b;border:0;background:#edf2f6}
+.modal-masificacion.modal-subir-capa .cargar-capa{color:#fff;background:linear-gradient(110deg,#489ec5,#59bf77)}
+@media(max-width:640px){
+  .modal-masificacion.modal-subir-capa .visibilidad-capa{grid-template-columns:1fr}
+}
+
+.acciones-resumen-masificacion{display:grid;gap:10px;margin:12px 0}
+.accion-resumen{
+  width:100%;
+  min-height:62px;
+  display:grid;
+  grid-template-columns:36px 1fr auto;
+  align-items:center;
+  gap:11px;
+  padding:10px 13px;
+  text-align:left;
+  color:#293a55;
+  border:1px solid #d4e0ea;
+  border-radius:13px;
+  background:#fff;
+  box-shadow:0 7px 18px rgba(34,62,91,.06);
+  cursor:pointer;
+}
+.accion-resumen:hover{border-color:#77b4cd;background:#f3fafc;transform:translateY(-1px)}
+.accion-resumen.principal{color:#fff;border-color:#438eaf;background:linear-gradient(110deg,#438eaf,#57afc7)}
+.accion-resumen svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.accion-resumen span{display:grid;gap:3px}
+.accion-resumen strong{font-size:.72rem}
+.accion-resumen small{color:#73829a;font-size:.58rem;font-weight:650}
+.accion-resumen.principal small{color:#e2f2f7}
+.accion-resumen>b{font-size:1.35rem;font-weight:500}
+
+.modal-potencial-masificacion{width:min(1040px,94vw)}
+.modal-potencial-masificacion[open],.modal-exportar-masificacion[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+.modal-potencial-masificacion .modal-cuerpo{overflow:auto}
+.metricas-modal-potencial{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.metricas-modal-potencial article{padding:14px;border:1px solid #d7e2eb;border-radius:12px;background:linear-gradient(145deg,#fff,#eef5f9)}
+.metricas-modal-potencial span{display:block;color:#708099;font-size:.58rem;font-weight:800;text-transform:uppercase}
+.metricas-modal-potencial strong{display:block;margin-top:7px;color:#1d2945;font-size:1.15rem}
+.tabla-potencial table{font-size:.68rem}
+.metodologia-potencial{margin:0;color:#708099;font-size:.63rem;line-height:1.5}
+.pie-modal-potencial,.acciones-exportacion-masificacion{display:flex;justify-content:flex-end;gap:10px;padding:14px 24px 20px;border-top:1px solid #e0e8ef;background:#fff}
+.pie-modal-potencial button,.acciones-exportacion-masificacion button{min-height:41px;padding:0 16px;border:0;border-radius:10px;font:inherit;font-size:.68rem;font-weight:800;cursor:pointer}
+.pie-modal-potencial button:first-child,.acciones-exportacion-masificacion button:first-child{color:#52647b;background:#edf2f6}
+.pie-modal-potencial button:last-child,.acciones-exportacion-masificacion button:last-child{color:#fff;background:linear-gradient(110deg,#489ec5,#59bf77)}
+
+.modal-exportar-masificacion{width:min(680px,94vw)}
+.formatos-exportacion-masificacion{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0;padding:0;border:0}
+.formatos-exportacion-masificacion legend{grid-column:1/-1;margin-bottom:5px;color:#5f6f87;font-size:.65rem;font-weight:800}
+.formatos-exportacion-masificacion label{position:relative}
+.formatos-exportacion-masificacion input{position:absolute;opacity:0}
+.formatos-exportacion-masificacion span{display:grid;gap:4px;padding:14px;border:1px solid #d5e0e9;border-radius:12px;background:#fff;cursor:pointer}
+.formatos-exportacion-masificacion input:checked+span{border-color:#4899bd;box-shadow:0 0 0 3px rgba(72,153,189,.13);background:#eef8fc}
+.formatos-exportacion-masificacion b{font-size:.78rem}
+.formatos-exportacion-masificacion small{color:#748299;font-size:.57rem}
+.alcance-exportacion-masificacion{display:grid;grid-template-columns:auto 1fr auto auto;gap:10px;align-items:center;padding:13px;border-radius:11px;background:#eaf2f6;font-size:.65rem}
+.alcance-exportacion-masificacion span{color:#758299}
+
+@media(max-width:720px){
+  .metricas-modal-potencial{grid-template-columns:1fr 1fr}
+  .formatos-exportacion-masificacion{grid-template-columns:1fr}
+  .alcance-exportacion-masificacion{grid-template-columns:auto 1fr}
+}
+
+/* Trazabilidad integrada en Liquidaciones */
+#modalLiquidaciones[open]{display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
+.panel-liquidacion{overflow:auto}
+.panel-liquidacion[hidden]{display:none!important}
+.pestanas-liquidacion{display:flex;gap:6px;padding:10px 24px;border-bottom:1px solid #dbe5ec;background:#fff}
+.pestanas-liquidacion button{min-height:36px;padding:0 16px;border:1px solid transparent;border-radius:9px;color:#66758c;background:transparent;font:inherit;font-size:.68rem;font-weight:800;cursor:pointer}
+.pestanas-liquidacion button:hover{background:#f0f5f8}
+.pestanas-liquidacion button.activa{color:#276882;border-color:#a8cede;background:#e8f4f8;box-shadow:inset 0 -2px 0 #489aba}
+.cabecera-trazabilidad,.cabecera-auditoria{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 18px;border:1px solid #d5e1ea;border-radius:14px;background:#fff}
+.cabecera-trazabilidad h3,.cabecera-auditoria h3{margin:3px 0;color:#1e2b46;font-size:1.05rem}
+.cabecera-trazabilidad p,.cabecera-auditoria p{margin:0;color:#718099;font-size:.64rem}
+.cabecera-trazabilidad small,.cabecera-auditoria small{color:#438eaf;font-size:.57rem;font-weight:850;letter-spacing:.07em}
+.estado-expediente{min-width:190px;display:grid;gap:3px;padding:12px 14px;border-left:4px solid #e2a21a;border-radius:11px;background:#fff8e9}
+.estado-expediente span,.estado-expediente small{color:#7f7257;font-size:.57rem}
+.estado-expediente strong{color:#644f1b;font-size:.78rem}
+.transicion-zona{display:grid;grid-template-columns:minmax(240px,1fr) 240px auto;gap:12px;align-items:end;padding:15px 17px;border:1px solid #cfe0e9;border-radius:14px;background:linear-gradient(120deg,#eef7fa,#f7fbfc)}
+.transicion-zona>div{display:grid;gap:3px}.transicion-zona>div small{color:#438eaf;font-size:.56rem;font-weight:850}.transicion-zona>div strong{color:#1f3f5b;font-size:.82rem}.transicion-zona p{margin:0;color:#708099;font-size:.61rem}
+.transicion-zona label{display:grid;gap:5px;color:#66758c;font-size:.62rem;font-weight:780}
+.transicion-zona select{height:39px;padding:0 10px;border:1px solid #c8d8e4;border-radius:9px;color:#253650;background:#fff;font:inherit;font-size:.66rem;font-weight:700}
+.transicion-zona button,.cabecera-auditoria button{min-height:39px;padding:0 14px;border:0;border-radius:9px;color:#fff;background:linear-gradient(110deg,#438eaf,#56b57a);font:inherit;font-size:.65rem;font-weight:800;cursor:pointer}
+.flujo-expediente{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.flujo-expediente article{position:relative;display:flex;align-items:center;gap:10px;min-height:70px;padding:12px;border:1px solid #d7e1e9;border-radius:12px;background:#fff}
+.flujo-expediente article b{flex:0 0 31px;height:31px;display:grid;place-items:center;border-radius:50%;color:#7a8798;background:#edf2f5;font-size:.68rem}
+.flujo-expediente article span{min-width:0;display:grid;gap:4px}.flujo-expediente article strong{color:#37455d;font-size:.67rem}.flujo-expediente article small{color:#8591a3;font-size:.55rem}
+.flujo-expediente article.completada{border-color:#b9dfcc;background:#f5fbf8}.flujo-expediente article.completada b{color:#fff;background:#49a779}.flujo-expediente article.completada strong{color:#276849}
+.flujo-expediente article.actual{border-color:#efcf82;box-shadow:0 0 0 3px rgba(226,162,26,.11);background:#fffaf0}.flujo-expediente article.actual b{color:#fff;background:#e2a21a}.flujo-expediente article.actual strong{color:#6d5318}
+.avance-expediente{display:flex;align-items:center;gap:12px;padding:0 2px}.avance-expediente>span{flex:1;height:8px;overflow:hidden;border-radius:20px;background:#dfe7ed}.avance-expediente i{display:block;width:44%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#49a779,#55b5ce)}.avance-expediente strong{color:#426178;font-size:.63rem}
+.cabecera-auditoria button{background:#438eaf}
+.resumen-auditoria{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.resumen-auditoria article{display:grid;gap:5px;padding:13px 15px;border:1px solid #d6e1e9;border-radius:11px;background:#fff}.resumen-auditoria span{color:#718099;font-size:.58rem}.resumen-auditoria strong{color:#1e2b46;font-size:.78rem}.resumen-auditoria .estado-en-curso{color:#b77a00}
+.tabla-auditoria table{font-size:.65rem}.tabla-auditoria td:first-child{white-space:nowrap}.movimiento-actual{display:inline-block;padding:4px 7px;border-radius:20px;color:#276882;background:#e2f2f8}
+@media(max-width:820px){
+  .transicion-zona{grid-template-columns:1fr}
+  .flujo-expediente{grid-template-columns:1fr 1fr}
+  .cabecera-trazabilidad,.cabecera-auditoria{align-items:flex-start}
+}
+@media(max-width:560px){
+  .pestanas-liquidacion{padding-inline:12px;overflow:auto}.pestanas-liquidacion button{flex:1}
+  .cabecera-trazabilidad,.cabecera-auditoria{display:grid}
+  .flujo-expediente,.resumen-auditoria{grid-template-columns:1fr}
+}
+
+/* Ajustes de lectura cartográfica y trazabilidad independiente */
+.tablero-masificacion{min-height:380px}
+.leyenda-beneficiarios-mapa{position:absolute;z-index:455;left:50%;bottom:12px;display:flex;gap:12px;align-items:center;padding:7px 10px;border:1px solid rgba(191,207,223,.9);border-radius:10px;color:#33445f;background:rgba(255,255,255,.94);box-shadow:0 6px 18px rgba(29,50,78,.14);font-size:.59rem;font-weight:800;transform:translateX(-50%)}
+.leyenda-beneficiarios-mapa span{display:flex;align-items:center;gap:5px;white-space:nowrap}
+.leyenda-beneficiarios-mapa i{width:10px;height:10px;border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 1px rgba(37,55,82,.18)}
+.leyenda-beneficiarios-mapa i.normal{background:#2f9d78}.leyenda-beneficiarios-mapa i.potencial{background:#7655a8}
+.icono-detalle-proyecto.beneficiario.normal{background:#2f9d78}
+.avance-periodos-proyecto{margin-top:14px;padding:14px;box-shadow:none;background:#f8fbfd}
+.avance-periodos-proyecto .avance-item{grid-template-columns:35px 1fr 38px;margin-top:9px}
+.accion-resumen.trazabilidad{border-color:#c6d8e6;background:linear-gradient(145deg,#f8fbfd,#edf5f9)}
+.accion-resumen.trazabilidad svg{color:#3e799a}
+
+/* Informes de supervisión: IDT diario e ISO semanal */
+.accion-resumen.supervision svg{color:#69b7d8}.modal-supervision{width:min(1120px,94vw)!important}.modal-supervision .supervision-cuerpo{max-height:calc(88vh - 150px);overflow:auto}.supervision-tipos{display:grid;grid-template-columns:1fr 1fr;gap:10px}.supervision-tipos button{display:grid;gap:3px;padding:12px 16px;text-align:left;color:var(--mas-texto);border:1px solid var(--mas-borde);border-radius:12px;background:var(--mas-tarjeta-2);cursor:pointer}.supervision-tipos button.activo{border-color:#4f75e8;background:#203667;box-shadow:inset 3px 0 #65c4e8}.supervision-tipos span{font-size:.82rem;font-weight:850}.supervision-tipos small{font-size:.62rem}.supervision-configuracion{display:grid;grid-template-columns:1.5fr 1.4fr 1fr;gap:10px;padding:13px;border:1px solid var(--mas-borde);border-radius:13px;background:var(--mas-tarjeta)}.supervision-configuracion label{display:grid;gap:6px;font-size:.64rem;font-weight:800}.supervision-configuracion input,.supervision-configuracion select{width:100%;min-width:0;height:40px;padding:0 11px;border:1px solid #435783;border-radius:9px;color:var(--mas-texto);background:#0d1730}.supervision-vista{display:grid;gap:12px}.supervision-portada{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 19px;border:1px solid #425784;border-left:5px solid #2563eb;border-radius:14px;background:#142850}.supervision-portada h3{margin:3px 0;font-size:1.12rem}.supervision-portada p{margin:0}.supervision-portada>strong{padding:9px 12px;border:1px solid #526a9c;border-radius:10px;white-space:nowrap}.supervision-ficha,.supervision-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.supervision-ficha span,.supervision-kpis article{display:grid;gap:5px;padding:12px;border:1px solid var(--mas-borde);border-radius:11px;background:var(--mas-tarjeta)}.supervision-ficha small,.supervision-kpis small{font-size:.59rem;text-transform:uppercase;letter-spacing:.05em}.supervision-ficha b{font-size:.71rem}.supervision-kpis strong{font-size:1rem}.supervision-kpis span{color:var(--mas-texto-secundario);font-size:.59rem}.supervision-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.supervision-grid article,.supervision-curvas,.supervision-evidencias,.supervision-tablas section{padding:14px;border:1px solid var(--mas-borde);border-radius:12px;background:var(--mas-tarjeta)}.supervision-grid h4,.supervision-curvas h4,.supervision-evidencias h4,.supervision-tablas h4{margin:0 0 8px;font-size:.8rem}.supervision-grid p,.supervision-grid li{color:var(--mas-texto-secundario);font-size:.65rem;line-height:1.5}.supervision-grid ul{margin:0;padding-left:17px}.supervision-progreso{height:7px;margin-top:10px;overflow:hidden;border-radius:8px;background:#0d1730}.supervision-progreso i{display:block;height:100%;border-radius:inherit;background:#20d7d4}.supervision-tablas{display:grid;grid-template-columns:1fr 1fr;gap:10px}.supervision-tablas table{width:100%;border-collapse:collapse;font-size:.64rem}.supervision-tablas th,.supervision-tablas td{padding:7px;border-bottom:1px solid #34486f;text-align:left}.supervision-tablas th{color:#cfe2ff}.supervision-evidencias header{display:flex;justify-content:space-between;align-items:center}.supervision-evidencias header p{margin:0}.supervision-evidencias header>b{padding:6px 10px;border-radius:20px;color:#cfe2ff;background:#203667}.supervision-evidencias>div{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.supervision-evidencias span{min-height:56px;display:grid;place-items:end start;padding:9px;border:1px solid #425784;border-radius:9px;color:#d8e7ff;background:linear-gradient(145deg,#16284d,#203667);font-size:.61rem;font-weight:750}.supervision-curvas>div{display:grid;grid-template-columns:180px 1fr;gap:10px;align-items:center;margin:10px 0}.supervision-curvas span{font-size:.65rem}.supervision-curvas span b{float:right}.supervision-curvas i{height:9px;overflow:hidden;border-radius:10px;background:#0d1730}.supervision-curvas em{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#2563eb,#20d7d4)}.supervision-curvas p{margin:12px 0 0}.supervision-acciones{position:sticky;bottom:0;z-index:5;display:flex;justify-content:flex-end;align-items:center;gap:9px;padding:13px 20px;border-top:1px solid var(--mas-borde);background:#101a34}.supervision-acciones>span{margin-right:auto;color:var(--mas-texto-secundario);font-size:.64rem}.supervision-acciones button{min-height:38px;padding:0 15px;border:1px solid #435783;border-radius:9px;color:var(--mas-texto);background:#182644;font-weight:800;cursor:pointer}.supervision-acciones button.principal{border-color:#2563eb;background:#2563eb}
+@media(max-width:760px){.supervision-configuracion,.supervision-ficha,.supervision-kpis,.supervision-grid,.supervision-tablas{grid-template-columns:1fr}.supervision-evidencias>div{grid-template-columns:1fr 1fr}.supervision-acciones{flex-wrap:wrap}.supervision-acciones>span{width:100%}}
+#modalLiquidaciones[open]{grid-template-rows:auto minmax(0,1fr)}
+.modal-trazabilidad{width:min(1460px,96vw);height:min(900px,92vh);max-height:92vh;overflow:hidden}
+.modal-trazabilidad[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
+.modal-trazabilidad .contenido-trazabilidad{display:grid;align-content:start;gap:14px;padding:20px 24px 28px;overflow:auto}
+.modal-trazabilidad .trazabilidad-expediente,.modal-trazabilidad .auditoria-expediente{display:grid;gap:14px;padding:0;overflow:visible}
+.modal-trazabilidad .auditoria-expediente{padding-top:16px;border-top:1px solid #dbe5ec}
+.trazabilidad-controles{display:grid;grid-template-columns:1.05fr 1.05fr 1fr auto auto;gap:12px;align-items:end;padding:14px;border:1px solid #d7e3ec;border-radius:18px;background:#f7fafc}
+.trazabilidad-controles label{display:grid;gap:7px;color:#65738c;font-size:12px;font-weight:800}
+.trazabilidad-controles select,.trazabilidad-controles input{height:43px;border:1px solid #cad9e6;border-radius:12px;background:#fff;padding:0 12px;color:#1c2b46;font-family:inherit;font-size:13px;font-weight:700;outline:none}
+.trazabilidad-controles button{min-height:43px;border:0;border-radius:12px;background:linear-gradient(135deg,#4e93b7,#57bf79);padding:0 18px;color:#fff;font-weight:800;cursor:pointer}
+.trazabilidad-controles button.secundario{border:1px solid #c8d8e5;background:#fff;color:#334660}
+.formulario-expediente{display:grid;gap:14px;padding:18px;border:1px solid #cddce7;border-radius:18px;background:#f8fbfd}
+.formulario-expediente[hidden]{display:none}
+.formulario-expediente>header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:0;border:0;background:transparent}
+.formulario-expediente>header h3,.historial-fase h3{margin:0;color:#172844;font-size:18px}.formulario-expediente>header p{margin:4px 0 0;color:#74829a;font-size:12px}
+.formulario-expediente>header button{width:38px;height:38px;border:1px solid #c6d7e4;border-radius:11px;background:#fff;color:#314660;font-size:23px;cursor:pointer}
+.campos-expediente{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;align-items:end}
+.campos-expediente label{display:grid;gap:6px;color:#62728b;font-size:11px;font-weight:800}.campos-expediente input,.campos-expediente select{min-width:0;height:42px;border:1px solid #c8d8e5;border-radius:11px;background:#fff;padding:0 11px;color:#1b2c49;font-family:inherit;font-size:12px;font-weight:700}
+.campos-expediente .campo-documento{grid-column:span 2}.campos-expediente .campo-documento input{height:auto;padding:8px}.campos-expediente .campo-documento small{color:#8190a4;font-size:10px}
+.campos-expediente>button{height:42px;border:0;border-radius:11px;background:#379569;color:#fff;font-weight:800;cursor:pointer}.estado-formulario-expediente{margin:0;color:#2b805d;font-size:12px;font-weight:800}
+.flujo-expediente-interactivo article{cursor:pointer;transition:border-color .18s,box-shadow .18s,transform .18s}.flujo-expediente-interactivo article:hover{transform:translateY(-1px);border-color:#77b8d6}.flujo-expediente-interactivo article.activa{border-color:#45a6d0!important;box-shadow:0 0 0 3px rgba(69,166,208,.14)!important}
+.historial-fase{display:grid;gap:12px;padding-top:6px}.historial-fase>header{display:flex;align-items:center;justify-content:space-between;gap:12px}.historial-fase>header small{color:#74839a;font-size:11px;font-weight:700}.historial-fase .tabla-modal{max-height:none}.historial-fase table{min-width:900px}.historial-fase th,.historial-fase td{padding:11px 12px}
+.estado-historial{height:36px;border:1px solid #c8d8e5;border-radius:10px;background:#fff;padding:0 9px;color:#263a56;font-family:inherit;font-size:11px;font-weight:700}
+.acciones-historial{display:flex;gap:6px}.acciones-historial button{width:34px;height:34px;border:1px solid #bcd1e0;border-radius:9px;background:#edf6fb;color:#376985;font-size:16px;cursor:pointer}.acciones-historial button.eliminar{border-color:#efc2c2;background:#fff1f1;color:#bd4848}.historial-fase tr.editando td[contenteditable="true"]{background:#fff8de;outline:1px dashed #d6a928}
+.control-liquidacion-total{display:flex;align-items:center;gap:12px;padding:13px 15px;border:1px solid #bed8e7;border-radius:14px;background:#f0f8fc;color:#223650;cursor:pointer}.control-liquidacion-total input{width:20px;height:20px;accent-color:#439abb}.control-liquidacion-total span{display:grid;gap:3px}.control-liquidacion-total b{font-size:13px}.control-liquidacion-total small{color:#708097;font-size:11px}
+@media(max-width:760px){
+  .leyenda-beneficiarios-mapa{left:12px;right:12px;justify-content:center;transform:none}
+  .modal-trazabilidad .contenido-trazabilidad{padding:14px}
+  .trazabilidad-controles{grid-template-columns:1fr}
+  .campos-expediente{grid-template-columns:1fr}.campos-expediente .campo-documento{grid-column:auto}
+}
+@media(min-width:761px) and (max-width:1180px){.trazabilidad-controles{grid-template-columns:repeat(3,1fr)}.trazabilidad-controles button{width:100%}}
+
+/* Crear proyecto */
+.cabecera-modulo{display:grid;gap:12px}.boton-crear-proyecto{width:max-content;padding:0 18px;height:44px;border:0;border-radius:12px;color:#fff;font:inherit;font-size:.72rem;font-weight:850;cursor:pointer;background:linear-gradient(110deg,#438eaf,#57bf79);box-shadow:0 10px 22px rgba(36,84,116,.16);justify-self:start;position:relative;z-index:2}.boton-crear-proyecto:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(36,84,116,.2)}
+.modal-crear-proyecto{width:min(1240px,96vw);max-height:94vh}.modal-crear-proyecto[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}.cuerpo-crear-proyecto{display:grid;grid-template-columns:minmax(0,1fr) 1.2fr;gap:16px;overflow:auto}.tarjeta-crear-proyecto{display:grid;gap:14px;padding:16px;border:1px solid #d5e1ea;border-radius:16px;background:#fff;box-shadow:0 10px 25px rgba(25,45,78,.06)}.campos-crear-proyecto{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.campos-crear-proyecto label{display:grid;gap:6px;color:#637288;font-size:.64rem;font-weight:850;text-transform:uppercase;letter-spacing:.05em}.campos-crear-proyecto input,.campos-crear-proyecto select{min-width:0;height:42px;padding:0 12px;border:1px solid #ccd9e5;border-radius:10px;color:#25324b;background:#fff;font:inherit;font-size:.75rem;font-weight:650}.campos-crear-proyecto input:focus,.campos-crear-proyecto select:focus{border-color:#4ca5c9;box-shadow:0 0 0 3px rgba(76,165,201,.12);outline:0}.campos-crear-proyecto .campo-ancho{grid-column:1/-1}.tarjeta-beneficiarios-proyecto{min-width:0}.cabecera-beneficiarios-proyecto{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.cabecera-beneficiarios-proyecto small{display:block;color:#71809a;font-size:.58rem;font-weight:850;letter-spacing:.08em}.cabecera-beneficiarios-proyecto h3{margin:3px 0 4px;color:#17203a;font-size:1rem}.cabecera-beneficiarios-proyecto p{margin:0;color:#71809a;font-size:.68rem;font-weight:650}.acciones-beneficiarios-proyecto{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.acciones-beneficiarios-proyecto button,.boton-subir-excel-proyecto{height:40px;padding:0 14px;border:0;border-radius:10px;color:#fff;background:linear-gradient(110deg,#438eaf,#57bf79);font:inherit;font-size:.68rem;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.boton-subir-excel-proyecto{position:relative;overflow:hidden}.boton-subir-excel-proyecto input{position:absolute;inset:0;opacity:0;cursor:pointer}.barra-beneficiarios-proyecto{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 12px;border:1px solid #dce6ee;border-radius:12px;background:#f7fbfd}.barra-beneficiarios-proyecto strong{color:#1f334c;font-size:.66rem;letter-spacing:.04em}.barra-beneficiarios-proyecto small{color:#708097;font-size:.62rem}.tabla-beneficiarios-proyecto{max-height:360px}.tabla-beneficiarios-proyecto table{min-width:900px;font-size:.67rem}.tabla-beneficiarios-proyecto input,.tabla-beneficiarios-proyecto select{width:100%;height:34px;padding:0 8px;border:1px solid #d0dbe5;border-radius:8px;background:#fff;color:#25324b;font:inherit;font-size:.66rem}.tabla-beneficiarios-proyecto .accion-eliminar-beneficiario{width:34px;height:34px;border:1px solid #efc2c2;border-radius:8px;background:#fff1f1;color:#bd4848;font-size:15px;cursor:pointer}.tabla-beneficiarios-proyecto tbody tr td{vertical-align:middle}.fila-vacia-beneficiarios td{padding:18px 14px;color:#748299;text-align:center}.paginacion-beneficiarios-proyecto{display:flex;justify-content:space-between;gap:10px;align-items:center;color:#758299;font-size:.62rem;font-weight:800}.paginacion-beneficiarios-proyecto strong{color:#1f334c}.acciones-crear-proyecto{display:flex;justify-content:flex-end;gap:10px;padding:14px 24px 20px;border-top:1px solid #e0e8ef;background:#fff}.acciones-crear-proyecto button{min-width:140px;height:41px;border:0;border-radius:10px;font:inherit;font-size:.68rem;font-weight:800;cursor:pointer}.cancelar-crear-proyecto{color:#52647b;background:#edf2f6}.guardar-crear-proyecto{color:#fff;background:linear-gradient(110deg,#489ec5,#59bf77)}
+@media(max-width:980px){.cuerpo-crear-proyecto{grid-template-columns:1fr}}
+@media(max-width:760px){.cabecera-modulo{gap:10px}.boton-crear-proyecto{width:100%}.campos-crear-proyecto{grid-template-columns:1fr}.cabecera-beneficiarios-proyecto,.acciones-crear-proyecto{flex-direction:column;align-items:stretch}.acciones-beneficiarios-proyecto{width:100%}.acciones-beneficiarios-proyecto>*{flex:1}.acciones-crear-proyecto button{width:100%}}
+
+.cuerpo-modificar-proyecto{display:grid;grid-template-columns:320px minmax(0,1fr);gap:16px;overflow:auto}.panel-proyectos-modificar{display:grid;gap:12px;align-content:start;padding:16px;border:1px solid #d6e1ec;border-radius:16px;background:#f8fbfe;box-shadow:0 10px 24px rgba(25,45,78,.05)}.panel-proyectos-cabecera{display:flex;align-items:center;justify-content:space-between;gap:10px}.panel-proyectos-cabecera strong{display:block;color:#17203a;font-size:.92rem}.panel-proyectos-cabecera small{color:#718099;font-size:.62rem;font-weight:800}.boton-panel-proyectos{height:36px;padding:0 12px;border:0;border-radius:10px;color:#fff;background:linear-gradient(110deg,#438eaf,#57bf79);font:inherit;font-size:.64rem;font-weight:800;cursor:pointer}.buscador-proyectos-edicion input{width:100%;height:40px;padding:0 12px;border:1px solid #ccd9e5;border-radius:10px;background:#fff;color:#25324b;font:inherit;font-size:.72rem}.lista-proyectos-edicion{display:grid;gap:10px;max-height:calc(90vh - 180px);overflow:auto;padding-right:2px}.item-proyecto-edicion{display:grid;gap:10px;padding:12px;border:1px solid #d5e0eb;border-radius:14px;background:#fff;box-shadow:0 8px 18px rgba(22,45,69,.05)}.item-proyecto-edicion.activo{border-color:#4ba8cb;box-shadow:0 0 0 3px rgba(75,168,203,.13);background:#eff9fc}.item-proyecto-edicion strong{display:block;color:#17203a;font-size:.76rem}.item-proyecto-edicion span{display:block;color:#394962;font-size:.68rem;font-weight:750}.item-proyecto-edicion small{display:block;color:#758299;font-size:.58rem}.acciones-item-proyecto{display:flex;gap:8px;flex-wrap:wrap}.acciones-item-proyecto button{height:32px;padding:0 10px;border:0;border-radius:9px;color:#fff;background:#438eaf;font:inherit;font-size:.6rem;font-weight:800;cursor:pointer}.acciones-item-proyecto .peligro{background:#c95c5c}.item-proyecto-vacio{padding:18px;color:#748299;text-align:center;border:1px dashed #cad7e3;border-radius:12px;background:#fff}.panel-formulario-proyecto{min-width:0;display:grid;gap:16px}.tarjeta-edicion-proyecto{min-width:0}.resumen-equipo-proyecto{display:block;margin-top:-4px;color:#4a6282;font-size:.62rem;font-weight:800}.modal-confirmar-eliminar-proyecto{width:min(640px,92vw)}.modal-confirmar-eliminar-proyecto .modal-cuerpo{padding-bottom:18px}.modal-confirmar-eliminar-proyecto #detalleConfirmarEliminarProyecto{margin:0;color:#43516a;font-size:.82rem;line-height:1.55}
+
+@media(max-width:1100px){.cuerpo-modificar-proyecto{grid-template-columns:1fr}.lista-proyectos-edicion{max-height:240px}}
+@media(max-width:760px){.panel-proyectos-cabecera{flex-direction:column;align-items:stretch}.acciones-item-proyecto button,.boton-panel-proyectos{width:100%}}
+
+.acciones-item-proyecto .icono-eliminar-proyecto{width:32px;padding:0;display:grid;place-items:center;font-size:1rem;line-height:1}
+
+/* Navegador de proyectos dentro del mapa (escritorio) */
+@media(min-width:1051px){
+  .barra-proyectos-mapa{position:absolute;z-index:540;top:14px;bottom:14px;left:14px;width:268px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;overflow:hidden;border:1px solid rgba(126,157,188,.52);border-radius:17px;background:rgba(247,250,253,.96);box-shadow:0 16px 36px rgba(24,49,78,.2);backdrop-filter:blur(9px);transition:width .24s ease,transform .24s ease}
+  .barra-proyectos-cabecera{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;border-bottom:1px solid #dce5ef;background:linear-gradient(135deg,#1f3659,#2f6282);color:#fff;cursor:default;user-select:none}
+  .barra-proyectos-titulo{min-width:0;display:flex;align-items:center;gap:10px}.barra-proyectos-titulo>div{min-width:0;display:grid;gap:2px}.barra-proyectos-titulo strong{font-size:.88rem}.barra-proyectos-titulo small{overflow:hidden;color:#cfe1eb;font-size:.58rem;white-space:nowrap;text-overflow:ellipsis}
+  .barra-proyectos-icono{width:31px;height:31px;display:grid;place-items:center;flex:0 0 auto;border-radius:10px;background:rgba(255,255,255,.12)}.barra-proyectos-icono svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  #alternarBarraProyectos{width:30px;height:30px;display:grid;place-items:center;flex:0 0 auto;padding:0;border:1px solid rgba(255,255,255,.25);border-radius:9px;color:#fff;background:rgba(8,23,43,.18);cursor:pointer}#alternarBarraProyectos span{width:9px;height:9px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(-135deg);transition:transform .2s}
+  .barra-proyectos-busqueda{height:39px;display:flex;align-items:center;gap:8px;margin:10px 10px 6px;padding:0 10px;border:1px solid #d4e0eb;border-radius:10px;background:#fff}.barra-proyectos-busqueda svg{width:16px;height:16px;fill:none;stroke:#6689a4;stroke-width:2}.barra-proyectos-busqueda input{min-width:0;width:100%;border:0;outline:0;color:#26344d;background:transparent;font:inherit;font-size:.68rem}.barra-proyectos-busqueda input::placeholder{color:#8b98aa}
+  .lista-proyectos-mapa{min-height:0;display:grid;grid-auto-rows:max-content;align-content:start;gap:8px;padding:6px 8px 10px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#70abc7 #e3edf4}.lista-proyectos-mapa::-webkit-scrollbar{width:7px}.lista-proyectos-mapa::-webkit-scrollbar-track{background:#e3edf4}.lista-proyectos-mapa::-webkit-scrollbar-thumb{border-radius:9px;background:#70abc7}
+  .proyecto-arbol{overflow:hidden;border:1px solid #d6e1ec;border-radius:12px;background:#fff;box-shadow:0 4px 12px rgba(35,65,95,.06)}.proyecto-arbol.seleccionado{border-color:#54a7ca;box-shadow:0 0 0 2px rgba(84,167,202,.13)}
+  .proyecto-arbol-cabecera{display:grid;grid-template-columns:minmax(0,1fr) 28px;align-items:stretch}.seleccionar-proyecto-mapa{min-width:0;display:grid;grid-template-columns:9px minmax(0,1fr);gap:9px;align-items:center;padding:10px;border:0;text-align:left;color:#26354f;background:transparent;cursor:pointer}.seleccionar-proyecto-mapa>i{width:9px;height:32px;border-radius:9px;background:var(--color-proyecto,#4e7de1)}.seleccionar-proyecto-mapa>span{min-width:0;display:grid;gap:2px}.seleccionar-proyecto-mapa strong,.seleccionar-proyecto-mapa small{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.seleccionar-proyecto-mapa strong{font-size:.68rem}.seleccionar-proyecto-mapa small{color:#7a879b;font-size:.56rem;font-weight:700}.seleccionar-proyecto-mapa em{width:max-content;padding:3px 6px;border-radius:8px;color:#3a6680;background:#e7f3f8;font-size:.52rem;font-style:normal;font-weight:850}
+  .alternar-subproyectos{border:0;border-left:1px solid #e2e9f1;color:#5d7189;background:#f7fafc;cursor:pointer}.alternar-subproyectos span{display:block;width:7px;height:7px;margin:auto;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .18s}.proyecto-arbol.abierto .alternar-subproyectos span{transform:rotate(225deg)}
+  .subproyectos-mapa{display:none;padding:3px 8px 9px 26px;border-top:1px solid #e6edf4;background:#f9fbfd}.proyecto-arbol.abierto .subproyectos-mapa{display:grid}.subproyecto-mapa{position:relative;display:grid;gap:2px;padding:8px 7px 8px 16px;border:0;border-bottom:1px solid #e8eef4;text-align:left;color:#41516a;background:transparent;cursor:pointer}.subproyecto-mapa:last-child{border-bottom:0}.subproyecto-mapa:before{content:"";position:absolute;left:2px;top:14px;width:7px;height:7px;border:2px solid #75a9c2;border-radius:50%;background:#fff}.subproyecto-mapa:after{content:"";position:absolute;left:6px;top:-5px;bottom:22px;width:1px;background:#cddce8}.subproyecto-mapa:first-child:after{top:0}.subproyecto-mapa strong{font-size:.61rem}.subproyecto-mapa small{color:#7c899c;font-size:.53rem}.subproyecto-mapa:hover,.subproyecto-mapa.activo{color:#286d91;background:#edf7fb}
+  .barra-proyectos-mapa>footer{display:flex;align-items:center;gap:7px;padding:8px 11px;border-top:1px solid #dce5ef;color:#71839a;background:#eef5f9}.barra-proyectos-mapa>footer span{font-weight:900}.barra-proyectos-mapa>footer small{font-size:.54rem;font-weight:750}
+  .mapa-panel .controles-mapa{left:300px;transition:left .24s ease}.mapa-panel .panel-flotante{left:300px;max-height:calc(100% - 110px);overflow-y:auto;transition:left .24s ease}
+  .barra-proyectos-mapa.contraida{width:54px;grid-template-rows:auto}.barra-proyectos-mapa.contraida .barra-proyectos-cabecera{height:54px;padding:10px;justify-content:center}.barra-proyectos-mapa.contraida .barra-proyectos-titulo>div,.barra-proyectos-mapa.contraida .barra-proyectos-busqueda,.barra-proyectos-mapa.contraida .lista-proyectos-mapa,.barra-proyectos-mapa.contraida>footer{display:none}.barra-proyectos-mapa.contraida #alternarBarraProyectos{position:absolute;right:-1px;bottom:-1px;width:23px;height:23px;border-radius:8px}.barra-proyectos-mapa.contraida #alternarBarraProyectos span{transform:rotate(45deg)}.mapa-panel.proyectos-contraidos .controles-mapa,.mapa-panel.proyectos-contraidos .panel-flotante{left:82px}
+}
+
+/* Tarjeta de proyecto: datos legibles y fondo basado en la referencia enviada. */
+@media(min-width:1051px){
+  .tablero-masificacion .proyecto-arbol,
+  .tablero-masificacion .proyecto-arbol.seleccionado{
+    border-color:#6072aa!important;
+    background:#3c4c7d!important;
+  }
+  .tablero-masificacion .proyecto-arbol-cabecera{
+    position:relative!important;
+    display:block!important;
+    min-height:198px!important;
+  }
+  .tablero-masificacion .seleccionar-proyecto-mapa{
+    width:100%!important;
+    min-height:198px!important;
+    padding:17px 138px 76px 16px!important;
+  }
+  .tablero-masificacion .acciones-proyecto-mapa{
+    position:absolute!important;
+    z-index:2!important;
+    top:12px!important;
+    right:38px!important;
+    padding:0!important;
+  }
+  .tablero-masificacion .alternar-subproyectos{
+    position:absolute!important;
+    z-index:2!important;
+    top:12px!important;
+    right:4px!important;
+    margin:0!important;
+  }
+  .tablero-masificacion .datos-proyecto-barra{
+    position:absolute!important;
+    right:14px!important;
+    bottom:14px!important;
+    left:16px!important;
+    display:flex!important;
+    width:auto!important;
+    margin:0!important;
+    padding:0!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    gap:5px!important;
+  }
+  .tablero-masificacion .datos-proyecto-barra small{
+    display:flex!important;
+    width:100%!important;
+    min-width:0!important;
+    align-items:baseline!important;
+    gap:5px!important;
+    overflow:visible!important;
+    white-space:normal!important;
+  }
+  .tablero-masificacion .datos-proyecto-barra small strong{
+    overflow:visible!important;
+    color:#fff!important;
+    font-size:.62rem!important;
+    line-height:1.3!important;
+    white-space:normal!important;
+    text-overflow:clip!important;
+  }
+}
+@media(max-width:1050px){.barra-proyectos-mapa{display:none}}
+
+.proyectos-mapa-vacio{margin:12px;padding:14px 12px;border:1px dashed rgba(136,168,198,.6);border-radius:12px;color:#71809a;font-size:.68rem;line-height:1.45;text-align:center}
+
+/* Panel operativo de proyectos fuera del mapa (REQ-SAT-02 a REQ-SAT-07) */
+.tablero-masificacion{
+  grid-template-columns:270px minmax(0,1fr) 350px;
+  gap:14px;
+}
+.tablero-masificacion>.boton-resumen-masificacion{left:auto;right:332px;transform:translate(50%,-50%)}
+.tablero-masificacion>.barra-proyectos-mapa{
+  position:relative;
+  inset:auto;
+  z-index:2;
+  width:auto;
+  min-width:0;
+  height:100%;
+  display:grid;
+  grid-template-rows:auto auto auto minmax(120px,1fr) auto auto;
+  overflow:hidden;
+  border:1px solid rgba(91,107,155,.6);
+  border-radius:18px;
+  background:#111a35;
+  box-shadow:0 15px 34px rgba(4,10,28,.2);
+  backdrop-filter:none;
+  transition:width .24s ease,grid-template-columns .24s ease;
+}
+.tablero-masificacion>.barra-proyectos-mapa .barra-proyectos-cabecera{
+  background:#142850;
+  border-bottom-color:#34466f;
+}
+.tablero-masificacion>.barra-proyectos-mapa .barra-proyectos-busqueda{
+  background:#0f1831;
+  border-color:#3b4d78;
+}
+.tablero-masificacion>.barra-proyectos-mapa .barra-proyectos-busqueda input{color:#f6f7ff}
+.tablero-masificacion>.barra-proyectos-mapa .lista-proyectos-mapa{scrollbar-color:#5b6bba #101a35}
+.tablero-masificacion>.barra-proyectos-mapa>footer{background:#101a35;border-top-color:#34466f;color:#c0c8df}
+.versiones-proyecto{display:grid;gap:7px;margin:2px 10px 7px;padding:10px;border:1px solid #35476f;border-radius:12px;background:#0d1730}
+.versiones-proyecto>small{color:#8fa1c7;font-size:.55rem;font-weight:900;letter-spacing:.08em}
+.versiones-proyecto p{margin:0;color:#adb8d2;font-size:.57rem;line-height:1.35}
+.selector-version-proyecto{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.selector-version-proyecto button{min-width:0;height:31px;padding:0 7px;border:1px solid #435783;border-radius:8px;color:#cbd4e8;background:#16213f;font:inherit;font-size:.58rem;font-weight:800;cursor:pointer}
+.selector-version-proyecto button.activo{color:#fff;border-color:#4f75e8;background:#2c63ed;box-shadow:0 5px 13px rgba(44,99,237,.2)}
+.comparador-versiones-mapa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.comparador-versiones-mapa>section{display:grid;grid-template-rows:auto minmax(230px,1fr) auto;overflow:hidden;border:1px solid #40547e;border-radius:14px;background:#111d38;box-shadow:0 10px 25px rgba(2,10,28,.2)}
+.comparador-versiones-mapa>section>header{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:11px 13px;border-bottom:1px solid #35476f;background:#142850}
+.comparador-versiones-mapa>section>header strong{font-size:.78rem}.comparador-versiones-mapa>section>header small{color:#aebbd4;font-size:.58rem;font-weight:700}
+.comparador-versiones-mapa>section>div{min-height:230px;background:#dce8ed}
+.comparador-versiones-mapa>section>button{min-height:40px;margin:10px;padding:0 13px;border:1px solid #4a6190;border-radius:9px;color:#eaf1ff;background:#1b2b50;font:inherit;font-size:.67rem;font-weight:850;cursor:pointer}
+.comparador-versiones-mapa>section>button:hover,.comparador-versiones-mapa>section>button.activo{border-color:#5d8cff;color:#fff;background:#2c63ed}
+@media(max-width:700px){.comparador-versiones-mapa{grid-template-columns:1fr}.comparador-versiones-mapa>section{grid-template-rows:auto minmax(190px,1fr) auto}.comparador-versiones-mapa>section>div{min-height:190px}}
+.acciones-control-proyecto{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:7px 9px 10px;border-top:1px solid #34466f}
+.acciones-control-proyecto button{min-width:0;display:grid;grid-template-columns:25px 1fr;grid-template-rows:auto auto;gap:1px 7px;padding:8px;border:1px solid #34466f;border-radius:10px;text-align:left;color:#f6f7ff;background:#16213f;font:inherit;cursor:pointer}
+.acciones-control-proyecto button:hover{border-color:#5b6bba;background:#1b2b50}
+.acciones-control-proyecto span{grid-row:1/3;width:25px;height:25px;display:grid;place-items:center;border-radius:7px;color:#cfe2ff;background:#243761;font-size:.7rem;font-weight:900}
+.acciones-control-proyecto b{overflow:hidden;font-size:.57rem;white-space:nowrap;text-overflow:ellipsis}
+.acciones-control-proyecto small{overflow:hidden;color:#95a4c3;font-size:.48rem;white-space:nowrap;text-overflow:ellipsis}
+.tablero-masificacion>.barra-proyectos-mapa.contraida{width:auto;grid-template-rows:auto}
+.tablero-masificacion>.barra-proyectos-mapa.contraida .barra-proyectos-cabecera{height:56px}
+.tablero-masificacion>.barra-proyectos-mapa.contraida .versiones-proyecto,.tablero-masificacion>.barra-proyectos-mapa.contraida .acciones-control-proyecto{display:none}
+.tablero-masificacion:has(>.barra-proyectos-mapa.contraida){grid-template-columns:58px minmax(0,1fr) 350px}
+.mapa-panel .controles-mapa,.mapa-panel .panel-flotante{left:22px}
+.mapa-panel.proyectos-contraidos .controles-mapa,.mapa-panel.proyectos-contraidos .panel-flotante{left:22px}
+
+.modal-control-proyecto{width:min(900px,92vw);max-height:88vh;padding:0;border:1px solid #425784;border-radius:20px;color:#f6f7ff;background:#101a35;box-shadow:0 28px 75px rgba(2,6,20,.6)}
+.modal-control-proyecto::backdrop{background:rgba(3,8,23,.76);backdrop-filter:blur(4px)}
+.modal-control-proyecto .mc-cabecera{display:flex;justify-content:space-between;gap:14px;padding:20px 22px;border-bottom:1px solid #34466f;background:#142850}
+.modal-control-proyecto h2,.modal-control-proyecto h3{margin:0;color:#fff}.modal-control-proyecto p{margin:5px 0 0;color:#aeb9d2;font-size:.75rem}
+.modal-control-proyecto .mc-cerrar{width:36px;height:36px;border:1px solid #4a5f8c;border-radius:10px;color:#fff;background:#0b142c;font-size:1.2rem;cursor:pointer}
+.modal-control-proyecto .mc-cuerpo{display:grid;gap:14px;padding:18px 22px;overflow:auto}
+.modal-control-proyecto .mc-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.modal-control-proyecto .mc-kpis article{padding:12px;border:1px solid #35476f;border-radius:12px;background:#16213f}.modal-control-proyecto .mc-kpis small{display:block;color:#91a1c2;font-size:.56rem}.modal-control-proyecto .mc-kpis strong{display:block;margin-top:6px;font-size:1rem}
+.modal-control-proyecto table{width:100%;border-collapse:collapse;font-size:.68rem}.modal-control-proyecto th,.modal-control-proyecto td{padding:10px;border-bottom:1px solid #34466f;text-align:left}.modal-control-proyecto th{color:#cfe2ff;background:#182747}.modal-control-proyecto td{color:#eef2ff}
+.modal-control-proyecto .mc-fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.modal-control-proyecto .mc-foto{min-height:110px;display:grid;align-content:end;padding:10px;border:1px solid #40537f;border-radius:12px;background:linear-gradient(145deg,#243761,#14213e)}.modal-control-proyecto .mc-foto small{color:#b8c4dc}.modal-control-proyecto .mc-foto button{margin-top:7px;border:0;color:#ffb8bd;background:transparent;text-align:left;cursor:pointer}
+.modal-control-proyecto .mc-acciones{display:flex;justify-content:flex-end;gap:9px}.modal-control-proyecto .mc-acciones button,.modal-control-proyecto .mc-enlace{height:38px;padding:0 14px;border:1px solid #4c6090;border-radius:10px;color:#fff;background:#1b2a4d;font:inherit;font-size:.65rem;font-weight:800;cursor:pointer}.modal-control-proyecto .mc-acciones .principal{border-color:#2c63ed;background:#2c63ed}
+@media(max-width:1200px){.tablero-masificacion{grid-template-columns:235px minmax(0,1fr) 300px}.tablero-masificacion>.boton-resumen-masificacion{right:282px}.acciones-control-proyecto{grid-template-columns:1fr}}
+
+/* Armonización oscura final del módulo Masificación */
+:root{
+  --mas-fondo:#0b1020;
+  --mas-superficie:#101a35;
+  --mas-tarjeta:#16213f;
+  --mas-tarjeta-2:#182747;
+  --mas-borde:#34466f;
+  --mas-borde-activo:#5b6bba;
+  --mas-texto:#f6f7ff;
+  --mas-texto-secundario:#b8c4dc;
+  --mas-texto-suave:#91a1c2;
+  --mas-acento:#2c63ed;
+}
+html,body,.aplicacion,.contenido-principal{background:var(--mas-fondo)!important;color:var(--mas-texto)!important}
+.cabecera-modulo,.cabecera-modulo>div,.cabecera-modulo h1{background:transparent!important;color:var(--mas-texto)!important}
+.filtros-masificacion{border-color:var(--mas-borde)!important;background:var(--mas-superficie)!important;box-shadow:none!important}
+.filtros-masificacion label{color:var(--mas-texto-suave)!important}
+.filtros-masificacion input,.filtros-masificacion select,.buscador-proyecto>span{color:var(--mas-texto)!important;border-color:#435783!important;background:#0d1730!important}
+.filtros-masificacion input::placeholder{color:#8393b4!important;opacity:1}
+.filtros-masificacion button[type=reset]{color:#dce4f5!important;border-color:#435783!important;background:#16213f!important}
+.tablero-masificacion{grid-template-columns:270px minmax(0,1fr) 350px;gap:14px}
+.tablero-masificacion>.barra-proyectos-mapa{grid-template-rows:auto auto auto minmax(120px,1fr) auto!important}
+.panel-derecho{color:var(--mas-texto)!important;border-color:var(--mas-borde)!important;background:#111a35!important;scrollbar-color:#5b6bba #0d1730!important}
+.panel-derecho::-webkit-scrollbar-track{background:#0d1730!important}.panel-derecho::-webkit-scrollbar-thumb{border-color:#0d1730!important;background:#5b6bba!important}
+.resumen-cabecera,.avance-ciudades,.detalle-proyecto,.potencial-beneficiarios,.acciones-resumen{color:var(--mas-texto)!important;border-color:var(--mas-borde)!important;background:var(--mas-tarjeta)!important;box-shadow:none!important}
+.resumen-cabecera>*,.detalle-proyecto header,.detalle-proyecto header>div,.titulo-detalle-proyecto>div,.avance-ciudades>header,.potencial-beneficiarios>header{background:transparent!important}
+.resumen-cabecera h2,.avance-ciudades h3,.detalle-proyecto h2,.potencial-beneficiarios h3,.accion-resumen strong{color:var(--mas-texto)!important}
+.resumen-cabecera small,.resumen-cabecera p,.avance-ciudades p,.detalle-proyecto small,.detalle-proyecto header p,.potencial-beneficiarios small,.potencial-beneficiarios p,.accion-resumen small{color:var(--mas-texto-secundario)!important}
+.kpis article,.metricas-potencial article,.avance-periodos-proyecto{color:var(--mas-texto)!important;border-color:var(--mas-borde)!important;background:var(--mas-tarjeta-2)!important;box-shadow:none!important}
+.kpis span,.metricas-potencial span{color:var(--mas-texto-secundario)!important}.kpis strong,.metricas-potencial strong{color:var(--mas-texto)!important}
+.barra-avance{background:#253353!important}
+.detalle-proyecto dl{background:transparent!important}
+.detalle-proyecto dl div{color:var(--mas-texto)!important;border-color:#4b5f8d!important;background:var(--mas-tarjeta-2)!important}
+.detalle-proyecto dt{color:var(--mas-texto-suave)!important}.detalle-proyecto dd{color:var(--mas-texto)!important}
+.detalle-proyecto button:not(.volver-proyecto){color:var(--mas-texto)!important;border:1px solid #435783!important;background:#0d1730!important}
+.estado-algoritmo{color:#9ef0ca!important;background:#173c36!important}
+.accion-resumen{background:var(--mas-tarjeta-2)!important}.accion-resumen.principal{border-color:#4f75e8!important;background:#203667!important}
+
+/* Navegador de proyectos: tarjetas oscuras y textos limpios */
+.tablero-masificacion>.barra-proyectos-mapa{color:var(--mas-texto)!important;background:var(--mas-superficie)!important}
+.tablero-masificacion .proyecto-arbol{border-color:var(--mas-borde)!important;background:var(--mas-tarjeta)!important;box-shadow:none!important}
+.tablero-masificacion .proyecto-arbol.seleccionado{border-color:#4f75e8!important;background:#182a52!important;box-shadow:0 0 0 2px rgba(79,117,232,.18)!important}
+.tablero-masificacion .proyecto-arbol.proyecto-hijo{margin-left:calc(var(--nivel-proyecto) * 14px);width:calc(100% - (var(--nivel-proyecto) * 14px));border-left:3px solid #6385d9}
+.tablero-masificacion .seleccionar-proyecto-mapa{color:var(--mas-texto)!important}
+.tablero-masificacion .seleccionar-proyecto-mapa small,.tablero-masificacion .subproyecto-mapa small{color:var(--mas-texto-suave)!important}
+.tablero-masificacion .seleccionar-proyecto-mapa em{color:#cfe2ff!important;background:#22375f!important}
+.tablero-masificacion .alternar-subproyectos{color:#b7c4dc!important;border-color:var(--mas-borde)!important;background:#101a35!important}
+.tablero-masificacion .proyecto-arbol-cabecera{grid-template-columns:minmax(0,1fr) auto 28px}.tablero-masificacion .seleccionar-proyecto-mapa>i{height:42px}.tablero-masificacion .seleccionar-proyecto-mapa em{max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.tablero-masificacion .acciones-proyecto-mapa{display:flex;align-items:center;gap:2px;padding:0 4px;border-left:1px solid var(--mas-borde)}.tablero-masificacion .acciones-proyecto-mapa button{width:23px;height:26px;display:grid;place-items:center;padding:0;border:0;border-radius:6px;color:#b7c4dc;background:transparent;cursor:pointer}.tablero-masificacion .acciones-proyecto-mapa button:hover{color:#fff;background:#438eaf}.tablero-masificacion .acciones-proyecto-mapa button.eliminar:hover{background:#c95c5c}.tablero-masificacion .acciones-proyecto-mapa svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.tablero-masificacion .subproyectos-mapa{border-color:var(--mas-borde)!important;background:#0f1831!important}
+.tablero-masificacion .subproyecto-mapa{color:#dce4f5!important;border-color:#2e3e63!important}.tablero-masificacion .subproyecto-mapa:hover,.tablero-masificacion .subproyecto-mapa.activo{color:#fff!important;background:#1b2b50!important}
+.proyectos-mapa-vacio{color:var(--mas-texto-secundario)!important;border-color:#435783!important;background:transparent!important}
+/* Etapa visible directamente sobre cada construcción del mapa. */
+.marcador-proyecto-con-etapa{width:46px;height:46px;display:grid;place-items:center;transform:translateY(-2px)}.marcador-proyecto-con-etapa .icono-proyecto-mapa{position:relative}.marcador-proyecto-con-etapa .icono-proyecto-mapa small{position:absolute;right:-7px;bottom:-6px;display:grid;place-items:center;min-width:25px;height:16px;padding:0 4px;border:2px solid #fff;border-radius:8px;color:#fff;background:var(--color-proyecto,#4e7de1);font:900 .43rem Inter,"Segoe UI",Arial,sans-serif;line-height:1;letter-spacing:.03em;box-shadow:0 3px 8px rgba(3,10,24,.32)}
+/* Panel izquierdo: jerarquía más clara entre búsqueda y proyectos. */
+@media(min-width:1051px){.tablero-masificacion>.barra-proyectos-mapa{width:286px;border-color:#3d5785;border-radius:18px;background:linear-gradient(180deg,#172442,#101a35)!important}.tablero-masificacion .barra-proyectos-cabecera{padding:15px 14px;border-color:#31486f;background:linear-gradient(135deg,#263d69,#204d6f)}.tablero-masificacion .barra-proyectos-titulo strong{font-size:.94rem}.tablero-masificacion .barra-proyectos-busqueda{height:43px;margin:12px 12px 8px;border-color:#3d5785;background:#101a35}.tablero-masificacion .barra-proyectos-busqueda input{color:#edf4ff}.tablero-masificacion .lista-proyectos-mapa{gap:10px;padding:7px 10px 13px}.tablero-masificacion .proyecto-arbol{border-radius:15px}.tablero-masificacion .seleccionar-proyecto-mapa{gap:11px;padding:13px 12px}.tablero-masificacion .seleccionar-proyecto-mapa>i{height:48px}.tablero-masificacion .seleccionar-proyecto-mapa strong{font-size:.73rem}.tablero-masificacion .seleccionar-proyecto-mapa small{font-size:.58rem}.mapa-panel .controles-mapa,.mapa-panel .panel-flotante{left:318px}}
+
+/* Todos los diálogos, formularios, tablas y tarjetas del módulo */
+.modal-masificacion,.modal-control-proyecto{color:var(--mas-texto)!important;border:1px solid #425784!important;background:var(--mas-superficie)!important;box-shadow:0 30px 80px rgba(2,6,20,.68)!important}
+.modal-masificacion::backdrop,.modal-control-proyecto::backdrop{background:rgba(3,8,23,.8)!important;backdrop-filter:blur(4px)}
+.modal-masificacion>header,.modal-control-proyecto .mc-cabecera{color:var(--mas-texto)!important;border-bottom:1px solid var(--mas-borde)!important;background:#142850!important}
+.modal-masificacion>header>div,.modal-control-proyecto .mc-cabecera>div{background:transparent!important}
+.modal-masificacion>header h2,.modal-masificacion h2,.modal-masificacion h3,.modal-masificacion h4,.modal-masificacion strong,.modal-masificacion b{color:var(--mas-texto)!important}
+.modal-masificacion>header p,.modal-masificacion>header small,.modal-masificacion p,.modal-masificacion small,.modal-masificacion label,.modal-masificacion legend{color:var(--mas-texto-secundario)!important}
+.modal-cuerpo,.cuerpo-subir-capa,.contenido-trazabilidad,.panel-liquidacion{color:var(--mas-texto)!important;background:var(--mas-superficie)!important}
+.titulo-anexo,.barra-acciones-modal,.tabla-modal,.vista-documento,.tarjeta-crear-proyecto,.panel-proyectos-modificar,.item-proyecto-edicion,.formulario-expediente,.trazabilidad-controles,.cabecera-trazabilidad,.cabecera-auditoria,.transicion-zona,.resumen-auditoria article,.flujo-expediente article,.metricas-modal-potencial article,.pie-modal-potencial,.acciones-exportacion-masificacion,.formatos-exportacion-masificacion span,.alcance-exportacion-masificacion,.barra-beneficiarios-proyecto,.acciones-crear-proyecto,.item-proyecto-vacio{color:var(--mas-texto)!important;border-color:var(--mas-borde)!important;background:var(--mas-tarjeta)!important;box-shadow:none!important}
+.modal-masificacion input,.modal-masificacion select,.modal-masificacion textarea,.campos-modal input,.campos-crear-proyecto input,.campos-crear-proyecto select,.tabla-beneficiarios-proyecto input,.tabla-beneficiarios-proyecto select,.trazabilidad-controles input,.trazabilidad-controles select,.campos-expediente input,.campos-expediente select,.estado-historial,.buscador-proyectos-edicion input{color:var(--mas-texto)!important;border-color:#435783!important;background:#0d1730!important}
+.modal-masificacion input::placeholder,.modal-masificacion textarea::placeholder{color:#8393b4!important}
+.tabla-modal,.tabla-potencial{border-color:var(--mas-borde)!important;background:var(--mas-superficie)!important}
+.tabla-modal th,.tabla-modal tfoot th{color:#dce7ff!important;border-color:var(--mas-borde)!important;background:#182747!important}
+.tabla-modal td{color:#f1f4ff!important;border-color:#2f4067!important;background:#111a35!important}
+.vista-documento p,.modal-masificacion .metodologia-potencial,.cabecera-beneficiarios-proyecto p,.barra-beneficiarios-proyecto small,.paginacion-beneficiarios-proyecto{color:var(--mas-texto-secundario)!important}
+.vista-documento h4{color:#9fc8ff!important}
+.pestanas-liquidacion{border-color:var(--mas-borde)!important;background:#101a35!important}.pestanas-liquidacion button{color:#b9c5dd!important}.pestanas-liquidacion button:hover{background:#1b2b50!important}.pestanas-liquidacion button.activa{color:#fff!important;border-color:#4f75e8!important;background:#203667!important}
+.flujo-expediente article.completada{border-color:#326d61!important;background:#143832!important}.flujo-expediente article.completada strong{color:#a7f0d2!important}
+.flujo-expediente article.actual{border-color:#8f6b20!important;background:#302716!important}.flujo-expediente article.actual strong{color:#ffe09b!important}
+.flujo-expediente article strong,.resumen-auditoria strong,.cabecera-trazabilidad h3,.cabecera-auditoria h3,.formulario-expediente h3,.historial-fase h3,.panel-proyectos-cabecera strong,.item-proyecto-edicion strong,.barra-beneficiarios-proyecto strong{color:var(--mas-texto)!important}
+.flujo-expediente article small,.resumen-auditoria span,.cabecera-trazabilidad p,.cabecera-auditoria p,.formulario-expediente p,.historial-fase small,.item-proyecto-edicion small{color:var(--mas-texto-secundario)!important}
+.control-liquidacion-total{color:var(--mas-texto)!important;border-color:#435783!important;background:#182747!important}.control-liquidacion-total small{color:var(--mas-texto-secundario)!important}
+.acciones-historial button,.formulario-expediente>header button,.trazabilidad-controles button.secundario{color:#dce7ff!important;border-color:#435783!important;background:#1b2b50!important}
+.acciones-historial button.eliminar{color:#ffb7bd!important;border-color:#773e50!important;background:#3b1d2a!important}
+.estado-borrador,.estado-modal,.movimiento-actual{color:#cfe2ff!important;background:#203667!important}
+.gis-ok{color:#a7f0d2!important;background:#173c36!important}
+.cancelar-capa,.cancelar-crear-proyecto,.pie-modal-potencial button:first-child,.acciones-exportacion-masificacion button:first-child{color:#e0e7f5!important;border:1px solid #435783!important;background:#1b2b50!important}
+
+/* Cabecera de plantilla inspirada en la documentación técnica suministrada */
+.plantilla-documental{display:grid;grid-template-columns:1.25fr 2fr .55fr .65fr;gap:0;overflow:hidden;border:1px solid #435783;border-radius:13px;background:#0d1730}
+.plantilla-documental>div{min-width:0;display:grid;align-content:center;gap:5px;padding:12px 14px;border-right:1px solid #34466f;background:transparent!important}
+.plantilla-documental>div:last-child{border-right:0}.plantilla-documental small{color:#91a1c2!important;font-size:.55rem;font-weight:850;letter-spacing:.07em}.plantilla-documental strong{font-size:.7rem}.plantilla-documental-marca{background:#142850!important}.plantilla-documental-referencia{grid-column:1/-1;border-top:1px solid #34466f;border-right:0!important}.plantilla-documental-referencia span{color:#dbe4f5;font-size:.64rem}
+
+@media(max-width:1200px){.tablero-masificacion{grid-template-columns:235px minmax(0,1fr) 300px}}
+@media(max-width:1050px){.tablero-masificacion{grid-template-columns:1fr}.panel-derecho{max-height:620px}.plantilla-documental{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.plantilla-documental{grid-template-columns:1fr}.plantilla-documental>div{border-right:0;border-bottom:1px solid #34466f}.plantilla-documental-referencia{grid-column:auto}}
+
+/* Ajustes finales del tablero de tres columnas y del buscador */
+.tablero-masificacion.resumen-oculto{
+  grid-template-columns:270px minmax(0,1fr)!important;
+  gap:14px 0!important;
+}
+.tablero-masificacion.resumen-oculto .mapa-panel{
+  width:100%;
+  min-width:0;
+}
+.tablero-masificacion.resumen-oculto .panel-derecho{
+  display:none!important;
+  width:0;
+  min-width:0;
+  padding:0!important;
+  border:0!important;
+  opacity:0;
+  overflow:hidden;
+}
+.tablero-masificacion.resumen-oculto>.boton-resumen-masificacion{
+  left:auto!important;
+  right:12px!important;
+  transform:translateY(-50%)!important;
+}
+.buscador-proyecto,
+.buscador-proyecto>span,
+.buscador-proyecto input,
+.buscador-proyecto b{
+  box-shadow:none!important;
+}
+.buscador-proyecto>span{
+  overflow:hidden;
+  background:transparent!important;
+}
+/* Navegador izquierdo con escala y control lateral equivalentes al panel derecho. */
+@media(min-width:1051px){.tablero-masificacion{grid-template-columns:310px minmax(0,1fr) 350px!important;gap:18px!important}.tablero-masificacion>.barra-proyectos-mapa{overflow:visible!important;border:1px solid #405883!important;border-radius:20px!important;box-shadow:0 16px 34px rgba(2,8,24,.28)!important}.tablero-masificacion>.barra-proyectos-mapa>*:not(#alternarBarraProyectos){overflow:hidden}.tablero-masificacion>.barra-proyectos-mapa .barra-proyectos-cabecera{min-height:76px;padding:17px 18px!important;border-radius:19px 19px 0 0;overflow:visible!important}.tablero-masificacion .barra-proyectos-titulo strong{font-size:1.04rem!important}.tablero-masificacion .barra-proyectos-titulo small{font-size:.66rem!important}.tablero-masificacion .barra-proyectos-icono{width:36px;height:36px}.tablero-masificacion .barra-proyectos-busqueda{height:46px;margin:14px 14px 10px!important;padding:0 13px!important;border-radius:13px!important}.tablero-masificacion .barra-proyectos-busqueda input{font-size:.75rem!important}.tablero-masificacion .lista-proyectos-mapa{gap:13px!important;padding:10px 12px 16px!important}.tablero-masificacion .proyecto-arbol{border-radius:17px!important}.tablero-masificacion .seleccionar-proyecto-mapa{gap:12px!important;padding:15px 14px!important}.tablero-masificacion .seleccionar-proyecto-mapa>i{width:10px;height:54px!important}.tablero-masificacion .seleccionar-proyecto-mapa strong{font-size:.8rem!important}.tablero-masificacion .seleccionar-proyecto-mapa small{font-size:.63rem!important}.tablero-masificacion .seleccionar-proyecto-mapa em{padding:4px 7px!important;font-size:.58rem!important}.tablero-masificacion .acciones-proyecto-mapa{gap:5px!important;padding:0 7px!important}.tablero-masificacion .acciones-proyecto-mapa button{width:28px!important;height:31px!important;border-radius:8px!important}.tablero-masificacion #alternarBarraProyectos{position:absolute!important;z-index:20;top:50%!important;right:-26px!important;bottom:auto!important;left:auto!important;width:52px!important;height:52px!important;padding:0!important;border:2px solid #c9d9ef!important;border-radius:15px!important;color:#fff!important;background:#1d2948!important;box-shadow:0 9px 22px rgba(17,26,56,.3)!important;transform:translateY(-50%)!important}.tablero-masificacion #alternarBarraProyectos:hover{background:#29436e!important}.tablero-masificacion #alternarBarraProyectos span{width:13px!important;height:13px!important;border-width:3px!important;transform:rotate(-135deg)!important}.tablero-masificacion:has(>.barra-proyectos-mapa.contraida){grid-template-columns:64px minmax(0,1fr) 350px!important}.tablero-masificacion>.barra-proyectos-mapa.contraida #alternarBarraProyectos{right:-26px!important;bottom:auto!important;transform:translateY(-50%)!important}.tablero-masificacion>.barra-proyectos-mapa.contraida #alternarBarraProyectos span{transform:rotate(45deg)!important}}
+/* Los dos sliders permanecen dentro del tablero y usan la misma escala. */
+@media(min-width:1051px){.tablero-masificacion{grid-template-columns:286px minmax(0,1fr) 330px!important;gap:15px!important;max-height:calc(100dvh - 122px)}.tablero-masificacion>.boton-resumen-masificacion,.tablero-masificacion #alternarBarraProyectos{width:44px!important;height:44px!important;border-radius:13px!important}.tablero-masificacion>.boton-resumen-masificacion{right:308px!important}.tablero-masificacion #alternarBarraProyectos{right:-22px!important}.tablero-masificacion>.barra-proyectos-mapa.contraida #alternarBarraProyectos{right:-22px!important}.tablero-masificacion>.barra-proyectos-mapa .lista-proyectos-mapa{scrollbar-width:thin;scrollbar-color:#5b6bba #0d1730}.tablero-masificacion>.barra-proyectos-mapa .lista-proyectos-mapa::-webkit-scrollbar{width:8px}.tablero-masificacion>.barra-proyectos-mapa .lista-proyectos-mapa::-webkit-scrollbar-track{background:#0d1730}.tablero-masificacion>.barra-proyectos-mapa .lista-proyectos-mapa::-webkit-scrollbar-thumb{border:2px solid #0d1730;border-radius:10px;background:#5b6bba}}
+@media(min-width:1051px) and (max-width:1350px){.tablero-masificacion{grid-template-columns:270px minmax(0,1fr) 300px!important}.tablero-masificacion>.boton-resumen-masificacion{right:278px!important}}
+/* El mapa y los paneles no exceden el alto útil de la pantalla. */
+@media(min-width:1051px){.tablero-masificacion{height:min(680px,calc(100dvh - 190px))!important;min-height:440px!important;max-height:calc(100dvh - 190px)!important}.tablero-masificacion>.barra-proyectos-mapa,.tablero-masificacion>.mapa-panel,.tablero-masificacion>.panel-derecho{min-height:0!important;height:100%!important}}
+/* Lista navegable: el control queda junto a editar/eliminar y no corta proyectos. */
+@media(min-width:1051px){.tablero-masificacion>.barra-proyectos-mapa{display:grid!important;grid-template-rows:auto auto minmax(0,1fr)!important;overflow:hidden!important}.tablero-masificacion>.barra-proyectos-mapa .barra-proyectos-cabecera{overflow:hidden!important}.tablero-masificacion>.barra-proyectos-mapa .lista-proyectos-mapa{min-height:0!important;height:auto!important;overflow-y:auto!important;overflow-x:hidden!important;padding-bottom:16px!important}.tablero-masificacion #alternarBarraProyectos{position:static!important;align-self:start!important;justify-self:center!important;width:38px!important;height:38px!important;margin:16px 10px 0 0!important;border:0!important;border-left:1px solid var(--mas-borde)!important;border-radius:10px!important;background:#0d1730!important;box-shadow:none!important;transform:none!important}.tablero-masificacion #alternarBarraProyectos span{width:10px!important;height:10px!important;border-width:2px!important;transform:rotate(-135deg)!important}.tablero-masificacion>.barra-proyectos-mapa.contraida{grid-template-rows:auto!important}.tablero-masificacion>.barra-proyectos-mapa.contraida #alternarBarraProyectos{position:static!important;margin:9px 0!important}.tablero-masificacion>.barra-proyectos-mapa.contraida #alternarBarraProyectos span{transform:rotate(45deg)!important}}
+/* Tarjetas de proyecto con lectura completa, similar a la ficha de referencia. */
+@media(min-width:1051px){.tablero-masificacion .proyecto-arbol-cabecera{grid-template-columns:minmax(0,1fr) auto 34px!important;align-items:stretch}.tablero-masificacion .proyecto-arbol{min-height:190px!important}.tablero-masificacion .seleccionar-proyecto-mapa{grid-template-columns:0 minmax(0,1fr)!important;padding:17px 16px!important}.tablero-masificacion .seleccionar-proyecto-mapa>i{display:none}.tablero-masificacion .seleccionar-proyecto-mapa>span{gap:10px!important;align-content:start}.tablero-masificacion .seleccionar-proyecto-mapa strong{padding-right:4px;font-size:.9rem!important;letter-spacing:.01em}.tablero-masificacion .seleccionar-proyecto-mapa .codigo-proyecto-barra{color:#afc1e9!important;font-size:.67rem!important;font-weight:850}.tablero-masificacion .seleccionar-proyecto-mapa em{justify-self:start;max-width:max-content;padding:7px 11px!important;border-radius:16px!important;color:#cbeeff!important;background:#315b9e!important;font-size:.62rem!important}.tablero-masificacion .datos-proyecto-barra{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:11px;color:#dce7ff;font-size:.61rem;line-height:1.3}.tablero-masificacion .datos-proyecto-barra small{overflow:visible!important;color:inherit!important;font-size:inherit!important;white-space:normal!important;text-overflow:clip!important}.tablero-masificacion .acciones-proyecto-mapa{align-self:start;gap:8px!important;padding:16px 12px 0 0!important;border:0!important}.tablero-masificacion .acciones-proyecto-mapa button{width:38px!important;height:38px!important;border-radius:12px!important;color:#fff!important;background:#0d1730!important}.tablero-masificacion .alternar-subproyectos{align-self:end!important;height:48px!important;border:0!important;border-left:1px solid var(--mas-borde)!important;border-radius:0 0 16px 0!important;background:#12203d!important}.tablero-masificacion .alternar-subproyectos span{width:10px!important;height:10px!important;border-width:2px!important;transform:rotate(45deg)!important}.tablero-masificacion .proyecto-arbol.abierto .alternar-subproyectos span{transform:rotate(225deg)!important}}
+.buscador-proyecto input{
+  height:100%!important;
+  padding:0!important;
+  border:0!important;
+  outline:0!important;
+  background:transparent!important;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.buscador-proyecto b{
+  display:grid;
+  place-items:center;
+  flex:0 0 20px;
+  color:#cfe2ff!important;
+  background:transparent!important;
+}
+@media(max-width:1200px) and (min-width:1051px){
+  .tablero-masificacion.resumen-oculto{
+    grid-template-columns:235px minmax(0,1fr)!important;
+  }
+}
+@media(max-width:1050px){
+  .tablero-masificacion.resumen-oculto{
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:0!important;
+  }
+}
+
+/* Visor fiel de los formatos oficiales de supervisión. */
+.supervision-documento-embebido{display:flex;flex-direction:column;min-height:68vh;border:1px solid #33466f;border-radius:16px;overflow:hidden;background:#0b1020}
+.supervision-documento-embebido~*{display:none!important}
+.supervision-documento-barra{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;background:#142850;border-bottom:1px solid #33466f;color:#f6f7ff}
+.supervision-documento-barra div{display:grid;gap:3px}
+.supervision-documento-barra strong{font-size:15px}
+.supervision-documento-barra small{color:#b7c4df;font-size:12px}
+.supervision-documento-barra a{flex:none;padding:9px 13px;border-radius:10px;background:#2563eb;color:#fff;text-decoration:none;font-weight:800;font-size:12px}
+.supervision-documento-embebido object{display:block;width:100%;height:68vh;min-height:620px;border:0;background:#fff}
+.supervision-editor{border:1px solid #33466f;border-radius:14px;background:#111d38;overflow:hidden}
+.supervision-editor summary{padding:13px 16px;color:#f6f7ff;background:#142850;font-size:.8rem;font-weight:850;cursor:pointer}
+.supervision-editor-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px}
+.supervision-editor-grid label{display:grid;gap:6px;color:#dce7fb;font-size:.63rem;font-weight:800}
+.supervision-editor-grid label.ancho{grid-column:span 2}
+.supervision-editor-grid input,.supervision-editor-grid textarea{width:100%;min-width:0;border:1px solid #435783;border-radius:9px;color:#f6f7ff;background:#0d1730;font:inherit;padding:10px 11px}
+.supervision-editor-grid input{height:40px}.supervision-editor-grid textarea{min-height:78px;resize:vertical}.supervision-editor-grid small{color:#9eb0d0;font-weight:500}
+@media(max-width:900px){.supervision-documento-embebido object{min-height:520px}.supervision-documento-barra{align-items:flex-start;flex-direction:column}}
+@media(max-width:900px){.supervision-editor-grid{grid-template-columns:1fr 1fr}.supervision-editor-grid label.ancho{grid-column:1/-1}}
+
+/* Evidencias seleccionables recibidas desde el dispositivo móvil vinculado. */
+.supervision-movil{display:grid;gap:12px;padding:15px;border:1px solid #33466f;border-radius:15px;background:#111d38}
+.supervision-movil>header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.supervision-movil>header>div:first-child{display:grid;gap:3px}
+.supervision-movil h3,.supervision-movil p{margin:0}.supervision-movil h3{font-size:1rem;color:#f6f7ff}.supervision-movil p{font-size:.72rem;color:#9eb0d0}.supervision-movil header small{color:#67c6ed;font-weight:900;letter-spacing:.08em}
+.supervision-movil-estado{display:flex;align-items:center;gap:8px;color:#bfe9d0;font-size:.72rem;font-weight:800}.supervision-movil-estado i{width:9px;height:9px;border-radius:50%;background:#4dcc8b;box-shadow:0 0 0 5px #4dcc8b20}.supervision-movil-estado button{height:36px;padding:0 13px;border:1px solid #435783;border-radius:9px;background:#142850;color:#f6f7ff;font-weight:800;cursor:pointer}
+.supervision-galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.evidencia-movil{overflow:hidden;border:1px solid #40547e;border-radius:12px;background:#0d1730;transition:.18s ease}.evidencia-movil.descartada{opacity:.48;filter:saturate(.45)}.evidencia-movil>div{position:relative;height:128px;background:#080f20}.evidencia-movil img{display:block;width:100%;height:100%;object-fit:cover}.evidencia-movil>div span{position:absolute;right:7px;bottom:7px;padding:4px 7px;border-radius:999px;background:#0b1020d9;color:#fff;font-size:.55rem;font-weight:850}.evidencia-movil footer{display:grid;grid-template-columns:1fr auto;gap:3px 8px;padding:9px}.evidencia-movil footer strong{color:#f6f7ff;font-size:.72rem}.evidencia-movil footer small{grid-column:1;color:#9eb0d0;font-size:.61rem}.evidencia-movil footer button{grid-column:2;grid-row:1/3;align-self:center;padding:7px 9px;border:1px solid #3e5685;border-radius:8px;background:#18305a;color:#dcecff;font-size:.6rem;font-weight:850;cursor:pointer}.evidencia-movil.incluida footer button{border-color:#2d8666;background:#173d39;color:#bff2d7}
+@media(max-width:900px){.supervision-movil>header{align-items:flex-start;flex-direction:column}.supervision-galeria{grid-template-columns:1fr 1fr}}
+
+/* Creación de proyectos, subproyectos y planificación. */
+.campos-crear-proyecto label small{color:#748299;font-size:.56rem;font-weight:650;line-height:1.35;text-transform:none;letter-spacing:0}.abrir-cronograma-proyecto{color:#24607e!important;border:1px solid #9bc9db!important;background:#e9f7fb!important}.modal-cronograma-proyecto{width:min(1180px,96vw)}.modal-cronograma-proyecto .modal-cuerpo{display:grid;gap:14px}.cronograma-resumen{display:grid;gap:4px;padding:12px 14px;border:1px solid #cfe0eb;border-radius:12px;background:#f4fbfe}.cronograma-resumen strong{color:#18324c;font-size:.78rem}.cronograma-resumen span{color:#6d7e94;font-size:.65rem}.tabla-cronograma-proyecto{max-height:min(48vh,440px)}.tabla-cronograma-proyecto table{min-width:1040px}.tabla-cronograma-proyecto input,.tabla-cronograma-proyecto select{width:100%;height:34px;padding:0 8px;border:1px solid #cbd9e5;border-radius:8px;color:#26354d;background:#fff;font:inherit;font-size:.64rem}.tabla-cronograma-proyecto button{width:32px;height:32px;border:1px solid #efc6c6;border-radius:8px;color:#b64848;background:#fff4f4;font-size:16px;cursor:pointer}.agregar-actividad-cronograma{justify-self:start;height:38px;padding:0 13px;border:0;border-radius:10px;color:#fff;background:linear-gradient(110deg,#438eaf,#57bf79);font:inherit;font-size:.66rem;font-weight:800;cursor:pointer}
+.modal-cronograma-proyecto .cronograma-resumen{border-color:var(--mas-borde)!important;background:var(--mas-tarjeta)!important}.modal-cronograma-proyecto .cronograma-resumen strong{color:var(--mas-texto)!important}.modal-cronograma-proyecto .cronograma-resumen span{color:var(--mas-texto-secundario)!important}.modal-cronograma-proyecto .tabla-cronograma-proyecto input,.modal-cronograma-proyecto .tabla-cronograma-proyecto select{color:var(--mas-texto)!important;border-color:#435783!important;background:#0d1730!important}.modal-cronograma-proyecto .abrir-cronograma-proyecto{color:var(--mas-texto)!important;background:var(--mas-tarjeta-2)!important}
+.filtros-masificacion .buscador-proyecto,.filtros-masificacion .buscador-proyecto>span,.filtros-masificacion .buscador-proyecto input,.filtros-masificacion .buscador-proyecto b{background-color:transparent!important;background-image:none!important;box-shadow:none!important}
+
+/* El panel de proyectos se navega dentro de su propio carril; no invade el mapa. */
+@media(min-width:1051px){
+  .tablero-masificacion>.barra-proyectos-mapa{
+    display:grid!important;
+    grid-template-rows:auto minmax(0,1fr)!important;
+    min-height:0!important;
+    overflow:hidden!important;
+  }
+  .tablero-masificacion>.barra-proyectos-mapa .lista-proyectos-mapa{
+    min-height:0!important;
+    height:auto!important;
+    overflow-x:hidden!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain;
+    scrollbar-gutter:stable;
+  }
+  .tablero-masificacion .alternar-subproyectos{
+    align-self:start!important;
+    justify-self:stretch!important;
+    height:38px!important;
+    margin:16px 8px 0 0!important;
+    border:0!important;
+    border-left:1px solid var(--mas-borde)!important;
+    border-radius:0 10px 10px 0!important;
+    background:#0d1730!important;
+  }
+  .tablero-masificacion .alternar-subproyectos span{transform:rotate(45deg)!important}
+  .tablero-masificacion .proyecto-arbol.abierto .alternar-subproyectos span{transform:rotate(225deg)!important}
+}
+
+/* Fichas compactas y legibles: los datos no compiten con las acciones. */
+@media(min-width:1051px){
+  .tablero-masificacion .proyecto-arbol{min-height:186px!important;background:#35477f!important}
+  .tablero-masificacion .seleccionar-proyecto-mapa{padding:17px 16px!important}
+  .tablero-masificacion .seleccionar-proyecto-mapa>span{gap:9px!important}
+  .tablero-masificacion .seleccionar-proyecto-mapa strong{font-size:.9rem!important}
+  .tablero-masificacion .acciones-proyecto-mapa{gap:10px!important;padding:16px 10px 0 0!important}
+  .tablero-masificacion .acciones-proyecto-mapa button{width:40px!important;height:40px!important;border-radius:12px!important}
+  .tablero-masificacion .alternar-subproyectos{
+    width:40px!important;
+    height:40px!important;
+    margin:16px 10px 0 0!important;
+    border:0!important;
+    border-radius:12px!important;
+    color:#dbe8ff!important;
+    background:#0d1730!important;
+  }
+  .tablero-masificacion .datos-proyecto-barra{
+    display:flex!important;
+    justify-content:space-between!important;
+    gap:12px!important;
+    margin-top:auto!important;
+    padding-top:12px!important;
+    border:0!important;
+  }
+  .tablero-masificacion .datos-proyecto-barra small{
+    display:flex!important;
+    min-width:0!important;
+    align-items:baseline!important;
+    gap:4px!important;
+    font-size:.6rem!important;
+  }
+  .tablero-masificacion .datos-proyecto-barra small span{flex:none;color:#b5c6e8;font-weight:750}
+  .tablero-masificacion .datos-proyecto-barra small strong{
+    overflow:hidden!important;
+    color:#f1f5ff!important;
+    font-size:.64rem!important;
+    font-weight:800!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+    text-overflow:ellipsis!important;
+  }
+}
+
+/* Cabecera compacta: las acciones no cubren el nombre del proyecto. */
+@media(min-width:1051px){
+  .tablero-masificacion .proyecto-arbol{min-height:0!important}
+  .tablero-masificacion .proyecto-arbol-cabecera{position:relative!important}
+  .tablero-masificacion .seleccionar-proyecto-mapa{min-height:148px!important;padding:14px 14px!important}
+  .tablero-masificacion .seleccionar-proyecto-mapa>span{gap:7px!important}
+  .tablero-masificacion .seleccionar-proyecto-mapa>span>strong{
+    max-width:calc(100% - 112px)!important;
+    overflow:hidden!important;
+    font-size:.78rem!important;
+    white-space:nowrap!important;
+    text-overflow:ellipsis!important;
+  }
+  .tablero-masificacion .acciones-proyecto-mapa{gap:6px!important;padding:12px 6px 0 0!important}
+  .tablero-masificacion .acciones-proyecto-mapa button,
+  .tablero-masificacion .alternar-subproyectos{width:34px!important;height:34px!important;border-radius:10px!important}
+  .tablero-masificacion .alternar-subproyectos{margin:12px 6px 0 0!important}
+  .tablero-masificacion .datos-proyecto-barra{
+    justify-content:flex-start!important;
+    gap:10px!important;
+    margin-top:5px!important;
+    padding-top:5px!important;
+  }
+  .tablero-masificacion .datos-proyecto-barra small{font-size:.57rem!important}
+  .tablero-masificacion .datos-proyecto-barra small strong{font-size:.59rem!important}
+}
+
+/* Paleta integrada al panel derecho y cierre total del carril izquierdo. */
+@media(min-width:1051px){
+  .tablero-masificacion .proyecto-arbol{
+    border-color:var(--mas-borde)!important;
+    background:var(--mas-tarjeta)!important;
+    box-shadow:none!important;
+  }
+  .tablero-masificacion .proyecto-arbol.seleccionado{
+    border-color:#5477bf!important;
+    background:#203667!important;
+    box-shadow:inset 3px 0 #65c4e8!important;
+  }
+  .tablero-masificacion .seleccionar-proyecto-mapa em{background:#294b87!important}
+  .tablero-masificacion>.barra-proyectos-mapa.contraida{
+    overflow:hidden!important;
+    grid-template-rows:auto!important;
+  }
+  .tablero-masificacion>.barra-proyectos-mapa.contraida .lista-proyectos-mapa,
+  .tablero-masificacion>.barra-proyectos-mapa.contraida .barra-proyectos-busqueda,
+  .tablero-masificacion>.barra-proyectos-mapa.contraida>footer{display:none!important}
+}
+
+/* El tablero toma la altura disponible cuando los filtros se abren o se ocultan. */
+@media(min-width:1051px){
+  .tablero-masificacion{
+    height:var(--alto-tablero-masificacion,calc(100dvh - 190px))!important;
+    max-height:var(--alto-tablero-masificacion,calc(100dvh - 190px))!important;
+  }
+}
+
+/* El control de proyectos replica al del resumen derecho y el carril se oculta por completo. */
+@media(min-width:1051px){
+  .tablero-masificacion>.barra-proyectos-mapa{overflow:visible!important}
+  .tablero-masificacion #alternarBarraProyectos{
+    position:absolute!important;
+    z-index:30!important;
+    top:50%!important;
+    right:-22px!important;
+    left:auto!important;
+    width:44px!important;
+    height:44px!important;
+    margin:0!important;
+    border:2px solid rgba(204,220,239,.85)!important;
+    border-radius:14px!important;
+    color:#fff!important;
+    background:#1d2948!important;
+    box-shadow:0 9px 22px rgba(17,26,56,.25)!important;
+    transform:translateY(-50%)!important;
+  }
+  .tablero-masificacion #alternarBarraProyectos:hover{background:#243f68!important}
+  .tablero-masificacion #alternarBarraProyectos span{
+    width:12px!important;
+    height:12px!important;
+    border-width:0 3px 3px 0!important;
+    transform:rotate(-135deg)!important;
+  }
+  .tablero-masificacion:has(>.barra-proyectos-mapa.contraida){
+    grid-template-columns:0 minmax(0,1fr) 330px!important;
+  }
+  .tablero-masificacion>.barra-proyectos-mapa.contraida{
+    width:0!important;
+    min-width:0!important;
+    height:100%!important;
+    align-self:stretch!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    overflow:visible!important;
+  }
+  .tablero-masificacion>.barra-proyectos-mapa.contraida .barra-proyectos-cabecera{
+    width:0!important;
+    min-height:0!important;
+    height:0!important;
+    padding:0!important;
+    border:0!important;
+    overflow:visible!important;
+  }
+  .tablero-masificacion>.barra-proyectos-mapa.contraida .barra-proyectos-titulo{display:none!important}
+  .tablero-masificacion>.barra-proyectos-mapa.contraida #alternarBarraProyectos{
+    top:50%!important;
+    right:-22px!important;
+    transform:translateY(-50%)!important;
+  }
+  .tablero-masificacion>.barra-proyectos-mapa.contraida #alternarBarraProyectos span{transform:rotate(45deg)!important}
+}
+
+/* Estado explícito de cierre y cheurones idénticos a los del panel derecho. */
+@media(min-width:1051px){
+  .tablero-masificacion.proyectos-ocultos{grid-template-columns:0 minmax(0,1fr) 330px!important}
+  .tablero-masificacion.proyectos-ocultos>#alternarBarraProyectos{
+    position:absolute!important;
+    z-index:40!important;
+    top:50%!important;
+    left:-22px!important;
+    right:auto!important;
+    transform:translateY(-50%)!important;
+  }
+  .tablero-masificacion .mapa-panel .controles-mapa{left:20px!important;transition:none!important}
+  .tablero-masificacion #alternarBarraProyectos span{
+    display:block!important;
+    border:solid currentColor!important;
+    border-width:0 3px 3px 0!important;
+    transform:rotate(135deg)!important;
+  }
+  .tablero-masificacion>.barra-proyectos-mapa.contraida #alternarBarraProyectos span{transform:rotate(-45deg)!important}
+}
+
+/* Crear proyecto pertenece al encabezado del panel de proyectos. */
+@media(min-width:1051px){
+  .tablero-masificacion .barra-proyectos-cabecera .boton-crear-proyecto-toolbar{
+    flex:0 0 auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:34px!important;
+    margin-left:auto!important;
+    padding:0 10px!important;
+    border-radius:10px!important;
+    font-size:.6rem!important;
+    box-shadow:none!important;
+  }
+  .tablero-masificacion .barra-proyectos-cabecera .boton-crear-proyecto-toolbar small{font-size:inherit!important}
+  .tablero-masificacion .barra-proyectos-cabecera .boton-crear-proyecto-toolbar .icono-crear-proyecto{font-size:1rem!important;line-height:1}
+}
+
+/* El formulario de crear/editar usa todo el modal; la lista ya vive en el panel izquierdo. */
+.modal-crear-proyecto .cuerpo-modificar-proyecto{grid-template-columns:minmax(0,1fr)!important}
+
+/* Cronograma operativo: tabla editable y visualización Gantt sincronizada. */
+.modal-cronograma-proyecto{width:min(1500px,96vw)!important;max-height:94vh!important}
+.modal-cronograma-proyecto .modal-cuerpo{gap:12px!important;padding:16px 20px!important}
+.barra-cronograma-proyecto{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:10px 12px;border:1px solid var(--mas-borde);border-radius:12px;background:#142850}
+.exportar-cronograma-proyecto,.importar-cronograma-proyecto{height:36px;display:inline-flex;align-items:center;padding:0 12px;border:1px solid #496696;border-radius:9px;color:#f5f8ff;background:#203667;font:800 .64rem inherit;cursor:pointer}.exportar-cronograma-proyecto{border-color:#a74a59;background:#7d2e3d}.barra-cronograma-proyecto small{margin-left:auto;color:#9fb0d3;font-size:.6rem}
+.cronograma-proyecto-visor{display:grid;grid-template-columns:minmax(620px,1.03fr) minmax(500px,.97fr);min-height:470px;max-height:58vh;overflow:hidden;border:1px solid var(--mas-borde);border-radius:14px;background:#0d1730}
+.tabla-cronograma-proyecto{max-height:none!important;border:0!important;border-radius:0!important;background:#101a35!important;overflow:auto}.tabla-cronograma-proyecto table{min-width:920px!important;font-size:.6rem}.tabla-cronograma-proyecto th{position:sticky;top:0;z-index:2;color:#dceaff!important;background:#216080!important}.tabla-cronograma-proyecto th,.tabla-cronograma-proyecto td{padding:8px 7px!important;border-color:#344a76!important;white-space:nowrap}.tabla-cronograma-proyecto input,.tabla-cronograma-proyecto select{height:30px!important;font-size:.59rem!important}.tabla-cronograma-proyecto td:nth-child(2) input{min-width:170px}.tabla-cronograma-proyecto td:nth-child(8) input{width:56px}.tabla-cronograma-proyecto td:nth-child(9) button{border-color:#7a3945!important;color:#ffd3d8!important;background:#4a2531!important}
+.gantt-cronograma-proyecto{min-width:0;overflow:auto;background:#f7f9fd}.gantt-cronograma-proyecto>header{position:sticky;top:0;z-index:3;display:grid;grid-auto-flow:column;grid-auto-columns:42px;height:38px;min-width:max-content;border-bottom:1px solid #dce4f0;background:#eef3f9}.gantt-cronograma-proyecto>header span{display:grid;place-items:center;border-right:1px solid #dce4f0;color:#6e809a;font-size:.52rem;font-weight:800}.gantt-cronograma-proyecto>div{min-width:max-content;padding:10px 0}.gantt-fila{position:relative;height:54px;border-bottom:1px solid #e3e8f0;background:repeating-linear-gradient(90deg,transparent 0 41px,#e6ebf3 41px 42px)}.gantt-barra{position:absolute;top:12px;height:22px;overflow:hidden;padding:0 8px;border-radius:6px;color:#fff;font-size:.56rem;font-weight:800;line-height:22px;white-space:nowrap;text-overflow:ellipsis;box-shadow:0 2px 5px rgba(20,43,73,.18)}.gantt-barra i{position:absolute;left:0;bottom:0;height:4px;background:#52c77a}.gantt-vacio{padding:26px;color:#64738b;font-size:.72rem;text-align:center}
+@media(max-width:1050px){.cronograma-proyecto-visor{grid-template-columns:1fr;max-height:70vh}.gantt-cronograma-proyecto{min-height:280px}.barra-cronograma-proyecto small{width:100%;margin-left:0}}
+
+/* Secuencia de la maqueta: edición arriba, Gantt completo debajo. */
+@media(min-width:1051px){
+  .modal-cronograma-proyecto{width:min(1800px,97vw)!important}
+  .cronograma-proyecto-visor{
+    grid-template-columns:1fr!important;
+    grid-template-rows:minmax(310px,.9fr) minmax(300px,1fr)!important;
+    max-height:72vh!important;
+  }
+  .tabla-cronograma-proyecto{border-bottom:1px solid var(--mas-borde)!important}
+  .gantt-cronograma-proyecto{min-height:300px;border-top:0!important}
+  .gantt-cronograma-proyecto>header{height:42px!important;background:#eef3f9!important}
+  .gantt-cronograma-proyecto>div{padding-top:8px!important}
+  .gantt-fila{height:50px!important}
+}
+
+.accion-cronograma-proyecto{height:36px;padding:0 10px;border:1px solid #496696;border-radius:9px;color:#dceaff;background:#182747;font:800 .61rem inherit;cursor:pointer}.accion-cronograma-proyecto:hover{background:#294b87}.contador-seleccion-cronograma{padding:8px 10px;border:1px solid #496696;border-radius:9px;color:#bdddff;background:#0d1730;font-size:.59rem}
+.tablero-masificacion .acciones-proyecto-mapa .crear-subproyecto{color:#d7fbff!important;background:#1b556d!important;font-size:1.18rem!important;font-weight:900!important;line-height:1}.tablero-masificacion .acciones-proyecto-mapa .crear-subproyecto:hover{color:#fff!important;background:#2e91af!important}
+
+/* En alta o edición solo se muestra el encabezado propio del formulario. */
+body:has(#modalCrearProyecto[open]) .cabecera-satcontrol-global,body:has(#modalCronogramaProyecto[open]) .cabecera-satcontrol-global,body:has(#modalRecursosCronograma[open]) .cabecera-satcontrol-global{visibility:hidden!important}
+.tabla-cronograma-proyecto tr[data-nivel="1"] td:nth-child(3) input{padding-left:24px!important}.tabla-cronograma-proyecto tr[data-nivel="2"] td:nth-child(3) input{padding-left:40px!important}.tabla-cronograma-proyecto tr[data-nivel="3"] td:nth-child(3) input{padding-left:56px!important}.tabla-cronograma-proyecto tr:has(input[data-seleccion-cronograma]:checked){background:#203d71!important}
+
+.modal-calendario-cronograma{width:min(860px,94vw)!important}.modal-calendario-cronograma .modal-cuerpo{gap:14px!important}.resumen-calendario-cronograma,.seccion-calendario-cronograma,.horario-semanal-cronograma,.feriados-cronograma{padding:13px;border:1px solid var(--mas-borde);border-radius:12px;background:var(--mas-tarjeta)}.resumen-calendario-cronograma{color:#bfe1ff;font-size:.72rem;font-weight:750}.seccion-calendario-cronograma{display:grid;gap:10px}.semana-calendario-cronograma{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.semana-calendario-cronograma label{display:flex;align-items:center;justify-content:center;gap:5px;min-height:36px;border:1px solid #435783;border-radius:9px;background:#0d1730;color:#dbe7ff;font-size:.63rem;font-weight:800;cursor:pointer}.plantilla-horario-cronograma{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:9px;align-items:end;padding:13px;border:1px solid var(--mas-borde);border-radius:12px;background:#142850}.plantilla-horario-cronograma label,.feriados-cronograma label{display:grid;gap:5px;color:#aebddd;font-size:.61rem;font-weight:800}.plantilla-horario-cronograma input,.feriados-cronograma input{height:36px;padding:0 9px;border:1px solid #435783;border-radius:8px;color:#f4f7ff;background:#0d1730;font:inherit}.plantilla-horario-cronograma button,.feriados-cronograma button{height:36px;padding:0 11px;border:0;border-radius:8px;color:#fff;background:#315f9d;font:800 .61rem inherit;cursor:pointer}.horario-semanal-cronograma{overflow:auto}.horario-semanal-cronograma header,.fila-horario-cronograma{display:grid;grid-template-columns:1.2fr repeat(4,1fr) .8fr;min-width:640px}.horario-semanal-cronograma header{padding:0 8px 8px;color:#aebddd;font-size:.56rem;font-weight:900;text-transform:uppercase}.fila-horario-cronograma{align-items:center;padding:8px;border-top:1px solid #34486f;color:#e8efff;font-size:.65rem}.fila-horario-cronograma input{width:100%;height:30px;border:1px solid #435783;border-radius:7px;color:#fff;background:#0d1730;font:inherit;font-size:.6rem}.fila-horario-cronograma b{color:#65cf9c;text-align:right}.feriados-cronograma{display:grid;gap:10px}.feriados-cronograma>div{display:grid;grid-template-columns:150px 1fr auto;gap:8px;align-items:end}.feriados-cronograma ul{display:grid;gap:6px;margin:0;padding:0;list-style:none}.feriados-cronograma li{display:flex;justify-content:space-between;gap:10px;padding:8px 10px;border:1px solid #435783;border-radius:8px;color:#dce8ff;background:#0d1730;font-size:.63rem}.feriados-cronograma li button{height:auto;padding:3px 7px;background:#743847}
+
+/* Tabla y recursos del cronograma: se mantiene la edición antes de la vista Gantt. */
+.tabla-cronograma-proyecto th:nth-child(2),.tabla-cronograma-proyecto td:nth-child(2){min-width:42px;width:42px;text-align:center}.tabla-cronograma-proyecto td:nth-child(3) input{min-width:190px}.numero-cronograma b{color:#64d9ed;font-size:.8rem}.tabla-cronograma-proyecto td:nth-child(9){white-space:nowrap}.tabla-cronograma-proyecto td:nth-child(9) input{width:54px!important;min-width:54px!important}.porcentaje-cronograma{margin-left:4px;color:#9ecaff;font-size:.68rem;font-weight:800}.boton-recursos-cronograma{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:4px!important;min-width:38px!important;height:34px!important;padding:0 7px!important;border:1px solid #4c73ae!important;border-radius:8px!important;background:#1b365f!important;color:#b9edff!important;cursor:pointer}.boton-recursos-cronograma svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}.boton-recursos-cronograma b{min-width:11px;font-size:.63rem}.modal-recursos-cronograma{width:min(820px,94vw)!important}.form-recursos-cronograma{display:grid;grid-template-columns:1.55fr 1fr .65fr .65fr auto;gap:10px;align-items:end;padding:14px;border:1px solid var(--mas-borde);border-radius:12px;background:var(--mas-tarjeta)}.form-recursos-cronograma label{display:grid;gap:5px;color:#b9c9e8;font-size:.65rem;font-weight:850}.form-recursos-cronograma input,.form-recursos-cronograma select{height:38px;padding:0 10px;border:1px solid #435783;border-radius:8px;color:#eff5ff;background:#0d1730;font:inherit}.form-recursos-cronograma button{height:38px;padding:0 13px;border:0;border-radius:8px;color:#fff;background:#3687a9;font:800 .68rem inherit;cursor:pointer}.lista-recursos-cronograma{display:grid;gap:8px}.lista-recursos-cronograma article{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 13px;border:1px solid #405987;border-radius:10px;background:#142850}.lista-recursos-cronograma article span{display:grid;gap:3px;color:#f3f7ff}.lista-recursos-cronograma article small{color:#a9bbdc;font-size:.68rem}.lista-recursos-cronograma article button{border:0;border-radius:7px;background:#5c3148;color:#ffd5df;font-size:1rem;line-height:28px;width:30px;height:30px;cursor:pointer}.lista-recursos-cronograma .recurso-cronograma-vacio{display:block;color:#a9bbdc;font-size:.75rem}@media(max-width:760px){.form-recursos-cronograma{grid-template-columns:1fr 1fr}.form-recursos-cronograma label:first-child{grid-column:1/-1}}
+
+/* Separación clara entre la tabla editable y el diagrama Gantt. */
+.cronograma-proyecto-visor{gap:16px!important;padding:14px!important;background:#0a142d!important}.tabla-cronograma-proyecto,.gantt-cronograma-proyecto{border:1px solid #405987!important;border-radius:11px!important}.tabla-cronograma-proyecto{box-shadow:0 8px 18px rgba(0,0,0,.16)}.gantt-cronograma-proyecto{box-shadow:0 8px 18px rgba(0,0,0,.12)}@media(min-width:1051px){.cronograma-proyecto-visor{grid-template-rows:minmax(305px,.9fr) minmax(295px,1fr)!important}.tabla-cronograma-proyecto{border-bottom:1px solid #405987!important}.gantt-cronograma-proyecto{border-top:1px solid #405987!important}}
+
+/* Tabla de cronograma alineada a la maqueta de Project. */
+.tabla-cronograma-proyecto table{min-width:1240px!important;border-collapse:separate!important;border-spacing:0!important}.tabla-cronograma-proyecto th{height:44px!important;background:#216080!important;color:#f7fbff!important;font-size:.64rem!important;font-weight:900!important;text-align:left!important}.tabla-cronograma-proyecto th:first-child,.tabla-cronograma-proyecto td:first-child{width:40px;text-align:center!important}.tabla-cronograma-proyecto th:nth-child(2),.tabla-cronograma-proyecto td:nth-child(2){width:52px;text-align:center!important}.tabla-cronograma-proyecto th:nth-child(3),.tabla-cronograma-proyecto td:nth-child(3){min-width:330px}.tabla-cronograma-proyecto th:nth-child(4),.tabla-cronograma-proyecto td:nth-child(4),.tabla-cronograma-proyecto th:nth-child(5),.tabla-cronograma-proyecto td:nth-child(5){min-width:122px}.tabla-cronograma-proyecto th:nth-child(6),.tabla-cronograma-proyecto td:nth-child(6),.tabla-cronograma-proyecto th:nth-child(7),.tabla-cronograma-proyecto td:nth-child(7){min-width:112px}.tabla-cronograma-proyecto tbody tr{background:#0f1b37}.tabla-cronograma-proyecto tbody tr:nth-child(even){background:#101f42}.tabla-cronograma-proyecto tbody tr.resumen-cronograma{background:#243f76!important}.tabla-cronograma-proyecto tbody tr.seleccionada-cronograma{box-shadow:inset 4px 0 #56d4e7}.tabla-cronograma-proyecto td{height:64px!important;padding:8px 9px!important;vertical-align:middle!important}.tabla-cronograma-proyecto input[readonly]{opacity:.85;background:#203a6a!important;font-weight:800}.actividad-cronograma{display:flex;align-items:center;min-width:330px}.actividad-cronograma input{flex:1;min-width:120px!important;border:0!important;background:transparent!important;padding:0 5px!important;font-size:.69rem!important}.resumen-cronograma .actividad-cronograma input{font-weight:900!important}.arrastre-cronograma{padding:0 7px;color:#8db5ec;font-size:1rem;cursor:grab}.sangria-cronograma{display:inline-block;flex:0 0 auto}.alternar-cronograma{display:grid;place-items:center;width:23px;height:23px;margin-right:6px;border:0;border-radius:5px;background:transparent;color:#65d8e9;font-size:.7rem;cursor:pointer}.marcador-vacio{color:#8fb9ec}.subtareas-cronograma,.nivel-cronograma{flex:0 0 auto;margin-right:7px;border:1px solid #4270ad;border-radius:7px;padding:4px 6px;color:#a9dafa;background:#12264e;font-size:.55rem;font-weight:900}.subtareas-cronograma{color:#65d8e9;border:0;background:transparent}.avance-cronograma{white-space:nowrap}.avance-cronograma input{width:52px!important;min-width:52px!important}.avance-cronograma span{margin-left:4px;color:#b7d7ff;font-size:.66rem;font-weight:800}.fila-cronograma-maqueta .boton-recursos-cronograma{margin:auto}.fila-cronograma-maqueta td:last-child button{border:0!important;background:transparent!important;color:#ff7184!important;font-size:1.15rem!important}.fila-cronograma-maqueta.dragging{opacity:.45}.fila-cronograma-maqueta:has(input:checked){background:#294779!important}
+
+/* La selección se realiza al pulsar una fila; no se muestran casillas. */
+.tabla-cronograma-proyecto th:first-child,.tabla-cronograma-proyecto td:first-child{display:none!important}.fila-cronograma-maqueta{cursor:pointer}.fila-cronograma-maqueta input,.fila-cronograma-maqueta button{cursor:auto}.fila-cronograma-maqueta.seleccionada-cronograma{background:#294779!important;box-shadow:inset 4px 0 #56d4e7}
+
+/* Gantt claro como la maqueta: encabezado gris azulado y grilla blanca. */
+.gantt-cronograma-proyecto{background:#fff!important}.gantt-cronograma-proyecto>header{background:#eef3f8!important;border-bottom-color:#becadc!important}.gantt-cronograma-proyecto>header span{border-right-color:#d6dde7!important;color:#5e6b7e!important}.gantt-cronograma-proyecto>div{background:#fff!important}.gantt-fila{background:repeating-linear-gradient(to right,#fff 0,#fff 41px,#edf1f5 41px,#edf1f5 42px)!important;border-bottom-color:#e4e9ef!important}.gantt-barra{box-shadow:0 2px 6px rgba(0,0,0,.17)!important}.gantt-vacio{color:#64738b!important}
+
+/* El encabezado del cronograma ocupa una fila propia y no se cruza con la barra. */
+.modal-cronograma-proyecto{display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important;overflow:hidden!important}.modal-cronograma-proyecto>header{position:relative!important;z-index:3!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:start!important;min-height:106px!important;padding:18px 24px!important;box-sizing:border-box!important}.modal-cronograma-proyecto>header>div{display:grid!important;gap:5px!important;align-content:start!important;min-width:0!important}.modal-cronograma-proyecto>header small{display:block!important;line-height:1.1!important}.modal-cronograma-proyecto>header h2{position:static!important;margin:0!important;line-height:1.15!important}.modal-cronograma-proyecto>header p{position:static!important;margin:0!important;line-height:1.35!important}.modal-cronograma-proyecto .modal-cuerpo{position:relative!important;z-index:1!important;min-height:0!important;overflow:auto!important;margin:0!important;padding-top:16px!important}.modal-cronograma-proyecto>footer{position:relative!important;z-index:2!important}
+
+/* El identificador queda gestionado internamente; se prioriza el área de trabajo. */
+.modal-cronograma-proyecto .cronograma-resumen{display:none!important}.modal-cronograma-proyecto .modal-cuerpo{gap:14px!important}.cronograma-proyecto-visor{max-height:none!important;min-height:760px!important}@media(min-width:1051px){.cronograma-proyecto-visor{grid-template-rows:minmax(300px,.7fr) minmax(430px,1.3fr)!important}.gantt-cronograma-proyecto{min-height:430px!important}.gantt-fila{height:58px!important}}
+
+/* El diálogo se abre en la capa superior de la ventana, nunca dentro del mapa. */
+.modal-cronograma-proyecto:not([open]){display:none!important}
+.modal-cronograma-proyecto[open]{position:fixed!important;inset:2vh 1.5vw!important;width:auto!important;max-width:none!important;height:96vh!important;max-height:none!important;margin:0!important;z-index:2147483647!important}.modal-cronograma-proyecto[open]::backdrop{background:rgba(3,8,23,.82)!important;backdrop-filter:blur(4px)!important}
+
+/* Barra compacta de iconos para las acciones de planificación. */
+.barra-cronograma-proyecto .icono-accion-cronograma{display:grid!important;place-items:center!important;width:42px!important;min-width:42px!important;height:42px!important;padding:0!important;border:1px solid #496696!important;border-radius:10px!important;background:#182d53!important;color:#cfe8ff!important;box-shadow:none!important}.barra-cronograma-proyecto .icono-accion-cronograma svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.barra-cronograma-proyecto .agregar-actividad-cronograma.icono-accion-cronograma{background:linear-gradient(135deg,#3e9ab8,#59bf77)!important;border-color:#63cda1!important;color:#fff!important}.barra-cronograma-proyecto .icono-accion-cronograma:hover{border-color:#79d5ef!important;background:#244a7f!important}.barra-cronograma-proyecto .agregar-actividad-cronograma.icono-accion-cronograma:hover{background:linear-gradient(135deg,#48abc9,#68cf88)!important}
+
+/* En escritorio la edición y el Gantt se muestran simultáneamente. */
+@media(min-width:1051px){.cronograma-proyecto-visor{grid-template-columns:minmax(650px,1.08fr) minmax(560px,.92fr)!important;grid-template-rows:minmax(620px,1fr)!important;min-height:620px!important;max-height:none!important}.tabla-cronograma-proyecto,.gantt-cronograma-proyecto{min-height:620px!important;height:620px!important}.gantt-cronograma-proyecto{border-top:1px solid #405987!important}.gantt-fila{height:58px!important}}
+
+/* Deslizantes visibles para navegar la tabla y la línea de tiempo. */
+.tabla-cronograma-proyecto,.gantt-cronograma-proyecto{scrollbar-width:thin;scrollbar-color:#55bdd8 #0d1730}.tabla-cronograma-proyecto::-webkit-scrollbar,.gantt-cronograma-proyecto::-webkit-scrollbar{width:10px;height:10px}.tabla-cronograma-proyecto::-webkit-scrollbar-track,.gantt-cronograma-proyecto::-webkit-scrollbar-track{border-radius:8px;background:#0d1730}.tabla-cronograma-proyecto::-webkit-scrollbar-thumb,.gantt-cronograma-proyecto::-webkit-scrollbar-thumb{border:2px solid #0d1730;border-radius:8px;background:linear-gradient(90deg,#3e91b5,#61cde1)}.gantt-cronograma-proyecto::-webkit-scrollbar-track{background:#e2e9f1}.gantt-cronograma-proyecto::-webkit-scrollbar-thumb{border-color:#e2e9f1;background:linear-gradient(90deg,#4ea5c8,#70cde1)}
+
+/* Deslizador horizontal explícito de la línea de tiempo. */
+.navegacion-horizontal-cronograma{grid-column:1/-1;display:grid;grid-template-columns:1.08fr .92fr;gap:16px;padding:0 2px}.navegacion-horizontal-cronograma label{display:grid;grid-template-columns:42px 1fr;align-items:center;gap:8px;min-width:0;color:#a9c9e8;font-size:.6rem;font-weight:900;text-transform:uppercase}.navegacion-horizontal-cronograma input{width:100%;height:16px;margin:0;accent-color:#55bdd8;cursor:ew-resize}.navegacion-horizontal-cronograma input::-webkit-slider-runnable-track{height:7px;border-radius:10px;background:#263d68}.navegacion-horizontal-cronograma input::-webkit-slider-thumb{width:18px;height:18px;margin-top:-5px;border:2px solid #dff8ff;border-radius:50%;background:#55bdd8;box-shadow:0 1px 5px rgba(25,60,93,.35)}.navegacion-horizontal-cronograma label:nth-child(2) input::-webkit-slider-runnable-track{background:#cbd5e1}.navegacion-horizontal-cronograma label:nth-child(2) input::-webkit-slider-thumb{border-color:#fff;background:#4ea5c8}@media(max-width:1050px){.navegacion-horizontal-cronograma{grid-template-columns:1fr}}
+/* La fila de navegación forma parte del visor y no queda recortada. */
+@media(min-width:1051px){.cronograma-proyecto-visor{grid-template-rows:minmax(0,1fr) 32px!important;height:530px!important;min-height:530px!important;max-height:530px!important}.tabla-cronograma-proyecto,.gantt-cronograma-proyecto{height:auto!important;min-height:0!important}.navegacion-horizontal-cronograma{align-self:center;height:32px;padding:0 4px}.gantt-fila{height:54px!important}}
+
+/* Iconografía consistente en recursos, borrar, exportar y cargar. */
+.tabla-cronograma-proyecto th[title="Recursos"]{display:flex;align-items:center;justify-content:center;gap:5px}.icono-recursos-tabla{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}.boton-eliminar-cronograma{display:grid!important;place-items:center!important;width:32px!important;height:32px!important;margin:auto!important;border:0!important;border-radius:7px!important;background:transparent!important;color:#ff7184!important}.boton-eliminar-cronograma:hover{background:#381b34!important}.boton-eliminar-cronograma svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.exportar-cronograma-proyecto,.importar-cronograma-proyecto{display:inline-flex!important;align-items:center!important;gap:7px!important}.exportar-cronograma-proyecto svg,.importar-cronograma-proyecto svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Botón de recursos de la columna REC., alineado con la referencia visual. */
+.tabla-cronograma-proyecto th:nth-child(9),.tabla-cronograma-proyecto td:nth-child(9){min-width:102px!important;width:102px!important;text-align:center!important}
+.tabla-cronograma-proyecto th[title="Recursos"]{display:table-cell!important;text-align:center!important;font-size:.76rem!important}
+body #modalCronogramaProyecto .fila-cronograma-maqueta .boton-recursos-cronograma{position:relative;display:grid!important;place-items:center!important;width:44px!important;min-width:44px!important;height:42px!important;margin:auto!important;padding:0!important;border:2px solid #3f659b!important;border-radius:10px!important;background:#13284f!important;color:#c4f3ff!important;box-shadow:none!important;transition:border-color .18s ease,background .18s ease,transform .18s ease}
+body #modalCronogramaProyecto .fila-cronograma-maqueta .boton-recursos-cronograma:hover,body #modalCronogramaProyecto .fila-cronograma-maqueta .boton-recursos-cronograma:focus-visible{border-color:#66b6dd!important;background:#193967!important;transform:translateY(-1px);outline:none}
+body #modalCronogramaProyecto .fila-cronograma-maqueta .boton-recursos-cronograma svg{width:20px!important;height:20px!important;stroke-width:2!important}
+body #modalCronogramaProyecto .fila-cronograma-maqueta .boton-recursos-cronograma b{position:absolute;right:4px;bottom:3px;display:grid;place-items:center;min-width:16px;height:16px;padding:0 3px;border-radius:8px;background:#4c73ae;color:#fff;font-size:.55rem;line-height:1}
+
+body .tablero-masificacion .proyecto-arbol,
+body .tablero-masificacion .proyecto-arbol.seleccionado{
+  border-color:#6072aa!important;
+  background:#3c4c7d!important;
+}
+
+/* Distribución vertical: acciones arriba y contenido debajo, sin cruces. */
+@media(min-width:1051px){
+  body .tablero-masificacion .proyecto-arbol-cabecera,
+  body .tablero-masificacion .seleccionar-proyecto-mapa{
+    min-height:184px!important;
+  }
+  body .tablero-masificacion .seleccionar-proyecto-mapa{
+    padding:48px 14px 58px!important;
+  }
+  body .tablero-masificacion .seleccionar-proyecto-mapa>span{
+    width:100%!important;
+  }
+  body .tablero-masificacion .acciones-proyecto-mapa{
+    top:9px!important;
+    right:34px!important;
+    gap:2px!important;
+  }
+  body .tablero-masificacion .alternar-subproyectos{
+    top:9px!important;
+    right:4px!important;
+  }
+  body .tablero-masificacion .acciones-proyecto-mapa button,
+  body .tablero-masificacion .alternar-subproyectos{
+    width:26px!important;
+    min-width:26px!important;
+    height:26px!important;
+    border-radius:8px!important;
+  }
+  body .tablero-masificacion .acciones-proyecto-mapa svg{width:13px!important;height:13px!important}
+  body .tablero-masificacion .acciones-proyecto-mapa .crear-subproyecto{font-size:1rem!important}
+  body .tablero-masificacion .seleccionar-proyecto-mapa>span>strong{font-size:.76rem!important;line-height:1.22!important}
+  body .tablero-masificacion .seleccionar-proyecto-mapa .codigo-proyecto-barra{font-size:.61rem!important}
+  body .tablero-masificacion .seleccionar-proyecto-mapa em{padding:5px 9px!important;font-size:.57rem!important}
+  body .tablero-masificacion .datos-proyecto-barra{right:12px!important;bottom:9px!important;left:14px!important;gap:2px!important}
+  body .tablero-masificacion .datos-proyecto-barra small,
+  body .tablero-masificacion .datos-proyecto-barra small strong{font-size:.57rem!important;line-height:1.2!important}
+}
+
+/* Flujo compacto de la ficha: elimina el espacio vacío central. */
+@media(min-width:1051px){
+  body .tablero-masificacion .proyecto-arbol-cabecera,
+  body .tablero-masificacion .seleccionar-proyecto-mapa{
+    min-height:0!important;
+  }
+  body .tablero-masificacion .seleccionar-proyecto-mapa{
+    display:block!important;
+    padding:50px 14px 14px!important;
+  }
+  body .tablero-masificacion .seleccionar-proyecto-mapa>span{
+    display:flex!important;
+    gap:6px!important;
+  }
+  body .tablero-masificacion .datos-proyecto-barra{
+    position:static!important;
+    display:flex!important;
+    width:100%!important;
+    margin:5px 0 0!important;
+    padding:7px 0 0!important;
+    border-top:1px solid rgba(185,202,245,.18)!important;
+    gap:3px!important;
+  }
+  body .tablero-masificacion .datos-proyecto-barra small{
+    width:100%!important;
+  }
+}
+
+/* Nombre e iconos comparten la fila superior de la tarjeta. */
+@media(min-width:1051px){
+  body .tablero-masificacion .seleccionar-proyecto-mapa{
+    padding:48px 14px 14px!important;
+  }
+  body .tablero-masificacion .seleccionar-proyecto-mapa>span>strong{
+    position:absolute!important;
+    z-index:1!important;
+    top:12px!important;
+    right:124px!important;
+    left:14px!important;
+    width:auto!important;
+    max-width:none!important;
+    line-height:1.2!important;
+  }
+}
+
+/* Carga de beneficiarios accesible desde la cabecera del formulario. */
+.acciones-cabecera-crear-proyecto{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+body #modalCrearProyecto>header .boton-subir-beneficiarios{position:relative;display:inline-flex;align-items:center;justify-content:center;width:auto!important;height:38px!important;padding:0 14px!important;overflow:hidden;border:1px solid #83b8cf!important;border-radius:10px!important;color:#fff!important;background:#286986!important;font:inherit;font-size:.66rem!important;font-weight:850!important;white-space:nowrap;cursor:pointer}
+body #modalCrearProyecto>header .boton-subir-beneficiarios:hover{background:#3485a5!important}
+body #modalCrearProyecto>header .boton-subir-beneficiarios input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+body #modalCrearProyecto>header .acciones-cabecera-crear-proyecto>#cerrarCrearProyecto{flex:0 0 auto}
+@media(max-width:640px){body #modalCrearProyecto>header{align-items:flex-start}.acciones-cabecera-crear-proyecto{gap:6px}body #modalCrearProyecto>header .boton-subir-beneficiarios{height:34px!important;padding:0 10px!important;font-size:.58rem!important}}
+
+/* Herramienta de geometría vinculada al alta y edición de proyectos. */
+.herramienta-area-proyecto{display:grid;gap:11px;padding:14px;border:1px solid #3e5787;border-radius:13px;background:#14264a}.herramienta-area-proyecto header small{color:#69cbe1;font-size:.55rem;font-weight:900;letter-spacing:.08em}.herramienta-area-proyecto h3{margin:3px 0 4px;color:#f4f7ff;font-size:.84rem}.herramienta-area-proyecto header p{margin:0;color:#aebddd;font-size:.62rem;font-weight:650;line-height:1.45}.campos-herramienta-area{display:grid;grid-template-columns:1fr 1.25fr .75fr auto;gap:9px;align-items:end}.campos-herramienta-area label{display:grid;gap:5px;color:#b9c9e8;font-size:.57rem;font-weight:850;text-transform:uppercase;letter-spacing:.04em}.campos-herramienta-area input,.campos-herramienta-area select{width:100%;min-width:0;height:36px;padding:0 9px;border:1px solid #435d8d;border-radius:8px;color:#f2f6ff;background:#0d1730;font:inherit;font-size:.63rem}.campos-herramienta-area button{height:36px;padding:0 12px;border:0;border-radius:8px;color:#fff;background:#3688a9;font:800 .62rem inherit;white-space:nowrap;cursor:pointer}.campos-herramienta-area button:hover{background:#43a2c4}.estado-herramienta-area{margin:0;padding:8px 10px;border:1px solid #344b78;border-radius:8px;color:#b8c8e7;background:#0d1730;font-size:.59rem}.estado-herramienta-area.exito{color:#bff5d6;border-color:#37795b;background:#123b31}@media(max-width:850px){.campos-herramienta-area{grid-template-columns:1fr 1fr}.campos-herramienta-area button{grid-column:1/-1}}
+
+/* Evita el destello inicial mientras el cargador global traslada el botón Proyecto. */
+.cabecera-satcontrol-global #abrirCrearProyecto{display:none!important}
+
+.acciones-geometria-mapa{position:absolute;z-index:720;right:14px;bottom:52px;display:flex;align-items:center;gap:14px;padding:11px 12px;border:1px solid #5574a8;border-radius:12px;color:#f5f8ff;background:rgba(15,29,58,.96);box-shadow:0 12px 28px rgba(5,12,30,.34)}.acciones-geometria-mapa[hidden]{display:none}.acciones-geometria-mapa div{display:grid;gap:2px}.acciones-geometria-mapa strong{font-size:.68rem}.acciones-geometria-mapa small{color:#aebddd;font-size:.55rem}.acciones-geometria-mapa span{display:flex;gap:6px}.acciones-geometria-mapa button{height:30px;padding:0 9px;border:1px solid #526b9a;border-radius:7px;color:#fff;background:#294c7d;font:800 .57rem inherit;cursor:pointer}.acciones-geometria-mapa #guardarGeometriaMapa{border-color:#438c72;background:#287555}.acciones-geometria-mapa #eliminarGeometriaMapa{border-color:#8d4f62;background:#713346}@media(max-width:700px){.acciones-geometria-mapa{right:8px;bottom:48px;left:8px;align-items:stretch;flex-direction:column}.acciones-geometria-mapa span button{flex:1}}
+.modal-dibujo-area{width:min(760px,94vw)}.modal-dibujo-area .campos-herramienta-area{grid-template-columns:1.15fr 1fr 1.2fr}
+.modal-acciones-geometria{width:min(620px,92vw)}.resumen-geometria-dibujada{display:flex!important;align-items:center;gap:13px!important}.resumen-geometria-dibujada>div{display:grid;gap:4px}.resumen-geometria-dibujada strong{color:#f5f8ff;font-size:.82rem}.resumen-geometria-dibujada small{color:#aebddd;font-size:.64rem}.icono-geometria-dibujada{width:48px;height:48px;display:grid;place-items:center;flex:none;border:1px solid #5574a8;border-radius:13px;color:#72d0e5;background:#172b52}.icono-geometria-dibujada svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.acciones-modal-geometria{display:flex;justify-content:flex-end;gap:9px;padding:14px 20px 18px;border-top:1px solid #344b78;background:#111f3d}.acciones-modal-geometria button{height:38px;padding:0 15px;border:1px solid #526b9a;border-radius:9px;color:#fff;background:#294c7d;font:800 .64rem inherit;cursor:pointer}.acciones-modal-geometria #guardarGeometriaMapa{border-color:#438c72;background:#287555}.acciones-modal-geometria #eliminarGeometriaMapa{border-color:#8d4f62;background:#713346}.vertice-edicion-geometria{width:15px!important;height:15px!important;margin:-7.5px 0 0 -7.5px!important;border:3px solid #fff!important;border-radius:50%!important;background:#ef9b2d!important;box-shadow:0 2px 7px rgba(3,10,24,.42)!important}.mapa-editando-vertices{cursor:default!important}.acciones-geometria-mapa #finalizarEdicionGeometria{border-color:#438c72;background:#287555}
+
+/* El nombre del proyecto se muestra completo sin competir con sus acciones. */
+@media(min-width:1051px){
+  .tablero-masificacion .proyecto-arbol-cabecera{
+    grid-template-columns:minmax(0,1fr) auto 34px!important;
+  }
+  .tablero-masificacion .seleccionar-proyecto-mapa{
+    min-height:160px!important;
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+  .tablero-masificacion .seleccionar-proyecto-mapa>span{
+    display:flex!important;
+    width:100%!important;
+    min-width:0!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+  }
+  .tablero-masificacion .seleccionar-proyecto-mapa em{align-self:flex-start!important}
+  .tablero-masificacion .seleccionar-proyecto-mapa>span>strong{
+    display:block!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    justify-self:stretch!important;
+    overflow:hidden!important;
+    font-size:.82rem!important;
+    line-height:1.3!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+    text-overflow:clip!important;
+  }
+  .tablero-masificacion .acciones-proyecto-mapa{
+    align-items:flex-start!important;
+    gap:3px!important;
+    padding:12px 2px 0 0!important;
+  }
+  .tablero-masificacion .acciones-proyecto-mapa button,
+  .tablero-masificacion .alternar-subproyectos{
+    width:30px!important;
+    min-width:30px!important;
+    height:30px!important;
+    border-radius:9px!important;
+  }
+  .tablero-masificacion .alternar-subproyectos{
+    align-self:start!important;
+    margin:12px 4px 0 1px!important;
+    border:0!important;
+    background:#0d1730!important;
+  }
+  .tablero-masificacion .acciones-proyecto-mapa svg{
+    width:15px!important;
+    height:15px!important;
+  }
+}
+@media(max-width:760px){.semana-calendario-cronograma{grid-template-columns:repeat(4,1fr)}.plantilla-horario-cronograma{grid-template-columns:1fr 1fr}.feriados-cronograma>div{grid-template-columns:1fr}.plantilla-horario-cronograma button{grid-column:1/-1}}
+
+/* Las barras de navegación se sustituyen por el scroll nativo del visor. */
+.navegacion-horizontal-cronograma{display:none!important}
+@media(min-width:1051px){.cronograma-proyecto-visor{grid-template-rows:minmax(0,1fr)!important;height:530px!important;min-height:530px!important;max-height:530px!important}.exportar-cronograma-proyecto{background:#a53343!important;border-color:#e16b78!important;color:#fff!important}.exportar-cronograma-proyecto:hover{background:#c44757!important}}
+
+/* Gantt tipo Project: fechas sobre blanco y cuadrícula sutil, como la maqueta. */
+.gantt-cronograma-proyecto>header{background:#fff!important;border-bottom-color:#e7ebf1!important}
+.gantt-cronograma-proyecto>header span{color:#77849a!important;border-right-color:#eef1f5!important}
+#cabeceraGanttCronograma,#cabeceraGanttCronograma span{background:#fff!important}
+.gantt-cronograma-proyecto>div{background:#fff!important}
+.gantt-fila{border-bottom:0!important;background:repeating-linear-gradient(90deg,#fff 0,#fff 41px,#eef1f5 41px,#eef1f5 42px)!important}
+.gantt-fila{height:76px!important;position:relative;overflow:visible!important}.gantt-fase-principal{height:90px!important}.gantt-barra{top:18px!important;height:28px!important;line-height:28px!important}.gantt-barra-fase{font-weight:900!important}.gantt-avance{position:absolute;top:53px;height:14px;border:1px solid #adbacb;border-radius:8px;background:#d6deea;overflow:hidden}.gantt-avance i{display:block;height:100%;border-radius:7px;background:#50bf78}.gantt-porcentaje{position:absolute;z-index:3;top:51px;color:#14264a!important;font-size:.68rem!important;font-weight:900!important;line-height:16px;white-space:nowrap}.gantt-nivel-1 .gantt-barra{top:17px}.gantt-nivel-1 .gantt-avance{top:52px}.gantt-nivel-2 .gantt-barra{top:21px;height:24px!important;line-height:24px!important}.gantt-nivel-2 .gantt-avance{top:50px}.gantt-nivel-3 .gantt-barra{top:24px;height:22px!important;line-height:22px!important}
+.gantt-cronograma-proyecto #ganttCronogramaProyecto{overflow:visible!important;padding-right:58px!important}.gantt-cronograma-proyecto .gantt-porcentaje{display:block!important;visibility:visible!important;opacity:1!important;color:#000!important}
+
+/* La fase acompaña al marcador sin añadir otro contorno blanco. */
+.marcador-proyecto-con-etapa .icono-proyecto-mapa small{display:none!important}

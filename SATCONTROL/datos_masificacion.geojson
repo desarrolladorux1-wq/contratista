@@ -1,0 +1,3986 @@
+{
+  "type": "FeatureCollection",
+  "name": "Proyectos, lotes y beneficiarios de Masificación",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "MAS-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.06,
+          -11.94
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-001",
+        "nombre": "Ampliación Norte",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas",
+        "estado": "Instalada",
+        "avance": 84,
+        "longitud": 18.4,
+        "elementos": "Válvulas 8 · Tuberías PE 12 · Estaciones 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-001-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -77.05,
+              -11.988
+            ],
+            [
+              -77.02,
+              -11.988
+            ],
+            [
+              -77.02,
+              -11.969999999999999
+            ],
+            [
+              -77.05,
+              -11.969999999999999
+            ],
+            [
+              -77.05,
+              -11.988
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-001",
+        "numero": 1,
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.062,
+          -11.998999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.00999999999999,
+          -11.992999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.057,
+          -11.962
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.00699999999999,
+          -11.956999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-001-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -77.05,
+              -11.943
+            ],
+            [
+              -77.02,
+              -11.943
+            ],
+            [
+              -77.02,
+              -11.924999999999999
+            ],
+            [
+              -77.05,
+              -11.924999999999999
+            ],
+            [
+              -77.05,
+              -11.943
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-001",
+        "numero": 2,
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.062,
+          -11.953999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.00999999999999,
+          -11.947999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.057,
+          -11.917
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.00699999999999,
+          -11.911999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-001-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -77.05,
+              -11.898
+            ],
+            [
+              -77.02,
+              -11.898
+            ],
+            [
+              -77.02,
+              -11.879999999999999
+            ],
+            [
+              -77.05,
+              -11.879999999999999
+            ],
+            [
+              -77.05,
+              -11.898
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-001",
+        "numero": 3,
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.062,
+          -11.908999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.00999999999999,
+          -11.902999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.057,
+          -11.872
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-001-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.00699999999999,
+          -11.866999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-001",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Comas"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "MAS-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.94,
+          -12.21
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-002",
+        "nombre": "Red Metropolitana Sur",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador",
+        "estado": "En ejecución",
+        "avance": 61,
+        "longitud": 24.8,
+        "elementos": "Válvulas 9 · Tuberías PE 13 · Estaciones 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-002-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -76.92999999999999,
+              -12.258000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.258000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.24
+            ],
+            [
+              -76.92999999999999,
+              -12.24
+            ],
+            [
+              -76.92999999999999,
+              -12.258000000000001
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-002",
+        "numero": 1,
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.942,
+          -12.269
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.88999999999999,
+          -12.263
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.937,
+          -12.232000000000001
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.88699999999999,
+          -12.227
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-002-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -76.92999999999999,
+              -12.213000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.213000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.195
+            ],
+            [
+              -76.92999999999999,
+              -12.195
+            ],
+            [
+              -76.92999999999999,
+              -12.213000000000001
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-002",
+        "numero": 2,
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.942,
+          -12.224
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.88999999999999,
+          -12.218
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.937,
+          -12.187000000000001
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.88699999999999,
+          -12.182
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-002-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -76.92999999999999,
+              -12.168000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.168000000000001
+            ],
+            [
+              -76.89999999999999,
+              -12.15
+            ],
+            [
+              -76.92999999999999,
+              -12.15
+            ],
+            [
+              -76.92999999999999,
+              -12.168000000000001
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-002",
+        "numero": 3,
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.942,
+          -12.179
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.88999999999999,
+          -12.173
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.937,
+          -12.142000000000001
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-002-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.88699999999999,
+          -12.137
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-002",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "Lima",
+        "provincia": "Lima",
+        "distrito": "Villa El Salvador"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "MAS-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.56,
+          -16.37
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-003",
+        "nombre": "Corredor Gas Arequipa",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado",
+        "estado": "Instalada",
+        "avance": 77,
+        "longitud": 15.2,
+        "elementos": "Válvulas 10 · Tuberías PE 14 · Estaciones 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-003-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.55,
+              -16.418000000000003
+            ],
+            [
+              -71.52,
+              -16.418000000000003
+            ],
+            [
+              -71.52,
+              -16.400000000000002
+            ],
+            [
+              -71.55,
+              -16.400000000000002
+            ],
+            [
+              -71.55,
+              -16.418000000000003
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-003",
+        "numero": 1,
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.562,
+          -16.429000000000002
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.50999999999999,
+          -16.423000000000002
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.557,
+          -16.392000000000003
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.50699999999999,
+          -16.387000000000004
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-003-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.55,
+              -16.373
+            ],
+            [
+              -71.52,
+              -16.373
+            ],
+            [
+              -71.52,
+              -16.355
+            ],
+            [
+              -71.55,
+              -16.355
+            ],
+            [
+              -71.55,
+              -16.373
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-003",
+        "numero": 2,
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.562,
+          -16.384
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.50999999999999,
+          -16.378
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.557,
+          -16.347
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.50699999999999,
+          -16.342000000000002
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-003-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.55,
+              -16.328000000000003
+            ],
+            [
+              -71.52,
+              -16.328000000000003
+            ],
+            [
+              -71.52,
+              -16.310000000000002
+            ],
+            [
+              -71.55,
+              -16.310000000000002
+            ],
+            [
+              -71.55,
+              -16.328000000000003
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-003",
+        "numero": 3,
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.562,
+          -16.339000000000002
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.50999999999999,
+          -16.333000000000002
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.557,
+          -16.302000000000003
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-003-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.50699999999999,
+          -16.297000000000004
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-003",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "Arequipa",
+        "provincia": "Arequipa",
+        "distrito": "Cerro Colorado"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "MAS-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.03,
+          -8.11
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-004",
+        "nombre": "Expansión Trujillo",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo",
+        "estado": "Proyectada",
+        "avance": 32,
+        "longitud": 29.6,
+        "elementos": "Válvulas 11 · Tuberías PE 15 · Estaciones 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-004-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.02,
+              -8.158
+            ],
+            [
+              -78.99,
+              -8.158
+            ],
+            [
+              -78.99,
+              -8.139999999999999
+            ],
+            [
+              -79.02,
+              -8.139999999999999
+            ],
+            [
+              -79.02,
+              -8.158
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-004",
+        "numero": 1,
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.032,
+          -8.168999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.97999999999999,
+          -8.162999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.027,
+          -8.132
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.97699999999999,
+          -8.126999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-004-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.02,
+              -8.113
+            ],
+            [
+              -78.99,
+              -8.113
+            ],
+            [
+              -78.99,
+              -8.094999999999999
+            ],
+            [
+              -79.02,
+              -8.094999999999999
+            ],
+            [
+              -79.02,
+              -8.113
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-004",
+        "numero": 2,
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.032,
+          -8.123999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.97999999999999,
+          -8.117999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.027,
+          -8.087
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.97699999999999,
+          -8.081999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-004-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.02,
+              -8.068
+            ],
+            [
+              -78.99,
+              -8.068
+            ],
+            [
+              -78.99,
+              -8.049999999999999
+            ],
+            [
+              -79.02,
+              -8.049999999999999
+            ],
+            [
+              -79.02,
+              -8.068
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-004",
+        "numero": 3,
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.032,
+          -8.078999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.97999999999999,
+          -8.072999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.027,
+          -8.042
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-004-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.97699999999999,
+          -8.036999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-004",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "La Libertad",
+        "provincia": "Trujillo",
+        "distrito": "Trujillo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "MAS-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.84,
+          -6.76
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-005",
+        "nombre": "Red Urbana Chiclayo",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz",
+        "estado": "En ejecución",
+        "avance": 58,
+        "longitud": 21.1,
+        "elementos": "Válvulas 12 · Tuberías PE 16 · Estaciones 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-005-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.83,
+              -6.808
+            ],
+            [
+              -79.8,
+              -6.808
+            ],
+            [
+              -79.8,
+              -6.789999999999999
+            ],
+            [
+              -79.83,
+              -6.789999999999999
+            ],
+            [
+              -79.83,
+              -6.808
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-005",
+        "numero": 1,
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.842,
+          -6.818999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.78999999999999,
+          -6.813
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.837,
+          -6.781999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.78699999999999,
+          -6.776999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-005-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.83,
+              -6.763
+            ],
+            [
+              -79.8,
+              -6.763
+            ],
+            [
+              -79.8,
+              -6.744999999999999
+            ],
+            [
+              -79.83,
+              -6.744999999999999
+            ],
+            [
+              -79.83,
+              -6.763
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-005",
+        "numero": 2,
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.842,
+          -6.773999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.78999999999999,
+          -6.768
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.837,
+          -6.736999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.78699999999999,
+          -6.731999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-005-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.83,
+              -6.718
+            ],
+            [
+              -79.8,
+              -6.718
+            ],
+            [
+              -79.8,
+              -6.699999999999999
+            ],
+            [
+              -79.83,
+              -6.699999999999999
+            ],
+            [
+              -79.83,
+              -6.718
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-005",
+        "numero": 3,
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.842,
+          -6.728999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.78999999999999,
+          -6.723
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.837,
+          -6.691999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-005-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.78699999999999,
+          -6.686999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-005",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "Lambayeque",
+        "provincia": "Chiclayo",
+        "distrito": "José Leonardo Ortiz"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "MAS-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.89,
+          -13.53
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-006",
+        "nombre": "Conexión Cusco",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián",
+        "estado": "Proyectada",
+        "avance": 27,
+        "longitud": 17.8,
+        "elementos": "Válvulas 13 · Tuberías PE 17 · Estaciones 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-006-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.88,
+              -13.578
+            ],
+            [
+              -71.85,
+              -13.578
+            ],
+            [
+              -71.85,
+              -13.559999999999999
+            ],
+            [
+              -71.88,
+              -13.559999999999999
+            ],
+            [
+              -71.88,
+              -13.578
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-006",
+        "numero": 1,
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.892,
+          -13.588999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.83999999999999,
+          -13.582999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.887,
+          -13.552
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.83699999999999,
+          -13.546999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-006-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.88,
+              -13.533
+            ],
+            [
+              -71.85,
+              -13.533
+            ],
+            [
+              -71.85,
+              -13.514999999999999
+            ],
+            [
+              -71.88,
+              -13.514999999999999
+            ],
+            [
+              -71.88,
+              -13.533
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-006",
+        "numero": 2,
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.892,
+          -13.543999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.83999999999999,
+          -13.537999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.887,
+          -13.507
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.83699999999999,
+          -13.501999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-006-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.88,
+              -13.488
+            ],
+            [
+              -71.85,
+              -13.488
+            ],
+            [
+              -71.85,
+              -13.469999999999999
+            ],
+            [
+              -71.88,
+              -13.469999999999999
+            ],
+            [
+              -71.88,
+              -13.488
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-006",
+        "numero": 3,
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.892,
+          -13.498999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.83999999999999,
+          -13.492999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.887,
+          -13.462
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-006-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.83699999999999,
+          -13.456999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-006",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "Cusco",
+        "provincia": "Cusco",
+        "distrito": "San Sebastián"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "MAS-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.63,
+          -5.19
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-007",
+        "nombre": "Anillo Piura",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla",
+        "estado": "Instalada",
+        "avance": 91,
+        "longitud": 13.7,
+        "elementos": "Válvulas 14 · Tuberías PE 18 · Estaciones 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-007-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.61999999999999,
+              -5.238
+            ],
+            [
+              -80.58999999999999,
+              -5.238
+            ],
+            [
+              -80.58999999999999,
+              -5.22
+            ],
+            [
+              -80.61999999999999,
+              -5.22
+            ],
+            [
+              -80.61999999999999,
+              -5.238
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-007",
+        "numero": 1,
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.63199999999999,
+          -5.249
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.57999999999998,
+          -5.243
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.627,
+          -5.212
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.57699999999998,
+          -5.207
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-007-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.61999999999999,
+              -5.1930000000000005
+            ],
+            [
+              -80.58999999999999,
+              -5.1930000000000005
+            ],
+            [
+              -80.58999999999999,
+              -5.175
+            ],
+            [
+              -80.61999999999999,
+              -5.175
+            ],
+            [
+              -80.61999999999999,
+              -5.1930000000000005
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-007",
+        "numero": 2,
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.63199999999999,
+          -5.204
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.57999999999998,
+          -5.198
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.627,
+          -5.167
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.57699999999998,
+          -5.162
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-007-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.61999999999999,
+              -5.148000000000001
+            ],
+            [
+              -80.58999999999999,
+              -5.148000000000001
+            ],
+            [
+              -80.58999999999999,
+              -5.13
+            ],
+            [
+              -80.61999999999999,
+              -5.13
+            ],
+            [
+              -80.61999999999999,
+              -5.148000000000001
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-007",
+        "numero": 3,
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.63199999999999,
+          -5.159
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.57999999999998,
+          -5.1530000000000005
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.627,
+          -5.122
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-007-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.57699999999998,
+          -5.117
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-007",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "Piura",
+        "provincia": "Piura",
+        "distrito": "Castilla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "MAS-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.76,
+          -14.02
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-008",
+        "nombre": "Expansión Ica",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla",
+        "estado": "En ejecución",
+        "avance": 69,
+        "longitud": 16.3,
+        "elementos": "Válvulas 15 · Tuberías PE 19 · Estaciones 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-008-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.75,
+              -14.068
+            ],
+            [
+              -75.72,
+              -14.068
+            ],
+            [
+              -75.72,
+              -14.049999999999999
+            ],
+            [
+              -75.75,
+              -14.049999999999999
+            ],
+            [
+              -75.75,
+              -14.068
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-008",
+        "numero": 1,
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.762,
+          -14.078999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.71,
+          -14.072999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.757,
+          -14.042
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.707,
+          -14.036999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-008-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.75,
+              -14.023
+            ],
+            [
+              -75.72,
+              -14.023
+            ],
+            [
+              -75.72,
+              -14.004999999999999
+            ],
+            [
+              -75.75,
+              -14.004999999999999
+            ],
+            [
+              -75.75,
+              -14.023
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-008",
+        "numero": 2,
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.762,
+          -14.033999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.71,
+          -14.027999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.757,
+          -13.997
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.707,
+          -13.991999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-008-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.75,
+              -13.978
+            ],
+            [
+              -75.72,
+              -13.978
+            ],
+            [
+              -75.72,
+              -13.959999999999999
+            ],
+            [
+              -75.75,
+              -13.959999999999999
+            ],
+            [
+              -75.75,
+              -13.978
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-008",
+        "numero": 3,
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.762,
+          -13.988999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.71,
+          -13.982999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.757,
+          -13.952
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-008-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.707,
+          -13.947
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-008",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "Ica",
+        "provincia": "Ica",
+        "distrito": "Subtanjalla"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "MAS-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.22,
+          -12.04
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-009",
+        "nombre": "Red Huancayo",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo",
+        "estado": "Proyectada",
+        "avance": 38,
+        "longitud": 19.5,
+        "elementos": "Válvulas 16 · Tuberías PE 20 · Estaciones 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-009-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.21,
+              -12.088
+            ],
+            [
+              -75.17999999999999,
+              -12.088
+            ],
+            [
+              -75.17999999999999,
+              -12.069999999999999
+            ],
+            [
+              -75.21,
+              -12.069999999999999
+            ],
+            [
+              -75.21,
+              -12.088
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-009",
+        "numero": 1,
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.222,
+          -12.098999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16999999999999,
+          -12.092999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.217,
+          -12.062
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16699999999999,
+          -12.056999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-009-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.21,
+              -12.043
+            ],
+            [
+              -75.17999999999999,
+              -12.043
+            ],
+            [
+              -75.17999999999999,
+              -12.024999999999999
+            ],
+            [
+              -75.21,
+              -12.024999999999999
+            ],
+            [
+              -75.21,
+              -12.043
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-009",
+        "numero": 2,
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.222,
+          -12.053999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16999999999999,
+          -12.047999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.217,
+          -12.017
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16699999999999,
+          -12.011999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-009-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.21,
+              -11.998
+            ],
+            [
+              -75.17999999999999,
+              -11.998
+            ],
+            [
+              -75.17999999999999,
+              -11.979999999999999
+            ],
+            [
+              -75.21,
+              -11.979999999999999
+            ],
+            [
+              -75.21,
+              -11.998
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-009",
+        "numero": 3,
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.222,
+          -12.008999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16999999999999,
+          -12.002999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.217,
+          -11.972
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-009-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.16699999999999,
+          -11.966999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-009",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "Junín",
+        "provincia": "Huancayo",
+        "distrito": "El Tambo"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "MAS-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.52,
+          -9.12
+        ]
+      },
+      "properties": {
+        "tipo": "proyecto",
+        "codigo": "MAS-010",
+        "nombre": "Conexión Chimbote",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote",
+        "estado": "Instalada",
+        "avance": 88,
+        "longitud": 14.9,
+        "elementos": "Válvulas 17 · Tuberías PE 21 · Estaciones 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-010-1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.50999999999999,
+              -9.168
+            ],
+            [
+              -78.47999999999999,
+              -9.168
+            ],
+            [
+              -78.47999999999999,
+              -9.149999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.149999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.168
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-010",
+        "numero": 1,
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.52199999999999,
+          -9.178999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 1,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592600",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.46999999999998,
+          -9.172999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 1,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592601",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.517,
+          -9.142
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 1,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592602",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.46699999999998,
+          -9.136999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 1,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592603",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-010-2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.50999999999999,
+              -9.123
+            ],
+            [
+              -78.47999999999999,
+              -9.123
+            ],
+            [
+              -78.47999999999999,
+              -9.104999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.104999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.123
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-010",
+        "numero": 2,
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.52199999999999,
+          -9.133999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 2,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592604",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.46999999999998,
+          -9.127999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 2,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592605",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.517,
+          -9.097
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 2,
+        "nombre": "María Elena Ramos",
+        "suministro": "SUM-592606",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.46699999999998,
+          -9.091999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 2,
+        "nombre": "Carlos Quispe Flores",
+        "suministro": "SUM-592607",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "LOT-010-3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.50999999999999,
+              -9.078
+            ],
+            [
+              -78.47999999999999,
+              -9.078
+            ],
+            [
+              -78.47999999999999,
+              -9.059999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.059999999999999
+            ],
+            [
+              -78.50999999999999,
+              -9.078
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "tipo": "lote",
+        "proyecto": "MAS-010",
+        "numero": 3,
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.52199999999999,
+          -9.088999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 3,
+        "nombre": "Rosa Huamán Soto",
+        "suministro": "SUM-592608",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.46999999999998,
+          -9.082999999999998
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 3,
+        "nombre": "Luis Alberto Torres",
+        "suministro": "SUM-592609",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.517,
+          -9.052
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 3,
+        "nombre": "Ana Lucía Mendoza",
+        "suministro": "SUM-592610",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BEN-010-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.46699999999998,
+          -9.046999999999999
+        ]
+      },
+      "properties": {
+        "tipo": "beneficiario",
+        "proyecto": "MAS-010",
+        "lote": 3,
+        "nombre": "Jorge Paredes Díaz",
+        "suministro": "SUM-592611",
+        "estado": "Potencial",
+        "departamento": "Áncash",
+        "provincia": "Santa",
+        "distrito": "Nuevo Chimbote"
+      }
+    }
+  ]
+}
