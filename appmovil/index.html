@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contratista móvil | FISE</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <section class="pantalla-login" id="pantallaLogin" aria-label="Acceso al aplicativo móvil">
+    <div class="muesca"></div>
+    <div class="marca-login"><img src="../logo_fise.png" alt="FISE"></div>
+    <form id="formLogin" class="login-form">
+      <p class="eyebrow">MASIFICACIÓN DE GAS NATURAL</p>
+      <h1>Bienvenido</h1>
+      <p class="acceso-directo">Acceso para Contratista</p>
+      <button class="ingresar" type="submit">Ingresar</button>
+    </form>
+    <p class="pie-login">Aplicativo móvil del contratista<br>Masificación de gas natural</p>
+  </section>
+
+  <main class="app contratista-app" id="appContratista" hidden>
+    <header class="app-cabecera">
+      <img src="../logo_fise.png" alt="FISE">
+      <div><p>MASIFICACIÓN</p><h1>Contratista</h1><span>Proyecto Sur Oeste · Tacna</span></div>
+      <strong>CT</strong>
+    </header>
+
+    <div class="contenido-movil">
+      <section class="vista activa" id="inicio">
+        <p class="eyebrow">JORNADA DE HOY</p>
+        <h2>Mi frente de trabajo</h2>
+        <article class="tarjeta-movil frente">
+          <p>Frente asignado</p><h3>Red de distribución · Sector 03</h3>
+          <span>Cusco · Cuadrilla 02</span>
+          <div class="progreso"><i style="width:68%"></i></div><b>68% de avance programado</b>
+        </article>
+        <h2>Resumen del día</h2>
+        <div class="resumen-grid">
+          <article><span>Avance físico</span><b>68%</b></article>
+          <article><span>Personal</span><b>29</b></article>
+          <article><span>Equipos</span><b>6</b></article>
+        </div>
+        <article class="tarjeta-movil aviso"><h3>Próximo informe</h3><p>Registre las actividades y evidencias de la jornada antes de finalizar el día.</p><button data-ir="informe" type="button">Registrar informe</button></article>
+      </section>
+
+      <section class="vista" id="informe">
+        <p class="eyebrow">REGISTRO DE OBRA</p><h2>Nuevo informe</h2>
+        <form id="formInforme" class="formulario-movil">
+          <div class="selector-tipo"><button type="button" class="seleccionado" data-tipo="Diario">Diario</button><button type="button" data-tipo="Semanal">Semanal</button></div>
+          <label>Proyecto<select required><option>Proyecto Sur Oeste · Tacna</option><option>CUS-03 · Red de distribución Sector 03</option></select></label>
+          <label>Fecha de ejecución<input type="date" required></label>
+          <label>Actividades ejecutadas<textarea required placeholder="Describa los trabajos realizados en el frente."></textarea></label>
+          <div class="dos-columnas"><label>Personal en obra<input type="number" min="0" value="29" required></label><label>Equipos<input type="number" min="0" value="6" required></label></div>
+          <label>Avance físico (%)<input type="number" min="0" max="100" value="68" required></label>
+          <div class="dos-columnas"><label>Incidentes<input type="number" min="0" value="0" required></label><label>Accidentes<input type="number" min="0" value="0" required></label></div>
+          <label>Observaciones<textarea placeholder="Indique restricciones, coordinaciones o comentarios."></textarea></label>
+          <label class="carga">Adjuntar evidencias<input id="archivosInforme" type="file" multiple accept="image/*,video/*,.pdf"><span>Fotos, videos, ATS, permisos o informes.</span></label>
+          <div class="acciones-form"><button id="guardarInforme" type="button" class="secundario">Guardar borrador</button><button type="submit">Enviar informe</button></div>
+        </form>
+      </section>
+
+      <section class="vista" id="evidencias">
+        <p class="eyebrow">SUSTENTO DE OBRA</p><h2>Evidencias</h2>
+        <article class="tarjeta-movil"><h3>Adjunte archivos del frente</h3><p>Registre fotografías, videos, ATS, permisos de trabajo e informes de campo.</p><label class="zona-carga">Seleccionar archivos<input id="cargarEvidencia" type="file" multiple accept="image/*,video/*,.pdf"><small>Formatos permitidos: fotos, videos y PDF.</small></label></article>
+        <div id="listaEvidencias" class="lista-archivos"><p class="vacio">Aún no se adjuntaron evidencias en esta sesión.</p></div>
+      </section>
+
+      <section class="vista" id="informes">
+        <p class="eyebrow">HISTORIAL DE OBRA</p><h2>Mis informes</h2>
+        <p class="descripcion">Consulte sus borradores e informes enviados.</p>
+        <div id="listaInformes" class="lista-informes"></div>
+      </section>
+
+      <section class="vista" id="perfil">
+        <p class="eyebrow">CUENTA DE USUARIO</p><h2>Mi perfil</h2>
+        <form id="formPerfil" class="formulario-movil">
+          <label>Nombres<input value="Andrea"></label><label>Apellidos<input value="Contratista"></label>
+          <label>Empresa contratista<input value="NAGASCO S.A.C."></label><label>Correo<input type="email" value="andrea.contratista@ejemplo.pe"></label><label>Teléfono<input value="999 555 111"></label>
+          <button type="submit">Guardar cambios</button><button id="cerrarSesion" type="button" class="secundario">Cerrar sesión</button>
+        </form>
+      </section>
+    </div>
+
+    <nav class="navegacion" aria-label="Navegación principal">
+      <button class="activo" type="button" data-ir="inicio"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Inicio</span></button>
+      <button type="button" data-ir="informe"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM15 3v5h5M9 12h6M9 16h6"/></svg><span>Informe</span></button>
+      <button type="button" data-ir="evidencias"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="10" r="1.5"/><path d="m5 17 5-5 3 3 2-2 4 4"/></svg><span>Evidencias</span></button>
+      <button type="button" data-ir="informes"><svg viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5zM16 3v4h4M8 12h8M8 16h8"/></svg><span>Mis informes</span></button>
+      <button type="button" data-ir="perfil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-4 3.3-6 8-6s7.3 2 8 6"/></svg><span>Perfil</span></button>
+    </nav>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <style>
+    .pantalla-login[hidden],.app[hidden]{display:none!important}.contratista-app{display:flex;flex-direction:column;overflow:hidden!important;padding:0!important;background:#f7fafc}.app-cabecera{display:flex;align-items:center;gap:12px;padding:22px 20px;color:#fff;background:linear-gradient(120deg,#365888,#63b4d1)}.app-cabecera img{width:52px;height:52px;object-fit:contain;border-radius:12px;background:#fff}.app-cabecera p{margin:0;font-size:.63rem;font-weight:800;letter-spacing:.08em}.app-cabecera h1{margin:2px 0;color:#fff;font-size:1.45rem}.app-cabecera span{font-size:.76rem}.app-cabecera strong{display:grid;place-items:center;width:42px;height:42px;margin-left:auto;border-radius:13px;background:#ffffff2a;font-size:1rem}.contenido-movil{flex:1;overflow-y:auto;padding:20px 18px 88px}.eyebrow{margin:0;color:#5c779e;font-size:.62rem;font-weight:900;letter-spacing:.1em}.vista h2{margin:6px 0 15px;color:#204a80;font-size:1.35rem}.tarjeta-movil{margin:0 0 17px;padding:15px;border:1px solid #d7e4ee;border-radius:16px;background:#fff}.tarjeta-movil h3{margin:4px 0;color:#1b3d69;font-size:.88rem}.tarjeta-movil p,.tarjeta-movil span,.descripcion{color:#667c99;font-size:.72rem;line-height:1.45}.frente p{margin:0}.frente span{display:block}.progreso{height:8px;margin:14px 0 7px;overflow:hidden;border-radius:12px;background:#e4edf2}.progreso i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#5ccf94,#54afd1)}.frente b{color:#3174a1;font-size:.67rem}.resumen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.resumen-grid article{padding:13px 10px;border:1px solid #dce7ef;border-radius:13px;background:#fff}.resumen-grid span{display:block;color:#73869f;font-size:.61rem}.resumen-grid b{display:block;margin-top:7px;color:#225d95;font-size:1.22rem}.aviso button,.formulario-movil>button{margin-top:6px;padding:10px 13px;color:#fff;border:0;border-radius:10px;background:#3986b5;font:inherit;font-size:.7rem;font-weight:800}.selector-tipo{display:grid;grid-template-columns:1fr 1fr;gap:8px}.selector-tipo button{padding:11px;color:#56718f;border:1px solid #cfdde9;border-radius:10px;background:#fff;font:inherit;font-size:.72rem;font-weight:800}.selector-tipo .seleccionado{color:#fff;border-color:#3382b3;background:#3382b3}.formulario-movil{display:grid;gap:12px;margin:0}.formulario-movil label{font-size:.68rem}.formulario-movil textarea{min-height:82px}.dos-columnas{display:grid;grid-template-columns:1fr 1fr;gap:10px}.carga{padding:13px;border:1px dashed #9cbad1;border-radius:12px;background:#f4f9fc}.carga span{color:#7089a2;font-size:.62rem;font-weight:500}.acciones-form{display:grid;grid-template-columns:1fr 1.3fr;gap:9px}.acciones-form button{padding:12px;color:#fff;border:0;border-radius:10px;background:#3582b1;font:inherit;font-size:.7rem;font-weight:800}.acciones-form .secundario,.formulario-movil .secundario{color:#3e6689;border:1px solid #c8dbe9;background:#fff}.zona-carga{display:grid;gap:8px;padding:18px;color:#347aaa;border:1px dashed #98b8d0;border-radius:12px;background:#f4f9fc;text-align:center;font-size:.74rem}.zona-carga input{font-size:.64rem}.zona-carga small{color:#7189a2;font-size:.6rem}.lista-archivos,.lista-informes{display:grid;gap:9px}.lista-archivos article{display:grid;gap:3px;padding:12px;border:1px solid #dbe7ef;border-radius:12px;background:#fff}.lista-archivos span,.lista-archivos small{color:#69819c;font-size:.61rem}.lista-archivos b{color:#234b78;font-size:.72rem}.informe-item{display:flex;justify-content:space-between;gap:8px;padding:13px;border:1px solid #dce7ef;border-radius:13px;background:#fff}.informe-item h3{margin:6px 0 2px;color:#214d7c;font-size:.76rem}.informe-item p,.informe-item small{margin:0;color:#6d8199;font-size:.63rem}.estado{display:inline-block;padding:4px 7px;color:#267459;border-radius:9px;background:#e5f6ed;font-size:.56rem;font-weight:900}.estado.borrador{color:#966b09;background:#fff4d6}.informe-item button{align-self:center;padding:8px;color:#3374a7;border:1px solid #bcd3e5;border-radius:8px;background:#fff;font:inherit;font-size:.62rem;font-weight:800}.navegacion button{min-width:0;flex:1;color:#5d7596;font-size:.55rem}.navegacion button svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.navegacion button span{font-size:inherit}.navegacion .activo{color:#2379ae}.login-form{grid-template-rows:auto auto 1fr}.acceso-directo{margin:0 0 8px;color:#d0def6;font-size:.85rem}.pantalla-login h1{font-size:2rem}.pie-login{font-size:.76rem}@media(max-width:520px){.contratista-app .navegacion{position:fixed}.contenido-movil{padding-bottom:91px}}
+  </style>
+  <script src="app.js"></script>
+</body>
+</html>

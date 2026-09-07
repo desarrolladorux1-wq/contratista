@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Panel del contratista para proyectos de Masificación">
+  <title>Masificación | Panel del contratista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="recursos-globales/estilos_generales.css?v=20260828-2">
+  <link rel="stylesheet" href="SATCONTROL/estilos_masificacion.css?v=20260817-70">
+  <link rel="stylesheet" href="recursos-globales/temas.css?v=20260902-2">
+  <link rel="stylesheet" href="estilos.css">
+  <style>.enlace-app-movil{text-decoration:none}.enlace-app-movil .menu-icono svg{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}</style>
+  <style>
+    /* Apariencia Paulet: el contenido del informe acompaña al panel oscuro. */
+    body.paulet-contratista{background:#0b1226;color:#eef5ff}
+    body.paulet-contratista .vista-supervision-integrada{color:#edf5ff!important;background:#0c142b!important}
+    body.paulet-contratista .vista-supervision-integrada>.supervision-cuerpo{background:#0c142b!important}
+    body.paulet-contratista .vista-supervision-integrada .identidad-informe-supervision,body.paulet-contratista .vista-supervision-integrada .supervision-configuracion,body.paulet-contratista .vista-supervision-integrada .supervision-editor,body.paulet-contratista .vista-supervision-integrada .supervision-movil,body.paulet-contratista .vista-supervision-integrada .supervision-vista,body.paulet-contratista .vista-supervision-integrada .supervision-grid article,body.paulet-contratista .vista-supervision-integrada .supervision-curvas,body.paulet-contratista .vista-supervision-integrada .supervision-evidencias,body.paulet-contratista .vista-supervision-integrada .supervision-tablas section{color:#edf5ff!important;border-color:#334975!important;background:#121f3e!important;box-shadow:none!important}
+    body.paulet-contratista .vista-supervision-integrada .logo-institucional-informe,body.paulet-contratista .vista-supervision-integrada .vista-logo-contratista,body.paulet-contratista .vista-supervision-integrada .supervision-portada,body.paulet-contratista .vista-supervision-integrada .supervision-ficha span,body.paulet-contratista .vista-supervision-integrada .supervision-kpis article{border-color:#3a5080!important;background:#17294d!important}
+    body.paulet-contratista .vista-supervision-integrada h2,body.paulet-contratista .vista-supervision-integrada h3,body.paulet-contratista .vista-supervision-integrada h4,body.paulet-contratista .vista-supervision-integrada b,body.paulet-contratista .vista-supervision-integrada strong{color:#f4f8ff!important}
+    body.paulet-contratista .vista-supervision-integrada p,body.paulet-contratista .vista-supervision-integrada small,body.paulet-contratista .vista-supervision-integrada label,body.paulet-contratista .vista-supervision-integrada li{color:#aebfdd!important}
+    body.paulet-contratista .vista-supervision-integrada input,body.paulet-contratista .vista-supervision-integrada select,body.paulet-contratista .vista-supervision-integrada textarea{color:#f2f7ff!important;border-color:#45608f!important;background:#0d1831!important}
+    body.paulet-contratista .vista-supervision-integrada .supervision-editor summary{color:#f2f7ff!important;border-color:#334975!important;background:#162747!important}
+    body.paulet-contratista .vista-supervision-integrada .supervision-tipos button{color:#b9cae5!important;border-color:#3a5080!important;background:#142342!important;box-shadow:none!important}
+    body.paulet-contratista .vista-supervision-integrada .supervision-acciones{border-color:#334975!important;background:#101c37!important;box-shadow:none!important}
+    body.paulet-contratista .vista-supervision-integrada .supervision-acciones button{color:#d8e8ff!important;border-color:#45608f!important;background:#1a2d52!important}
+    body.paulet-contratista .repositorio{border-color:#334975!important;background:#121f3e!important;box-shadow:none!important}
+    body.paulet-contratista .repositorio .barra-repositorio{border-color:#334975!important;background:#101c37!important}
+    body.paulet-contratista .repositorio .barra-repositorio label,body.paulet-contratista .repositorio .barra-repositorio strong{color:#b7c8e6!important}
+    body.paulet-contratista .repositorio input,body.paulet-contratista .repositorio select{color:#edf5ff!important;border-color:#45608f!important;background:#0d1831!important}
+    body.paulet-contratista .repositorio input::placeholder{color:#9aacca!important}
+    body.paulet-contratista .repositorio .tabla-contenedor,body.paulet-contratista .repositorio table,body.paulet-contratista .repositorio td{background:#162747!important}
+    body.paulet-contratista .repositorio th{color:#dce9ff!important;border-color:#3a5080!important;background:#304369!important}
+    body.paulet-contratista .repositorio td{color:#e4eeff!important;border-color:#3a5080!important}
+    body.paulet-contratista .repositorio td:nth-child(2){color:#7fb8ee!important}
+    body.paulet-contratista .repositorio .accion-tabla{color:#b9dcfa!important;border-color:#5475a8!important;background:#20375f!important}
+    /* Al seleccionar FISE se restituye el formato institucional claro. */
+    body.paulet-contratista.tema-claro-contratista{background:#f3f6fa;color:#294568}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada{color:#294568!important;background:#f6faff!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada>.supervision-cuerpo{background:#f6faff!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .identidad-informe-supervision,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-configuracion,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-editor,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-movil,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-vista,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-grid article,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-curvas,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-evidencias,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-tablas section{color:#294568!important;border-color:#d5e2ee!important;background:#fff!important;box-shadow:0 8px 22px rgba(52,85,125,.07)!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .logo-institucional-informe,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .vista-logo-contratista,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-portada,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-ficha span,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-kpis article{border-color:#d5e2ee!important;background:#f7fbfe!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada h2,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada h3,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada h4,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada b,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada strong{color:#294d82!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada p,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada small,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada label,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada li{color:#6c819e!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada input,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada select,body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada textarea{color:#294568!important;border-color:#cbdbe9!important;background:#fff!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-editor summary{color:#294d82!important;border-color:#d5e2ee!important;background:#f4f9fd!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-tipos button{color:#536f94!important;border-color:#d5e2ee!important;background:#fff!important;box-shadow:0 6px 15px rgba(52,85,125,.06)!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-acciones{border-color:#d5e2ee!important;background:#fff!important;box-shadow:0 -5px 18px rgba(52,85,125,.06)!important}
+    body.paulet-contratista.tema-claro-contratista .vista-supervision-integrada .supervision-acciones button{color:#365b88!important;border-color:#cbdbe9!important;background:#fff!important}
+    /* El selector global usa data-tema="paulet" para el estilo FISE claro. */
+    html[data-tema="paulet"] body.paulet-contratista{background:#f3f6fa;color:#294568}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada>.supervision-cuerpo{color:#294568!important;background:#f6faff!important}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .identidad-informe-supervision,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-configuracion,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-editor,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-movil,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-vista,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-grid article,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-curvas,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-evidencias,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-tablas section{color:#294568!important;border-color:#d5e2ee!important;background:#fff!important;box-shadow:0 8px 22px rgba(52,85,125,.07)!important}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .logo-institucional-informe,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .vista-logo-contratista,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-portada,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-ficha span,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-kpis article{border-color:#d5e2ee!important;background:#f7fbfe!important}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada h2,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada h3,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada h4,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada b,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada strong{color:#294d82!important}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada p,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada small,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada label,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada li{color:#6c819e!important}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada input,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada select,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada textarea{color:#294568!important;border-color:#cbdbe9!important;background:#fff!important}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-editor summary{color:#294d82!important;border-color:#d5e2ee!important;background:#f4f9fd!important}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-tipos button{color:#536f94!important;border-color:#d5e2ee!important;background:#fff!important;box-shadow:0 6px 15px rgba(52,85,125,.06)!important}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-acciones,html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-acciones button{border-color:#d5e2ee!important;background:#fff!important;box-shadow:none!important}
+    html[data-tema="paulet"] body.paulet-contratista .vista-supervision-integrada .supervision-acciones button{color:#365b88!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio{border-color:#d7e2ec!important;background:#fff!important;box-shadow:0 12px 28px rgba(44,73,111,.10)!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio .barra-repositorio{border-color:#d7e2ec!important;background:#f7fbfe!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio .barra-repositorio label,html[data-tema="paulet"] body.paulet-contratista .repositorio .barra-repositorio strong{color:#6d809d!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio input,html[data-tema="paulet"] body.paulet-contratista .repositorio select{color:#294568!important;border-color:#cbdbe9!important;background:#fff!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio input::placeholder{color:#778ca8!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio .tabla-contenedor,html[data-tema="paulet"] body.paulet-contratista .repositorio table,html[data-tema="paulet"] body.paulet-contratista .repositorio td{background:#fff!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio th{color:#36598d!important;border-color:#d7e2ec!important;background:#edf6fb!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio td{color:#344b6c!important;border-color:#d7e2ec!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio td:nth-child(2){color:#284a7c!important}
+    html[data-tema="paulet"] body.paulet-contratista .repositorio .accion-tabla{color:#397fa7!important;border-color:#c7dbe6!important;background:#fff!important}
+    /* Menú lateral en Estilos FISE: contraste legible sobre fondo claro. */
+    html[data-tema="paulet"] body.paulet-contratista .menu-lateral.panel-lateral{color:#3b5378!important;background:#fff!important;border-right:1px solid #d9e5ef!important}
+    html[data-tema="paulet"] body.paulet-contratista .menu-lateral .menu-cabecera,html[data-tema="paulet"] body.paulet-contratista .menu-lateral .menu-pie{border-color:#d9e5ef!important}
+    html[data-tema="paulet"] body.paulet-contratista .menu-lateral .menu-marca-texto strong{color:#294d82!important}
+    html[data-tema="paulet"] body.paulet-contratista .menu-lateral .menu-marca-texto small,html[data-tema="paulet"] body.paulet-contratista .menu-lateral .grupo-titulo{color:#7186a2!important}
+    html[data-tema="paulet"] body.paulet-contratista .menu-lateral .enlace-menu .enlace-texto,html[data-tema="paulet"] body.paulet-contratista .menu-lateral .enlace-menu .menu-icono{color:#415b7f!important}
+    html[data-tema="paulet"] body.paulet-contratista .menu-lateral .enlace-menu.activo{color:#254f82!important;border-color:#c8deed!important;background:#e9f5fc!important;box-shadow:inset 4px 0 #58aed6!important}
+    html[data-tema="paulet"] body.paulet-contratista .menu-lateral .enlace-menu.activo .enlace-texto,html[data-tema="paulet"] body.paulet-contratista .menu-lateral .enlace-menu.activo .menu-icono{color:#254f82!important}
+    html[data-tema="paulet"] body.paulet-contratista .menu-lateral .enlace-menu.activo .menu-icono{display:grid!important;place-items:center;width:36px!important;height:36px;border-radius:50%;background:#cfeafa!important}
+    html[data-tema="paulet"] body.paulet-contratista .menu-lateral .enlace-menu:not(.activo):hover{background:#f0f7fc!important}
+    .modal-detalle-informe{width:min(620px,calc(100vw - 30px));padding:0;color:#edf5ff;border:1px solid #3d5685;border-radius:18px;background:#111d38;box-shadow:0 25px 70px rgba(0,0,0,.45)}
+    .modal-detalle-informe::backdrop{background:rgba(3,9,23,.72)}.modal-detalle-informe form{display:grid;gap:0}.modal-detalle-informe header{position:relative;padding:24px;border-bottom:1px solid #3a5080;background:linear-gradient(120deg,#1b315c,#315d91)}.modal-detalle-informe header small{color:#9ed9f1;font-size:.68rem;font-weight:800;letter-spacing:.08em}.modal-detalle-informe h2{margin:7px 42px 0 0;color:#fff;font-size:1.25rem}.modal-detalle-informe header button{position:absolute;top:20px;right:20px;width:34px;height:34px;color:#fff;border:1px solid #82a2d0;border-radius:9px;background:transparent;font-size:1.25rem;cursor:pointer}.modal-detalle-informe section{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:22px}.modal-detalle-informe article{display:grid;gap:5px;padding:13px;border:1px solid #3a5080;border-radius:11px;background:#17294d}.modal-detalle-informe article.ancho{grid-column:1/-1}.modal-detalle-informe article small{color:#9fb2d2;font-size:.65rem;font-weight:800;text-transform:uppercase}.modal-detalle-informe article strong{font-size:.84rem}.modal-detalle-informe section>p{grid-column:1/-1;margin:0;color:#afc0dc;font-size:.76rem;line-height:1.5}.modal-detalle-informe footer{display:flex;justify-content:flex-end;padding:0 22px 22px}.modal-detalle-informe footer button{height:40px;padding:0 18px;color:#dceaff;border:1px solid #5475a8;border-radius:9px;background:#20375f;font:inherit;font-weight:800;cursor:pointer}
+  </style>
+</head>
+<body class="paulet-contratista">
+  <div class="aplicacion">
+    <aside class="menu-lateral panel-lateral" id="panelLateral" aria-label="Menú principal">
+      <header class="menu-cabecera">
+        <a class="menu-marca" href="#sat-control" aria-label="Inicio de Masificación"><img class="menu-logo" src="SATCONTROL/compartido/img/logo_fise.png" alt=""><span class="menu-marca-texto"><strong>Masificación</strong><small>Panel del contratista</small></span></a>
+        <button class="boton-menu" id="contraerMenu" type="button" aria-label="Contraer o ampliar menú" aria-expanded="true"><span aria-hidden="true"></span></button>
+      </header>
+      <div class="menu-contenido"><nav aria-label="Módulos de Masificación"><section class="grupo-menu" aria-labelledby="grupo-operacion-contratista">
+        <h2 class="grupo-titulo" id="grupo-operacion-contratista">Operación</h2>
+        <button class="enlace-menu activo" type="button" data-vista="sat-control" data-etiqueta="SAT control"><span class="menu-icono"><svg viewBox="0 0 24 24"><path d="M4 5.5 9 3l6 2.5L20 3v15.5L15 21l-6-2.5L4 21V5.5Z"/><path d="M9 3v15.5M15 5.5V21"/><circle cx="12" cy="11.5" r="2"/></svg></span><span class="enlace-texto">SAT control</span></button>
+        <button class="enlace-menu" type="button" data-vista="informe-supervision" data-etiqueta="Informe de obra"><span class="menu-icono"><svg viewBox="0 0 24 24"><path d="M7 3h10v4H7zM5 5H3v16h18V5h-2"/><path d="M7 11h10M7 15h7M7 19h5"/></svg></span><span class="enlace-texto">Informe de obra</span></button>
+        <button class="enlace-menu" type="button" data-vista="repositorio-informes" data-etiqueta="Mis informes de obra"><span class="menu-icono"><svg viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v11H3zM3 7V4h7l2 2h7v3"/><path d="M8 13h8M8 17h5"/></svg></span><span class="enlace-texto">Mis informes de obra</span></button>
+        <a class="enlace-menu enlace-app-movil" href="appmovil/index.html" data-etiqueta="Aplicativo móvil"><span class="menu-icono"><svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2"/><path d="M10 18.3h4"/></svg></span><span class="enlace-texto">Aplicativo móvil</span></a>
+      </section></nav></div>
+      <footer class="menu-pie"><a class="enlace-menu cerrar-sesion" href="../../login/login.html" data-etiqueta="Cerrar sesión"><span class="menu-icono">↪</span><span class="enlace-texto">Cerrar sesión</span></a></footer>
+    </aside>
+
+    <main class="contenido-principal">
+      <header class="cabecera-principal">
+        <button class="menu-movil" id="abrirMenu" type="button" aria-label="Abrir menú">☰</button>
+        <div><small>MASIFICACIÓN DE GAS NATURAL</small><h1 id="tituloVista">SAT control</h1></div>
+        <div class="cabecera-acciones">
+          <button id="recargarSatcontrol" type="button" title="Recargar SATCONTROL" aria-label="Recargar SATCONTROL"><svg viewBox="0 0 24 24"><path d="M20 6v5h-5M4 18v-5h5"/><path d="M6.1 9A7 7 0 0 1 18 6l2 5M17.9 15A7 7 0 0 1 6 18l-2-5"/></svg></button>
+          <button id="alternarTema" type="button" title="Cambiar tema" aria-label="Cambiar tema"><svg viewBox="0 0 24 24"><path d="M20.5 14.1A8 8 0 0 1 9.9 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg></button>
+          <button id="notificaciones" type="button" title="Notificaciones" aria-label="Notificaciones"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><i>3</i></button><span>AC</span>
+        </div>
+      </header>
+
+      <section class="vista activa vista-satcontrol-completo" id="sat-control" aria-labelledby="tituloVista">
+        <div class="estado-carga-sat" id="estadoCargaSat"><span></span><strong>Cargando SATCONTROL completo…</strong></div>
+        <iframe id="satcontrolCompleto" title="SATCONTROL completo de Masificación" src="SATCONTROL/masificacion.html?contratista=1&v=20260818-2" loading="eager"></iframe>
+      </section>
+
+      <section class="vista vista-supervision-integrada" id="informe-supervision" aria-labelledby="tituloVista" hidden>
+        <div class="supervision-cuerpo">
+          <section class="identidad-informe-supervision" aria-labelledby="tituloIdentidadInforme">
+            <div class="logo-institucional-informe"><small>LOGO INSTITUCIONAL</small><img src="SATCONTROL/compartido/img/logo_fise.png" alt="Logo FISE"><strong>FISE</strong></div>
+            <div class="logo-contratista-informe"><div><small>IDENTIDAD DEL CONTRATISTA</small><h3 id="tituloIdentidadInforme">Logo para el informe</h3><p>Este logo aparecerá separado del logo FISE en la cabecera del documento.</p></div><label class="cargar-logo-contratista">Subir logo<input id="logoContratistaInforme" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml"></label></div>
+            <div class="vista-logo-contratista" id="vistaLogoContratista"><span>LOGO</span><small id="nombreLogoContratista">Sin logo cargado</small></div>
+          </section>
+          <nav class="supervision-tipos" aria-label="Tipo de informe"><button type="button" class="activo" data-tipo-supervision="diario"><span>Diario</span><small>IDT · END-FPY-FI-04</small></button><button type="button" data-tipo-supervision="semanal"><span>Semanal</span><small>ISO · END-FPY-FI-05</small></button></nav>
+          <section class="supervision-configuracion">
+            <label>Proyecto<select id="supervisionProyecto"><option value="CUS-03">CUS-03 · Red de distribución Sector 03</option><option value="AQP-CN">AQP-CN · Ampliación Cono Norte</option><option value="LIM-S2">LIM-S2 · Lima Sur Etapa II</option></select></label>
+            <label>N.° de informe<input id="supervisionNumero" value="END-IDT-RED-CU-259-G1-25-07-2026"></label>
+            <label id="campoFechaSupervision">Fecha de ejecución<input id="supervisionFecha" type="date" value="2026-08-18"></label><label id="campoPeriodoSupervision" hidden>Periodo<input id="supervisionPeriodo" value="12/08/2026 – 18/08/2026"></label>
+          </section>
+          <details class="supervision-editor" open><summary>Editar contenido del informe</summary><div class="supervision-editor-grid">
+            <label>Contratista<input id="supervisionContratista" value="NAGASCO S.A.C."></label><label>Responsable de obra<input id="supervisionSupervisor" value="Residente de obra"></label><label>Cliente<input id="supervisionCliente" value="FONDO DE INCLUSIÓN SOCIAL ENERGÉTICO - FISE"></label><label>Lugar de obra<input id="supervisionLugar" value="Ca. Cauce Seco de Llocllopata / Cusco"></label>
+            <label>Avance civil<input id="supervisionAvanceCivil" value="100.00%"></label><label>Avance mecánico<input id="supervisionAvanceMecanico" value="100.00%"></label><label>Personal en obra<input id="supervisionPersonal" type="number" value="29"></label><label>Equipos<input id="supervisionEquipos" type="number" value="6"></label><label>Incidentes<input id="supervisionIncidentes" type="number" value="0"></label><label>Accidentes<input id="supervisionAccidentes" type="number" value="0"></label>
+            <label class="ancho">Observaciones<textarea id="supervisionObservaciones">Se realizó el seguimiento de los trabajos ejecutados, pruebas, gasificación, reposición y cierre de observaciones del proyecto.</textarea></label><label class="ancho">Conclusiones / restricciones<textarea id="supervisionConclusiones">Las actividades se desarrollaron de acuerdo con la programación. Permanecen acciones de seguimiento documentario y control de calidad.</textarea></label><label class="ancho">Agregar fotografías<input id="supervisionFotos" type="file" accept="image/*" multiple><small>Puede agregar fotos manualmente e incluirlas o descartarlas antes de generar el PDF.</small></label>
+          </div></details>
+          <section class="supervision-movil"><header><div><small>EVIDENCIAS DE CAMPO</small><h3>Fotografías registradas desde el móvil</h3><p>Dispositivo de contratista vinculado · Seleccione las imágenes que se incluirán en el informe.</p></div><div class="supervision-movil-estado"><i></i><span>En línea</span><button type="button" id="sincronizarFotosSupervision">Sincronizar</button></div></header><div class="supervision-galeria" id="galeriaFotosSupervision" aria-live="polite"></div></section>
+          <section class="supervision-vista" id="vistaInformeDiario">
+            <div class="supervision-portada"><div><small>FORMATO END-FPY-FI-04</small><h3>Informe diario de obra · IDT</h3><p>Proyecto de distribución de gas natural por red de ductos</p></div><strong>CONTRATISTA · NAGASCO</strong></div>
+            <div class="supervision-ficha"><span><small>Contratista</small><b>NAGASCO S.A.C.</b></span><span><small>Responsable de obra</small><b>Residente de obra</b></span><span><small>Cliente</small><b>FISE</b></span><span><small>Especialidad</small><b>Civil / Mecánica / Seguridad</b></span></div>
+            <div class="supervision-kpis"><article><small>Avance de red</small><strong>24,994.94 ml</strong><span>Construcción completada</span></article><article><small>Gasificación</small><strong>19,277.37 ml</strong><span>Frentes verificados</span></article><article><small>RNC</small><strong>14</strong><span>5 abiertas · 9 cerradas</span></article><article><small>Personal</small><strong>29</strong><span>Cuadrilla total</span></article></div>
+            <div class="supervision-grid"><article><h4>1. Avance constructivo</h4><ul><li>Permisos, difusión y señalización.</li><li>Interferencias y excavación de calicatas.</li><li>Hermeticidad, electrofusión y gasificación.</li></ul></article><article><h4>2. Observaciones de obra</h4><p>Acciones correctivas ejecutadas y sustento del levantamiento de RNC.</p><div class="supervision-progreso"><i style="width:64%"></i></div></article><article><h4>3. Gestión del tiempo</h4><p>Construcción concluida; permanecen pruebas y control de fugas.</p></article><article><h4>4. Seguridad</h4><p>Charla diaria registrada. Sin incidentes ni accidentes.</p></article></div>
+            <div class="supervision-tablas"><section><h4>Personal del contratista</h4><table><thead><tr><th>Grupo</th><th>Cant.</th></tr></thead><tbody><tr><td>Ingeniería, calidad y seguridad</td><td>8</td></tr><tr><td>Cuadrilla civil y mecánica</td><td>18</td></tr><tr><td>Topografía y relaciones comunitarias</td><td>3</td></tr></tbody><tfoot><tr><th>Total</th><th>29</th></tr></tfoot></table></section><section><h4>Equipos</h4><table><thead><tr><th>Equipo</th><th>Cant.</th></tr></thead><tbody><tr><td>Retroexcavadora / minicargador</td><td>2</td></tr><tr><td>Cortadora / compactadores</td><td>3</td></tr><tr><td>Equipo de fusión</td><td>1</td></tr></tbody><tfoot><tr><th>Total</th><th>6</th></tr></tfoot></table></section></div>
+            <section class="supervision-evidencias"><header><div><h4>Registro fotográfico</h4><p>22 evidencias georreferenciadas incluidas en el IDT.</p></div><b>22 fotos</b></header><div><span>Charla de seguridad</span><span>Prueba de hermeticidad</span><span>Electrofusión</span><span>Control de presión</span><span>Venteo y gasificación</span><span>Verificación de fugas</span></div></section>
+          </section>
+          <section class="supervision-vista" id="vistaInformeSemanal" hidden>
+            <div class="supervision-portada"><div><small>FORMATO END-FPY-FI-05</small><h3>Informe semanal de obra · ISO</h3><p>Periodo de ejecución de redes de distribución</p></div><strong>CU-REDES · 039</strong></div>
+            <div class="supervision-ficha"><span><small>Contratista</small><b>NAGASCO S.A.C.</b></span><span><small>Plazo</small><b>270 días</b></span><span><small>Monto contractual</small><b>US$ 5,552,825.29 + IGV</b></span><span><small>Personal</small><b>44 trabajadores</b></span></div>
+            <div class="supervision-kpis"><article><small>Fase 1 + 2</small><strong>100%</strong><span>Avance contractual</span></article><article><small>Hermeticidad</small><strong>100%</strong><span>Pruebas concluidas</span></article><article><small>Red construida</small><strong>24,994.94 ml</strong><span>32 mallas</span></article><article><small>Reposición</small><strong>92.84%</strong><span>18,244.23 ml</span></article></div>
+            <div class="supervision-grid"><article><h4>I. Resumen de obra</h4><ul><li>Comunicaciones y gestión comunitaria.</li><li>Seguridad, salud y gestión ambiental.</li><li>Control de personal y frentes activos.</li></ul></article><article><h4>II. Restricciones</h4><ul><li>Reposición y observaciones de calidad.</li><li>Asfalto rechazado y actividades pendientes.</li><li>Seguimiento a pruebas y gasificación.</li></ul></article><article><h4>III. Reuniones y compromisos</h4><p>Responsables, fechas comprometidas y estado de cada acuerdo.</p></article><article><h4>IV. Evidencia semanal</h4><p>Concreto, asfalto, temperatura, granulometría, red y reposición.</p></article></div>
+            <section class="supervision-curvas"><h4>Avance semanal de red</h4><div><span>Construida <b>24,994.94 ml</b></span><i><em style="width:100%"></em></i></div><div><span>Gasificada <b>19,277.37 ml</b></span><i><em style="width:77%"></em></i></div><div><span>Reposición <b>18,244.23 ml</b></span><i><em style="width:92.84%"></em></i></div><p>SPI: <strong>1.00</strong> · Pendiente de gasificación: <strong>5,717.57 ml</strong></p></section>
+            <div class="supervision-tablas"><section><h4>Avance por especialidad</h4><table><thead><tr><th>Especialidad</th><th>Estado</th></tr></thead><tbody><tr><td>Civil</td><td>En cierre</td></tr><tr><td>Mecánica</td><td>Concluida</td></tr><tr><td>Hermeticidad</td><td>100%</td></tr></tbody></table></section><section><h4>Compromisos</h4><table><thead><tr><th>Actividad</th><th>Seguimiento</th></tr></thead><tbody><tr><td>Reposición observada</td><td>En proceso</td></tr><tr><td>Cierre de RNC</td><td>Por validar</td></tr><tr><td>Gasificación pendiente</td><td>Programada</td></tr></tbody></table></section></div>
+          </section>
+        </div>
+        <footer class="supervision-acciones"><span id="estadoInformeSupervision">Registre el avance, revise las evidencias y genere el informe.</span><button type="button" id="guardarBorrador">Guardar borrador</button><button type="button" id="exportarSupervisionCsv">Exportar CSV</button><button type="button" id="guardarInformeRepositorio">Guardar en repositorio</button><button type="button" class="principal" id="exportarSupervisionPdf">Generar PDF</button></footer>
+      </section>
+
+      <section class="vista" id="repositorio-informes" aria-labelledby="tituloVista" hidden>
+        <div class="titulo-pagina"><div><h2>Mis informes de obra</h2><p>Historial de informes diarios y semanales enviados por el contratista.</p></div><button class="primario" type="button" data-ir="informe-supervision">+ Crear informe</button></div>
+        <section class="tarjeta repositorio">
+          <div class="barra-repositorio"><label>Buscar informe<input id="buscarInforme" type="search" placeholder="Número, nombre o responsable"></label><label>Tipo<select id="filtrarTipo"><option value="">Todos</option><option>Informe diario</option><option>Informe semanal</option></select></label><strong id="cantidadInformes">0 informes</strong></div>
+          <div class="tabla-contenedor"><table><thead><tr><th>Fecha</th><th>Número / nombre del informe</th><th>Tipo</th><th>Realizado por</th><th>Proyecto</th><th>Estado</th><th></th></tr></thead><tbody id="listaInformes"></tbody></table></div>
+          <div class="vacio" id="repositorioVacio" hidden><span>▤</span><h3>No hay informes para mostrar</h3><p>Cree un informe de obra o cambie los filtros.</p></div>
+        </section>
+      </section>
+
+      <section class="vista" id="no-conformidades" aria-labelledby="tituloVista" hidden>
+        <div class="titulo-pagina"><div><h2>No conformidades y levantamientos</h2><p>Reciba observaciones, sustente la acción correctiva y envíela para verificación.</p></div><a class="primario" href="appmovil/index.html">Abrir app móvil</a></div>
+        <section class="tarjeta nc-resumen">
+          <article><small>Asignadas</small><strong>3</strong><span>Requieren atención</span></article><article><small>Por vencer</small><strong>1</strong><span>Vence en 2 días</span></article><article><small>En verificación</small><strong>2</strong><span>Enviadas a Interventor</span></article><article><small>Cerradas</small><strong>9</strong><span>Historial del proyecto</span></article>
+        </section>
+        <section class="tarjeta nc-tabla"><header><div><h3>Mis no conformidades</h3><p>OCA o PETROPERÚ emiten y verifican; el contratista levanta y sustenta.</p></div><button class="primario" type="button" id="abrirLevantamiento">Registrar levantamiento</button></header>
+          <div class="tabla-contenedor"><table><thead><tr><th>NC</th><th>Emisor</th><th>Proyecto / libro</th><th>Especialidad</th><th>Vencimiento</th><th>Estado</th><th></th></tr></thead><tbody><tr><td>2500002</td><td>PETROPERÚ</td><td>PY-FISE-DT-01-TCN-TCN-2024-2<br>TCN01TCN2456</td><td>Seguridad / Civil</td><td>12/07/2025</td><td><b class="estado borrador">En levantamiento</b></td><td><button class="accion-tabla" data-nc="2500002">Ver detalle</button></td></tr><tr><td>2500011</td><td>OCA</td><td>Proyecto Puno · Frente PSR</td><td>Calidad</td><td>06/09/2026</td><td><b class="estado borrador">Por vencer</b></td><td><button class="accion-tabla" data-nc="2500011">Ver detalle</button></td></tr><tr><td>2500008</td><td>PETROPERÚ</td><td>PY-FISE-DT-01-TCN-TCN-2024-2</td><td>HSE</td><td>—</td><td><b class="estado">En verificación</b></td><td><button class="accion-tabla" data-nc="2500008">Ver detalle</button></td></tr></tbody></table></div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <button class="velo" id="velo" type="button" aria-label="Cerrar menú"></button>
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+  <dialog class="modal-nc" id="modalLevantamiento"><header><div><small>LEVANTAMIENTO DE NC</small><h2>NC 2500002</h2><p>Registre la causa raíz, acción correctiva y evidencias antes de enviarlo.</p></div><button type="button" id="cerrarLevantamiento" aria-label="Cerrar">×</button></header><form id="formLevantamiento"><label>Causa raíz<textarea required placeholder="Describa la causa del incumplimiento"></textarea></label><label>Acción correctiva realizada<textarea required placeholder="Describa qué se corrigió en campo"></textarea></label><label>Acción preventiva<textarea placeholder="Indique cómo evitará que vuelva a ocurrir"></textarea></label><label>Responsable<input required placeholder="Nombre y cargo"></label><label>Fecha de ejecución<input required type="date"></label><label>Adjuntar evidencias<input type="file" accept="image/*,application/pdf" multiple><small>Fotos, ATS, permiso de trabajo, informe o acta.</small></label><footer><button type="button" id="guardarBorradorNc">Guardar borrador</button><button class="primario" type="submit">Enviar a verificación</button></footer></form></dialog>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script src="recursos-globales/scripts_generales.js?v=20260831-1"></script>
+  <script src="app.js?v=20260831-1"></script>
+</body>
+</html>
