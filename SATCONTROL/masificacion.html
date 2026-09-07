@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plataforma Web GIS para proyectos de masificación">
+  <title>Masificación | SATCONTROL</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../estilos_generales.css?v=20260828-2">
+  <link rel="stylesheet" href="../../../../estilos_asistente_ia.css?v=20260828-1">
+  <link rel="stylesheet" href="estilos_masificacion.css?v=20260831-1">
+<link rel="stylesheet" href="../../../../temas.css?v=20260902-2">
+</head>
+<body class="pagina-masificacion">
+  <div class="aplicacion">
+    <aside class="menu-lateral" aria-label="Menú principal">
+      <header class="menu-cabecera">
+        <a class="menu-marca" href="masificacion.html" aria-label="Inicio de Masificación">
+          <img class="menu-logo" src="compartido/img/logo_fise.png" alt="">
+          <span class="menu-marca-texto"><strong>Masificación</strong><small>Panel de gestión</small></span>
+        </a>
+        <button class="boton-menu" type="button" data-accion="alternar-menu" aria-label="Contraer o ampliar menú"><span aria-hidden="true"></span></button>
+      </header>
+      <div class="menu-contenido">
+        <nav>
+          <section class="grupo-menu" aria-labelledby="grupo-operacion">
+            <h2 class="grupo-titulo" id="grupo-operacion">Operación</h2>
+            <a class="enlace-menu activo" href="#satcontrol" data-etiqueta="SATCONTROL">
+              <span class="menu-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5 9 3l6 2.5L20 3v15.5L15 21l-6-2.5L4 21V5.5Z"/><path d="M9 3v15.5M15 5.5V21"/><circle cx="12" cy="11.5" r="2.2"/></svg></span><span class="enlace-texto">SATCONTROL</span>
+            </a>
+          </section>
+        </nav>
+      </div>
+      <footer class="menu-pie">
+        <a class="enlace-menu cerrar-sesion" href="../../login/login.html" data-etiqueta="Cerrar sesión">
+          <span class="menu-icono" aria-hidden="true">↪</span><span class="enlace-texto">Cerrar sesión</span>
+        </a>
+      </footer>
+    </aside>
+
+    <button class="boton-menu boton-menu-movil" type="button" data-accion="abrir-menu-movil" aria-label="Abrir menú"><span aria-hidden="true"></span></button>
+    <button class="velo-menu" type="button" data-accion="cerrar-menu-movil" aria-label="Cerrar menú"></button>
+
+    <main class="contenido-principal">
+      <section id="satcontrol" data-seccion-modulo>
+        <header class="cabecera-modulo">
+          <div><h1>Proyectos de Masificación</h1></div>
+        </header>
+
+        <form class="filtros-masificacion" id="filtrosMasificacion">
+          <label class="buscador-proyecto">Buscar dentro de los planos
+            <span><b aria-hidden="true">⌕</b><input id="buscarProyecto" type="search" placeholder="Código, proyecto, ciudad o elemento de red" autocomplete="off"></span>
+          </label>
+          <div class="fila-filtros">
+            <label>Proyecto<select id="filtroProyecto"><option value="">Todos los proyectos</option></select></label>
+            <label>Departamento<select id="filtroDepartamento"><option value="">Todos</option></select></label>
+            <label>Provincia<select id="filtroProvincia"><option value="">Todas</option></select></label>
+            <label>Distrito<select id="filtroDistrito"><option value="">Todos</option></select></label>
+            <label>Estado de red<select id="filtroEstado"><option value="">Todos los estados</option><option>Proyectada</option><option>En ejecución</option><option>Instalada</option></select></label>
+            <button type="reset">Restablecer</button>
+          </div>
+        </form>
+
+        <div class="tablero-masificacion">
+          <aside class="barra-proyectos-mapa" id="barraProyectosMapa" aria-label="Proyectos y subproyectos">
+              <header class="barra-proyectos-cabecera">
+                <div class="barra-proyectos-titulo">
+                  <span class="barra-proyectos-icono" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M3.5 7.5h6l1.8 2h9.2v9.5H3.5z"/><path d="M3.5 7.5V5h6l1.8 2h7.2v2.5"/></svg>
+                  </span>
+                  <div><strong>Proyectos</strong><small id="contadorBarraProyectos">0 visibles</small></div>
+                </div>
+                <button id="alternarBarraProyectos" type="button" aria-expanded="true" aria-label="Contraer proyectos"><span aria-hidden="true"></span></button>
+              </header>
+              <div class="lista-proyectos-mapa" id="listaProyectosMapa"></div>
+          </aside>
+          <section class="mapa-panel" aria-label="Mapa de proyectos de masificación">
+            <div id="mapaMasificacion"></div>
+            <aside class="acciones-geometria-mapa" id="accionesGeometriaMapa" hidden aria-live="polite"><div><strong>Edición de vértices</strong><small>Arrastre los puntos para modificar el área.</small></div><span><button type="button" id="finalizarEdicionGeometria">Finalizar edición</button></span></aside>
+            <div class="controles-mapa">
+              <button id="botonMapas" type="button" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h3M11 12h9M4 18h7M15 18h5"/><circle cx="16" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="13" cy="18" r="2"/></svg>
+                <span>Mapas</span>
+              </button>
+              <button id="botonCapas" type="button" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-9 5 9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg>
+                <span>Capas</span>
+              </button>
+              <button id="botonVersionesMapa" type="button" aria-label="Cambiar base de información">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M8 10h8M8 14h5"/></svg>
+                <span>Versiones</span>
+              </button>
+              <button id="botonSubir" class="subir" type="button" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7.5 8.5 12 4l4.5 4.5"/><path d="M5 13v6h14v-6"/></svg>
+                <span>Subir capas</span>
+              </button>
+            </div>
+
+            <div class="panel-flotante" id="panelMapas" hidden>
+              <strong>Mapas base</strong>
+              <label><input type="radio" name="mapaBase" value="osm" checked>OpenStreetMap</label>
+              <label><input type="radio" name="mapaBase" value="topografico">Topográfico</label>
+            </div>
+            <div class="panel-flotante" id="panelCapas" hidden>
+              <div class="grupo-capas" id="capasGenerales">
+                <strong>Estado de los proyectos</strong>
+                <label><input type="checkbox" data-estado="Proyectada" checked><i class="proyectada"></i>Red proyectada</label>
+                <label><input type="checkbox" data-estado="En ejecución" checked><i class="ejecucion"></i>Red en ejecución</label>
+                <label><input type="checkbox" data-estado="Instalada" checked><i class="instalada"></i>Red instalada</label>
+                <hr>
+                <strong>Beneficiarios potenciales</strong>
+                <label><input id="mostrarManzanas" type="checkbox" checked>Manzanas abastecidas</label>
+                <label><input id="mostrarPredios" type="checkbox" checked>Unidades prediales</label>
+                <label><input id="mostrarInfluencia" type="checkbox" checked>Áreas de influencia</label>
+                <label><input id="mostrarCapaCargada" type="checkbox" checked>Capas GIS cargadas</label>
+              </div>
+              <div class="grupo-capas capas-proyecto" id="capasProyecto" hidden>
+                <small id="nombreCapasProyecto">PROYECTO SELECCIONADO</small>
+                <strong>Capas superpuestas</strong>
+                <label><input type="checkbox" data-capa-proyecto="troncal" checked><i class="capa-troncal"></i>Troncal principal</label>
+                <label><input type="checkbox" data-capa-proyecto="ramales" checked><i class="capa-ramales"></i>Ramales secundarios</label>
+                <label><input type="checkbox" data-capa-proyecto="concesionaria" checked><i class="capa-concesionaria"></i>Redes por concesionaria</label>
+                <label><input type="checkbox" data-capa-proyecto="cobertura" checked><i class="capa-cobertura"></i>Perímetro del proyecto</label>
+                <label><input type="checkbox" data-capa-proyecto="beneficiarios" checked><i class="capa-beneficiarios"></i>Beneficiarios</label>
+                <label><input type="checkbox" data-capa-proyecto="estrato" checked><i class="capa-estrato"></i>Estratos INEI</label>
+                <div class="leyenda-estratos" aria-label="Filtrar estratos socioeconómicos">
+                  <button type="button" class="filtro-estrato activo" data-filtro-estrato="todos">Todos</button>
+                  <button type="button" class="filtro-estrato" data-filtro-estrato="1"><i data-estrato="1"></i>E1</button>
+                  <button type="button" class="filtro-estrato" data-filtro-estrato="2"><i data-estrato="2"></i>E2</button>
+                  <button type="button" class="filtro-estrato" data-filtro-estrato="3"><i data-estrato="3"></i>E3</button>
+                  <button type="button" class="filtro-estrato" data-filtro-estrato="4"><i data-estrato="4"></i>E4</button>
+                  <button type="button" class="filtro-estrato" data-filtro-estrato="5"><i data-estrato="5"></i>E5</button>
+                </div>
+              </div>
+            </div>
+            <span id="estadoCarga" hidden></span>
+            <div class="contador-mapa" id="contadorMapa">Cargando proyectos…</div>
+            <div class="leyenda-beneficiarios-mapa" aria-label="Leyenda de beneficiarios">
+              <span><i class="normal"></i>Beneficiario registrado</span>
+              <span><i class="potencial"></i>Beneficiario potencial</span>
+            </div>
+          </section>
+
+          <button class="boton-resumen-masificacion" id="botonResumenMasificacion" type="button" aria-controls="panelDerecho" aria-expanded="true" aria-label="Ocultar resumen">
+            <span aria-hidden="true"></span>
+          </button>
+
+          <aside class="panel-derecho" id="panelDerecho" aria-label="Resumen y detalle del proyecto">
+            <div id="resumenMasificacion">
+              <header class="resumen-cabecera"><small>RESUMEN GENERAL</small><h2>Información general</h2><p>Consolidado nacional de proyectos de masificación</p></header>
+              <div class="kpis">
+                <article><span>Proyectos</span><strong id="kpiTotal">0</strong></article>
+                <article class="verde"><span>Red instalada</span><strong id="kpiInstalada">0 km</strong></article>
+                <article class="amarillo"><span>En ejecución</span><strong id="kpiEjecucion">0 km</strong></article>
+                <article class="azul"><span>Proyectada</span><strong id="kpiProyectada">0 km</strong></article>
+              </div>
+              <section class="avance-ciudades">
+                <h3>Avance por ciudad</h3><p>Progreso físico de las redes registradas</p>
+                <div id="listaAvance"></div>
+              </section>
+            </div>
+            <section class="detalle-proyecto" id="detalleProyecto" hidden>
+              <header><div class="titulo-detalle-proyecto"><span class="icono-detalle-proyecto" aria-hidden="true">⌁</span><div><small>PROYECTO SELECCIONADO</small><h2 id="detalleNombre">—</h2><p>Seguimiento geográfico y avance de la red.</p></div></div><button id="cerrarDetalle" type="button" aria-label="Cerrar detalle">×</button></header>
+              <dl id="datosProyecto"></dl>
+              <button class="abrir-planificacion-detalle" id="abrirPlanificacionDetalle" type="button">Abrir planificación técnica</button>
+              <section class="avance-ciudades avance-periodos-proyecto">
+                <h3>Avance del proyecto por periodo</h3><p>Evolución física acumulada de P1 a P5</p>
+                <div id="listaAvanceProyecto"></div>
+              </section>
+            </section>
+            <section class="detalle-proyecto detalle-beneficiario" id="detalleBeneficiario" hidden>
+              <header><div class="titulo-detalle-proyecto"><span class="icono-detalle-proyecto beneficiario" id="iconoBeneficiarioDetalle" aria-hidden="true">●</span><div><small id="tipoBeneficiarioDetalle">BENEFICIARIO POTENCIAL</small><h2 id="nombreBeneficiario">—</h2><p>Unidad residencial dentro del área de influencia.</p></div></div><button id="cerrarBeneficiario" type="button" aria-label="Volver al proyecto">←</button></header>
+              <dl id="datosBeneficiario"></dl>
+              <button class="volver-proyecto" id="volverProyecto" type="button">Volver a la información del proyecto</button>
+            </section>
+            <section class="detalle-proyecto detalle-seleccion" id="detalleSeleccion" hidden>
+              <header><div><small>SELECCIÓN EN EL MAPA</small><h2 id="tituloSeleccion">Registros seleccionados</h2><p id="resumenSeleccion">—</p></div><button id="limpiarSeleccion" type="button">Limpiar</button></header>
+              <div class="lista-seleccion" id="listaSeleccion"></div>
+            </section>
+            <div class="acciones-resumen-masificacion">
+              <button class="accion-resumen principal" id="abrirPotencial" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V8l8-4 8 4v11"/><path d="M8 19v-6h8v6M3 19h18"/></svg>
+                <span><strong>Beneficiarios potenciales</strong><small>Ver cruce espacial y predios abastecidos</small></span>
+                <b aria-hidden="true">›</b>
+              </button>
+              <button class="accion-resumen trazabilidad" id="abrirTrazabilidad" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M7 6v12M17 6v12M7 10h10M7 14h10"/><circle cx="7" cy="6" r="2"/><circle cx="17" cy="10" r="2"/><circle cx="7" cy="14" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+                <span><strong>Trazabilidad de expedientes</strong><small>Consultar las nueve fases y su historial</small></span>
+                <b aria-hidden="true">›</b>
+              </button>
+              <button class="accion-resumen supervision" id="abrirInformesSupervision" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v4H7zM5 5H3v16h18V5h-2"/><path d="M7 11h10M7 15h7M7 19h5"/></svg>
+                <span><strong>Informes de supervisión</strong><small>Generar reporte diario o semanal</small></span>
+                <b aria-hidden="true">›</b>
+              </button>
+              <button class="accion-resumen" id="abrirExportacionMasificacion" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M8 8l4-4 4 4"/><path d="M5 13v6h14v-6"/></svg>
+                <span><strong>Exportar información</strong><small>PDF, CSV o XLSX según la selección</small></span>
+                <b aria-hidden="true">›</b>
+              </button>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="modal-masificacion modal-supervision" id="modalInformesSupervision">
+    <header><div><small>SUPERVISIÓN DE OBRA</small><h2>Generación de informes</h2><p>Formatos técnicos IDT diario e ISO semanal.</p></div><button type="button" data-cerrar-modal="modalInformesSupervision">×</button></header>
+    <div class="modal-cuerpo supervision-cuerpo">
+      <nav class="supervision-tipos" aria-label="Tipo de informe">
+        <button type="button" class="activo" data-tipo-supervision="diario"><span>Diario</span><small>IDT · END-FPY-FI-04</small></button>
+        <button type="button" data-tipo-supervision="semanal"><span>Semanal</span><small>ISO · END-FPY-FI-05</small></button>
+      </nav>
+      <section class="supervision-configuracion">
+        <label>Proyecto<select id="supervisionProyecto"></select></label>
+        <label>N.° de informe<input id="supervisionNumero" value="END-IDT-RED-CU-259-G1-25-07-2026"></label>
+        <label id="campoFechaSupervision">Fecha de ejecución<input id="supervisionFecha" type="date" value="2026-07-25"></label>
+        <label id="campoPeriodoSupervision" hidden>Periodo<input id="supervisionPeriodo" value="03/08/2026 – 09/08/2026"></label>
+      </section>
+      <details class="supervision-editor" open>
+        <summary>Editar contenido del informe</summary>
+        <div class="supervision-editor-grid">
+          <label>Contratista<input id="supervisionContratista" value="NAGASCO S.A.C."></label>
+          <label>Supervisión<input id="supervisionSupervisor" value="END PERÚ S.A.C."></label>
+          <label>Cliente<input id="supervisionCliente" value="FONDO DE INCLUSIÓN SOCIAL ENERGÉTICO - FISE"></label>
+          <label>Lugar de supervisión<input id="supervisionLugar" value="Ca. Cauce Seco de Llocllopata / Cusco"></label>
+          <label>Avance civil<input id="supervisionAvanceCivil" value="100.00%"></label>
+          <label>Avance mecánico<input id="supervisionAvanceMecanico" value="100.00%"></label>
+          <label>Personal en obra<input id="supervisionPersonal" type="number" value="29"></label>
+          <label>Equipos<input id="supervisionEquipos" type="number" value="6"></label>
+          <label>Incidentes<input id="supervisionIncidentes" type="number" value="0"></label>
+          <label>Accidentes<input id="supervisionAccidentes" type="number" value="0"></label>
+          <label class="ancho">Observaciones<textarea id="supervisionObservaciones">Se realizó el seguimiento de los trabajos ejecutados, pruebas, gasificación, reposición y cierre de observaciones del proyecto.</textarea></label>
+          <label class="ancho">Conclusiones / restricciones<textarea id="supervisionConclusiones">Las actividades se desarrollaron de acuerdo con la programación. Permanecen acciones de seguimiento documentario y control de calidad.</textarea></label>
+          <label class="ancho">Agregar fotografías<input id="supervisionFotos" type="file" accept="image/*" multiple><small>Puede agregar fotos manualmente. Antes de generar el informe podrá incluirlas o descartarlas.</small></label>
+        </div>
+      </details>
+      <section class="supervision-movil">
+        <header>
+          <div><small>EVIDENCIAS DE CAMPO</small><h3>Fotografías recibidas desde el móvil</h3><p>Dispositivo SUP-CUSCO-04 vinculado · Seleccione las imágenes que formarán parte del PDF.</p></div>
+          <div class="supervision-movil-estado"><i></i><span>En línea</span><button type="button" id="sincronizarFotosSupervision">Sincronizar</button></div>
+        </header>
+        <div class="supervision-galeria" id="galeriaFotosSupervision" aria-live="polite"></div>
+      </section>
+      <section class="supervision-vista" id="vistaInformeDiario">
+        <div class="supervision-portada"><div><small>FORMATO END-FPY-FI-04</small><h3>Informe diario de trabajo · IDT</h3><p>Proyecto de distribución de gas natural por red de ductos</p></div><strong>FISE · END Perú</strong></div>
+        <div class="supervision-ficha"><span><small>Contratista</small><b>NAGASCO S.A.C.</b></span><span><small>Supervisión</small><b>END Perú S.A.C.</b></span><span><small>Cliente</small><b>FISE</b></span><span><small>Especialidad</small><b>Civil / Mecánica / Seguridad</b></span></div>
+        <div class="supervision-kpis"><article><small>Avance de red</small><strong>24,994.94 ml</strong><span>Construcción completada</span></article><article><small>Gasificación</small><strong>19,277.37 ml</strong><span>Frentes verificados</span></article><article><small>RNC</small><strong>14</strong><span>5 abiertas · 9 cerradas</span></article><article><small>Personal</small><strong>29</strong><span>Cuadrilla total</span></article></div>
+        <div class="supervision-grid"><article><h4>1. Avance constructivo</h4><ul><li>Permisos, difusión y señalización.</li><li>Interferencias y excavación de calicatas.</li><li>Hermeticidad, electrofusión y gasificación.</li></ul></article><article><h4>2. Observaciones y auditorías</h4><p>Seguimiento de acciones correctivas y cierre documentado de RNC.</p><div class="supervision-progreso"><i style="width:64%"></i></div></article><article><h4>3. Gestión del tiempo</h4><p>Construcción concluida; permanecen pruebas, apertura de poliválvula y control de fugas.</p></article><article><h4>4. Seguridad</h4><p>Charla diaria registrada. Sin incidentes ni accidentes durante la jornada.</p></article></div>
+        <div class="supervision-tablas"><section><h4>Personal del contratista</h4><table><thead><tr><th>Grupo</th><th>Cant.</th></tr></thead><tbody><tr><td>Ingeniería, calidad y seguridad</td><td>8</td></tr><tr><td>Cuadrilla civil y mecánica</td><td>18</td></tr><tr><td>Topografía y relaciones comunitarias</td><td>3</td></tr></tbody><tfoot><tr><th>Total</th><th>29</th></tr></tfoot></table></section><section><h4>Equipos</h4><table><thead><tr><th>Equipo</th><th>Cant.</th></tr></thead><tbody><tr><td>Retroexcavadora / minicargador</td><td>2</td></tr><tr><td>Cortadora / compactadores</td><td>3</td></tr><tr><td>Equipo de fusión</td><td>1</td></tr></tbody><tfoot><tr><th>Total</th><th>6</th></tr></tfoot></table></section></div>
+        <section class="supervision-evidencias"><header><div><h4>Registro fotográfico</h4><p>22 evidencias georreferenciadas incluidas en el IDT.</p></div><b>22 fotos</b></header><div><span>Charla de seguridad</span><span>Prueba de hermeticidad</span><span>Electrofusión</span><span>Control de presión</span><span>Venteo y gasificación</span><span>Verificación de fugas</span></div></section>
+      </section>
+      <section class="supervision-vista" id="vistaInformeSemanal" hidden>
+        <div class="supervision-portada"><div><small>FORMATO END-FPY-FI-05</small><h3>Informe semanal de trabajo · ISO</h3><p>Periodo de seguimiento de redes de distribución</p></div><strong>CU-REDES · 039</strong></div>
+        <div class="supervision-ficha"><span><small>Contratista</small><b>NAGASCO S.A.C.</b></span><span><small>Plazo</small><b>270 días</b></span><span><small>Monto contractual</small><b>US$ 5,552,825.29 + IGV</b></span><span><small>Personal</small><b>44 trabajadores</b></span></div>
+        <div class="supervision-kpis"><article><small>Fase 1 + 2</small><strong>100%</strong><span>Avance contractual</span></article><article><small>Hermeticidad</small><strong>100%</strong><span>Pruebas concluidas</span></article><article><small>Red construida</small><strong>24,994.94 ml</strong><span>32 mallas</span></article><article><small>Reposición</small><strong>92.84%</strong><span>18,244.23 ml</span></article></div>
+        <div class="supervision-grid"><article><h4>I. Resumen de obra</h4><ul><li>Comunicaciones y gestión comunitaria.</li><li>Seguridad, salud y gestión ambiental.</li><li>Control de personal y frentes activos.</li></ul></article><article><h4>II. Restricciones</h4><ul><li>Reposición y observaciones de calidad.</li><li>Asfalto rechazado y actividades pendientes.</li><li>Seguimiento a pruebas y gasificación.</li></ul></article><article><h4>III. Reuniones y compromisos</h4><p>Responsables, fechas comprometidas y estado de cada acuerdo.</p></article><article><h4>IV. Evidencia semanal</h4><p>Concreto, asfalto, temperatura, granulometría, red y reposición.</p></article></div>
+        <section class="supervision-curvas"><h4>Avance semanal de red</h4><div><span>Construida <b>24,994.94 ml</b></span><i><em style="width:100%"></em></i></div><div><span>Gasificada <b>19,277.37 ml</b></span><i><em style="width:77%"></em></i></div><div><span>Reposición <b>18,244.23 ml</b></span><i><em style="width:92.84%"></em></i></div><p>SPI: <strong>1.00</strong> · Pendiente de gasificación: <strong>5,717.57 ml</strong></p></section>
+        <div class="supervision-tablas"><section><h4>Avance por especialidad</h4><table><thead><tr><th>Especialidad</th><th>Estado</th></tr></thead><tbody><tr><td>Civil</td><td>En cierre</td></tr><tr><td>Mecánica</td><td>Concluida</td></tr><tr><td>Hermeticidad</td><td>100%</td></tr></tbody></table></section><section><h4>Compromisos</h4><table><thead><tr><th>Actividad</th><th>Seguimiento</th></tr></thead><tbody><tr><td>Reposición observada</td><td>En proceso</td></tr><tr><td>Cierre de RNC</td><td>Por validar</td></tr><tr><td>Gasificación pendiente</td><td>Programada</td></tr></tbody></table></section></div>
+      </section>
+    </div>
+    <footer class="supervision-acciones"><span id="estadoInformeSupervision">Edite los datos, revise las evidencias y genere el informe.</span><button type="button" data-cerrar-modal="modalInformesSupervision">Cancelar</button><button type="button" id="exportarSupervisionCsv">Exportar CSV</button><button type="button" class="principal" id="exportarSupervisionPdf">Generar PDF</button></footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-subir-capa" id="modalSubirCapa" aria-labelledby="tituloSubirCapa">
+    <header>
+      <div><h2 id="tituloSubirCapa">Subir capa GIS</h2><p>Cargue archivos GPX, GeoJSON, KML o ZIP, asigne un nombre y defina si será individual o compartida.</p></div>
+      <button type="button" id="cerrarSubirCapa" aria-label="Cerrar">×</button>
+    </header>
+    <div class="cuerpo-subir-capa">
+      <label class="campo-subir-capa">Archivo
+        <input id="archivoGisModal" type="file" accept=".kml,.gpx,.json,.geojson,.zip">
+        <span class="boton-archivo-capa" id="seleccionarArchivoCapa">Seleccionar archivo</span>
+        <small id="estadoCargaModal">Ningún archivo seleccionado</small>
+      </label>
+      <label class="campo-subir-capa">Nombre de la capa
+        <input id="nombreCapa" type="text" placeholder="Ej. Troncal Sur Arequipa" autocomplete="off">
+      </label>
+      <fieldset class="visibilidad-capa"><legend>Visibilidad de la capa</legend>
+        <label><input type="radio" name="visibilidadCapa" value="individual" checked><span><b>Individual</b><small>Solo visible para el usuario que la subió</small></span></label>
+        <label><input type="radio" name="visibilidadCapa" value="compartida"><span><b>Compartida</b><small>Visible para el equipo autorizado de la agrupación</small></span></label>
+      </fieldset>
+      <label class="campo-subir-capa">Tipo detectado
+        <output id="tipoCapaDetectado">Seleccione un archivo</output>
+      </label>
+      <p class="estado-subir-capa" id="mensajeSubirCapa">La capa se visualizará e indexará en el mapa al cargarla.</p>
+    </div>
+    <footer><button type="button" class="cancelar-capa" id="cancelarSubirCapa">Cancelar</button><button type="button" class="cargar-capa" id="cargarCapa">Cargar capa</button></footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-potencial-masificacion" id="modalPotencial" aria-labelledby="tituloPotencial">
+    <header>
+      <div><small>CRUCE ESPACIAL</small><h2 id="tituloPotencial">Identificación de beneficiarios potenciales</h2><p>Red FISE, manzanas abastecidas y unidades prediales dentro del área de influencia.</p></div>
+      <button type="button" data-cerrar-modal="modalPotencial" aria-label="Cerrar">×</button>
+    </header>
+    <div class="modal-cuerpo">
+      <div class="metricas-modal-potencial">
+        <article><span>Predios analizados</span><strong id="kpiPrediosAnalizados">0</strong></article>
+        <article><span>Residenciales</span><strong id="kpiResidenciales">0</strong></article>
+        <article><span>Proyección concesionario</span><strong id="kpiConcesionario">0</strong></article>
+        <article><span>Potenciales únicos</span><strong id="kpiPotenciales">0</strong></article>
+        <span id="kpiManzanas" hidden>0</span><span id="kpiCobertura" hidden>0%</span>
+      </div>
+      <div class="tabla-modal tabla-potencial">
+        <table>
+          <thead><tr><th>Manzana</th><th>Predios</th><th>Con cobertura FISE</th><th>Proyección concesionario</th><th>Beneficiarios potenciales</th></tr></thead>
+          <tbody id="tablaPotencial"></tbody>
+        </table>
+      </div>
+      <p class="metodologia-potencial">Metodología: intersección de áreas de influencia de la red con unidades prediales; se eliminan duplicados entre viviendas existentes y proyecciones de la concesionaria.</p>
+    </div>
+    <footer class="pie-modal-potencial">
+      <button type="button" data-cerrar-modal="modalPotencial">Cerrar</button>
+      <button type="button" id="exportarPotencial">Exportar potencial de abastecimiento</button>
+    </footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-exportar-masificacion" id="modalExportacionMasificacion" aria-labelledby="tituloExportacionMasificacion">
+    <header>
+      <div><small>EXPORTACIÓN DE DATOS</small><h2 id="tituloExportacionMasificacion">Reporte de Masificación</h2><p id="descripcionExportacionMasificacion">El archivo respetará los filtros y la selección realizada en el mapa.</p></div>
+      <button type="button" data-cerrar-modal="modalExportacionMasificacion" aria-label="Cerrar">×</button>
+    </header>
+    <div class="modal-cuerpo">
+      <fieldset class="formatos-exportacion-masificacion"><legend>Selecciona el formato</legend>
+        <label><input type="radio" name="formatoExportacionMasificacion" value="pdf" checked><span><b>PDF</b><small>Informe listo para imprimir</small></span></label>
+        <label><input type="radio" name="formatoExportacionMasificacion" value="csv"><span><b>CSV</b><small>Datos tabulares compatibles</small></span></label>
+        <label><input type="radio" name="formatoExportacionMasificacion" value="xlsx"><span><b>XLSX</b><small>Libro de Microsoft Excel</small></span></label>
+      </fieldset>
+      <div class="alcance-exportacion-masificacion"><span>Alcance</span><strong id="alcanceExportacionMasificacion">Todos los proyectos filtrados</strong><span>Registros</span><b id="cantidadExportacionMasificacion">0</b></div>
+    </div>
+    <footer class="acciones-exportacion-masificacion">
+      <button type="button" data-cerrar-modal="modalExportacionMasificacion">Cancelar</button>
+      <button type="button" id="confirmarExportacionMasificacion">Generar reporte</button>
+    </footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-crear-proyecto" id="modalCrearProyecto" aria-labelledby="tituloCrearProyecto">
+    <header>
+      <div><small id="etiquetaCrearProyecto">NUEVO PROYECTO</small><h2 id="tituloCrearProyecto">Crear proyecto</h2><p id="descripcionCrearProyecto">Registre los datos, el equipo, el área y los beneficiarios del nuevo proyecto.</p></div>
+      <div class="acciones-cabecera-crear-proyecto">
+        <label class="boton-subir-excel-proyecto boton-subir-beneficiarios" for="excelProyecto"><input id="excelProyecto" type="file" accept=".xls,.xlsx,.csv"><span>Subir beneficiarios</span></label>
+        <button type="button" id="cerrarCrearProyecto" aria-label="Cerrar">×</button>
+      </div>
+    </header>
+    <div class="modal-cuerpo cuerpo-modificar-proyecto">
+
+      <section class="panel-formulario-proyecto">
+        <div class="tarjeta-crear-proyecto tarjeta-edicion-proyecto">
+          <div class="campos-crear-proyecto">
+            <label>Código de proyecto<input id="proyectoCodigo" type="text" placeholder="Ej. MAS-011" autocomplete="off"></label>
+            <label>Nombre del proyecto<input id="proyectoNombre" type="text" placeholder="Ej. Nuevo corredor de masificación" autocomplete="off"></label>
+            <label>Proyecto padre / subproyecto<select id="proyectoPadre"><option value="">Proyecto principal (sin padre)</option></select><small>Al elegir un padre se crea un subproyecto; el código y nombre se proponen automáticamente y se pueden editar.</small></label>
+            <label>Fase del proyecto<select id="proyectoFase"><option>Anteproyecto</option><option>Proyecto</option><option>Construcción</option><option>Operación</option></select></label>
+            <label>Fecha de inicio<input id="proyectoFechaInicio" type="date"></label>
+            <label>Fecha de fin<input id="proyectoFechaFin" type="date"></label>
+            <label>Responsable líder<select id="proyectoResponsableLider"><option>-- Seleccione --</option><option>Oliver Gonzales</option><option>María Quispe</option><option>Carlos Mendoza</option><option>Ana Torres</option></select></label>
+            <label>Empresa contratista<input id="proyectoEmpresaContratista" type="text" placeholder="Ingrese la empresa contratista" autocomplete="organization"></label>
+            <label>Equipo<select id="proyectoEquipo" multiple size="4"><option>Equipo GIS</option><option>Equipo Social</option><option>Mesa Técnica</option><option>Operaciones</option><option>Validador FISE</option><option>Catastro</option><option>Campo</option><option>Instalaciones</option><option>Social</option><option>Técnico GIS</option><option>Equipo Técnico</option></select></label>
+            <label>Departamento<select id="proyectoDepartamento"><option>Seleccione uno o varios integrantes</option></select></label>
+            <label>Provincia<select id="proyectoProvincia"><option>Seleccione uno o varios integrantes</option></select></label>
+            <label>Distrito<select id="proyectoDistrito"><option>Seleccione uno o varios integrantes</option></select></label>
+            <label>Tipo de proyecto<select id="proyectoTipo"><option>Masificación de gas FISE</option><option>Servicio GLP</option><option>Conversión energética</option><option>Validación de beneficiarios</option></select></label>
+            <label>Estado<select id="proyectoEstado"><option>En evaluación</option><option>Aprobado</option><option>Observado</option><option>En campo</option><option>En ejecución</option></select></label>
+            <label>Beneficiarios estimados<input id="proyectoBeneficiarios" type="number" min="0" placeholder="0"></label>
+            <label class="campo-ancho">Área de influencia<input id="proyectoAreaInfluencia" type="text" placeholder="Definir en mapa" autocomplete="off"></label>
+            <label class="campo-ancho">Localización (centro del polígono)<input id="proyectoLocalizacion" type="text" placeholder="Latitud, longitud" autocomplete="off"></label>
+          </div>
+        </div>
+
+        <section class="tarjeta-crear-proyecto tarjeta-beneficiarios-proyecto">
+          <header class="cabecera-beneficiarios-proyecto">
+            <div><small>BENEFICIARIOS</small><h3 id="tituloBeneficiariosProyecto">Beneficiarios (0)</h3><p>Importe cualquier Excel o edite las celdas directamente.</p></div>
+            <div class="acciones-beneficiarios-proyecto">
+              <button type="button" id="agregarBeneficiarioProyecto">+ Agregar registro</button>
+            </div>
+          </header>
+          <div class="barra-beneficiarios-proyecto">
+            <strong>#NombreDocumentoCódigoEstadoAcción</strong>
+            <small>Suba un Excel o agregue un registro directamente.</small>
+          </div>
+          <div class="tabla-modal tabla-beneficiarios-proyecto">
+            <table>
+              <thead><tr><th>#</th><th>Nombre</th><th>Documento</th><th>Código</th><th>Estado</th><th>Acción</th></tr></thead>
+              <tbody id="tablaBeneficiariosProyecto"></tbody>
+            </table>
+          </div>
+          <div class="paginacion-beneficiarios-proyecto">
+            <span>Anterior</span><strong>Página 1 de 1</strong><span>Siguiente</span>
+          </div>
+        </section>
+      </section>
+    </div>
+    <footer class="acciones-crear-proyecto">
+      <button type="button" class="abrir-cronograma-proyecto" id="abrirCronogramaProyecto">Cronograma</button>
+      <button type="button" class="abrir-planificacion-proyecto" id="abrirPlanificacionProyecto">Planificación técnica</button>
+      <button type="button" class="cancelar-crear-proyecto" id="cancelarCrearProyecto">Cancelar</button>
+      <button type="button" class="guardar-crear-proyecto" id="guardarCrearProyecto">Guardar cambios</button>
+    </footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-planificacion-tecnica" id="modalPlanificacionTecnica" aria-labelledby="tituloPlanificacionTecnica">
+    <header>
+      <div><small>PLANIFICACIÓN DEL TERRENO</small><h2 id="tituloPlanificacionTecnica">Planificación técnica</h2><p id="subtituloPlanificacionTecnica">Evaluación previa al inicio de la ejecución.</p></div>
+      <button type="button" id="cerrarPlanificacionTecnica" aria-label="Cerrar">×</button>
+    </header>
+    <div class="resumen-planificacion-tecnica">
+      <article><span>Avance técnico</span><strong id="avancePlanificacionTecnica">0%</strong><i><em id="barraPlanificacionTecnica"></em></i></article>
+      <article><span>Cumplidos</span><strong id="cumplidosPlanificacionTecnica">0 de 13</strong><small>Requisitos inspeccionados</small></article>
+      <article><span>Observaciones</span><strong id="observadosPlanificacionTecnica">0</strong><small>Pendientes de subsanar</small></article>
+      <article><span>Resultado</span><strong id="resultadoPlanificacionTecnica">Sin evaluar</strong><small id="fechaPlanificacionTecnica">Sin fecha de inspección</small></article>
+    </div>
+    <nav class="pestanas-planificacion-tecnica" aria-label="Secciones de planificación">
+      <button class="activo" type="button" data-pestana-planificacion="requisitos">Requisitos</button>
+      <button type="button" data-pestana-planificacion="visita">Visita</button>
+      <button type="button" data-pestana-planificacion="evidencias">Evidencias</button>
+      <button type="button" data-pestana-planificacion="observaciones">Observaciones</button>
+      <button type="button" data-pestana-planificacion="cierre">Cierre</button>
+    </nav>
+    <div class="cuerpo-planificacion-tecnica">
+      <section data-panel-planificacion="requisitos">
+        <header class="cabecera-panel-planificacion"><div><h3>Requisitos técnicos e inspección</h3><p>Incluye los requisitos FISE y las variables del formato de inspección de terreno.</p></div><button id="agregarRequisitoPlanificacion" type="button">+ Agregar requisito</button></header>
+        <div class="tabla-planificacion-requisitos"><table><thead><tr><th>#</th><th>Variable a inspeccionar</th><th>Parámetro</th><th>Resultado</th><th>Comentario</th></tr></thead><tbody id="tablaRequisitosPlanificacion"></tbody></table></div>
+      </section>
+      <section data-panel-planificacion="visita" hidden>
+        <div class="formulario-visita-planificacion">
+          <label>Fecha de inspección<input id="planificacionFecha" type="date"></label><label>Localidad<input id="planificacionLocalidad" type="text" placeholder="Ej. Sector Mucra"></label>
+          <label>Responsable FISE<input id="planificacionResponsable" type="text" placeholder="Nombre del responsable"></label><label>Asistentes<input id="planificacionAsistentes" type="text" placeholder="Municipalidad, DREM u otros"></label>
+          <label>Coordenadas / GIS<input id="planificacionCoordenadas" type="text" placeholder="Latitud, longitud"></label><label>Tipo de visita<select id="planificacionTipoVisita"><option>Inspección inicial</option><option>Seguimiento</option><option>Subsanación</option><option>Cierre</option></select></label>
+          <label class="campo-ancho">Ayuda de memoria<textarea id="planificacionAyudaMemoria" rows="5" placeholder="Acuerdos, participantes y próximos pasos"></textarea></label>
+        </div>
+      </section>
+      <section data-panel-planificacion="evidencias" hidden>
+        <div class="carga-evidencias-planificacion"><label for="archivosPlanificacion"><strong>Adjuntar evidencias</strong><span>Fotos, planos, SUNARP, resoluciones, XLSX, DOCX, KML, SHP o DWG.</span><input id="archivosPlanificacion" type="file" multiple></label><div id="listaEvidenciasPlanificacion"><p>No hay evidencias adjuntas.</p></div></div>
+      </section>
+      <section data-panel-planificacion="observaciones" hidden>
+        <header class="cabecera-panel-planificacion"><div><h3>Observaciones y subsanaciones</h3><p>Los requisitos que no cumplen se incorporan automáticamente.</p></div></header>
+        <div id="listaObservacionesPlanificacion" class="lista-observaciones-planificacion"></div>
+      </section>
+      <section data-panel-planificacion="cierre" hidden>
+        <div class="panel-cierre-planificacion"><div class="estado-cierre-planificacion"><small>RESULTADO DE LA EVALUACIÓN</small><strong id="estadoCierrePlanificacion">Sin evaluar</strong><p id="mensajeCierrePlanificacion">Complete la inspección técnica para determinar la aptitud del terreno.</p></div><label>Conclusiones<textarea id="conclusionesPlanificacion" rows="6" placeholder="Conclusiones técnicas de la inspección"></textarea></label><label class="confirmacion-cierre"><input id="confirmarCierrePlanificacion" type="checkbox"> Confirmo que la información y las evidencias fueron revisadas.</label><button id="cerrarEtapaPlanificacion" type="button" disabled>Cerrar planificación e iniciar ejecución</button></div>
+      </section>
+    </div>
+    <footer class="acciones-planificacion-tecnica"><span id="estadoGuardadoPlanificacion">Los cambios se guardarán con el proyecto.</span><button type="button" id="cancelarPlanificacionTecnica">Cancelar</button><button class="principal" type="button" id="guardarPlanificacionTecnica">Guardar planificación</button></footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-cronograma-proyecto" id="modalCronogramaProyecto" aria-labelledby="tituloCronogramaProyecto">
+    <header><div><small>PLANIFICACIÓN DEL PROYECTO</small><h2 id="tituloCronogramaProyecto">Cronograma de actividades</h2><p id="subtituloCronogramaProyecto">Defina actividades, fechas, dependencias y avance físico.</p></div><button type="button" id="cerrarCronogramaProyecto" aria-label="Cerrar">×</button></header>
+    <div class="modal-cuerpo">
+      <div class="cronograma-resumen"><strong id="cronogramaProyectoActual">Proyecto nuevo</strong><span>Las actividades sucesoras pueden depender del código de una actividad predecesora.</span></div>
+      <div class="barra-cronograma-proyecto">
+        <button type="button" class="agregar-actividad-cronograma icono-accion-cronograma" id="agregarActividadCronograma" title="Agregar actividad" aria-label="Agregar actividad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M4 12h10M4 18h10M19 8v8M15 12h8"/></svg></button>
+        <button type="button" class="accion-cronograma-proyecto icono-accion-cronograma" id="calendarioCronogramaProyecto" title="Calendario laboral" aria-label="Calendario laboral"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></button>
+        <button type="button" class="accion-cronograma-proyecto icono-accion-cronograma" id="bajarNivelCronograma" title="Bajar nivel / convertir en subactividad" aria-label="Bajar nivel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h8M3 12h5M3 18h8M13 9l4 3-4 3M17 12h4"/></svg></button>
+        <button type="button" class="accion-cronograma-proyecto icono-accion-cronograma" id="subirNivelCronograma" title="Subir nivel de actividad" aria-label="Subir nivel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h12M12 12h9M9 18h12M11 9l-4 3 4 3M7 12H3"/></svg></button>
+        <b class="contador-seleccion-cronograma" id="contadorSeleccionCronograma">0 seleccionadas</b>
+        <button type="button" class="exportar-cronograma-proyecto" id="exportarCronogramaProyecto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l3 3v17H6zM14 2v5h5M8 15h6M8 11h4"/></svg><span>Exportar PDF</span></button>
+        <label class="importar-cronograma-proyecto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M4 15v5h16v-5"/></svg><span>Cargar XML / CSV / XLSX</span><input id="importarCronogramaProyecto" type="file" accept=".xml,.csv,.xlsx" hidden></label>
+        <small id="estadoImportacionCronograma">Edite, ordene o cargue actividades desde XML, CSV o XLSX.</small>
+      </div>
+      <div class="cronograma-proyecto-visor">
+        <div class="tabla-modal tabla-cronograma-proyecto"><table><thead><tr><th><input id="seleccionarTodoCronograma" type="checkbox" aria-label="Seleccionar todas las actividades"></th><th>N°</th><th>ACTIVIDADES</th><th>INICIO</th><th>FIN</th><th>PREDECESORA</th><th>SUCESORA</th><th>AVANCE</th><th title="Recursos">REC.</th><th></th></tr></thead><tbody id="tablaCronogramaProyecto"></tbody></table></div>
+        <section class="gantt-cronograma-proyecto" aria-label="Vista Gantt"><header id="cabeceraGanttCronograma"></header><div id="ganttCronogramaProyecto"></div></section>
+        <div class="navegacion-horizontal-cronograma"><label>Tabla<input id="deslizadorTablaCronograma" type="range" min="0" max="0" value="0" aria-label="Desplazar horizontalmente la tabla"></label><label>Gantt<input id="deslizadorGanttCronograma" type="range" min="0" max="0" value="0" aria-label="Desplazar horizontalmente el diagrama Gantt"></label></div>
+      </div>
+    </div>
+    <footer class="acciones-crear-proyecto"><button type="button" class="cancelar-crear-proyecto" id="cancelarCronogramaProyecto">Cancelar</button><button type="button" class="guardar-crear-proyecto" id="guardarCronogramaProyecto">Guardar cronograma</button></footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-recursos-cronograma" id="modalRecursosCronograma" aria-labelledby="tituloRecursosCronograma">
+    <header><div><small>RECURSOS DE LA ACTIVIDAD</small><h2 id="tituloRecursosCronograma">Recursos</h2><p id="subtituloRecursosCronograma">Asigne personal, cuadrillas, equipos o materiales.</p></div><button type="button" id="cerrarRecursosCronograma" aria-label="Cerrar">×</button></header>
+    <div class="modal-cuerpo"><div class="form-recursos-cronograma"><label>Recurso<input id="nombreRecursoCronograma" placeholder="Persona, cuadrilla, equipo o material"></label><label>Tipo<select id="tipoRecursoCronograma"><option>Personal</option><option>Cuadrilla</option><option>Equipo</option><option>Material</option><option>Subcontratista</option></select></label><label>Cantidad<input id="cantidadRecursoCronograma" type="number" min="0" step="0.1" value="1"></label><label>h/día<input id="horasRecursoCronograma" type="number" min="0" max="24" step="0.5" value="8"></label><button type="button" id="agregarRecursoCronograma">Agregar</button></div><div class="lista-recursos-cronograma" id="listaRecursosCronograma"></div></div>
+    <footer class="acciones-crear-proyecto"><button type="button" class="guardar-crear-proyecto" id="guardarRecursosCronograma">Listo</button></footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-calendario-cronograma" id="modalCalendarioCronograma" aria-labelledby="tituloCalendarioCronograma">
+    <header><div><small>CALENDARIO LABORAL</small><h2 id="tituloCalendarioCronograma">Calendario laboral del cronograma</h2><p>Defina días laborables, jornada, refrigerio y feriados del proyecto.</p></div><button type="button" id="cerrarCalendarioCronograma" aria-label="Cerrar">×</button></header>
+    <div class="modal-cuerpo">
+      <div class="resumen-calendario-cronograma" id="resumenCalendarioCronograma"></div>
+      <section class="seccion-calendario-cronograma"><strong>Días laborables de la semana</strong><div class="semana-calendario-cronograma" id="semanaCalendarioCronograma"></div></section>
+      <section class="plantilla-horario-cronograma"><label>Entrada<input id="horaEntradaCronograma" type="time" value="08:00"></label><label>Inicio refrigerio<input id="horaInicioRefrigerioCronograma" type="time" value="13:00"></label><label>Fin refrigerio<input id="horaFinRefrigerioCronograma" type="time" value="14:00"></label><label>Salida<input id="horaSalidaCronograma" type="time" value="17:00"></label><button type="button" id="aplicarHorarioCronograma">Aplicar a días laborables</button></section>
+      <section class="horario-semanal-cronograma"><header><span>Día</span><span>Entrada</span><span>Refrigerio</span><span>Retorno</span><span>Salida</span><span>H. efectivas</span></header><div id="filasHorarioCronograma"></div></section>
+      <section class="feriados-cronograma"><strong>Días no laborables específicos / feriados</strong><div><label>Fecha<input id="fechaFeriadoCronograma" type="date"></label><label>Descripción<input id="nombreFeriadoCronograma" placeholder="Ej.: Feriado nacional"></label><button type="button" id="agregarFeriadoCronograma">Agregar</button></div><ul id="listaFeriadosCronograma"></ul></section>
+    </div>
+    <footer class="acciones-crear-proyecto"><button type="button" class="cancelar-crear-proyecto" id="cancelarCalendarioCronograma">Cancelar</button><button type="button" class="guardar-crear-proyecto" id="guardarCalendarioCronograma">Aplicar calendario</button></footer>
+  </dialog>
+
+  <dialog class="modal-masificacion" id="modalVersionesMapa" aria-labelledby="tituloVersionesMapa">
+    <header><div><small>BASE DE INFORMACIÓN CARTOGRÁFICA</small><h2 id="tituloVersionesMapa">Cambiar versión del mapa</h2><p>Seleccione la base de datos que desea consultar para los proyectos mostrados.</p></div><button type="button" data-cerrar-modal="modalVersionesMapa" aria-label="Cerrar">×</button></header>
+    <div class="modal-cuerpo">
+      <div class="campos-modal"><label>Proyecto de referencia<select id="proyectoVersionMapa"></select></label></div>
+      <div class="comparador-versiones-mapa">
+        <section><header><strong>Planificación</strong><small>Anteproyecto / ingeniería</small></header><div id="mapaVersionPlanificacion" aria-label="Mapa de planificación"></div><button type="button" data-version-modal="planificacion">Usar Planificación</button></section>
+        <section><header><strong>As-built</strong><small>Red construida en campo</small></header><div id="mapaVersionAsBuilt" aria-label="Mapa as-built"></div><button type="button" data-version-modal="asbuilt">Usar As-built</button></section>
+      </div>
+      <div class="selector-version-proyecto selector-version-modal">
+        <span>Compare ambos trazados y elija cuál desea visualizar en el mapa principal.</span>
+      </div>
+      <p class="estado-modal" id="estadoVersionMapa">La versión se aplicará a todos los proyectos visibles en el mapa.</p>
+    </div>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-confirmar-eliminar-proyecto" id="modalConfirmarEliminarProyecto" aria-labelledby="tituloConfirmarEliminarProyecto">
+    <header>
+      <div><small>CONFIRMACIÓN</small><h2 id="tituloConfirmarEliminarProyecto">Eliminar proyecto</h2><p id="textoConfirmarEliminarProyecto">Esta acción requiere confirmación.</p></div>
+      <button type="button" id="cerrarConfirmarEliminarProyecto" aria-label="Cerrar">×</button>
+    </header>
+    <div class="modal-cuerpo">
+      <p id="detalleConfirmarEliminarProyecto">¿Desea eliminar este proyecto? La acción no se puede deshacer.</p>
+    </div>
+    <footer class="acciones-crear-proyecto">
+      <button type="button" class="cancelar-crear-proyecto" id="cancelarEliminarProyecto">Cancelar</button>
+      <button type="button" class="guardar-crear-proyecto" id="confirmarEliminarProyecto">Eliminar</button>
+    </footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-acciones-geometria" id="modalAccionesGeometria" aria-labelledby="tituloAccionesGeometria">
+    <header><div><small>GEOMETRÍA DIBUJADA</small><h2 id="tituloAccionesGeometria">¿Qué desea hacer con el área?</h2><p>Revise la geometría antes de vincularla a un proyecto o subproyecto.</p></div><button type="button" id="cerrarAccionesGeometria" aria-label="Cerrar">×</button></header>
+    <div class="modal-cuerpo resumen-geometria-dibujada"><span class="icono-geometria-dibujada"><svg viewBox="0 0 24 24"><path d="m5 6 6-3 8 4-2 11-8 3-5-6Z"/><circle cx="5" cy="6" r="1.5"/><circle cx="11" cy="3" r="1.5"/><circle cx="19" cy="7" r="1.5"/><circle cx="17" cy="18" r="1.5"/><circle cx="9" cy="21" r="1.5"/></svg></span><div><strong>Área lista para revisar</strong><small>Puede guardarla, editar sus vértices o eliminarla.</small></div></div>
+    <footer class="acciones-modal-geometria"><button type="button" id="guardarGeometriaMapa">Guardar</button><button type="button" id="editarGeometriaMapa">Editar vértices</button><button type="button" id="eliminarGeometriaMapa">Eliminar</button></footer>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-dibujo-area" id="modalDibujoArea" aria-labelledby="tituloHerramientaAreaProyecto">
+    <header><div><small>HERRAMIENTA DEL MAPA</small><h2 id="tituloHerramientaAreaProyecto">Dibujo y selección de área</h2><p>Defina la zona de estación, área de influencia u otra geometría del proyecto o subproyecto.</p></div><button type="button" id="cerrarDibujoArea" aria-label="Cerrar">×</button></header>
+    <div class="modal-cuerpo herramienta-area-proyecto">
+      <div class="campos-herramienta-area">
+        <label>Proyecto o subproyecto<select id="proyectoZonaObjetivo"></select></label>
+        <label>Tipo de zona<select id="tipoZonaProyecto"><option>Área de influencia</option><option>Zona de estación</option><option>Otra geometría</option></select></label>
+        <label>Nombre de la geometría<input id="nombreZonaProyecto" type="text" placeholder="Ej. Estación Norte" autocomplete="off"></label>
+      </div>
+      <input id="proyectoGeometria" type="hidden">
+      <p class="estado-herramienta-area" id="estadoZonaProyecto">Indique el nombre, tipo de objeto y proyecto que recibirá el área.</p>
+    </div>
+    <footer class="acciones-crear-proyecto"><button type="button" class="cancelar-crear-proyecto" id="cancelarDibujoArea">Cancelar</button><button type="button" class="guardar-crear-proyecto" id="guardarZonaProyecto">Guardar área</button></footer>
+  </dialog>
+
+  <div class="barra-herramientas-fise herramientas-masificacion" id="barraHerramientas">
+    <button class="boton-crear-proyecto boton-crear-proyecto-toolbar" id="abrirCrearProyecto" type="button" aria-label="Crear proyecto" title="Crear proyecto"><span class="icono-crear-proyecto" aria-hidden="true">+</span><small>Proyecto</small></button>
+    <button class="abrir-herramientas-fise boton-herramientas-icono" id="abrirHerramientas" type="button" aria-expanded="false" aria-label="Abrir herramientas" title="Herramientas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4.2 4.2 0 0 0-5.4 5.4L3.8 17.2a2.1 2.1 0 0 0 3 3l5.5-5.5a4.2 4.2 0 0 0 5.4-5.4l-2.6 2.6-3-3 2.6-2.6Z"/></svg></button>
+    <div class="grupo-herramientas-masificacion" id="grupoHerramientas" hidden>
+      <button type="button" data-herramienta="seleccionar" title="Seleccionar"><svg viewBox="0 0 24 24"><path d="M5 3.5 18.5 13l-6.1 1.1-3.3 5.4L5 3.5Z"/></svg><span>Seleccionar</span></button>
+      <button type="button" data-herramienta="poligono" title="Dibujar polígono"><svg viewBox="0 0 24 24"><path d="m6 5 12 3-2 11-12-4L6 5Z"/><circle cx="6" cy="5" r="1.5"/><circle cx="18" cy="8" r="1.5"/><circle cx="16" cy="19" r="1.5"/></svg><span>Polígono</span></button>
+      <button type="button" data-herramienta="circulo" title="Dibujar círculo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg><span>Círculo</span></button>
+      <button type="button" data-herramienta="area-proyecto" title="Dibujar y editar área"><svg viewBox="0 0 24 24"><path d="M4 20l4.2-1 10.9-10.9a2.2 2.2 0 0 0-3.1-3.1L5.1 15.9 4 20Z"/><path d="m14.6 6.4 3 3M5.1 15.9l3 3"/></svg><span>Área</span></button>
+      <button type="button" data-herramienta="liquidaciones" title="Liquidaciones Excel"><svg viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5Z"/><path d="M15 3v5h4M8 12h8M8 16h8M10 9v10"/></svg><span>Liquidaciones</span></button>
+      <button type="button" data-herramienta="informes" title="Informes técnicos"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6Z"/><path d="M15 3v5h4M9 12h7M9 16h7"/><path d="m8 8 1 1 2-2"/></svg><span>Informes</span></button>
+      <i></i>
+      <button type="button" data-herramienta="opciones" title="Más opciones"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg><span>Opciones</span></button>
+      <button type="button" data-herramienta="ampliar" title="Ampliar"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4.5 4.5M10.5 7.5v6M7.5 10.5h6"/></svg><span>Ampliar</span></button>
+      <button type="button" data-herramienta="mover" title="Mover"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M12 3 9.5 5.5M12 3l2.5 2.5M21 12l-2.5-2.5M21 12l-2.5 2.5M12 21l-2.5-2.5M12 21l2.5-2.5M3 12l2.5-2.5M3 12l2.5 2.5"/></svg><span>Mover</span></button>
+    </div>
+  </div>
+
+  <dialog class="modal-masificacion" id="modalLiquidaciones">
+    <header><div><small>AUTOMATIZACIÓN DE REPORTES</small><h2>Liquidaciones</h2><p>Liquidación de inversiones en bienes de capital con recursos FISE.</p></div><button type="button" data-cerrar-modal="modalLiquidaciones">×</button></header>
+    <div class="modal-cuerpo panel-liquidacion" data-panel-liquidacion="liquidacion">
+      <section class="titulo-anexo"><strong id="tituloAnexoLiquidacion">ANEXO 1: LIQUIDACIÓN PARCIAL DE LAS INVERSIONES EN BIENES DE CAPITAL CON RECURSOS DEL FISE</strong><p>Para el suministro de gas natural de usuarios residenciales en la concesión de Lima y Callao</p><small id="subtituloLiquidacion">Reporte de Transferencia parcial · Malla N.° PPEO-25-0594 CL-SECTOR-000100-MALLA-000</small></section>
+      <div class="generador-documentos-grid">
+      <aside class="datos-expediente-informe">
+        <h3>Datos del expediente</h3>
+        <div class="selector-documento-informe" role="tablist" aria-label="Tipo de documento">
+          <button class="activo" id="tabInformeTecnico" type="button" role="tab" aria-selected="true" aria-controls="vistaInformeTecnico">Informe Técnico Legal</button>
+          <button id="tabResolucion" type="button" role="tab" aria-selected="false" aria-controls="vistaResolucion">Resolución</button>
+        </div>
+      <div class="campos-modal campos-expediente-informe">
+        <label>Código de agrupación<input value="FISE-2026-001"></label><label>Código de malla<input value="PPEO-25-0594 CL-SECTOR-000100-MALLA-000"></label>
+        <label>Concesión<input value="LIMA Y CALLAO"></label><label>Fecha<input type="date" value="2026-07-24"></label><label id="etiquetaPorcentajeLiquidacion">% Liquidación parcial<input id="porcentajeLiquidacion" type="number" min="1" max="100" value="60"></label>
+      </div>
+      <label class="control-liquidacion-total"><input id="liquidacionTotal" type="checkbox"><span><b>Liquidar al 100%</b><small>Al activar esta opción, la liquidación parcial cambia a liquidación total y se recalculan las partidas.</small></span></label>
+      <div class="barra-acciones-modal"><div><b>Reporte de Agrupación · FISE-2026-001</b><small>4 de 4 partidas vinculadas con objetos espaciales GIS</small></div><button type="button">Descargar formato</button><label>Subir Excel (.xls / .xlsx)<input id="excelLiquidacion" type="file" accept=".xls,.xlsx"></label><button type="button" id="agregarPartida">+ Agregar partida</button></div>
+      <div class="tabla-modal"><table><thead><tr><th>Código VNR</th><th>Partida</th><th>Unidad</th><th>Cantidad</th><th>Tarifa Osinergmin</th><th>Objeto GIS</th><th>Vinculación</th><th id="columnaMontoLiquidacion">Monto parcial</th><th>Acción</th></tr></thead><tbody id="partidasLiquidacion">
+        <tr><td>010210010101</td><td>Tubería PE 200 mm · Terreno normal · Pavimento afirmado</td><td>m</td><td>94.37</td><td>US$ 123.17185</td><td>TRON-001</td><td><b class="gis-ok">GIS vinculado</b></td><td class="monto-liquidacion" data-total="11623.73">US$ 6,974.24</td><td><button class="eliminar-partida">Eliminar</button></td></tr>
+        <tr><td>010210010102</td><td>Tubería PE 200 mm · Terreno normal · Pavimento flexible</td><td>m</td><td>364.7</td><td>US$ 150.89658</td><td>RAM-002</td><td><b class="gis-ok">GIS vinculado</b></td><td class="monto-liquidacion" data-total="55031.98">US$ 33,019.19</td><td><button class="eliminar-partida">Eliminar</button></td></tr>
+        <tr><td>010210010401</td><td>Tubería PE 200 mm · Terreno rocoso · Pavimento afirmado</td><td>m</td><td>397.33</td><td>US$ 178.91137</td><td>TRON-003</td><td><b class="gis-ok">GIS vinculado</b></td><td class="monto-liquidacion" data-total="71086.85">US$ 42,652.11</td><td><button class="eliminar-partida">Eliminar</button></td></tr>
+        <tr><td>040210010401</td><td>Válvula PE 200 mm de alta densidad, 5 bar, tipo bola</td><td>und</td><td>1</td><td>US$ 1,086.02552</td><td>VAL-001</td><td><b class="gis-ok">GIS vinculado</b></td><td class="monto-liquidacion" data-total="1086.03">US$ 651.62</td><td><button class="eliminar-partida">Eliminar</button></td></tr>
+      </tbody></table></div>
+      <p class="estado-modal" id="estadoLiquidacion">Liquidación parcial aplicada al 60% · Total: US$ 83,297.16.</p>
+    </div>
+    <section class="modal-cuerpo panel-liquidacion trazabilidad-expediente" data-panel-liquidacion="trazabilidad" hidden>
+      <div class="cabecera-trazabilidad">
+        <div><small>EXPEDIENTE</small><h3>I-10512-2024</h3><p>Liquidación Parcial FISE · Redes · AGRUPACIÓN 1</p></div>
+        <div class="estado-expediente"><span>Fase actual</span><strong>Evaluación técnica</strong><small>5 de 9 fases</small></div>
+      </div>
+      <div class="trazabilidad-controles">
+        <label>Tipo de expediente<select><option>Planificación</option><option>Liquidación</option><option>Monitoreo</option></select></label>
+        <label>Zona de análisis<select><option>Zona concesionada</option><option>Zona no concesionada</option></select></label>
+        <label>Expediente<input value="FISE-2026-001" aria-label="Código del expediente"></label>
+        <button type="button">Registrar expediente</button>
+        <button class="secundario" type="button">Exportar auditoría</button>
+      </div>
+      <div class="transicion-zona">
+        <div><small>ANÁLISIS TERRITORIAL</small><strong id="zonaActualExpediente">Zona concesionada</strong><p>La trazabilidad conserva el historial cuando cambia el ámbito de análisis.</p></div>
+        <label>Continuar análisis en
+          <select id="zonaAnalisisExpediente"><option>Zona concesionada</option><option>Zona no concesionada</option></select>
+        </label>
+        <button id="cambiarZonaExpediente" type="button">Aplicar transición</button>
+      </div>
+      <div class="flujo-expediente" aria-label="Flujograma de nueve fases">
+        <article class="completada"><b>1</b><span><strong>Planificación</strong><small>Completada · 02/07/2026</small></span></article>
+        <article class="completada"><b>2</b><span><strong>Registro</strong><small>Completada · 04/07/2026</small></span></article>
+        <article class="completada"><b>3</b><span><strong>Validación documental</strong><small>Completada · 06/07/2026</small></span></article>
+        <article class="completada"><b>4</b><span><strong id="faseZonaExpediente">Análisis de zona concesionada</strong><small>Completada · 10/07/2026</small></span></article>
+        <article class="actual"><b>5</b><span><strong>Evaluación técnica</strong><small>En curso · Responsable técnico</small></span></article>
+        <article><b>6</b><span><strong>Evaluación económica</strong><small>Pendiente</small></span></article>
+        <article><b>7</b><span><strong>Evaluación legal</strong><small>Pendiente</small></span></article>
+        <article><b>8</b><span><strong>Liquidación y aprobación</strong><small>Pendiente</small></span></article>
+        <article><b>9</b><span><strong>Monitoreo</strong><small>Pendiente</small></span></article>
+      </div>
+      <div class="avance-expediente"><span><i></i></span><strong>44% completado</strong></div>
+    </section>
+    <section class="modal-cuerpo panel-liquidacion auditoria-expediente" data-panel-liquidacion="auditoria" hidden>
+      <div class="cabecera-auditoria"><div><small>CONTROL DEL EXPEDIENTE</small><h3>Auditoría de estados</h3><p>Historial de transiciones, responsables y observaciones del expediente I-10512-2024.</p></div><button type="button">Exportar auditoría</button></div>
+      <div class="resumen-auditoria">
+        <article><span>Movimientos</span><strong id="totalMovimientosExpediente">5</strong></article>
+        <article><span>Última actualización</span><strong>24/07/2026</strong></article>
+        <article><span>Estado</span><strong class="estado-en-curso">En evaluación</strong></article>
+      </div>
+      <div class="tabla-modal tabla-auditoria"><table><thead><tr><th>Fecha y hora</th><th>Fase</th><th>Movimiento</th><th>Responsable</th><th>Observación</th></tr></thead><tbody id="auditoriaExpediente">
+        <tr><td>24/07/2026 · 10:42</td><td>Evaluación técnica</td><td><b class="movimiento-actual">Inicio de evaluación</b></td><td>Carolina Jara</td><td>Partidas y objetos GIS remitidos para validación técnica.</td></tr>
+        <tr><td>10/07/2026 · 16:18</td><td>Análisis territorial</td><td>Fase completada</td><td>Analista GIS</td><td>Zona concesionada validada y vinculada con la malla PPEO-25-0594.</td></tr>
+        <tr><td>06/07/2026 · 11:30</td><td>Validación documental</td><td>Fase completada</td><td>Mesa de partes</td><td>Documentación obligatoria encontrada conforme.</td></tr>
+        <tr><td>04/07/2026 · 09:15</td><td>Registro</td><td>Expediente registrado</td><td>Renzo Vicente</td><td>Ingreso del expediente y asignación del código de agrupación.</td></tr>
+        <tr><td>02/07/2026 · 08:40</td><td>Planificación</td><td>Flujo iniciado</td><td>Coordinación FISE</td><td>Programación de revisión y responsables definida.</td></tr>
+      </tbody></table></div>
+    </section>
+  </dialog>
+
+  <dialog class="modal-masificacion modal-trazabilidad" id="modalTrazabilidad">
+    <header><div><h2>Trazabilidad desde registros de expedientes</h2><p>Consulte un expediente existente o registre uno nuevo; seleccione cada fase para revisar su historial.</p></div><button type="button" data-cerrar-modal="modalTrazabilidad">×</button></header>
+    <div class="contenido-trazabilidad" id="contenidoTrazabilidad">
+      <div class="trazabilidad-controles">
+        <label>Tipo de expediente<select id="trazaTipo"><option>Planificación</option><option>Liquidación</option><option>Monitoreo</option></select></label>
+        <label>Zona de análisis<select id="trazaZona"><option>Zona concesionada</option><option>Zona no concesionada</option></select></label>
+        <label>Expediente<input id="trazaCodigo" value="FISE-2026-001"></label>
+        <button id="registrarExpediente" type="button">Registrar expediente</button>
+        <button class="secundario" id="exportarAuditoriaTraza" type="button">Exportar auditoría</button>
+      </div>
+      <section class="formulario-expediente" id="formularioExpediente" hidden>
+        <header><div><h3>Generar nuevo expediente</h3><p>No existe información previa. Complete los campos y guarde el expediente.</p></div><button id="cerrarFormularioExpediente" type="button" aria-label="Cerrar formulario">×</button></header>
+        <div class="campos-expediente">
+          <label>Código<input id="nuevoExpCodigo" value="FISE-2026-001"></label>
+          <label>Tipo<select id="nuevoExpTipo"><option>Planificación</option><option>Liquidación</option><option>Monitoreo</option></select></label>
+          <label>Zona<select id="nuevoExpZona"><option>Zona concesionada</option><option>Zona no concesionada</option></select></label>
+          <label>Fecha inicial<input type="date" value="2026-07-01"></label>
+          <label>Fecha final<input type="date" value="2026-07-02"></label>
+          <label>Usuario<input value="Renzo"></label>
+          <label>Estado<select><option>No completado</option><option>En curso</option><option>Completado</option></select></label>
+          <label class="campo-documento">Documento PDF<input id="documentoExpediente" type="file" accept="application/pdf"><small id="nombreDocumentoExpediente">Ningún PDF seleccionado</small></label>
+          <button id="guardarExpediente" type="button">Guardar expediente</button>
+        </div>
+        <p class="estado-formulario-expediente" id="estadoFormularioExpediente"></p>
+      </section>
+      <div class="flujo-expediente flujo-expediente-interactivo" id="fasesTrazabilidad" aria-label="Flujograma de nueve fases">
+        <article class="completada activa" data-fase="1"><b>✓</b><span><strong>1. Planificación</strong><small>Completado · Inicio: 01/07/2026 · Fin: 02/07/2026</small></span></article>
+        <article class="completada" data-fase="2"><b>✓</b><span><strong>2. Registro de la agrupación</strong><small>Completado · Inicio: 03/07/2026 · Fin: 04/07/2026</small></span></article>
+        <article class="completada" data-fase="3"><b>✓</b><span><strong>3. Evaluación GIS</strong><small>Completado · Inicio: 05/07/2026 · Fin: 07/07/2026</small></span></article>
+        <article class="completada" data-fase="4"><b>✓</b><span><strong>4. Validación técnica</strong><small>Completado · Inicio: 08/07/2026 · Fin: 10/07/2026</small></span></article>
+        <article class="completada" data-fase="5"><b>✓</b><span><strong>5. Validación concesionaria</strong><small>Completado · Inicio: 11/07/2026 · Fin: 14/07/2026</small></span></article>
+        <article class="actual" data-fase="6"><b>6</b><span><strong>6. Programación de obra</strong><small>Avance no completado · Responsable: Operaciones · Inicio: 15/07/2026 · Fin: En curso</small></span></article>
+        <article data-fase="7"><b>7</b><span><strong>7. Ejecución de red</strong><small>No completado · Inicio: Pendiente · Fin: Pendiente</small></span></article>
+        <article data-fase="8"><b>8</b><span><strong>8. Liquidación</strong><small>No completado · Inicio: Pendiente · Fin: Pendiente</small></span></article>
+        <article data-fase="9"><b>9</b><span><strong>9. Monitoreo</strong><small>No completado · Inicio: Pendiente · Fin: Pendiente</small></span></article>
+      </div>
+      <section class="historial-fase">
+        <header><h3 id="tituloHistorialFase">Historial · 1. Planificación</h3><small>Toque otra fase para actualizar el detalle</small></header>
+        <div class="tabla-modal"><table><thead><tr><th>Fecha de inicio</th><th>Fecha de fin</th><th>Usuario</th><th>Estado anterior</th><th>Nuevo estado</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="historialFaseBody"></tbody></table></div>
+        <label for="archivoHistorialFase" hidden>Adjuntar archivo PDF</label>
+        <input id="archivoHistorialFase" type="file" accept="application/pdf" hidden>
+      </section>
+    </div>
+  </dialog>
+
+  <dialog class="modal-masificacion" id="modalInformes">
+    <header><div><small>GENERACIÓN AUTOMÁTICA</small><h2>Informes técnicos y resoluciones</h2><p>Plantilla FISE: Informe Técnico Legal + Resolución de Dirección Ejecutiva.</p></div><button type="button" data-cerrar-modal="modalInformes">×</button></header>
+    <div class="modal-cuerpo">
+      <section class="plantilla-documental" aria-label="Datos de la plantilla documental">
+        <div class="plantilla-documental-marca">
+          <small>PLANTILLA DOCUMENTAL TÉCNICA</small>
+          <strong>PA-MAS-INF-001</strong>
+        </div>
+        <div><small>Documento</small><strong>Informe técnico de liquidación y sustento cartográfico</strong></div>
+        <div><small>Versión</small><strong>01</strong></div>
+        <div><small>Vigencia</small><strong>2026</strong></div>
+        <div class="plantilla-documental-referencia"><small>Referencias técnicas</small><span>Cartografía · Levantamiento predial · Estado de unidades prediales · Plano técnico</span></div>
+      </section>
+      <div class="barra-acciones-modal"><b class="estado-borrador">Estado: Borrador</b><button>Word</button><button>PDF</button><button>Guardar</button><button>Aprobar</button><button>Descargar</button></div>
+      <div class="campos-modal">
+        <label>N.° Informe Técnico Legal<input value="ITL-FISE-2026-001"></label><label>N.° Resolución<input value="RD-FISE-2026-001"></label><label>Destinatario<input value="Director Ejecutivo - FISE"></label>
+        <label class="campo-ancho">Remitentes<input value="Analista Técnico; Especialista Técnico; Coordinador de Masificación; Finanzas; Especialista Legal"></label>
+        <label class="campo-ancho">Asunto<input value="Liquidación Parcial FISE - Redes · AGRUPACIÓN 1"></label><label>Referencia<input value="Expediente N.° I-10512-2024"></label>
+        <label>Lugar y fecha<input value="San Borja, 2026-07-24"></label><label>Monto<input value="US$ 98,291.11"></label><label>Concesionario<input value="Gas Natural de Lima y Callao S.A."></label>
+      </div>
+      </aside>
+      <div class="vistas-documentos-informe">
+      <article class="vista-documento informe-tecnico-previo" id="vistaInformeTecnico" role="tabpanel" aria-label="Vista previa del Informe Técnico Legal">
+        <header class="informe-tecnico-membrete"><strong>FISE - FONDO DE INCLUSIÓN SOCIAL ENERGÉTICO</strong><b>FISE</b></header>
+        <h3>INFORME TÉCNICO LEGAL N.° 0218-2026/FISE</h3>
+        <div class="informe-tecnico-datos">
+          <p><b>A:</b> Director Ejecutivo - FISE</p>
+          <p><b>De:</b> Analista Técnico - FISE; Especialista Técnico - FISE; Coordinador de Masificación de Gas Natural - FISE; Coordinador de Finanzas - FISE; Especialista Legal - FISE</p>
+          <p><b>Asunto:</b> Liquidación Parcial FISE - Redes de la agrupación AGRUPACIÓN 1</p>
+          <p><b>Referencia:</b> Expediente N.° I-10512-2024</p>
+          <p><b>Fecha:</b> 08 de abril de 2026</p>
+        </div>
+        <section><h4>1. OBJETIVO</h4><p>Sustentar técnica y legalmente la Liquidación Parcial FISE - Redes correspondiente al proyecto AGRUPACIÓN 1, verificando la documentación presentada por el concesionario, las partidas valorizadas, la información geoespacial y el monto solicitado para transferencia.</p></section>
+        <section><h4>2. BASE LEGAL</h4><p>2.1 Ley N.° 29852, Ley que crea el Sistema de Seguridad Energética en Hidrocarburos y el Fondo de Inclusión Social Energético - FISE.</p><p>2.2 Decreto Supremo N.° 021-2012-EM, Reglamento de la Ley N.° 29852.</p><p>2.3 Resolución Viceministerial N.° 035-2023-MINEM/VMH, que aprueba el procedimiento que regula los desembolsos de proyectos financiados con recursos del FISE.</p><p>2.4 Resolución Directoral N.° 123-2021-MINEM/DGH, que aprueba el procedimiento de priorización y ejecución de inversiones para el suministro de gas natural.</p><p>2.5 Ley N.° 32315, que establece medidas para impulsar la masificación del gas natural.</p></section>
+        <section><h4>3. ANTECEDENTES</h4><p>3.1 Los recursos del FISE se destinan, entre otros fines, a la masificación del uso del gas natural mediante el financiamiento parcial o total de conexiones y redes de distribución.</p><p>3.2 El FISE y el concesionario suscribieron el convenio para ejecutar inversiones destinadas al suministro de gas natural de usuarios residenciales.</p><p>3.3 El concesionario presentó la solicitud de transferencia correspondiente al proyecto, acompañada de la liquidación y la información cartográfica.</p></section>
+        <section><h4>4. ANÁLISIS</h4><p>Las partidas se valorizaron con códigos VNR y tarifas Osinergmin enlazadas con objetos espaciales GIS. No se advierten observaciones críticas.</p></section>
+        <section><h4>5. CONCLUSIONES</h4><p>La información permite sustentar la aprobación. El monto referencial asciende a US$ 98,291.11, sujeto a validación final.</p></section>
+        <section><h4>6. RECOMENDACIONES</h4><p>Aprobar la liquidación, publicar el informe y la resolución, e instruir la transferencia correspondiente.</p></section>
+      </article>
+      <article class="vista-documento resolucion-previa" id="vistaResolucion" role="tabpanel" aria-label="Vista previa de la Resolución" hidden>
+        <header class="resolucion-membrete"><strong>FISE - FONDO DE INCLUSIÓN SOCIAL ENERGÉTICO</strong><b>FISE</b></header>
+        <h3>RESOLUCIÓN DE DIRECCIÓN EJECUTIVA N.° RD-2026/FISE</h3>
+        <section><h4>VISTO</h4><p>El Informe Técnico Legal N.° 0218-2026/FISE, que sustenta la Liquidación Parcial FISE - Redes para el concesionario y la ejecución de inversiones en bienes de capital financiadas con recursos del FISE.</p></section>
+        <section><h4>CONSIDERANDO</h4><p>Que, mediante la Ley N.° 29852, se crea el Sistema de Seguridad Energética en Hidrocarburos y el Fondo de Inclusión Social Energético - FISE.</p><p>Que, conforme al Reglamento de la Ley N.° 29852, el FISE puede financiar nuevas inversiones en bienes de capital destinadas a la masificación del gas natural.</p><p>Que, revisada la documentación técnica, económica y geoespacial, corresponde aprobar la Liquidación Parcial mediante Resolución de Dirección Ejecutiva.</p></section>
+        <section><h4>ARTÍCULO 1</h4><p>Aprobar la Liquidación Parcial FISE - Redes correspondiente a AGRUPACIÓN 1, código FISE-2026-001, conforme al Informe Técnico Legal N.° 0218-2026/FISE.</p></section>
+        <section><h4>ARTÍCULO 2</h4><p>Disponer la publicación de la presente resolución y del Informe Técnico Legal que forma parte integrante de esta decisión.</p></section>
+        <section><h4>ARTÍCULO 3</h4><p>Remitir el oficio de instrucción al fiduciario para que realice la transferencia a favor del concesionario conforme con el desembolso aprobado.</p></section>
+      </article>
+      </div>
+      </div>
+      <h3>Cálculo automático VNR / Osinergmin</h3><p>Partidas extraídas de la liquidación y enlazadas con información espacial GIS.</p>
+      <div class="tabla-modal"><table><thead><tr><th>Código VNR</th><th>Partida</th><th>Cantidad</th><th>Tarifa</th><th>Objeto GIS</th><th>Subtotal</th></tr></thead><tbody>
+        <tr><td>010210010101</td><td>Tubería PE 200 mm · Pavimento afirmado</td><td>94.37 m</td><td>US$ 123.171850</td><td>TRON-001</td><td>US$ 11,623.73</td></tr>
+        <tr><td>010210010102</td><td>Tubería PE 200 mm · Pavimento flexible</td><td>364.7 m</td><td>US$ 150.896580</td><td>RAM-002</td><td>US$ 55,031.98</td></tr>
+        <tr><td>010210010401</td><td>Tubería PE 200 mm · Terreno rocoso</td><td>397.33 m</td><td>US$ 178.911370</td><td>TRON-003</td><td>US$ 71,086.85</td></tr>
+        <tr><td>040210010401</td><td>Válvula PE 200 mm</td><td>1 und</td><td>US$ 1,086.025520</td><td>VAL-001</td><td>US$ 1,086.03</td></tr>
+      </tbody><tfoot><tr><th scope="row" colspan="5">Total valorizado</th><th scope="col">US$ 138,828.59</th></tr></tfoot></table></div>
+    </div>
+  </dialog>
+
+  <dialog class="modal-control-proyecto" id="modalControlProyecto">
+    <header class="mc-cabecera">
+      <div><h2 id="tituloControlProyecto">Control del proyecto</h2><p id="subtituloControlProyecto">Seguimiento técnico de Masificación Gas.</p></div>
+      <button class="mc-cerrar" id="cerrarControlProyecto" type="button" aria-label="Cerrar">×</button>
+    </header>
+    <div class="mc-cuerpo" id="contenidoControlProyecto"></div>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous"></script>
+<script src="../../../../scripts_generales.js?v=20260831-1"></script>
+  <script src="masificacion.js?v=20260903-3"></script>
+  <script src="compartido/asistente_ia.js?v=20260813-3"></script>
+</body>
+</html>
+
